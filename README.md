@@ -1,32 +1,33 @@
 # python-bro-code
+
 [Bro Code Python YouTube Class](https://youtu.be/ix9cRaBkVe0?feature=shared)
 
-
-Learn Python in 1 HOUR ⏱ :    • Learn Python in 1 hour! 🐍 (2024)  
-My original Python 12 Hour course 🐍 :     • Python Full Course for free 🐍  
-Full Python playlist 📃:    • Start coding with PYTHON in 5 minutes! 🐍  
+Learn Python in 1 HOUR ⏱ : [Learn Python in 1 hour! 🐍 (2024)](https://youtu.be/ix9cRaBkVe0?feature=shared)  
+My original Python 12 Hour course 🐍 : [Python Full Course for free 🐍](https://youtu.be/ix9cRaBkVe0?feature=shared)  
+Full Python playlist 📃: [Start coding with PYTHON in 5 minutes! 🐍](https://youtu.be/ix9cRaBkVe0?feature=shared)
 
 [⭐ = project]
-#1   (00:00:00) python tutorial for beginners 🐍
-#2   (00:05:49) variables ❎
-#3   (00:16:05) type casting 💱
-#4   (00:21:15) user input ⌨️
-#5   (00:32:42) ⭐ madlibs game 📖
-#6   (00:37:55) arithmetic & math 📐
-#7   (00:51:46) if statements 🤔
-#8   (01:00:06) ⭐ calculator program 🧮
-#9   (01:05:59) ⭐ weight conversion program 🏋️
-#10 (01:09:59) ⭐ temperature conversion program 🌡️
-#11 (01:13:58) logical operators 🌦️
-#12 (01:21:28) conditional expressions ❓
-#13 (01:27:03) string methods 〰️
-#14 (01:39:08) string indexing ✂️
-#15 (01:46:35) format specifiers 💬
-#16 (01:51:55) while loops ♾️
-#17 (01:58:53) ⭐ compound interest calculator 💵
-#18 (02:06:28) for loops 🔁
-#19 (02:11:33) ⭐ countdown timer program ⌛
-#20 (02:17:28) nested loops ➿
+
+1. (00:00:00) python tutorial for beginners 🐍
+2. (00:05:49) variables ❎
+3. (00:16:05) type casting 💱
+4. (00:21:15) user input ⌨️
+5. (00:32:42) ⭐ madlibs game 📖
+6. (00:37:55) arithmetic & math 📐
+7. (00:51:46) if statements 🤔
+8. (01:00:06) ⭐ calculator program 🧮
+9. (01:05:59) ⭐ weight conversion program 🏋️
+10. (01:09:59) ⭐ temperature conversion program 🌡️
+11. (01:13:58) logical operators 🌦️
+12. (01:21:28) conditional expressions ❓
+13. (01:27:03) string methods 〰️
+14. (01:39:08) string indexing ✂️
+15. (01:46:35) format specifiers 💬
+16. (01:51:55) while loops ♾️
+17. (01:58:53) ⭐ compound interest calculator 💵
+18. (02:06:28) for loops 🔁
+19. (02:11:33) ⭐ countdown timer program ⌛
+20. (02:17:28) nested loops ➿
 #21 (02:23:03) lists, sets, and tuples 🍎
 #22 (02:38:08) ⭐ shopping cart program 🛒
 #23 (02:45:21) 2D collections ⬜
