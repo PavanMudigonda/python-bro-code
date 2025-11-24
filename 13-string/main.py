@@ -1,5 +1,7 @@
 name = input("Enter your name: ")
 
+
+
 print("Hello, " + name + "!")
 
 len = len(name)
@@ -23,9 +25,20 @@ find_p = name.find("P")
 
 print("The position of the letter 'P': " + str(find_p))
 
-#result = name.isdigit()
+name = name.capitalize()
+
+result = name.isdigit()
 
 result = name.isnumeric()
 
 
+
 print("Is your name a number? " + str(result))
+
+phone_number = input("what is your phone number ?")
+
+phone_number = phone_number.replace('-',"")
+
+print(phone_number)
+
+print(help(str))

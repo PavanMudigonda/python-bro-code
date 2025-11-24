@@ -1,3 +1,4 @@
+# execute some code WHILE some condition remains true
 food = input("What is your favorite food? ")
 
 while food != "q":

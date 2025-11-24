@@ -1,17 +1,24 @@
-#friends: int = 5
+#friends: int = 0
 
 #friends = friends + 1
 
+# augmented assignment operator  - plus
 #friends += 1
 
-#friends = friends - 1
 
-#friends -= 1
+#friends = friends - 2
+
+# augmented assignment operator - minus
+#friends -= 2
+
+#friends: int = 5
 
 # friends = friends * 3
 
+# augmented assignment operator - multiplication
 #friends *= 3
 
+# augmented assignment operator - division
 #friends /=3
 
 
@@ -20,7 +27,7 @@
 
 # remainder = friends % 2
 
-# print(remainder)
+ # print(remainder)
 
 
 #x: float = 3.14
