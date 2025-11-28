@@ -4,11 +4,18 @@ import random
 
 # print("\u25CF \u250C \u2510 \u2502 \u2514 \u2518")
 
-# ● ┌ ┐ │ └ ┘
+# ● ┌ - ┐ │ └ ┘
 
 # 🎲 Dice Roller Program
 
 # ASCII art for dice faces
+
+# lets build a dictionary to hold the dice art
+
+# dictionary is a combination of key:value pairs in a curly braces {}
+
+# the value is a tuple of strings (matrix of characters) representing each line of the dice face
+
 dice_art = {
     1: ("┌─────────┐",
         "│         │",
