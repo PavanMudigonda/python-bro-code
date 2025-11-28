@@ -1,3 +1,5 @@
+# for loops = execute a block of code a fixed number of times.
+#            you can iterate over a range, string, sequence, etc.
 # for x in range(1, 10):
 #     print(x)
     
@@ -19,10 +21,10 @@
 # for x in credit_card:
 #     print(x)
 
-for x in range(1,11,1):
-    if x == 5:
-        continue
-    else:
-        print(x)
-print("Done!")
+# for x in range(1,11,1):
+#     if x == 5:
+#         continue
+#     else:
+#         print(x)
+# print("Done!")
     

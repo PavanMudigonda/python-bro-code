@@ -12,6 +12,14 @@ num_of_students: int = 100
 
 # float
 pi: float = 3.14
+price = 10.99
+gpa = 3.2
+distance = 5.5
+
+print(f"the value of pi is {pi}")
+print(f"the price is {price}")
+print(f"the GPA is {gpa}")
+print(f"the distance is {distance}")
 
 # bool
 

@@ -1,4 +1,5 @@
 
+# execute some code WHILE some condition remains true
 num = input("Enter a number between 1 and 10: ")
 
 while int(num) < 1 or int(num) > 10:
