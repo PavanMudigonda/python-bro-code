@@ -1,5 +1,18 @@
 # python-bro-code
 
+## 📊 Progress Status
+
+![Progress](https://img.shields.io/badge/Progress-30%2F77-blue?style=for-the-badge)
+![Completion](https://img.shields.io/badge/Completion-38.96%25-green?style=for-the-badge)
+
+**Programs Completed:** 30 out of 77
+
+```
+████████████░░░░░░░░░░░░░░░░  38.96%
+```
+
+---
+
 [Bro Code Python YouTube Class](https://youtu.be/ix9cRaBkVe0?feature=shared)
 
 Learn Python in 1 HOUR ⏱ : [Learn Python in 1 hour! 🐍. (2024)](https://youtu.be/ix9cRaBkVe0?feature=shared)  
