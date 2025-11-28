@@ -1,5 +1,11 @@
 import random
 
+# unicode chars for dice faces
+
+# print("\u25CF \u250C \u2510 \u2502 \u2514 \u2518")
+
+# ● ┌ ┐ │ └ ┘
+
 # 🎲 Dice Roller Program
 
 # ASCII art for dice faces
