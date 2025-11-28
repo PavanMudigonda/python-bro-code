@@ -1,0 +1,89 @@
+import random
+
+# 🎲 Dice Roller Program
+
+# ASCII art for dice faces
+dice_art = {
+    1: ("┌─────────┐",
+        "│         │",
+        "│    ●    │",
+        "│         │",
+        "└─────────┘"),
+    
+    2: ("┌─────────┐",
+        "│  ●      │",
+        "│         │",
+        "│      ●  │",
+        "└─────────┘"),
+    
+    3: ("┌─────────┐",
+        "│  ●      │",
+        "│    ●    │",
+        "│      ●  │",
+        "└─────────┘"),
+    
+    4: ("┌─────────┐",
+        "│  ●   ●  │",
+        "│         │",
+        "│  ●   ●  │",
+        "└─────────┘"),
+    
+    5: ("┌─────────┐",
+        "│  ●   ●  │",
+        "│    ●    │",
+        "│  ●   ●  │",
+        "└─────────┘"),
+    
+    6: ("┌─────────┐",
+        "│  ●   ●  │",
+        "│  ●   ●  │",
+        "│  ●   ●  │",
+        "└─────────┘")
+}
+
+def roll_dice(num_dice):
+    """Roll the specified number of dice and display the results"""
+    if num_dice < 1:
+        print("Please enter a valid number of dice (1 or more)")
+        return
+    
+    results = []
+    for _ in range(num_dice):
+        results.append(random.randint(1, 6))
+    
+    # Display dice art
+    print("\n" + "="*50)
+    print(f"Rolling {num_dice} dice...")
+    print("="*50 + "\n")
+    
+    # Display all dice side by side
+    for line_index in range(5):
+        line = ""
+        for result in results:
+            line += dice_art[result][line_index] + "  "
+        print(line)
+    
+    print("\n" + "="*50)
+    print(f"Results: {results}")
+    print(f"Total: {sum(results)}")
+    print("="*50 + "\n")
+
+def main():
+    print("🎲 Welcome to the Dice Roller Program! 🎲\n")
+    
+    while True:
+        try:
+            num_dice = input("How many dice would you like to roll? (or 'q' to quit): ").strip()
+            
+            if num_dice.lower() == 'q':
+                print("Thanks for playing! Goodbye! 👋")
+                break
+            
+            num_dice = int(num_dice)
+            roll_dice(num_dice)
+            
+        except ValueError:
+            print("Please enter a valid number or 'q' to quit\n")
+
+if __name__ == "__main__":
+    main()
