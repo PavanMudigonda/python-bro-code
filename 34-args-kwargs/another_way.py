@@ -1,5 +1,15 @@
 
-def show_kwargs_details(**kwargs):
+# *args  = allows you to pass multiple non-keyword arguments
+# **kwargs = allows you to pass multiple keyword arguments
+# * and ** are unpacking operators
+# Argument types:
+# 1. positional
+# 2. default
+# 3. keyword
+# 4. arbitrary
+
+
+
     # Show all keys
     print("Keys:")
     for key in kwargs.keys():
