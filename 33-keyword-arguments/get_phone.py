@@ -3,11 +3,12 @@
 #                     make your functions more flexible, reduce # of arguments
 #                     1. positional, 2. DEFAULT, 3. keyword, 4. arbitrary
 
-def hello(greeting, title, first, last):
-    print(f"{greeting} {title} {first} {last}")
-    
-# hello("Hello", "Mr", "Spongebob", "Squarepants" )
 
-hello("Hello", "Mr", first="Spongebob", last="Squarepants" )
+def get_phone(country, area, first, last):
+    return f"{country}-{area}-{first}-{last}"
 
+# phone_num = get_phone(1,547,000,0000)
 
+phone_num = get_phone(country="+1",area="547",first="000",last="0000")
+
+print(phone_num)

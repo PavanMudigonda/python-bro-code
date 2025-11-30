@@ -3,11 +3,15 @@
 #                     make your functions more flexible, reduce # of arguments
 #                     1. positional, 2. DEFAULT, 3. keyword, 4. arbitrary
 
-def hello(greeting, title, first, last):
-    print(f"{greeting} {title} {first} {last}")
-    
-# hello("Hello", "Mr", "Spongebob", "Squarepants" )
 
-hello("Hello", "Mr", first="Spongebob", last="Squarepants" )
+import time
 
+def count(end, start=0):
+    for x in range(start,end+1):
+        print(x)
+        time.sleep(1)
+    print("DONE")
 
+count(30,10)
+
+        
