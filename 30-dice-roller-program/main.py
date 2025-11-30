@@ -14,7 +14,7 @@ import random
 
 # dictionary is a combination of key:value pairs in a curly braces {}
 
-# the value is a tuple of strings (matrix of characters) representing each line of the dice face
+# The value is a tuple of 5 strings in matrix form  representing each line of the dice
 
 dice_art = {
     1: ("┌─────────┐",
@@ -56,13 +56,22 @@ dice_art = {
 
 def roll_dice(num_dice):
     """Roll the specified number of dice and display the results"""
+    
+    # If user enters less than 1 dice, prompt for valid input
+    
     if num_dice < 1:
         print("Please enter a valid number of dice (1 or more)")
         return
     
+    # construct a list to hold the results of each dice roll
     results = []
+    
+    # for each dice to be rolled, generate a random number between 1 and 6
+    # image this as rolling 6  physical dice on a table
+    
     for _ in range(num_dice):
         results.append(random.randint(1, 6))
+    
     
     # Display dice art
     print("\n" + "="*50)
@@ -75,6 +84,8 @@ def roll_dice(num_dice):
         for result in results:
             line += dice_art[result][line_index] + "  "
         print(line)
+    
+    # Display results and total
     
     print("\n" + "="*50)
     print(f"Results: {results}")
