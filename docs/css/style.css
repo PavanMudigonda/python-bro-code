@@ -599,3 +599,97 @@ footer a:hover {
         grid-template-columns: 1fr;
     }
 }
+/* Test Results Styles */
+.test-results-section {
+    background: var(--bg-card);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.test-results-content {
+    margin-top: 1rem;
+}
+
+.test-case {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    border-left: 4px solid;
+    background: #f8f9fa;
+}
+
+.test-case.passed {
+    border-left-color: var(--success-color);
+    background: #d4edda;
+}
+
+.test-case.failed {
+    border-left-color: var(--danger-color);
+    background: #f8d7da;
+}
+
+.test-case-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.test-case-header .status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.test-case-header .passed {
+    color: var(--success-color);
+}
+
+.test-case-header .failed {
+    color: var(--danger-color);
+}
+
+.test-case-details {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.test-case-details div {
+    margin: 0.25rem 0;
+}
+
+.test-case-details strong {
+    display: inline-block;
+    min-width: 80px;
+}
+
+.test-summary {
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.test-summary.all-passed {
+    background: #d4edda;
+    color: #155724;
+    border: 2px solid var(--success-color);
+}
+
+.test-summary.some-failed {
+    background: #f8d7da;
+    color: #721c24;
+    border: 2px solid var(--danger-color);
+}
+
+.hidden-test-info {
+    color: var(--gray);
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}

@@ -50,6 +50,9 @@ document.addEventListener('DOMContentLoaded', function() {
 function runCode() {
     const code = document.getElementById('code-editor').value.trim();
     const outputDiv = document.getElementById('output');
+    const loadingDiv = document.getElementById('loading');
+    const testResultsSection = document.getElementById('test-results');
+    const testResultsContent = document.getElementById('test-results-content');
     
     if (!code) {
         outputDiv.innerHTML = '<div class="output-info">Please write some code first</div>';
@@ -62,8 +65,115 @@ function runCode() {
         return;
     }
     
-    // Run Python code using Skulpt
-    window.runPythonCode(code);
+    // Get current question data
+    const questionData = questionsData[currentQuestion];
+    
+    if (questionData && questionData.testCases && questionData.testCases.length > 0) {
+        // Run with test cases
+        loadingDiv.style.display = 'block';
+        outputDiv.innerHTML = '';
+        testResultsSection.style.display = 'none';
+        
+        window.runPythonWithTests(code, questionData.testCases, questionData.functionName)
+            .then(results => {
+                loadingDiv.style.display = 'none';
+                
+                // Display test results
+                displayTestResults(results);
+                
+                // Check if all tests passed
+                const allPassed = results.every(r => r.passed);
+                const markCompleteBtn = document.getElementById('mark-complete');
+                
+                if (allPassed) {
+                    markCompleteBtn.disabled = false;
+                    markCompleteBtn.title = 'All tests passed! Click to mark complete';
+                } else {
+                    markCompleteBtn.disabled = true;
+                    markCompleteBtn.title = 'Pass all tests to enable';
+                }
+            })
+            .catch(error => {
+                loadingDiv.style.display = 'none';
+                outputDiv.innerHTML = '<pre class="output-error"><strong>Error:</strong>\n' + error.toString() + '</pre>';
+            });
+    } else {
+        // No test cases - run normally for output
+        window.runPythonCode(code);
+        // Enable mark complete button for questions without tests
+        document.getElementById('mark-complete').disabled = false;
+    }
+}
+
+function displayTestResults(results) {
+    const testResultsSection = document.getElementById('test-results');
+    const testResultsContent = document.getElementById('test-results-content');
+    
+    // Count results
+    const passedCount = results.filter(r => r.passed).length;
+    const totalCount = results.length;
+    const visibleCount = results.filter(r => r.visible).length;
+    const hiddenCount = totalCount - visibleCount;
+    
+    let html = '';
+    
+    // Summary
+    if (passedCount === totalCount) {
+        html += `<div class="test-summary all-passed">
+            <i class="fas fa-check-circle"></i> All ${totalCount} tests passed! 🎉
+        </div>`;
+    } else {
+        html += `<div class="test-summary some-failed">
+            <i class="fas fa-times-circle"></i> ${passedCount}/${totalCount} tests passed
+        </div>`;
+    }
+    
+    // Individual test cases (only visible ones with details)
+    results.forEach((result, index) => {
+        if (result.visible) {
+            const status = result.passed ? 'passed' : 'failed';
+            const icon = result.passed ? 'fa-check' : 'fa-times';
+            
+            html += `<div class="test-case ${status}">
+                <div class="test-case-header">
+                    <span>Test Case ${index + 1}</span>
+                    <span class="status ${status}">
+                        <i class="fas ${icon}"></i>
+                        ${result.passed ? 'Passed' : 'Failed'}
+                    </span>
+                </div>
+                <div class="test-case-details">
+                    <div><strong>Input:</strong> ${formatValue(result.input)}</div>
+                    <div><strong>Expected:</strong> ${formatValue(result.expected)}</div>
+                    ${!result.passed ? `<div><strong>Got:</strong> ${formatValue(result.actual)}</div>` : ''}
+                    ${result.error ? `<div><strong>Error:</strong> ${result.error}</div>` : ''}
+                </div>
+            </div>`;
+        }
+    });
+    
+    // Hidden tests info
+    if (hiddenCount > 0) {
+        const hiddenPassed = results.filter((r, i) => !r.visible && r.passed).length;
+        html += `<div class="hidden-test-info">
+            <i class="fas fa-lock"></i> ${hiddenPassed}/${hiddenCount} hidden test(s) passed
+        </div>`;
+    }
+    
+    testResultsContent.innerHTML = html;
+    testResultsSection.style.display = 'block';
+}
+
+function formatValue(value) {
+    if (Array.isArray(value)) {
+        return '[' + value.join(', ') + ']';
+    } else if (typeof value === 'string') {
+        return '"' + value + '"';
+    } else if (value === null || value === undefined) {
+        return String(value);
+    } else {
+        return String(value);
+    }
 }
 
 function clearCode() {
@@ -153,9 +263,23 @@ function loadQuestion(questionNum) {
         
         // Build description HTML
         let descriptionHTML = `<p>${questionData.description}</p>`;
-        if (questionData.example) {
-            descriptionHTML += `<p><strong>Example:</strong></p><pre>${questionData.example}</pre>`;
+        
+        // Show visible test cases as examples
+        if (questionData.testCases && questionData.testCases.length > 0) {
+            const visibleTests = questionData.testCases.filter(t => t.visible);
+            if (visibleTests.length > 0) {
+                descriptionHTML += `<p><strong>Example Test Cases:</strong></p>`;
+                visibleTests.forEach((test, idx) => {
+                    descriptionHTML += `<pre><strong>Input:</strong> ${formatValue(test.input)}\n<strong>Output:</strong> ${formatValue(test.output)}</pre>`;
+                });
+                
+                const hiddenCount = questionData.testCases.filter(t => !t.visible).length;
+                if (hiddenCount > 0) {
+                    descriptionHTML += `<p class="hidden-test-info"><i class="fas fa-lock"></i> Plus ${hiddenCount} hidden test case(s)</p>`;
+                }
+            }
         }
+        
         document.getElementById('question-description').innerHTML = descriptionHTML;
         
         // Update hints
@@ -195,8 +319,13 @@ function loadQuestion(questionNum) {
         document.getElementById('code-editor').value = '# Write your Python code here\n';
     }
     
-    // Clear output
+    // Clear output and test results
     clearOutput();
+    document.getElementById('test-results').style.display = 'none';
+    
+    // Reset mark complete button
+    document.getElementById('mark-complete').disabled = true;
+    document.getElementById('mark-complete').title = 'Pass all tests to enable';
     
     // Reset start time
     startTime = Date.now();

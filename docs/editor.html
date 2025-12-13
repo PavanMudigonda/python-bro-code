@@ -112,9 +112,19 @@ print("Hello World")
                 </div>
             </div>
 
+            <!-- Test Results -->
+            <div class="test-results-section" id="test-results" style="display: none;">
+                <div class="output-header">
+                    <h3><i class="fas fa-check-double"></i> Test Results</h3>
+                </div>
+                <div id="test-results-content" class="test-results-content">
+                    <!-- Test results will be inserted here -->
+                </div>
+            </div>
+
             <!-- Mark as Complete -->
             <div class="completion-section">
-                <button id="mark-complete" class="btn-success">
+                <button id="mark-complete" class="btn-success" disabled title="Pass all tests to enable">
                     <i class="fas fa-check-circle"></i> Mark as Complete
                 </button>
                 <div id="completion-message" class="completion-message" style="display: none;">
@@ -143,7 +153,82 @@ print("Hello World")
             return Sk.builtinFiles["files"][x];
         }
         
-        // Run Python code using Skulpt
+        // Run Python code with test cases
+        window.runPythonWithTests = async function(code, testCases, functionName) {
+            const results = [];
+            
+            // Configure Skulpt
+            Sk.configure({
+                output: () => {}, // Suppress output during testing
+                read: builtinRead,
+                __future__: Sk.python3
+            });
+            
+            for (let i = 0; i < testCases.length; i++) {
+                const testCase = testCases[i];
+                try {
+                    // Create test code
+                    const testCode = code + `\n\n__result__ = ${functionName}(${testCase.input.map(v => JSON.stringify(v)).join(', ')})`;
+                    
+                    // Run the code
+                    await Sk.misceval.asyncToPromise(function() {
+                        return Sk.importMainWithBody("<stdin>", false, testCode, true);
+                    });
+                    
+                    // Get the result
+                    const result = Sk.globals['__result__'];
+                    let actualOutput;
+                    
+                    if (result === undefined) {
+                        actualOutput = undefined;
+                    } else if (result.v !== undefined) {
+                        // Skulpt object - extract Python value
+                        if (typeof result.v === 'number' || typeof result.v === 'boolean') {
+                            actualOutput = result.v;
+                        } else if (typeof result.v === 'string') {
+                            actualOutput = result.v;
+                        } else if (result instanceof Sk.builtin.list) {
+                            // Convert Skulpt list to JS array
+                            actualOutput = [];
+                            for (let j = 0; j < result.v.length; j++) {
+                                const item = result.v[j];
+                                actualOutput.push(item.v !== undefined ? item.v : item);
+                            }
+                        } else {
+                            actualOutput = result.v;
+                        }
+                    } else {
+                        actualOutput = result;
+                    }
+                    
+                    // Compare with expected output
+                    const passed = JSON.stringify(actualOutput) === JSON.stringify(testCase.output);
+                    
+                    results.push({
+                        passed: passed,
+                        input: testCase.input,
+                        expected: testCase.output,
+                        actual: actualOutput,
+                        visible: testCase.visible,
+                        error: null
+                    });
+                    
+                } catch (err) {
+                    results.push({
+                        passed: false,
+                        input: testCase.input,
+                        expected: testCase.output,
+                        actual: null,
+                        visible: testCase.visible,
+                        error: err.toString()
+                    });
+                }
+            }
+            
+            return results;
+        };
+        
+        // Run Python code for display output (original functionality)
         window.runPythonCode = function(code) {
             const output = document.getElementById('output');
             const loading = document.getElementById('loading');
