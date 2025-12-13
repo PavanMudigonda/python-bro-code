@@ -23,10 +23,16 @@ async function initializeEditor() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Get level from URL parameter
+    // Get level and question from URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has('level')) {
         currentLevel = urlParams.get('level');
+    }
+    if (urlParams.has('question')) {
+        const questionParam = parseInt(urlParams.get('question'));
+        if (questionParam >= 1 && questionParam <= 1000) {
+            currentQuestion = questionParam;
+        }
     }
     
     // Initialize editor and load questions
@@ -40,8 +46,16 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('prev-question').addEventListener('click', prevQuestion);
     document.getElementById('next-question').addEventListener('click', nextQuestion);
     document.getElementById('random-question').addEventListener('click', randomQuestion);
+    document.getElementById('goto-question').addEventListener('click', gotoQuestion);
     document.getElementById('show-hints').addEventListener('click', toggleHints);
     document.getElementById('clear-output').addEventListener('click', clearOutput);
+    
+    // Enter key on question input
+    document.getElementById('question-input').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            gotoQuestion();
+        }
+    });
     
     // Track start time
     startTime = Date.now();
@@ -348,6 +362,18 @@ function prevQuestion() {
 function nextQuestion() {
     if (currentQuestion < 1000) {
         loadQuestion(currentQuestion + 1);
+    }
+}
+
+function gotoQuestion() {
+    const input = document.getElementById('question-input');
+    const questionNum = parseInt(input.value);
+    
+    if (questionNum >= 1 && questionNum <= 1000) {
+        loadQuestion(questionNum);
+        input.value = ''; // Clear input
+    } else {
+        alert('Please enter a question number between 1 and 1000');
     }
 }
 
