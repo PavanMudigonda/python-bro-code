@@ -5,17 +5,22 @@ let startTime = null;
 let questionsData = {}; // Will hold all 1000 questions
 
 // Load questions data
-fetch('data/questions.json')
-    .then(response => response.json())
-    .then(data => {
-        questionsData = data;
+async function initializeEditor() {
+    try {
+        const response = await fetch('data/questions.json');
+        questionsData = await response.json();
         console.log('Loaded', Object.keys(questionsData).length, 'questions');
-    })
-    .catch(error => {
+        
+        // Now load the first question
+        loadQuestion(currentQuestion);
+    } catch (error) {
         console.error('Error loading questions:', error);
         // Fallback to default
         questionsData = {};
-    });
+        // Still load the question with fallback data
+        loadQuestion(currentQuestion);
+    }
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     // Get level from URL parameter
@@ -24,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
         currentLevel = urlParams.get('level');
     }
     
-    // Load first question
-    loadQuestion(currentQuestion);
+    // Initialize editor and load questions
+    initializeEditor();
     
     // Event listeners
     document.getElementById('run-code').addEventListener('click', runCode);
@@ -175,6 +180,11 @@ function loadQuestion(questionNum) {
             </div>
         `;
         document.querySelector('.question-meta').innerHTML = metaHTML;
+    } else {
+        // Fallback if question data not loaded
+        document.getElementById('question-title').textContent = `Practice Question ${questionNum}`;
+        document.getElementById('question-description').innerHTML = 
+            `<p>Loading question details... If this persists, please refresh the page.</p>`;
     }
     
     // Load saved code if exists
