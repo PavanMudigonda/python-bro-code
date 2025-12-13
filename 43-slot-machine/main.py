@@ -1,6 +1,10 @@
 # Python Slot Machine
-# user has balance
-# user can bet amount
+# As a user, I want to play a slot machine game where I can bet an amount from my balance
+# I want to be able to spin the machine, and either win or lose money based on the outcome.
+# The slot machine will have three symbols, and if all three match, I win a jackpot. 
+# If two match, I win a smaller amount. If none match, I lose my bet.
+# The game continues until I choose to quit or run out of money.
+# Implement the slot machine game in Python.
 
 import random
 
