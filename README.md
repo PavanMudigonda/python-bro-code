@@ -5,10 +5,10 @@
 ![Progress](https://img.shields.io/badge/Progress-40%2F77-blue?style=for-the-badge)
 ![Completion](https://img.shields.io/badge/Completion-52%25-green?style=for-the-badge)
 
-**Programs Completed:** 40 out of 77
+**Programs Completed:** 50 out of 77
 
 ```
-███████████████░░░░░░░░░░░░░░░  52.0%
+█████████████████████░░░░░░░░░░░░░  65.0%
 ```
 
 ---
