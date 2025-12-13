@@ -6,9 +6,9 @@
     <title>Python Code Editor - Practice Questions</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- PyScript for running Python in browser -->
-    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
-    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <!-- Skulpt for fast Python execution in browser -->
+    <script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt-stdlib.js" defer></script>
 </head>
 <body>
     <nav class="navbar">
@@ -124,53 +124,60 @@ print("Hello World")
         </div>
     </div>
 
-    <!-- PyScript code execution -->
-    <script type="py" config='{"packages": []}' id="python-runner" style="display: none;">
-from js import document, console
-import sys
-from io import StringIO
-import traceback
-
-def run_user_code():
-    output_div = document.getElementById("output")
-    loading_div = document.getElementById("loading")
-    
-    # Get code from editor
-    code = document.getElementById("code-editor").value
-    
-    # Show loading
-    loading_div.style.display = "block"
-    output_div.innerHTML = ""
-    
-    # Capture stdout
-    old_stdout = sys.stdout
-    sys.stdout = StringIO()
-    
-    try:
-        # Execute the code
-        exec(code, {})
+    <!-- Skulpt Python execution helper -->
+    <script>
+        // Skulpt output handler
+        function outf(text) {
+            const output = document.getElementById('output');
+            const existingPre = output.querySelector('pre.output-success');
+            if (existingPre) {
+                existingPre.textContent += text;
+            } else {
+                output.innerHTML = '<pre class="output-success">' + text + '</pre>';
+            }
+        }
         
-        # Get output
-        output = sys.stdout.getvalue()
+        function builtinRead(x) {
+            if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
+                throw "File not found: '" + x + "'";
+            return Sk.builtinFiles["files"][x];
+        }
         
-        # Display output
-        if output:
-            output_div.innerHTML = f'<pre class="output-success">{output}</pre>'
-        else:
-            output_div.innerHTML = '<div class="output-info">Code executed successfully (no output)</div>'
+        // Run Python code using Skulpt
+        window.runPythonCode = function(code) {
+            const output = document.getElementById('output');
+            const loading = document.getElementById('loading');
             
-    except Exception as e:
-        # Display error with traceback
-        error_msg = traceback.format_exc()
-        output_div.innerHTML = f'<pre class="output-error"><strong>Error:</strong>\n{error_msg}</pre>'
-        
-    finally:
-        # Restore stdout
-        sys.stdout = old_stdout
-        loading_div.style.display = "none"
-
-# Make function available globally
-window.run_user_code = run_user_code
+            // Show loading
+            loading.style.display = 'block';
+            output.innerHTML = '';
+            
+            // Configure Skulpt
+            Sk.configure({
+                output: outf,
+                read: builtinRead,
+                __future__: Sk.python3
+            });
+            
+            // Run the code
+            Sk.misceval.asyncToPromise(function() {
+                return Sk.importMainWithBody("<stdin>", false, code, true);
+            }).then(
+                function(mod) {
+                    // Success
+                    loading.style.display = 'none';
+                    const outputContent = output.querySelector('pre');
+                    if (!outputContent || !outputContent.textContent.trim()) {
+                        output.innerHTML = '<div class="output-info">Code executed successfully (no output)</div>';
+                    }
+                },
+                function(err) {
+                    // Error
+                    loading.style.display = 'none';
+                    output.innerHTML = '<pre class="output-error"><strong>Error:</strong>\n' + err.toString() + '</pre>';
+                }
+            );
+        };
     </script>
 
     <script src="js/progress.js"></script>

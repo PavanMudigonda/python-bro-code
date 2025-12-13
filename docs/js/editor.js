@@ -29,24 +29,22 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function runCode() {
-    // Check if PyScript is loaded
-    if (typeof window.run_user_code === 'function') {
-        // Call PyScript function
-        window.run_user_code();
-    } else if (typeof pyscript !== 'undefined') {
-        // PyScript is available, try to run
-        try {
-            pyscript.run_user_code();
-        } catch (e) {
-            // Fallback: show that PyScript is loading
-            document.getElementById('output').innerHTML = 
-                '<div class="output-info">⏳ PyScript is still loading... Please wait a moment and try again.</div>';
-        }
-    } else {
-        // PyScript not loaded yet
-        document.getElementById('output').innerHTML = 
-            '<div class="output-info">⏳ Python runtime is loading... This may take a few seconds on first visit. Please wait and try again.</div>';
+    const code = document.getElementById('code-editor').value.trim();
+    const outputDiv = document.getElementById('output');
+    
+    if (!code) {
+        outputDiv.innerHTML = '<div class="output-info">Please write some code first</div>';
+        return;
     }
+    
+    // Check if Skulpt is loaded
+    if (typeof Sk === 'undefined') {
+        outputDiv.innerHTML = '<div class="output-info">⏳ Python runtime is loading... Please wait a moment and try again.</div>';
+        return;
+    }
+    
+    // Run Python code using Skulpt
+    window.runPythonCode(code);
 }
 
 function clearCode() {
