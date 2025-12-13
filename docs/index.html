@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Practice Questions - Interactive Learning Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fab fa-python"></i>
+                <span>Python Practice 1000</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Dashboard</a></li>
+                <li><a href="editor.html">Code Editor</a></li>
+                <li><a href="questions.html">Browse Questions</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="hero">
+            <h1>🐍 Master Python with 1000 Practice Questions</h1>
+            <p>From Beginner to Grand Master - Track Your Progress, Code in Browser, Achieve Greatness</p>
+        </header>
+
+        <!-- Progress Overview -->
+        <section class="progress-overview">
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-content">
+                    <h3 id="total-completed">0</h3>
+                    <p>Questions Completed</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🎯</div>
+                <div class="stat-content">
+                    <h3 id="completion-percentage">0%</h3>
+                    <p>Overall Progress</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🔥</div>
+                <div class="stat-content">
+                    <h3 id="current-streak">0</h3>
+                    <p>Day Streak</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🏆</div>
+                <div class="stat-content">
+                    <h3 id="achievements-count">0</h3>
+                    <p>Achievements</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Level Progress -->
+        <section class="level-progress">
+            <h2>Progress by Level</h2>
+            <div class="levels-grid">
+                <div class="level-card" data-level="beginner">
+                    <div class="level-header">
+                        <h3>⭐ Beginner</h3>
+                        <span class="level-range">001-100</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-progress="beginner" style="width: 0%"></div>
+                    </div>
+                    <div class="level-stats">
+                        <span class="completed">0/100</span>
+                        <span class="percentage">0%</span>
+                    </div>
+                    <a href="editor.html?level=beginner" class="btn-start">Start Practicing</a>
+                </div>
+
+                <div class="level-card" data-level="intermediate">
+                    <div class="level-header">
+                        <h3>⭐⭐ Intermediate</h3>
+                        <span class="level-range">101-300</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-progress="intermediate" style="width: 0%"></div>
+                    </div>
+                    <div class="level-stats">
+                        <span class="completed">0/200</span>
+                        <span class="percentage">0%</span>
+                    </div>
+                    <a href="editor.html?level=intermediate" class="btn-start">Start Practicing</a>
+                </div>
+
+                <div class="level-card" data-level="advanced">
+                    <div class="level-header">
+                        <h3>⭐⭐⭐ Advanced</h3>
+                        <span class="level-range">301-500</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-progress="advanced" style="width: 0%"></div>
+                    </div>
+                    <div class="level-stats">
+                        <span class="completed">0/200</span>
+                        <span class="percentage">0%</span>
+                    </div>
+                    <a href="editor.html?level=advanced" class="btn-start">Start Practicing</a>
+                </div>
+
+                <div class="level-card" data-level="expert">
+                    <div class="level-header">
+                        <h3>🥉 Expert</h3>
+                        <span class="level-range">501-700</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-progress="expert" style="width: 0%"></div>
+                    </div>
+                    <div class="level-stats">
+                        <span class="completed">0/200</span>
+                        <span class="percentage">0%</span>
+                    </div>
+                    <a href="editor.html?level=expert" class="btn-start">Start Practicing</a>
+                </div>
+
+                <div class="level-card" data-level="master">
+                    <div class="level-header">
+                        <h3>🥈 Master</h3>
+                        <span class="level-range">701-900</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-progress="master" style="width: 0%"></div>
+                    </div>
+                    <div class="level-stats">
+                        <span class="completed">0/200</span>
+                        <span class="percentage">0%</span>
+                    </div>
+                    <a href="editor.html?level=master" class="btn-start">Start Practicing</a>
+                </div>
+
+                <div class="level-card" data-level="challenge">
+                    <div class="level-header">
+                        <h3>🥇 Challenge</h3>
+                        <span class="level-range">901-1000</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-progress="challenge" style="width: 0%"></div>
+                    </div>
+                    <div class="level-stats">
+                        <span class="completed">0/100</span>
+                        <span class="percentage">0%</span>
+                    </div>
+                    <a href="editor.html?level=challenge" class="btn-start">Start Practicing</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Start -->
+        <section class="quick-start">
+            <h2>Quick Start Guide</h2>
+            <div class="guide-grid">
+                <div class="guide-card">
+                    <div class="guide-number">1</div>
+                    <h3>Choose Your Level</h3>
+                    <p>Start with Beginner or jump to your skill level</p>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-number">2</div>
+                    <h3>Open Code Editor</h3>
+                    <p>Write and test Python code directly in your browser</p>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-number">3</div>
+                    <h3>Solve & Submit</h3>
+                    <p>Test your solution and mark as complete</p>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-number">4</div>
+                    <h3>Track Progress</h3>
+                    <p>Earn achievements and climb the ranks</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Activity -->
+        <section class="recent-activity">
+            <h2>Recent Activity</h2>
+            <div id="activity-list" class="activity-list">
+                <p class="no-activity">No activity yet. Start solving questions!</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Python Practice Questions © 2025 | Built with ❤️ for learners</p>
+        <p>
+            <a href="https://github.com/PavanMudigondaTR/python-bro-code" target="_blank">
+                <i class="fab fa-github"></i> View on GitHub
+            </a>
+        </p>
+    </footer>
+
+    <script src="js/progress.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

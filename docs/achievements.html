@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements - Python Practice</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fab fa-python"></i>
+                <span>Python Practice 1000</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="editor.html">Code Editor</a></li>
+                <li><a href="questions.html">Browse Questions</a></li>
+                <li><a href="achievements.html" class="active">Achievements</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="hero">
+            <h1>🏆 Your Achievements</h1>
+            <p>Track your milestones and celebrate your progress!</p>
+        </header>
+
+        <section class="achievements-grid" id="achievements-list">
+            <!-- Achievements will be loaded dynamically -->
+        </section>
+
+        <section class="stats-section">
+            <h2>Your Stats</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <h3 id="total-solved">0</h3>
+                    <p>Total Questions Solved</p>
+                </div>
+                <div class="stat-box">
+                    <h3 id="current-streak-stat">0</h3>
+                    <p>Current Streak (Days)</p>
+                </div>
+                <div class="stat-box">
+                    <h3 id="longest-streak-stat">0</h3>
+                    <p>Longest Streak (Days)</p>
+                </div>
+                <div class="stat-box">
+                    <h3 id="unlocked-achievements">0</h3>
+                    <p>Achievements Unlocked</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="progress-export">
+            <h2>Backup & Restore</h2>
+            <div class="export-controls">
+                <button id="export-progress" class="btn-primary">
+                    <i class="fas fa-download"></i> Export Progress
+                </button>
+                <button id="import-progress" class="btn-secondary">
+                    <i class="fas fa-upload"></i> Import Progress
+                </button>
+                <button id="reset-progress" class="btn-danger">
+                    <i class="fas fa-exclamation-triangle"></i> Reset All Progress
+                </button>
+            </div>
+            <textarea id="progress-json" class="json-viewer" placeholder="Progress data will appear here..." readonly></textarea>
+        </section>
+    </div>
+
+    <footer>
+        <p>Python Practice Questions © 2025 | Built with ❤️ for learners</p>
+    </footer>
+
+    <script src="js/progress.js"></script>
+    <script>
+        const achievements = [
+            { id: 'python_apprentice', icon: '⭐', title: 'Python Apprentice', desc: 'Complete 50 questions', requirement: 50 },
+            { id: 'python_practitioner', icon: '⭐⭐', title: 'Python Practitioner', desc: 'Complete 100 questions', requirement: 100 },
+            { id: 'python_expert', icon: '⭐⭐⭐', title: 'Python Expert', desc: 'Complete 200 questions', requirement: 200 },
+            { id: 'bronze_medal', icon: '🥉', title: 'Bronze Medal', desc: 'Complete 300 questions', requirement: 300 },
+            { id: 'silver_medal', icon: '🥈', title: 'Silver Medal', desc: 'Complete 500 questions', requirement: 500 },
+            { id: 'gold_medal', icon: '🥇', title: 'Gold Medal', desc: 'Complete 700 questions', requirement: 700 },
+            { id: 'diamond_tier', icon: '💎', title: 'Diamond Tier', desc: 'Complete 900 questions', requirement: 900 },
+            { id: 'grand_master', icon: '🏆', title: 'Grand Master', desc: 'Complete all 1000 questions!', requirement: 1000 },
+            { id: 'speed_demon', icon: '🎯', title: 'Speed Demon', desc: 'Solve a question in under 10 minutes', requirement: 'special' },
+            { id: 'space_optimizer', icon: '🚀', title: 'Space Optimizer', desc: 'Create an O(1) space solution', requirement: 'special' },
+            { id: 'innovator', icon: '💡', title: 'Innovator', desc: 'Create a solution better than reference', requirement: 'special' },
+            { id: 'on_fire', icon: '🔥', title: 'On Fire', desc: 'Solve 100 problems in a week', requirement: 'special' },
+            { id: 'ultimate_champion', icon: '👑', title: 'Ultimate Champion', desc: 'Complete the Final Boss Challenge', requirement: 1000 }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadAchievements();
+            loadStats();
+            
+            document.getElementById('export-progress').addEventListener('click', exportProgress);
+            document.getElementById('import-progress').addEventListener('click', importProgress);
+            document.getElementById('reset-progress').addEventListener('click', resetProgress);
+        });
+
+        function loadAchievements() {
+            const progress = progressTracker.getProgress();
+            const container = document.getElementById('achievements-list');
+            
+            container.innerHTML = achievements.map(achievement => {
+                const unlocked = progress.achievements[achievement.id];
+                const completed = progress.metadata.completed;
+                const progressPct = typeof achievement.requirement === 'number' 
+                    ? Math.min(100, (completed / achievement.requirement * 100))
+                    : 0;
+                
+                return `
+                    <div class="achievement-card ${unlocked ? 'unlocked' : 'locked'}">
+                        <div class="achievement-icon">${achievement.icon}</div>
+                        <h3>${achievement.title}</h3>
+                        <p>${achievement.desc}</p>
+                        ${!unlocked && typeof achievement.requirement === 'number' ? `
+                            <div class="achievement-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: ${progressPct}%"></div>
+                                </div>
+                                <span>${completed}/${achievement.requirement}</span>
+                            </div>
+                        ` : ''}
+                        ${unlocked ? '<div class="unlocked-badge">✅ Unlocked!</div>' : ''}
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function loadStats() {
+            const progress = progressTracker.getProgress();
+            document.getElementById('total-solved').textContent = progress.metadata.completed;
+            document.getElementById('current-streak-stat').textContent = progress.streaks.current_streak;
+            document.getElementById('longest-streak-stat').textContent = progress.streaks.longest_streak;
+            document.getElementById('unlocked-achievements').textContent = progressTracker.getAchievementCount();
+        }
+
+        function exportProgress() {
+            const json = progressTracker.exportProgress();
+            document.getElementById('progress-json').value = json;
+            
+            // Also download as file
+            const blob = new Blob([json], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'python-practice-progress.json';
+            a.click();
+        }
+
+        function importProgress() {
+            const json = prompt('Paste your progress JSON:');
+            if (json) {
+                if (progressTracker.importProgress(json)) {
+                    alert('Progress imported successfully!');
+                    location.reload();
+                } else {
+                    alert('Failed to import progress. Please check the JSON format.');
+                }
+            }
+        }
+
+        function resetProgress() {
+            if (progressTracker.resetProgress()) {
+                location.reload();
+            }
+        }
+    </script>
+
+    <style>
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .achievement-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .achievement-card.locked {
+            opacity: 0.5;
+            filter: grayscale(100%);
+        }
+
+        .achievement-card.unlocked {
+            border: 2px solid var(--success-color);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .achievement-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .achievement-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .achievement-progress {
+            margin-top: 1rem;
+        }
+
+        .unlocked-badge {
+            margin-top: 1rem;
+            padding: 0.5rem;
+            background: var(--success-color);
+            color: white;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .stats-section {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-box h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-export {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .export-controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-danger {
+            background: var(--danger-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-danger:hover {
+            background: #c82333;
+        }
+
+        .json-viewer {
+            width: 100%;
+            min-height: 200px;
+            padding: 1rem;
+            font-family: monospace;
+            background: #f8f9fa;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            resize: vertical;
+        }
+    </style>
+</body>
+</html>

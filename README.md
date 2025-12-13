@@ -1,6 +1,33 @@
-# python-bro-code
+# Python Learning Repository 🐍
 
-## 📊 Progress Status
+[![Practice Questions](https://img.shields.io/badge/Practice_Questions-1000-blue?style=for-the-badge)](./practice-questions)
+[![GitHub Pages](https://img.shields.io/badge/Live_Platform-Ready-success?style=for-the-badge)](https://pavanmudigondatr.github.io/python-bro-code/)
+[![Interactive Editor](https://img.shields.io/badge/Code_Editor-PyScript-orange?style=for-the-badge)](https://pavanmudigondatr.github.io/python-bro-code/editor.html)
+
+## 🎯 What's Inside
+
+### 📚 1000 Practice Questions
+A comprehensive collection organized by difficulty:
+- **Beginner** (001-100): Variables, control flow, functions
+- **Intermediate** (101-300): Strings, OOP, file I/O
+- **Advanced** (301-500): Data structures, algorithms, concurrency
+- **Expert** (501-700): System design, distributed systems, ML
+- **Master** (701-900): Compiler design, OS internals, databases
+- **Challenge** (901-1000): Competitive programming problems
+
+### 🌐 Interactive Web Platform
+**NEW!** Write and run Python code directly in your browser!
+- 🚀 **Live Demo**: [Try it now](https://pavanmudigondatr.github.io/python-bro-code/)
+- 💻 Interactive Python editor with instant execution
+- 📊 Progress tracking with achievements
+- 📱 Mobile-friendly responsive design
+- 💾 Auto-save your solutions
+
+[**→ Setup GitHub Pages**](./GITHUB_PAGES_SETUP.md) | [**→ Browse Questions**](./practice-questions)
+
+---
+
+## 📊 Course Progress Status
 
 ![Progress](https://img.shields.io/badge/Progress-40%2F77-blue?style=for-the-badge)
 ![Completion](https://img.shields.io/badge/Completion-52%25-green?style=for-the-badge)

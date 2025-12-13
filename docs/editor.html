@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Code Editor - Practice Questions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- PyScript for running Python in browser -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fab fa-python"></i>
+                <span>Python Practice 1000</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="editor.html" class="active">Code Editor</a></li>
+                <li><a href="questions.html">Browse Questions</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="editor-container">
+        <!-- Question Panel -->
+        <div class="question-panel">
+            <div class="panel-header">
+                <h2>
+                    <span id="question-number">Question 001</span>
+                    <span id="question-difficulty" class="badge badge-beginner">Beginner</span>
+                </h2>
+                <div class="question-nav">
+                    <button id="prev-question" class="btn-icon" title="Previous"><i class="fas fa-chevron-left"></i></button>
+                    <button id="next-question" class="btn-icon" title="Next"><i class="fas fa-chevron-right"></i></button>
+                    <button id="random-question" class="btn-icon" title="Random"><i class="fas fa-random"></i></button>
+                </div>
+            </div>
+            
+            <div class="question-content">
+                <h3 id="question-title">Print "Hello World"</h3>
+                <div id="question-description" class="description">
+                    <p>Write a program that prints "Hello World" to the console.</p>
+                    <p><strong>Example Output:</strong></p>
+                    <pre>Hello World</pre>
+                </div>
+                
+                <div class="question-hints">
+                    <button id="show-hints" class="btn-secondary">
+                        <i class="fas fa-lightbulb"></i> Show Hints
+                    </button>
+                    <div id="hints-content" class="hints-hidden">
+                        <ul>
+                            <li>Use the <code>print()</code> function</li>
+                            <li>Strings are enclosed in quotes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="question-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Estimated: 2 min</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-tag"></i>
+                        <span>Tags: basics, print</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Code Editor Panel -->
+        <div class="code-panel">
+            <div class="panel-header">
+                <h2><i class="fas fa-code"></i> Code Editor</h2>
+                <div class="editor-controls">
+                    <button id="run-code" class="btn-primary">
+                        <i class="fas fa-play"></i> Run Code
+                    </button>
+                    <button id="clear-code" class="btn-secondary">
+                        <i class="fas fa-eraser"></i> Clear
+                    </button>
+                    <button id="save-code" class="btn-secondary">
+                        <i class="fas fa-save"></i> Save
+                    </button>
+                </div>
+            </div>
+
+            <textarea id="code-editor" class="code-editor" spellcheck="false"># Write your Python code here
+print("Hello World")
+</textarea>
+
+            <div class="output-section">
+                <div class="output-header">
+                    <h3><i class="fas fa-terminal"></i> Output</h3>
+                    <button id="clear-output" class="btn-icon">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+                <div id="output" class="output-content">
+                    <div class="output-placeholder">
+                        Click "Run Code" to see output here...
+                    </div>
+                </div>
+                <div id="loading" class="loading-indicator" style="display: none;">
+                    <i class="fas fa-spinner fa-spin"></i> Running Python...
+                </div>
+            </div>
+
+            <!-- Mark as Complete -->
+            <div class="completion-section">
+                <button id="mark-complete" class="btn-success">
+                    <i class="fas fa-check-circle"></i> Mark as Complete
+                </button>
+                <div id="completion-message" class="completion-message" style="display: none;">
+                    <i class="fas fa-trophy"></i> Congratulations! Question completed!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PyScript code execution -->
+    <script type="py" config='{"packages": ["numpy"]}' id="python-runner" style="display: none;">
+from js import document, console
+import sys
+from io import StringIO
+
+def run_user_code():
+    output_div = document.getElementById("output")
+    loading_div = document.getElementById("loading")
+    
+    # Get code from editor
+    code = document.getElementById("code-editor").value
+    
+    # Show loading
+    loading_div.style.display = "block"
+    output_div.innerHTML = ""
+    
+    # Capture stdout
+    old_stdout = sys.stdout
+    sys.stdout = StringIO()
+    
+    try:
+        # Execute the code
+        exec(code, globals())
+        
+        # Get output
+        output = sys.stdout.getvalue()
+        
+        # Display output
+        if output:
+            output_div.innerHTML = f'<pre class="output-success">{output}</pre>'
+        else:
+            output_div.innerHTML = '<div class="output-info">Code executed successfully (no output)</div>'
+            
+    except Exception as e:
+        # Display error
+        output_div.innerHTML = f'<pre class="output-error"><strong>Error:</strong>\n{str(e)}</pre>'
+        
+    finally:
+        # Restore stdout
+        sys.stdout = old_stdout
+        loading_div.style.display = "none"
+    </script>
+
+    <script src="js/progress.js"></script>
+    <script src="js/editor.js"></script>
+</body>
+</html>

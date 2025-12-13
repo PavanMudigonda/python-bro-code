@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Questions - Python Practice</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fab fa-python"></i>
+                <span>Python Practice 1000</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="editor.html">Code Editor</a></li>
+                <li><a href="questions.html" class="active">Browse Questions</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="hero">
+            <h1>📚 Browse Questions</h1>
+            <p>Find questions by level, category, or search</p>
+        </header>
+
+        <!-- Filters -->
+        <section class="filters-section">
+            <div class="filter-group">
+                <label>Difficulty Level:</label>
+                <select id="level-filter">
+                    <option value="all">All Levels</option>
+                    <option value="beginner">Beginner (001-100)</option>
+                    <option value="intermediate">Intermediate (101-300)</option>
+                    <option value="advanced">Advanced (301-500)</option>
+                    <option value="expert">Expert (501-700)</option>
+                    <option value="master">Master (701-900)</option>
+                    <option value="challenge">Challenge (901-1000)</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label>Status:</label>
+                <select id="status-filter">
+                    <option value="all">All Questions</option>
+                    <option value="completed">Completed</option>
+                    <option value="incomplete">Not Completed</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label>Search:</label>
+                <input type="text" id="search-input" placeholder="Search by number or topic...">
+            </div>
+        </section>
+
+        <!-- Questions List -->
+        <section class="questions-list" id="questions-container">
+            <!-- Questions will be loaded dynamically -->
+        </section>
+    </div>
+
+    <footer>
+        <p>Python Practice Questions © 2025 | Built with ❤️ for learners</p>
+    </footer>
+
+    <script src="js/progress.js"></script>
+    <script>
+        // Question data structure (summary only)
+        const questionRanges = {
+            beginner: {
+                range: [1, 100],
+                categories: [
+                    { name: 'Variables & Types', range: [1, 20] },
+                    { name: 'Control Flow', range: [21, 40] },
+                    { name: 'Functions', range: [41, 60] },
+                    { name: 'Data Structures', range: [61, 80] },
+                    { name: 'Practice', range: [81, 100] }
+                ]
+            },
+            intermediate: {
+                range: [101, 300],
+                categories: [
+                    { name: 'String Manipulation', range: [101, 130] },
+                    { name: 'List Operations', range: [131, 160] },
+                    { name: 'Dictionaries & Sets', range: [161, 180] },
+                    { name: 'Functions & FP', range: [181, 210] },
+                    { name: 'OOP', range: [211, 240] },
+                    { name: 'File I/O', range: [241, 260] },
+                    { name: 'Advanced Topics', range: [261, 300] }
+                ]
+            },
+            advanced: {
+                range: [301, 500],
+                categories: [
+                    { name: 'Data Structures', range: [301, 330] },
+                    { name: 'Dynamic Programming', range: [331, 370] },
+                    { name: 'Advanced Algorithms', range: [371, 410] },
+                    { name: 'Concurrency', range: [411, 440] },
+                    { name: 'Design Patterns', range: [441, 470] },
+                    { name: 'Math & ML', range: [471, 500] }
+                ]
+            },
+            expert: {
+                range: [501, 700],
+                categories: [
+                    { name: 'System Design', range: [501, 530] },
+                    { name: 'Distributed Systems', range: [531, 560] },
+                    { name: 'Advanced Algorithms', range: [561, 600] },
+                    { name: 'Computational Geometry', range: [601, 630] },
+                    { name: 'Machine Learning', range: [631, 670] },
+                    { name: 'Cryptography', range: [671, 700] }
+                ]
+            },
+            master: {
+                range: [701, 900],
+                categories: [
+                    { name: 'Compiler Design', range: [701, 730] },
+                    { name: 'Operating Systems', range: [731, 760] },
+                    { name: 'Database Internals', range: [761, 790] },
+                    { name: 'Network Protocols', range: [791, 820] },
+                    { name: 'Computer Graphics', range: [821, 850] },
+                    { name: 'Quantum & Physics', range: [851, 880] },
+                    { name: 'Bioinformatics', range: [881, 900] }
+                ]
+            },
+            challenge: {
+                range: [901, 1000],
+                categories: [
+                    { name: 'Hard Problems', range: [901, 950] },
+                    { name: 'Expert Challenges', range: [951, 999] },
+                    { name: 'Final Boss', range: [1000, 1000] }
+                ]
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadQuestions();
+            
+            // Event listeners for filters
+            document.getElementById('level-filter').addEventListener('change', loadQuestions);
+            document.getElementById('status-filter').addEventListener('change', loadQuestions);
+            document.getElementById('search-input').addEventListener('input', loadQuestions);
+        });
+
+        function loadQuestions() {
+            const levelFilter = document.getElementById('level-filter').value;
+            const statusFilter = document.getElementById('status-filter').value;
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const container = document.getElementById('questions-container');
+            const progress = progressTracker.getProgress();
+
+            let html = '';
+
+            // Determine which levels to show
+            const levelsToShow = levelFilter === 'all' 
+                ? Object.keys(questionRanges) 
+                : [levelFilter];
+
+            levelsToShow.forEach(level => {
+                const levelData = questionRanges[level];
+                const levelProgress = progress.levels[level];
+
+                levelData.categories.forEach(category => {
+                    let categoryHtml = `
+                        <div class="category-section">
+                            <h2>
+                                ${getLevelBadge(level)} ${category.name}
+                                <span class="range-badge">${category.range[0]}-${category.range[1]}</span>
+                            </h2>
+                            <div class="questions-grid">
+                    `;
+
+                    for (let i = category.range[0]; i <= category.range[1]; i++) {
+                        const isCompleted = levelProgress.questions[i]?.completed || false;
+
+                        // Apply filters
+                        if (statusFilter === 'completed' && !isCompleted) continue;
+                        if (statusFilter === 'incomplete' && isCompleted) continue;
+                        if (searchTerm && !String(i).includes(searchTerm)) continue;
+
+                        categoryHtml += `
+                            <a href="editor.html?question=${i}" class="question-card ${isCompleted ? 'completed' : ''}">
+                                <div class="question-number">#${String(i).padStart(3, '0')}</div>
+                                <div class="question-status">
+                                    ${isCompleted ? '<i class="fas fa-check-circle"></i> Completed' : '<i class="far fa-circle"></i> Not Started'}
+                                </div>
+                            </a>
+                        `;
+                    }
+
+                    categoryHtml += `
+                            </div>
+                        </div>
+                    `;
+
+                    html += categoryHtml;
+                });
+            });
+
+            container.innerHTML = html || '<p class="no-results">No questions found matching your filters.</p>';
+        }
+
+        function getLevelBadge(level) {
+            const badges = {
+                beginner: '⭐',
+                intermediate: '⭐⭐',
+                advanced: '⭐⭐⭐',
+                expert: '🥉',
+                master: '🥈',
+                challenge: '🥇'
+            };
+            return badges[level] || '📝';
+        }
+    </script>
+
+    <style>
+        .filters-section {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .filter-group label {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .filter-group select,
+        .filter-group input {
+            padding: 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .questions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .category-section {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .category-section h2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .range-badge {
+            background: #e9ecef;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: normal;
+        }
+
+        .questions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+
+        .question-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 1.5rem 1rem;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--dark);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .question-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .question-card.completed {
+            background: linear-gradient(135deg, #d4edda 0%, #a8d5ba 100%);
+            border-color: var(--success-color);
+        }
+
+        .question-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .question-status {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        .question-card.completed .question-status {
+            color: var(--success-color);
+            font-weight: bold;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: var(--gray);
+            font-size: 1.2rem;
+        }
+    </style>
+</body>
+</html>
