@@ -2,6 +2,20 @@
 let currentQuestion = 1;
 let currentLevel = 'beginner';
 let startTime = null;
+let questionsData = {}; // Will hold all 1000 questions
+
+// Load questions data
+fetch('data/questions.json')
+    .then(response => response.json())
+    .then(data => {
+        questionsData = data;
+        console.log('Loaded', Object.keys(questionsData).length, 'questions');
+    })
+    .catch(error => {
+        console.error('Error loading questions:', error);
+        // Fallback to default
+        questionsData = {};
+    });
 
 document.addEventListener('DOMContentLoaded', function() {
     // Get level from URL parameter
@@ -127,6 +141,42 @@ function loadQuestion(questionNum) {
         badge.className = 'badge badge-challenge';
     }
     
+    // Load question content from JSON
+    const questionData = questionsData[questionNum];
+    if (questionData) {
+        document.getElementById('question-title').textContent = questionData.title;
+        
+        // Build description HTML
+        let descriptionHTML = `<p>${questionData.description}</p>`;
+        if (questionData.example) {
+            descriptionHTML += `<p><strong>Example:</strong></p><pre>${questionData.example}</pre>`;
+        }
+        document.getElementById('question-description').innerHTML = descriptionHTML;
+        
+        // Update hints
+        if (questionData.hints && questionData.hints.length > 0) {
+            let hintsHTML = '<ul>';
+            questionData.hints.forEach(hint => {
+                hintsHTML += `<li>${hint}</li>`;
+            });
+            hintsHTML += '</ul>';
+            document.getElementById('hints-content').innerHTML = hintsHTML;
+        }
+        
+        // Update meta info
+        const metaHTML = `
+            <div class="meta-item">
+                <i class="fas fa-clock"></i>
+                <span>Estimated: ${questionData.estimatedTime || 5} min</span>
+            </div>
+            <div class="meta-item">
+                <i class="fas fa-tag"></i>
+                <span>Tags: ${questionData.tags ? questionData.tags.join(', ') : 'practice'}</span>
+            </div>
+        `;
+        document.querySelector('.question-meta').innerHTML = metaHTML;
+    }
+    
     // Load saved code if exists
     const savedCode = localStorage.getItem(`code-${currentLevel}-${questionNum}`);
     if (savedCode) {
@@ -143,6 +193,11 @@ function loadQuestion(questionNum) {
     
     // Hide completion message
     document.getElementById('completion-message').style.display = 'none';
+    
+    // Reset hints to hidden
+    const hints = document.getElementById('hints-content');
+    hints.classList.remove('visible');
+    document.getElementById('show-hints').innerHTML = '<i class="fas fa-lightbulb"></i> Show Hints';
 }
 
 function prevQuestion() {
