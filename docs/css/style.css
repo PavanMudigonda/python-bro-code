@@ -480,6 +480,14 @@ body {
     background: #1e1e1e;
     color: #d4d4d4;
     resize: vertical;
+    line-height: 1.5;
+    tab-size: 4;
+    -moz-tab-size: 4;
+}
+
+.code-editor:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: -2px;
 }
 
 .output-section {

@@ -91,7 +91,7 @@
                 </div>
             </div>
 
-            <textarea id="code-editor" class="code-editor" spellcheck="false"># Write your Python code here
+            <textarea id="code-editor" class="code-editor" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off"># Write your Python code here
 print("Hello World")
 </textarea>
 
@@ -125,10 +125,11 @@ print("Hello World")
     </div>
 
     <!-- PyScript code execution -->
-    <script type="py" config='{"packages": ["numpy"]}' id="python-runner" style="display: none;">
+    <script type="py" config='{"packages": []}' id="python-runner" style="display: none;">
 from js import document, console
 import sys
 from io import StringIO
+import traceback
 
 def run_user_code():
     output_div = document.getElementById("output")
@@ -147,7 +148,7 @@ def run_user_code():
     
     try:
         # Execute the code
-        exec(code, globals())
+        exec(code, {})
         
         # Get output
         output = sys.stdout.getvalue()
@@ -159,13 +160,17 @@ def run_user_code():
             output_div.innerHTML = '<div class="output-info">Code executed successfully (no output)</div>'
             
     except Exception as e:
-        # Display error
-        output_div.innerHTML = f'<pre class="output-error"><strong>Error:</strong>\n{str(e)}</pre>'
+        # Display error with traceback
+        error_msg = traceback.format_exc()
+        output_div.innerHTML = f'<pre class="output-error"><strong>Error:</strong>\n{error_msg}</pre>'
         
     finally:
         # Restore stdout
         sys.stdout = old_stdout
         loading_div.style.display = "none"
+
+# Make function available globally
+window.run_user_code = run_user_code
     </script>
 
     <script src="js/progress.js"></script>

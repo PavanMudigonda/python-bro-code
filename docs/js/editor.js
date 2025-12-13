@@ -29,26 +29,23 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function runCode() {
-    // This triggers the PyScript execution
-    try {
-        const code = document.getElementById('code-editor').value;
-        const outputDiv = document.getElementById('output');
-        const loadingDiv = document.getElementById('loading');
-        
-        // Show loading
-        loadingDiv.style.display = 'block';
-        outputDiv.innerHTML = '';
-        
-        // PyScript will handle execution
-        // The python-runner script will capture and display output
-        
-        // Note: PyScript execution is handled by the embedded Python code in editor.html
-        // This function just triggers the UI updates
-        
-    } catch (error) {
+    // Check if PyScript is loaded
+    if (typeof window.run_user_code === 'function') {
+        // Call PyScript function
+        window.run_user_code();
+    } else if (typeof pyscript !== 'undefined') {
+        // PyScript is available, try to run
+        try {
+            pyscript.run_user_code();
+        } catch (e) {
+            // Fallback: show that PyScript is loading
+            document.getElementById('output').innerHTML = 
+                '<div class="output-info">⏳ PyScript is still loading... Please wait a moment and try again.</div>';
+        }
+    } else {
+        // PyScript not loaded yet
         document.getElementById('output').innerHTML = 
-            `<pre class="output-error">Error: ${error.message}</pre>`;
-        document.getElementById('loading').style.display = 'none';
+            '<div class="output-info">⏳ Python runtime is loading... This may take a few seconds on first visit. Please wait and try again.</div>';
     }
 }
 
