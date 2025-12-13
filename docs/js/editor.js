@@ -369,9 +369,22 @@ function gotoQuestion() {
     const input = document.getElementById('question-input');
     const questionNum = parseInt(input.value);
     
+    console.log('Goto question:', questionNum, 'Questions loaded:', Object.keys(questionsData).length); // Debug log
+    
+    if (!questionNum || isNaN(questionNum)) {
+        // No valid input
+        return;
+    }
+    
     if (questionNum >= 1 && questionNum <= 1000) {
+        // Check if questions are loaded
+        if (Object.keys(questionsData).length === 0) {
+            alert('Questions are still loading... Please wait a moment and try again.');
+            return;
+        }
+        
         loadQuestion(questionNum);
-        input.value = ''; // Clear input
+        input.value = ''; // Clear input after loading
     } else {
         alert('Please enter a question number between 1 and 1000');
     }
