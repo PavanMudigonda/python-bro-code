@@ -1,9 +1,10 @@
 # Python Learning Repository 🐍
 
 [![Practice Questions](https://img.shields.io/badge/Practice_Questions-1000-blue?style=for-the-badge)](./practice-questions)
-
-
+[![GitHub stars](https://img.shields.io/github/stars/PavanMudigondaTR/python-bro-code?style=for-the-badge&logo=github)](https://github.com/PavanMudigondaTR/python-bro-code/stargazers)
 [![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/ix9cRaBkVe0?feature=shared)
+
+> ⭐ **Found this helpful?** Star this repo to show your support and help others discover it!
 
 ### 🚀 Launch Instantly in Your Favorite Environment
 
