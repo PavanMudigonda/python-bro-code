@@ -1,63 +1,16 @@
 # Python Learning Repository 🐍
 
 [![Practice Questions](https://img.shields.io/badge/Practice_Questions-1000-blue?style=for-the-badge)](./practice-questions)
-[![GitHub Pages](https://img.shields.io/badge/Live_Platform-Ready-success?style=for-the-badge)](https://pavanmudigondatr.github.io/python-bro-code/)
-[![Interactive Editor](https://img.shields.io/badge/Code_Editor-Skulpt-orange?style=for-the-badge)](https://pavanmudigondatr.github.io/python-bro-code/editor.html)
-[![Cloud Sync](https://img.shields.io/badge/Cloud_Sync-Supabase-green?style=for-the-badge)](./docs/INTEGRATION_GUIDE.md)
 
-## 🎯 What's Inside
+### 🚀 Launch Instantly in Your Favorite Environment
 
-### 📚 1000 Practice Questions
-A comprehensive collection organized by difficulty:
-- **Beginner** (001-100): Variables, control flow, functions
-- **Intermediate** (101-300): Strings, OOP, file I/O
-- **Advanced** (301-500): Data structures, algorithms, concurrency
-- **Expert** (501-700): System design, distributed systems, ML
-- **Master** (701-900): Compiler design, OS internals, databases
-- **Challenge** (901-1000): Competitive programming problems
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigondaTR/python-bro-code/blob/main)
+[![Open in Replit](https://img.shields.io/badge/Open%20in-Replit-blue?style=flat&logo=replit)](https://replit.com/github/PavanMudigondaTR/python-bro-code)
+[![Open in Kaggle](https://img.shields.io/badge/Open%20in-Kaggle-20BEFF?style=flat&logo=kaggle)](https://kaggle.com/kernels/welcome?src=https://github.com/PavanMudigondaTR/python-bro-code)
+[![Open in Codespaces](https://img.shields.io/badge/Open%20in-Codespaces-black?style=flat&logo=github)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=PavanMudigondaTR/python-bro-code)
+[![github.dev](https://img.shields.io/badge/Open%20in-github.dev-black?style=flat&logo=github)](https://github.dev/PavanMudigondaTR/python-bro-code)
 
-### 🌐 Interactive Web Platform
-**NEW!** Write and run Python code directly in your browser!
-- 🚀 **Live Demo**: [Try it now](https://pavanmudigondatr.github.io/python-bro-code/)
-- 💻 Interactive Python editor with instant execution using Skulpt
-- 🧪 **Auto-validation**: Hidden test cases verify your solutions
-- 📊 Progress tracking with achievements and leaderboards
-- ☁️ **Cloud Sync**: Sign in to save progress across devices (Supabase)
-- 📱 Mobile-friendly responsive design
-- 💾 Auto-save your solutions (works offline!)
-
-[**→ Setup GitHub Pages**](./GITHUB_PAGES_SETUP.md) | [**→ Supabase Integration**](./docs/INTEGRATION_GUIDE.md) | [**→ Browse Questions**](./practice-questions)
-
----
-
-## ✨ Platform Features
-
-### 🔐 User Authentication
-- Email/Password sign-up with verification
-- Google OAuth integration
-- GitHub OAuth integration
-- Guest mode for offline use
-
-### 🏆 Gamification
-- 14 achievements with point rewards
-- Global leaderboard with rankings
-- Streak tracking (🔥 stay motivated!)
-- Points system based on difficulty
-- Profile page with stats
-
-### 💾 Progress Tracking
-- **Hybrid storage**: LocalStorage + Supabase cloud sync
-- Cross-device synchronization
-- Export/import progress data
-- Offline-first architecture
-- Real-time stats updates
-
-### 🧪 Code Validation
-- Automatic test case execution
-- Hidden test cases (no cheating!)
-- Visible examples for guidance
-- Instant feedback on correctness
-- Mark complete only after passing all tests
+**Zero Setup Required!** Click any badge above to start coding in seconds.
 
 ---
 
