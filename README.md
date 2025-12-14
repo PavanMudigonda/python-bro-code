@@ -2,6 +2,9 @@
 
 [![Practice Questions](https://img.shields.io/badge/Practice_Questions-1000-blue?style=for-the-badge)](./practice-questions)
 
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/ix9cRaBkVe0?feature=shared)
+
 ### 🚀 Launch Instantly in Your Favorite Environment
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigondaTR/python-bro-code/blob/main)
