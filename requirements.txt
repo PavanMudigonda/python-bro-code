@@ -1,0 +1,18 @@
+# Core Python packages for learning
+jupyter
+notebook
+ipython
+
+# Code quality
+black
+pylint
+autopep8
+
+# Useful libraries covered in the course
+PyQt5
+requests
+
+# Optional but helpful
+matplotlib
+numpy
+pandas

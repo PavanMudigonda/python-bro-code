@@ -1,0 +1,2 @@
+# System dependencies for Binder
+python3-pyqt5

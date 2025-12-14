@@ -1,0 +1,17 @@
+image: gitpod/workspace-python
+
+tasks:
+  - name: Setup Python Environment
+    init: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
+    command: |
+      echo "🐍 Python Bro Code Learning Environment Ready!"
+      echo "📂 Navigate to any folder (1-print/, 8-calculator/, etc.) and run the Python files"
+      echo "💡 Tip: Run 'python <filename>.py' to execute any program"
+
+vscode:
+  extensions:
+    - ms-python.python
+    - ms-python.vscode-pylance
+    - ms-toolsai.jupyter

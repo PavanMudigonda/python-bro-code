@@ -1,0 +1,8 @@
+language = "python3"
+run = "echo '🐍 Python Bro Code Learning Environment' && echo 'Navigate to any folder and run: python main.py' && python 1-print/main.py"
+
+[nix]
+channel = "stable-22_11"
+
+[deployment]
+run = ["python3", "1-print/main.py"]
