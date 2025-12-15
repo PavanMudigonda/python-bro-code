@@ -6,6 +6,10 @@
 
 > ⭐ **Found this helpful?** Star this repo to show your support and help others discover it!
 
+###  Checkout my other courses
+
+[![Zero to AI](https://img.shields.io/badge/Zero to AI-red?style=for-the-badge&logo=blog)](https://github.com/PavanMudigonda/zero-to-ai)
+
 ### 🚀 Launch Instantly in Your Favorite Environment
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigonda/python-bro-code/blob/main)
