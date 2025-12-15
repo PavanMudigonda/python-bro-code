@@ -17,12 +17,12 @@ print(f"chars: {chars}")
 print(f"key:   {key}")
 
 # ENCRYPTION
-plain_text = input("Enter a message to encrypt")
+plain_text = input("Enter a message to encrypt: ")
 cipher_text = ""
 
 for letter in plain_text:
-    index = chars.index(letter)
-    cipher_text += key[index]
+    index_of_letter = chars.index(letter)
+    cipher_text += key[index_of_letter]
 
 print(f'original message: {plain_text}')
 print(f'encryption message: {cipher_text}')
