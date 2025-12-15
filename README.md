@@ -8,7 +8,7 @@
 
 ###  Checkout my other courses
 
-[![Zero to AI](https://img.shields.io/badge/Zero to AI-red?style=for-the-badge)](https://github.com/PavanMudigonda/zero-to-ai)
+[![Zero to AI](https://img.shields.io/badge/Zero%20To%20AI-red?style=for-the-badge)](https://github.com/PavanMudigonda/zero-to-ai)
 
 ### 🚀 Launch Instantly in Your Favorite Environment
 
