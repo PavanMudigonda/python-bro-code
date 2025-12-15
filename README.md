@@ -1,18 +1,18 @@
 # Python Learning Repository 🐍
 
 [![Practice Questions](https://img.shields.io/badge/Practice_Questions-1000-blue?style=for-the-badge)](./practice-questions)
-[![GitHub stars](https://img.shields.io/github/stars/PavanMudigondaTR/python-bro-code?style=for-the-badge&logo=github)](https://github.com/PavanMudigondaTR/python-bro-code/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/PavanMudigonda/python-bro-code?style=for-the-badge&logo=github)](https://github.com/PavanMudigonda/python-bro-code/stargazers)
 [![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/ix9cRaBkVe0?feature=shared)
 
 > ⭐ **Found this helpful?** Star this repo to show your support and help others discover it!
 
 ### 🚀 Launch Instantly in Your Favorite Environment
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigondaTR/python-bro-code/blob/main)
-[![Open in Replit](https://img.shields.io/badge/Open%20in-Replit-blue?style=flat&logo=replit)](https://replit.com/github/PavanMudigondaTR/python-bro-code)
-[![Open in Kaggle](https://img.shields.io/badge/Open%20in-Kaggle-20BEFF?style=flat&logo=kaggle)](https://kaggle.com/kernels/welcome?src=https://github.com/PavanMudigondaTR/python-bro-code)
-[![Open in Codespaces](https://img.shields.io/badge/Open%20in-Codespaces-black?style=flat&logo=github)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=PavanMudigondaTR/python-bro-code)
-[![github.dev](https://img.shields.io/badge/Open%20in-github.dev-black?style=flat&logo=github)](https://github.dev/PavanMudigondaTR/python-bro-code)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigonda/python-bro-code/blob/main)
+[![Open in Replit](https://img.shields.io/badge/Open%20in-Replit-blue?style=flat&logo=replit)](https://replit.com/github/PavanMudigonda/python-bro-code)
+[![Open in Kaggle](https://img.shields.io/badge/Open%20in-Kaggle-20BEFF?style=flat&logo=kaggle)](https://kaggle.com/kernels/welcome?src=https://github.com/PavanMudigonda/python-bro-code)
+[![Open in Codespaces](https://img.shields.io/badge/Open%20in-Codespaces-black?style=flat&logo=github)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=PavanMudigonda/python-bro-code)
+[![github.dev](https://img.shields.io/badge/Open%20in-github.dev-black?style=flat&logo=github)](https://github.dev/PavanMudigonda/python-bro-code)
 
 **Zero Setup Required!** Click any badge above to start coding in seconds.
 
