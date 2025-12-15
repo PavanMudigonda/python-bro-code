@@ -10,7 +10,7 @@
 # DUNDER means double underscore __init__ = constructor method
 
 # create a class
-class Car:
+class Car:   # define class name
     # attributes
     def __init__(self, make, model, year, color):  # constructor method
         self.make = make
@@ -20,7 +20,7 @@ class Car:
         self.mileage = 0
         self.for_sale = False
 
-    # define methods
+    # define class methods inside the class
     def drive(self):
         print(f"The {self.make} is driving.")
 
