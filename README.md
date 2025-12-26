@@ -35,6 +35,88 @@
 
 ---
 
+## 📚 Chapter Checklist
+
+- [x] 1. Python tutorial for beginners 🐍
+- [x] 2. Variables ❎
+- [x] 3. Type casting 💱
+- [x] 4. User input ⌨️
+- [x] 5. ⭐ Madlibs game 📖
+- [x] 6. Arithmetic & math 📐
+- [x] 7. If statements 🤔
+- [x] 8. ⭐ Calculator program 🧮
+- [x] 9. ⭐ Weight conversion program 🏋️
+- [x] 10. ⭐ Temperature conversion program 🌡️
+- [x] 11. Logical operators 🌦️
+- [x] 12. Conditional expressions ❓
+- [x] 13. String methods 〰️
+- [x] 14. String indexing ✂️
+- [x] 15. Format specifiers 💬
+- [x] 16. While loops ♾️
+- [x] 17. ⭐ Compound interest calculator 💵
+- [x] 18. For loops 🔁
+- [x] 19. ⭐ Countdown timer program ⌛
+- [x] 20. Nested loops ➿
+- [x] 21. Lists, sets, and tuples 🍎
+- [x] 22. ⭐ Shopping cart program 🛒
+- [x] 23. 2D collections ⬜
+- [x] 24. ⭐ Quiz game 💯
+- [x] 25. Dictionaries 📙
+- [x] 26. ⭐ Concession stand program 🍿
+- [x] 27. Random numbers 🎲
+- [x] 28. ⭐ Number guessing game 🔢
+- [x] 29. ⭐ Rock, paper, scissors game 🗿
+- [x] 30. ⭐ Dice roller program ⚂
+- [x] 31. Functions 📞
+- [x] 32. Default arguments 👍
+- [x] 33. Keyword arguments 🗝️
+- [x] 34. *args & **kwargs 📦
+- [x] 35. Iterables 🔂
+- [x] 36. Membership operators 🔎
+- [x] 37. List comprehensions 📃
+- [x] 38. Match-case statements 📆
+- [x] 39. Modules 📨
+- [x] 40. Scope resolution 🔬
+- [x] 41. If name == 'main': 📥
+- [x] 42. ⭐ Banking program 💰
+- [x] 43. ⭐ Slot machine 🎰
+- [x] 44. ⭐ Encryption program 🔐
+- [x] 45. ⭐ Hangman game 🕺
+- [x] 46. Python object oriented programming 🚗
+- [x] 47. Class variables 🎓
+- [x] 48. Inheritance 👨‍👦‍👦
+- [x] 49. Multiple inheritance 🐟
+- [ ] 50. Super() 🔴
+- [ ] 51. Polymorphism 🎭
+- [ ] 52. Duck typing 🦆
+- [ ] 53. Static methods ⚡
+- [ ] 54. Class methods 🏫
+- [ ] 55. Magic methods 🌟
+- [ ] 56. @property ⚙️
+- [ ] 57. Decorators 🎊
+- [ ] 58. Exception handling 🚦
+- [ ] 59. File detection 🕵️‍♂️
+- [ ] 60. Writing files ✍
+- [ ] 61. Reading files 🔍
+- [ ] 62. Dates & times 📅
+- [ ] 63. ⭐ Alarm clock ⏰
+- [ ] 64. Multithreading 🧵
+- [ ] 65. Request API data ↩️
+- [ ] 66. PyQt5 GUI intro 🖥️
+- [ ] 67. PyQt5 labels 🏷️
+- [ ] 68. PyQt5 images 📷
+- [ ] 69. PyQt5 layout managers 🧲
+- [ ] 70. PyQt5 buttons 🛎️
+- [ ] 71. PyQt5 checkboxes ✅
+- [ ] 72. PyQt5 radio buttons 🔘
+- [ ] 73. PyQt5 line edits 💬
+- [ ] 74. PyQt5 CSS styles 🎨
+- [ ] 75. ⭐ Digital clock program 🕒
+- [ ] 76. ⭐ Stopwatch program ⏱
+- [ ] 77. ⭐ Weather API app ☀️
+
+---
+
 [Bro Code Python YouTube Class](https://youtu.be/ix9cRaBkVe0?feature=shared)
 
 Learn Python in 1 HOUR ⏱ : [Learn Python in 1 hour! 🐍. (2024)](https://youtu.be/ix9cRaBkVe0?feature=shared)  
