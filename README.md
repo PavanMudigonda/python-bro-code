@@ -49,99 +49,99 @@ Full Python playlist 📃: [Start coding with PYTHON in 5 minutes! 🐍](https:/
 
 ## 📺 Video Links
 
-[x] 1. Start coding with PYTHON in 5 minutes! 🐍 (5:13) - https://youtu.be/Sg4GMVMdOPo
-[x] 2. Learn Python VARIABLES in 10 minutes! ❎ (10:20) - https://youtu.be/7IoQ5BGkTJo
-[x] 3. Learn type casting in 7 minutes! 💱 (7:39) - https://youtu.be/Qtq83lAoogM
-[x] 4. User input in Python is easy + exercises ⌨️ (9:48) - https://youtu.be/nMCOB8KElwo
-[x] 5. Math in Python is easy! 📐 (10:03) - https://youtu.be/jc7TBgMS_kw
-[x] 6. If statements in Python are easy (if, elif, else) 🤔 (12:07) - https://youtu.be/FvMPfrgGeKs
-[x] 7. Let's code a simple python calculator! 🧮 (8:20) - https://youtu.be/yUrYouDQZL8
-[x] 8. Python weight conversion exercise 🏋️ (5:47) - https://youtu.be/80kjCBRjkmU
-[x] 9. Python temperature conversion program 🌡️ (5:44) - https://youtu.be/fy5QsDJmctQ
-[x] 10. Logical operators in Python are easy 🔣 (7:56) - https://youtu.be/W7luvtXeQTA
-[x] 11. Learn conditional expressions in 5 minutes! ❓ (5:21) - https://youtu.be/TYyKQBC4bwE
-[x] 12. String methods in Python are easy! 〰️ (12:14) - https://youtu.be/tb6EYiHtcXU
-[x] 13. String indexing in Python is easy ✂️ (6:17) - https://youtu.be/7pXf1DUuaIo
-[x] 14. Python email slicer program 📧 (4:07) - https://youtu.be/6MAufQ6vGtI
-[x] 15. Learn Python format specifiers in 5 minutes! 💬 (5:32) - https://youtu.be/FrvBwdAU2dQ
-[x] 16. While loops in Python are easy! ♾️ (8:04) - https://youtu.be/rRTjPnVooxE
-[x] 17. Code an interest calculator in 7 minutes! 💵 (7:35) - https://youtu.be/aM5dttidg4Q
-[x] 18. Learn Python for loops in 5 minutes! 🔁 (5:47) - https://youtu.be/KWgYha0clzw
-[x] 19. Nested loops in Python are easy ➿ (6:12) - https://youtu.be/APWy6Pc83gE
-[x] 20. Countdown timer program in Python ⌛ (8:59) - https://youtu.be/KseiSR0MCTI
-[x] 21. Python lists, sets, and tuples explained 🍍 (13:04) - https://youtu.be/gOMW_n2-2Mw
-[x] 22. Python shopping cart program 🛒 (9:12) - https://youtu.be/kbyHLU9JqjE
-[x] 23. Python 2D collections are easy! ⬜ (5:55) - https://youtu.be/Xy6qeQWQwFw
-[x] 24. Create a QUIZ GAME with Python 💯 (14:14) - https://youtu.be/zehwgTB0vV8
-[x] 25. Python dictionaries are easy 📙 (9:06) - https://youtu.be/MZZSMaEAC2g
-[x] 26. Python concession stand program 🍿 (10:46) - https://youtu.be/PbkIzW_70EI
-[x] 27. Generate random numbers in Python 🎲 (9:27) - https://youtu.be/piJc18hcH0Y
-[x] 28. Let's code a Python NUMBER GUESSING GAME! 🔢 (9:09) - https://youtu.be/jcKe13D6bao
-[x] 29. ROCK PAPER SCISSORS game in Python 🗿 (13:38) - https://youtu.be/fn68QNcatfo
-[x] 30. Code a dice roller program in 10 minutes! 🎲 (10:24) - https://youtu.be/x-Ag2_bJ40Y
-[x] 31. Encryption program in Python 🔐 (9:47) - https://youtu.be/vsLBErLWBhA
-[x] 32. Functions in Python are easy 📞 (9:05) - https://youtu.be/89cGQjB5R4M
-[x] 33. Python default arguments are awesome! 👍 (6:15) - https://youtu.be/m2uURZxex3c
-[x] 34. Python keyword arguments are awesome! 🗝️ (5:16) - https://youtu.be/7QCHpAtlSMo
-[x] 35. Python *ARGS & **KWARGS are awesome! 📦 (6:57) - https://youtu.be/Vh__2V2tXUM
-[x] 36. Learn Python iterables in 6 minutes! 🔂 (6:48) - https://youtu.be/VL_g3LjsFqs
-[x] 37. Learn Python MEMBERSHIP OPERATORS in 8 minutes! 🔎 (8:23) - https://youtu.be/OJ5E7VLsZQM
-[x] 38. Learn Python LIST COMPREHENSIONS in 10 minutes! 📃 (10:22) - https://youtu.be/YlY2g2xrl6Q
-[x] 39. Learn Python MATCH-CASE STATEMENTS in 5 minutes! 📆 (5:46) - https://youtu.be/L7tT0NZF-Ag
-[x] 40. What are Python modules? 📨 (7:57) - https://youtu.be/XcfxkHrHTVE
-[x] 41. What is Python scope resolution? 🔬 (8:05) - https://youtu.be/XN83IECAscM
-[x] 42. if __name__ == '__main__' for Python beginners 📥 (6:05) - https://youtu.be/8A0E1dSyjFM
-[x] 43. Credit card validator in Python 💳 (8:49) - https://youtu.be/LqXIJjcRmGI
-[x] 44. Let's code a beginners Python BANKING PROGRAM 💰 (13:38) - https://youtu.be/8aW3tkIul-8
-[x] 45. Let's code a beginners Python SLOT MACHINE 🎰 (16:38) - https://youtu.be/f5J3YiZ3XX8
-[x] 46. Let's code a HANGMAN GAME in Python! 🕺 (21:13) - https://youtu.be/ag8NtD1e0Kc
-[x] 47. Learn Python Object Oriented Programming! 🚗 (15:31) - https://youtu.be/1XE-_s4ZBT8
-[x] 48. Learn class variables in 8 minutes! 🎓 (8:47) - https://youtu.be/bytvWg4fPB0
-[x] 49. Python INHERITANCE in 6 minutes! 👨‍👦‍👦 (6:40) - https://youtu.be/u1be7Vele5o
-50. Learn Python multiple inheritance in 8 minutes! 🐟 (8:12) - https://youtu.be/Q8YlYHjksLo
-51. Learn Python ABSTRACT CLASSES in 7 minutes! 👻 (7:42) - https://youtu.be/97V7ICVeTJc
-52. SUPER() in Python explained! 🔴 (6:46) - https://youtu.be/HzyhmZqiaE8
-53. Learn polymorphism in 8 minutes! 🎭 (8:39) - https://youtu.be/tHN8I_4FIt8
-54. Learn Python DUCK TYPING in 4 minutes! 🦆 (4:51) - https://youtu.be/Qe03kCuTMoU
-55. Learn Python AGGREGATION in 6 minutes! 📚 (6:45) - https://youtu.be/caXOUnQkD1o
-56. Learn Python COMPOSITION in 7 minutes! 🚘 (7:30) - https://youtu.be/TPUdUkFHD5I
-57. Learn Python NESTED CLASSES in 9 minutes! 📛 (9:21) - https://youtu.be/zxPODCF4KEw
-58. Learn Python STATIC METHODS in 5 minutes! ⚡ (5:42) - https://youtu.be/GZYWTm7JoWs
-59. Learn Python CLASS METHODS in 6 minutes! 🏫 (6:38) - https://youtu.be/g-qRKZD3FgE
-60. Python MAGIC METHODS are easy! 🌟 (10:13) - https://youtu.be/NwjSP1_WEfE
-61. Learn Python DECORATORS in 7 minutes! 🎊 (7:46) - https://youtu.be/U-G-mSd4KAE
-62. Learn Python @property in 7 minutes! ⚙️ (7:28) - https://youtu.be/HkbQ_NaH0Lc
-63. Learn Python LAMBDA in 6 minutes! 🚮 (6:43) - https://youtu.be/IljPHDyBRog
-64. Python SORTING is easy (sort of) 🔀 (9:56) - https://youtu.be/cd-vtiO5chk
-65. Learn Python zip() in 3 minutes! 🤐 (3:51) - https://youtu.be/5WK3j2erJW4
-66. Learn RECURSION in 5 minutes! 😵 (5:42) - https://youtu.be/ivl5-snqul8
-67. Learn Python EXCEPTION HANDLING in 5 minutes! 🚦 (5:59) - https://youtu.be/V_NXT2-QIlE
-68. File detection in Python is easy! 🕵️‍♂️ (4:30) - https://youtu.be/EReeJSaU0Og
-69. Write files using Python! ✍ (7:05) - https://youtu.be/1IYrmTTKOoI
-70. Read files using Python! 🔍 (5:55) - https://youtu.be/GWBWQnWBI
-71. How to measure EXECUTION TIME in Python ⌚ (5:26) - https://youtu.be/FblABqaKz_U
-72. Learn Python DATES & TIMES in 6 minutes! 📅 (6:48) - https://youtu.be/DwBDHsdX6XQ
-73. Code an alarm clock using Python! ⏰ (8:56) - https://youtu.be/uf8DvQlWm7M
-74. Learn Python iterators in 7 minutes! ➡️ (7:28) - https://youtu.be/k0D3MQwLn7A
-75. Learn Python generators in 8 minutes! 🚰 (8:44) - https://youtu.be/Gsfsq2epdr8
-76. Learn Python generator expressions in 9 minutes! ♻️ (9:31) - https://youtu.be/ZBlxaXMN_hU
-77. You'll love Python data classes! 📋 (9:00) - https://youtu.be/G1lJeEIl05o
-78. Learn Python multithreading in 8 minutes! 🧵 (8:54) - https://youtu.be/STEOavXqXkQ
-79. Request API data using Python in 8 minutes! ↩️ (8:45) - https://youtu.be/JVQNywo4AbU
-80. Python PyQt5 setup a basic GUI Application! 🖥️ (9:31) - https://youtu.be/Uvqmv3PGiXM
-81. Create LABELS with Python in 8 minutes! 🏷️ (8:43) - https://youtu.be/nFLADhwXjW4
-82. Python PyQt5 IMAGES are easy! 📷 (6:46) - https://youtu.be/7v5NQeIBYes
-83. Layout managers in Python are easy! 🧲 (8:08) - https://youtu.be/ml-mBl77h6Q
-84. Create Python buttons in 7 minutes! 🛎️ (7:42) - https://youtu.be/9pl55MxZlG4
-85. Create Python checkboxes in 5 minutes! ✅ (5:49) - https://youtu.be/VgnUB_vzR9I
-86. Python PyQt5 RADIO BUTTONS are easy! 🔘 (6:35) - https://youtu.be/DZ3-ij_JHE0
-87. Python PyQt5 LINE EDITS are easy! 💬 (7:05) - https://youtu.be/4IUWg_wQNSc
-88. Add CSS to Python in 10 minutes! 🎨 (10:55) - https://youtu.be/YJM9d0F3n-o
-89. Let's code a digital clock with Python! 🕒 (12:45) - https://youtu.be/543g1CurFFo
-90. Code a stopwatch using Python! ⏱ (15:47) - https://youtu.be/UKs0xhxSOg0
-91. Create a weather app with Python! ☀️ (20:37) - https://youtu.be/Q4377DH5Jso
-92. Create QR codes with Python in 4 minutes! 📱 (4:48) - https://youtu.be/pJdTyvufOdg
-93. Build a music player with Python! 🎶 (18:52) - https://youtu.be/xf71dRBRP6o
+- [x] 1. Start coding with PYTHON in 5 minutes! 🐍 (5:13) - https://youtu.be/Sg4GMVMdOPo
+- [x] 2. Learn Python VARIABLES in 10 minutes! ❎ (10:20) - https://youtu.be/7IoQ5BGkTJo
+- [x] 3. Learn type casting in 7 minutes! 💱 (7:39) - https://youtu.be/Qtq83lAoogM
+- [x] 4. User input in Python is easy + exercises ⌨️ (9:48) - https://youtu.be/nMCOB8KElwo
+- [x] 5. Math in Python is easy! 📐 (10:03) - https://youtu.be/jc7TBgMS_kw
+- [x] 6. If statements in Python are easy (if, elif, else) 🤔 (12:07) - https://youtu.be/FvMPfrgGeKs
+- [x] 7. Let's code a simple python calculator! 🧮 (8:20) - https://youtu.be/yUrYouDQZL8
+- [x] 8. Python weight conversion exercise 🏋️ (5:47) - https://youtu.be/80kjCBRjkmU
+- [x] 9. Python temperature conversion program 🌡️ (5:44) - https://youtu.be/fy5QsDJmctQ
+- [x] 10. Logical operators in Python are easy 🔣 (7:56) - https://youtu.be/W7luvtXeQTA
+- [x] 11. Learn conditional expressions in 5 minutes! ❓ (5:21) - https://youtu.be/TYyKQBC4bwE
+- [x] 12. String methods in Python are easy! 〰️ (12:14) - https://youtu.be/tb6EYiHtcXU
+- [x] 13. String indexing in Python is easy ✂️ (6:17) - https://youtu.be/7pXf1DUuaIo
+- [x] 14. Python email slicer program 📧 (4:07) - https://youtu.be/6MAufQ6vGtI
+- [x] 15. Learn Python format specifiers in 5 minutes! 💬 (5:32) - https://youtu.be/FrvBwdAU2dQ
+- [x] 16. While loops in Python are easy! ♾️ (8:04) - https://youtu.be/rRTjPnVooxE
+- [x] 17. Code an interest calculator in 7 minutes! 💵 (7:35) - https://youtu.be/aM5dttidg4Q
+- [x] 18. Learn Python for loops in 5 minutes! 🔁 (5:47) - https://youtu.be/KWgYha0clzw
+- [x] 19. Nested loops in Python are easy ➿ (6:12) - https://youtu.be/APWy6Pc83gE
+- [x] 20. Countdown timer program in Python ⌛ (8:59) - https://youtu.be/KseiSR0MCTI
+- [x] 21. Python lists, sets, and tuples explained 🍍 (13:04) - https://youtu.be/gOMW_n2-2Mw
+- [x] 22. Python shopping cart program 🛒 (9:12) - https://youtu.be/kbyHLU9JqjE
+- [x] 23. Python 2D collections are easy! ⬜ (5:55) - https://youtu.be/Xy6qeQWQwFw
+- [x] 24. Create a QUIZ GAME with Python 💯 (14:14) - https://youtu.be/zehwgTB0vV8
+- [x] 25. Python dictionaries are easy 📙 (9:06) - https://youtu.be/MZZSMaEAC2g
+- [x] 26. Python concession stand program 🍿 (10:46) - https://youtu.be/PbkIzW_70EI
+- [x] 27. Generate random numbers in Python 🎲 (9:27) - https://youtu.be/piJc18hcH0Y
+- [x] 28. Let's code a Python NUMBER GUESSING GAME! 🔢 (9:09) - https://youtu.be/jcKe13D6bao
+- [x] 29. ROCK PAPER SCISSORS game in Python 🗿 (13:38) - https://youtu.be/fn68QNcatfo
+- [x] 30. Code a dice roller program in 10 minutes! 🎲 (10:24) - https://youtu.be/x-Ag2_bJ40Y
+- [x] 31. Encryption program in Python 🔐 (9:47) - https://youtu.be/vsLBErLWBhA
+- [x] 32. Functions in Python are easy 📞 (9:05) - https://youtu.be/89cGQjB5R4M
+- [x] 33. Python default arguments are awesome! 👍 (6:15) - https://youtu.be/m2uURZxex3c
+- [x] 34. Python keyword arguments are awesome! 🗝️ (5:16) - https://youtu.be/7QCHpAtlSMo
+- [x] 35. Python *ARGS & **KWARGS are awesome! 📦 (6:57) - https://youtu.be/Vh__2V2tXUM
+- [x] 36. Learn Python iterables in 6 minutes! 🔂 (6:48) - https://youtu.be/VL_g3LjsFqs
+- [x] 37. Learn Python MEMBERSHIP OPERATORS in 8 minutes! 🔎 (8:23) - https://youtu.be/OJ5E7VLsZQM
+- [x] 38. Learn Python LIST COMPREHENSIONS in 10 minutes! 📃 (10:22) - https://youtu.be/YlY2g2xrl6Q
+- [x] 39. Learn Python MATCH-CASE STATEMENTS in 5 minutes! 📆 (5:46) - https://youtu.be/L7tT0NZF-Ag
+- [x] 40. What are Python modules? 📨 (7:57) - https://youtu.be/XcfxkHrHTVE
+- [x] 41. What is Python scope resolution? 🔬 (8:05) - https://youtu.be/XN83IECAscM
+- [x] 42. if __name__ == '__main__' for Python beginners 📥 (6:05) - https://youtu.be/8A0E1dSyjFM
+- [x] 43. Credit card validator in Python 💳 (8:49) - https://youtu.be/LqXIJjcRmGI
+- [x] 44. Let's code a beginners Python BANKING PROGRAM 💰 (13:38) - https://youtu.be/8aW3tkIul-8
+- [x] 45. Let's code a beginners Python SLOT MACHINE 🎰 (16:38) - https://youtu.be/f5J3YiZ3XX8
+- [x] 46. Let's code a HANGMAN GAME in Python! 🕺 (21:13) - https://youtu.be/ag8NtD1e0Kc
+- [x] 47. Learn Python Object Oriented Programming! 🚗 (15:31) - https://youtu.be/1XE-_s4ZBT8
+- [x] 48. Learn class variables in 8 minutes! 🎓 (8:47) - https://youtu.be/bytvWg4fPB0
+- [x] 49. Python INHERITANCE in 6 minutes! 👨‍👦‍👦 (6:40) - https://youtu.be/u1be7Vele5o
+- [ ] 50. Learn Python multiple inheritance in 8 minutes! 🐟 (8:12) - https://youtu.be/Q8YlYHjksLo
+- [ ] 51. Learn Python ABSTRACT CLASSES in 7 minutes! 👻 (7:42) - https://youtu.be/97V7ICVeTJc
+- [ ] 52. SUPER() in Python explained! 🔴 (6:46) - https://youtu.be/HzyhmZqiaE8
+- [ ] 53. Learn polymorphism in 8 minutes! 🎭 (8:39) - https://youtu.be/tHN8I_4FIt8
+- [ ] 54. Learn Python DUCK TYPING in 4 minutes! 🦆 (4:51) - https://youtu.be/Qe03kCuTMoU
+- [ ] 55. Learn Python AGGREGATION in 6 minutes! 📚 (6:45) - https://youtu.be/caXOUnQkD1o
+- [ ] 56. Learn Python COMPOSITION in 7 minutes! 🚘 (7:30) - https://youtu.be/TPUdUkFHD5I
+- [ ] 57. Learn Python NESTED CLASSES in 9 minutes! 📛 (9:21) - https://youtu.be/zxPODCF4KEw
+- [ ] 58. Learn Python STATIC METHODS in 5 minutes! ⚡ (5:42) - https://youtu.be/GZYWTm7JoWs
+- [ ] 59. Learn Python CLASS METHODS in 6 minutes! 🏫 (6:38) - https://youtu.be/g-qRKZD3FgE
+- [ ] 60. Python MAGIC METHODS are easy! 🌟 (10:13) - https://youtu.be/NwjSP1_WEfE
+- [ ] 61. Learn Python DECORATORS in 7 minutes! 🎊 (7:46) - https://youtu.be/U-G-mSd4KAE
+- [ ] 62. Learn Python @property in 7 minutes! ⚙️ (7:28) - https://youtu.be/HkbQ_NaH0Lc
+- [ ] 63. Learn Python LAMBDA in 6 minutes! 🚮 (6:43) - https://youtu.be/IljPHDyBRog
+- [ ] 64. Python SORTING is easy (sort of) 🔀 (9:56) - https://youtu.be/cd-vtiO5chk
+- [ ] 65. Learn Python zip() in 3 minutes! 🤐 (3:51) - https://youtu.be/5WK3j2erJW4
+- [ ] 66. Learn RECURSION in 5 minutes! 😵 (5:42) - https://youtu.be/ivl5-snqul8
+- [ ] 67. Learn Python EXCEPTION HANDLING in 5 minutes! 🚦 (5:59) - https://youtu.be/V_NXT2-QIlE
+- [ ] 68. File detection in Python is easy! 🕵️‍♂️ (4:30) - https://youtu.be/EReeJSaU0Og
+- [ ] 69. Write files using Python! ✍ (7:05) - https://youtu.be/1IYrmTTKOoI
+- [ ] 70. Read files using Python! 🔍 (5:55) - https://youtu.be/GWBWQnWBI
+- [ ] 71. How to measure EXECUTION TIME in Python ⌚ (5:26) - https://youtu.be/FblABqaKz_U
+- [ ] 72. Learn Python DATES & TIMES in 6 minutes! 📅 (6:48) - https://youtu.be/DwBDHsdX6XQ
+- [ ] 73. Code an alarm clock using Python! ⏰ (8:56) - https://youtu.be/uf8DvQlWm7M
+- [ ] 74. Learn Python iterators in 7 minutes! ➡️ (7:28) - https://youtu.be/k0D3MQwLn7A
+- [ ] 75. Learn Python generators in 8 minutes! 🚰 (8:44) - https://youtu.be/Gsfsq2epdr8
+- [ ] 76. Learn Python generator expressions in 9 minutes! ♻️ (9:31) - https://youtu.be/ZBlxaXMN_hU
+- [ ] 77. You'll love Python data classes! 📋 (9:00) - https://youtu.be/G1lJeEIl05o
+- [ ] 78. Learn Python multithreading in 8 minutes! 🧵 (8:54) - https://youtu.be/STEOavXqXkQ
+- [ ] 79. Request API data using Python in 8 minutes! ↩️ (8:45) - https://youtu.be/JVQNywo4AbU
+- [ ] 80. Python PyQt5 setup a basic GUI Application! 🖥️ (9:31) - https://youtu.be/Uvqmv3PGiXM
+- [ ] 81. Create LABELS with Python in 8 minutes! 🏷️ (8:43) - https://youtu.be/nFLADhwXjW4
+- [ ] 82. Python PyQt5 IMAGES are easy! 📷 (6:46) - https://youtu.be/7v5NQeIBYes
+- [ ] 83. Layout managers in Python are easy! 🧲 (8:08) - https://youtu.be/ml-mBl77h6Q
+- [ ] 84. Create Python buttons in 7 minutes! 🛎️ (7:42) - https://youtu.be/9pl55MxZlG4
+- [ ] 85. Create Python checkboxes in 5 minutes! ✅ (5:49) - https://youtu.be/VgnUB_vzR9I
+- [ ] 86. Python PyQt5 RADIO BUTTONS are easy! 🔘 (6:35) - https://youtu.be/DZ3-ij_JHE0
+- [ ] 87. Python PyQt5 LINE EDITS are easy! 💬 (7:05) - https://youtu.be/4IUWg_wQNSc
+- [ ] 88. Add CSS to Python in 10 minutes! 🎨 (10:55) - https://youtu.be/YJM9d0F3n-o
+- [ ] 89. Let's code a digital clock with Python! 🕒 (12:45) - https://youtu.be/543g1CurFFo
+- [ ] 90. Code a stopwatch using Python! ⏱ (15:47) - https://youtu.be/UKs0xhxSOg0
+- [ ] 91. Create a weather app with Python! ☀️ (20:37) - https://youtu.be/Q4377DH5Jso
+- [ ] 92. Create QR codes with Python in 4 minutes! 📱 (4:48) - https://youtu.be/pJdTyvufOdg
+- [ ] 93. Build a music player with Python! 🎶 (18:52) - https://youtu.be/xf71dRBRP6o
 
 Python Interpreter: https://www.python.org/
 PyCharm IDE: https://www.jetbrains.com/pycharm/
