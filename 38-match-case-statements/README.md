@@ -1,5 +1,11 @@
 # 🔀 Match Case Statements
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/YlY2g2xrl6Q)
+
+
 ## What You'll Learn
 
 In this chapter, you'll learn about match-case statements (introduced in Python 3.10) - a powerful alternative to multiple if-elif-else chains. You'll discover how to write cleaner, more readable conditional logic using pattern matching, handle multiple values with the OR operator, and implement sophisticated matching patterns that go beyond simple value comparisons.

@@ -1,5 +1,15 @@
 # Chapter 18: For Loops
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/KWgYha0clzw)
+
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/KWgYha0clzw)
+
 ## 📚 What You'll Learn
 Master the for loop - Python's most elegant way to iterate through sequences and repeat code!
 

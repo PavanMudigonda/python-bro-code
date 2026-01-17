@@ -1,5 +1,11 @@
 # 📊 Class Variables
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/1XE-_s4ZBT8)
+
+
 ## What You'll Learn
 
 In this chapter, you'll master the distinction between class variables and instance variables - a fundamental concept in OOP. You'll learn how class variables are shared among all instances of a class, how to define and access them properly, when to use them versus instance variables, and common use cases like counters, constants, and default values.

@@ -1,5 +1,11 @@
 # 🏗️ Python OOP (Object-Oriented Programming)
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/ag8NtD1e0Kc)
+
+
 ## What You'll Learn
 
 In this chapter, you'll be introduced to Object-Oriented Programming (OOP) in Python - one of the most important programming paradigms. You'll learn how to create classes as blueprints for objects, define attributes and methods, use the `__init__` constructor, understand the `self` parameter, and create multiple instances from a single class. This is your gateway to writing more organized, reusable, and scalable code.

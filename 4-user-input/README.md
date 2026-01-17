@@ -1,5 +1,15 @@
 # Chapter 4: User Input
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/nMCOB8KElwo)
+
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/nMCOB8KElwo)
+
 ## 📚 What You'll Learn
 Learn how to make your programs interactive by accepting input from users!
 

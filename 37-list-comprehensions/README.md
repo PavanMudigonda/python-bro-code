@@ -1,5 +1,11 @@
 # 📝 List Comprehensions
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/OJ5E7VLsZQM)
+
+
 ## What You'll Learn
 
 In this chapter, you'll master list comprehensions - a powerful Python feature that allows you to create lists in a single, readable line of code. You'll learn how to transform data, filter elements, use conditional logic, and write more Pythonic, efficient code that replaces traditional for loops with elegant one-liners.

@@ -1,5 +1,11 @@
 # 🔍 Scope Resolution
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/XcfxkHrHTVE)
+
+
 ## What You'll Learn
 
 In this chapter, you'll master Python's scope resolution - understanding where variables are accessible and the order Python searches for them. You'll learn the LEGB rule (Local, Enclosing, Global, Built-in), understand variable shadowing, use the `global` and `nonlocal` keywords, and write code that properly manages variable scope across functions and modules.

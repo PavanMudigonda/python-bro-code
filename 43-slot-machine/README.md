@@ -1,5 +1,11 @@
 # 🎰 Slot Machine Program
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/LqXIJjcRmGI)
+
+
 ## What You'll Learn
 
 In this chapter, you'll build a complete slot machine game that demonstrates random number generation, list comprehensions, conditional payout logic, game loop mechanics, and input validation. You'll create an engaging game with emoji symbols, balance management, betting mechanics, and win conditions - bringing together multiple Python concepts into an entertaining project.

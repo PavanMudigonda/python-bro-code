@@ -1,5 +1,11 @@
 # 🍿 Concession Stand Program
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/PbkIzW_70EI)
+
+
 ## What You'll Learn
 
 In this chapter, you'll build a practical concession stand ordering system that demonstrates real-world application of dictionaries. You'll learn to create interactive menu systems, manage shopping carts, calculate totals, and format professional output using dictionary data structures.

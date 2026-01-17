@@ -1,5 +1,11 @@
 # 🔐 Encryption Program
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/8aW3tkIul-8)
+
+
 ## What You'll Learn
 
 In this chapter, you'll build a substitution cipher encryption program that demonstrates cryptographic concepts, string manipulation, character substitution algorithms, and the use of Python's string module. You'll learn how to create encryption keys, map characters between original and encrypted forms, and implement both encryption and decryption processes.

@@ -1,5 +1,15 @@
 # Chapter 7: If-Elif-Else Statements
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/yUrYouDQZL8)
+
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/yUrYouDQZL8)
+
 ## 📚 What You'll Learn
 Make your programs smart with conditional logic! Learn how to make decisions based on different conditions.
 

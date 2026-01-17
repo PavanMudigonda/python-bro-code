@@ -1,5 +1,11 @@
 # 🎲 Random Numbers
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/piJc18hcH0Y)
+
+
 ## What You'll Learn
 
 In this chapter, you'll master Python's random module to generate random numbers, make random selections, and shuffle sequences. Random number generation is essential for games, simulations, testing, and adding unpredictability to programs.

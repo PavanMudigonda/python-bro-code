@@ -1,5 +1,15 @@
 # Chapter 19: Countdown Timer
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/APWy6Pc83gE)
+
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/APWy6Pc83gE)
+
 ## 📚 What You'll Learn
 Build a real countdown timer using Python's time module - combining loops, time operations, and user input!
 

@@ -1,5 +1,11 @@
 # 🏷️ Keyword Arguments
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/m2uURZxex3c)
+
+
 ## What You'll Learn
 
 In this chapter, you'll master keyword arguments - a powerful Python feature that lets you pass arguments by parameter name rather than position. You'll learn how keyword arguments improve code readability, reduce errors, enable flexible function calls, and create self-documenting code that's easier to maintain.

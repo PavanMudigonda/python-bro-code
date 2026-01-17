@@ -1,5 +1,11 @@
 # 🏦 Banking Program
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/8A0E1dSyjFM)
+
+
 ## What You'll Learn
 
 In this chapter, you'll build a complete banking application that demonstrates professional program design. You'll learn how to manage global state, organize code into functions, handle errors gracefully, validate user input, and create an interactive menu-driven interface using Python's match-case statement. This project brings together multiple concepts to create a real-world application.

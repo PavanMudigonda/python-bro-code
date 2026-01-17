@@ -1,5 +1,11 @@
 # 📊 2D Collections (Nested Lists & Matrices)
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/Xy6qeQWQwFw)
+
+
 ## What You'll Learn
 
 In this chapter, you'll explore two-dimensional (2D) data structures using nested lists to create matrices, tables, and grids. You'll learn how to organize data in rows and columns, access elements using double indexing, and iterate through multi-dimensional data structures effectively.

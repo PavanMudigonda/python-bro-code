@@ -1,5 +1,15 @@
 # Chapter 9: Weight Converter Program
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/fy5QsDJmctQ)
+
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/fy5QsDJmctQ)
+
 ## 📚 What You'll Learn
 Create a practical unit converter that switches between pounds and kilograms!
 
