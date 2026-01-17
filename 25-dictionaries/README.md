@@ -1,5 +1,11 @@
 # 📖 Dictionaries
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/MZZSMaEAC2g)
+
+
 ## What You'll Learn
 
 In this chapter, you'll master Python dictionaries - one of the most powerful and versatile data structures in Python. Dictionaries store data as key-value pairs, enabling fast lookups, flexible data organization, and efficient data manipulation.

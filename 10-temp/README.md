@@ -1,5 +1,15 @@
 # Chapter 10: Temperature Converter Program
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/W7luvtXeQTA)
+
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/W7luvtXeQTA)
+
 ## 📚 What You'll Learn
 Convert temperatures between Fahrenheit and Celsius - essential for international travel and science!
 

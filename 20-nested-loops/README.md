@@ -1,5 +1,15 @@
 # Chapter 20: Nested Loops
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/KseiSR0MCTI)
+
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/KseiSR0MCTI)
+
 ## 📚 What You'll Learn
 Master nested loops - loops within loops - to create patterns, process 2D data, and solve complex iteration problems!
 

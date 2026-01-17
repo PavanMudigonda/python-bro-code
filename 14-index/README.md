@@ -1,5 +1,15 @@
 # Chapter 14: String Indexing and Slicing
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/6MAufQ6vGtI)
+
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/6MAufQ6vGtI)
+
 ## 📚 What You'll Learn
 Access and extract parts of strings using indexing and slicing - essential for text processing!
 

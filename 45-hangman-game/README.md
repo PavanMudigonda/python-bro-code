@@ -1,5 +1,11 @@
 # 🎮 Hangman Game
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/f5J3YiZ3XX8)
+
+
 ## What You'll Learn
 
 In this chapter, you'll build a complete Hangman word-guessing game that demonstrates dictionaries for ASCII art storage, sets for efficient letter tracking, list manipulation for hint displays, random word selection, and game loop design. You'll create an engaging game with visual feedback, input validation, win/loss conditions, and professional game state management.

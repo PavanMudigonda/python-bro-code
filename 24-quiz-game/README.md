@@ -1,5 +1,11 @@
 # 🎯 Quiz Game
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/zehwgTB0vV8)
+
+
 ## What You'll Learn
 
 In this chapter, you'll build an interactive quiz game that demonstrates how to work with tuples for immutable data storage, use the zip() function to iterate over multiple sequences simultaneously, and implement scoring systems with user input validation.

@@ -1,5 +1,15 @@
 # Chapter 8: Simple Calculator Program
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/80kjCBRjkmU)
+
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/80kjCBRjkmU)
+
 ## 📚 What You'll Learn
 Build a functional calculator that performs basic mathematical operations!
 

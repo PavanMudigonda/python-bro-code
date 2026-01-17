@@ -1,5 +1,11 @@
 # 🎯 Default Arguments
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/89cGQjB5R4M)
+
+
 ## What You'll Learn
 
 In this chapter, you'll learn about default arguments - function parameters that have preset values. You'll understand how to make functions more flexible by providing default values, when arguments can be omitted, and the correct order for different parameter types to create user-friendly, versatile functions.

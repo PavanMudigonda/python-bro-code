@@ -1,5 +1,15 @@
 # Chapter 16: While Loops
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/rRTjPnVooxE)
+
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/rRTjPnVooxE)
+
 ## 📚 What You'll Learn
 Execute code repeatedly while a condition is true - essential for creating interactive programs!
 

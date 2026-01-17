@@ -1,5 +1,15 @@
 # Chapter 21: Sets 🎲
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/gOMW_n2-2Mw)
+
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/gOMW_n2-2Mw)
+
 ## What You'll Learn
 Master Python sets, an unordered collection type that automatically handles unique values and provides powerful mathematical set operations.
 

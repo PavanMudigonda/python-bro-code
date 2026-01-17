@@ -1,5 +1,11 @@
 # 🧬 Inheritance
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/bytvWg4fPB0)
+
+
 ## What You'll Learn
 
 In this chapter, you'll discover inheritance - one of the four pillars of Object-Oriented Programming. You'll learn how to create parent-child class relationships, reuse code efficiently, extend functionality through method overriding, use the `super()` function to access parent methods, and understand when inheritance is the right design choice.

@@ -1,5 +1,11 @@
 # 🎯 If __name__ == "__main__"
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/XN83IECAscM)
+
+
 ## What You'll Learn
 
 In this chapter, you'll master the `if __name__ == "__main__"` pattern - a fundamental Python idiom that allows you to write code that can be both run as a standalone script and imported as a reusable module. You'll learn how Python's special `__name__` variable works, why this pattern is essential for professional Python development, and how to structure your code for maximum reusability.

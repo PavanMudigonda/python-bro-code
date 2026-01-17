@@ -1,5 +1,15 @@
 # Chapter 6: Arithmetic Operations & Math Functions
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/FvMPfrgGeKs)
+
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/FvMPfrgGeKs)
+
 ## 📚 What You'll Learn
 Master mathematical operations in Python, from basic arithmetic to useful built-in functions!
 

@@ -1,5 +1,11 @@
 # 🔀 Multiple Inheritance
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/u1be7Vele5o)
+
+
 ## What You'll Learn
 
 In this chapter, you'll explore multiple inheritance - a powerful but complex OOP feature where a class can inherit from more than one parent class. You'll learn how Python's Method Resolution Order (MRO) determines which parent's method gets called, understand the diamond problem, implement mixins for code reuse, and know when to choose multiple inheritance versus composition.
