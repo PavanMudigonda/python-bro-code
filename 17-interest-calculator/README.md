@@ -1,5 +1,15 @@
 # Chapter 17: Compound Interest Calculator
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/aM5dttidg4Q)
+
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/aM5dttidg4Q)
+
 ## 📚 What You'll Learn
 Calculate compound interest using mathematical formulas in Python - a practical application of math and programming!
 

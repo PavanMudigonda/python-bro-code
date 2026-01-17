@@ -1,5 +1,11 @@
 # Python Practice Questions
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtube.com/playlist?list=PLZPZq0r_RZOOkUQbat8LyQii36cJf2SWT&si=vS0xX0_w-4_Co0GV)
+
+
 A comprehensive collection of **1000 Python practice questions** organized by difficulty level to help you master Python programming from beginner to expert.
 
 ## 📚 Structure

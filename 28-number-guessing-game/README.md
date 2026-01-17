@@ -1,5 +1,11 @@
 # 🎯 Number Guessing Game
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/jcKe13D6bao)
+
+
 ## What You'll Learn
 
 In this chapter, you'll build an interactive number guessing game that combines random number generation, input validation, conditional logic, and user feedback. This classic programming project teaches important concepts about game loops, user interaction, and program flow control.

@@ -1,5 +1,11 @@
 # 📦 Modules
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/L7tT0NZF-Ag)
+
+
 ## What You'll Learn
 
 In this chapter, you'll learn about Python modules - files containing Python code that you can import and reuse in other programs. You'll discover how to import built-in modules, create your own custom modules, use different import styles, and organize your code into reusable, maintainable components that promote the DRY (Don't Repeat Yourself) principle.

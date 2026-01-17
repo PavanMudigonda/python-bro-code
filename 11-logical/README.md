@@ -1,5 +1,15 @@
 # Chapter 11: Logical Operators
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/TYyKQBC4bwE)
+
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/TYyKQBC4bwE)
+
 ## 📚 What You'll Learn
 Combine multiple conditions using logical operators to create powerful decision-making logic!
 

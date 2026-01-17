@@ -1,5 +1,11 @@
 # 🎲 Dice Roller Program
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/x-Ag2_bJ40Y)
+
+
 ## What You'll Learn
 
 In this chapter, you'll build a sophisticated dice rolling program that generates ASCII art representations of dice faces, demonstrates dictionary usage for structured data, works with tuples for multi-line strings, and implements functions with parameter validation. This project combines visual output with practical programming concepts.

@@ -1,5 +1,11 @@
 # 🔧 Functions
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/vsLBErLWBhA)
+
+
 ## What You'll Learn
 
 In this chapter, you'll master Python functions - reusable blocks of code that perform specific tasks. You'll learn how to define functions with parameters, call them with arguments, use return values, and understand why functions are essential for writing organized, maintainable, and DRY (Don't Repeat Yourself) code.

@@ -1,5 +1,11 @@
 # ✊✋✌️ Rock Paper Scissors Game
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/fn68QNcatfo)
+
+
 ## What You'll Learn
 
 In this chapter, you'll build the classic Rock Paper Scissors game, demonstrating how to use random computer opponents, implement game logic with nested conditionals, validate input with membership operators, and create replay functionality with game loops.

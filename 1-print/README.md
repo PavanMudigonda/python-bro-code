@@ -1,6 +1,20 @@
 # Chapter 1: Print Statement
 
-## 📚 What You'll Learn
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/Sg4GMVMdOPo)
+
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/Sg4GMVMdOPo)
+
+## � Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-Chapter_1-red?style=for-the-badge&logo=youtube)](https://youtu.be/N4mEzFDjqtA)
+
+## �📚 What You'll Learn
 In this chapter, you'll learn about the `print()` function, which is your first step in Python programming!
 
 ## 🎯 Learning Objectives

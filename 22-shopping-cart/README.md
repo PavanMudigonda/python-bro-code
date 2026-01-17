@@ -1,5 +1,11 @@
 # 🛒 Shopping Cart Program
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/kbyHLU9JqjE)
+
+
 ## What You'll Learn
 
 In this chapter, you'll build a practical shopping cart program that demonstrates how to use parallel lists to store related data, collect user input in a loop, and format output professionally. This project brings together list manipulation, user input validation, and receipt generation.

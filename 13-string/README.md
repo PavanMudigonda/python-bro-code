@@ -1,5 +1,15 @@
 # Chapter 13: String Methods
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/7pXf1DUuaIo)
+
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/7pXf1DUuaIo)
+
 ## 📚 What You'll Learn
 Master Python's powerful string manipulation methods to transform and analyze text!
 

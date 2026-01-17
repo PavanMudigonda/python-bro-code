@@ -1,6 +1,20 @@
 # Chapter 2: Variables and Data Types
 
-## 📚 What You'll Learn
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/7IoQ5BGkTJo)
+
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/7IoQ5BGkTJo)
+
+## � Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-Chapter_2-red?style=for-the-badge&logo=youtube)](https://youtu.be/dvJ6J2H5KjQ)
+
+## �📚 What You'll Learn
 Variables are fundamental in programming - they let you store and manipulate data in your programs!
 
 ## 🎯 Learning Objectives

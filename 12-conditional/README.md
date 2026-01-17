@@ -1,5 +1,15 @@
 # Chapter 12: Conditional Expressions (Ternary Operator)
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/tb6EYiHtcXU)
+
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/tb6EYiHtcXU)
+
 ## 📚 What You'll Learn
 Write compact, elegant one-line conditional statements using Python's ternary operator!
 

@@ -1,5 +1,11 @@
 # ✅ Membership Operators
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/VL_g3LjsFqs)
+
+
 ## What You'll Learn
 
 In this chapter, you'll master Python's membership operators - `in` and `not in`. These operators test whether a value exists in a sequence like strings, lists, tuples, sets, or dictionaries. You'll learn how to validate input, search for elements, check dictionary keys, and write cleaner conditional logic.

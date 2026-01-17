@@ -1,5 +1,11 @@
 # 🔄 Iterables
 
+
+## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/Vh__2V2tXUM)
+
+
 ## What You'll Learn
 
 In this chapter, you'll understand iterables - objects that can return their elements one at a time, allowing them to be used in loops. You'll learn what makes something iterable, how iteration works under the hood with `iter()` and `next()`, and how to work with different iterable types including lists, tuples, strings, sets, and dictionaries.
