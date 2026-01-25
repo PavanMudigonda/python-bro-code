@@ -1,12 +1,10 @@
 # Chapter 9: Weight Converter Program
 
-
 ## 📺 Video Tutorial
 
 **Python weight conversion exercise 🏋️** (5:47)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/80kjCBRjkmU)
-
 
 ## 📺 Video Tutorial
 
@@ -221,5 +219,14 @@ for lbs in range(10, 210, 10):
     print(f"{lbs:3d} | {kg:6.2f}")
 ```
 
+## 🎓 Key Takeaways from Video
+
+1. Variables store data values that can be reused
+2. Use if-elif-else for conditional logic
+3. Follow along with the video for hands-on practice
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
+
 ## 🔗 Next Chapter
 Continue to [Chapter 10: Temperature Converter](../10-temp/) to create another conversion program!
+

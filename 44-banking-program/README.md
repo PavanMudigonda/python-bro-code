@@ -1,12 +1,10 @@
 # 🏦 Banking Program
 
-
 ## 📺 Video Tutorial
 
 **Let's code a beginners Python BANKING PROGRAM 💰** (13:38)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/8aW3tkIul-8)
-
 
 ## What You'll Learn
 
@@ -1450,3 +1448,13 @@ Build a crypto trading and tracking system:
 ← [Previous: 41 - If Name Main](../41-if-name-main/README.md) | [Next: 43 - Slot Machine](../43-slot-machine/README.md) →
 
 [↑ Back to Main README](../README.md)
+
+## 🎓 Key Takeaways from Video
+
+1. Functions are reusable blocks of code
+2. Define functions using the def keyword
+3. Use loops to repeat actions
+4. Use if-elif-else for conditional logic
+5. Test your code to ensure it works correctly
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*

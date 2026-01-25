@@ -1,12 +1,10 @@
 # Chapter 11: Logical Operators
 
-
 ## 📺 Video Tutorial
 
 **Logical operators in Python are easy 🔣** (7:56)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/W7luvtXeQTA)
-
 
 ## 📺 Video Tutorial
 
@@ -214,5 +212,14 @@ else:
 3. **Flight Booking**: Available if (seats > 0) and (has_passport or is_domestic)
 4. **Game Level Unlock**: Unlock if (score >= 1000 and level >= 5) or has_premium
 
+## 🎓 Key Takeaways from Video
+
+1. Conditionals execute code based on conditions
+2. Use if-elif-else for conditional logic
+3. Follow along with the video for hands-on practice
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
+
 ## 🔗 Next Chapter
 Continue to [Chapter 12: Conditional Expressions](../12-conditional/) to learn shorthand if-else statements!
+

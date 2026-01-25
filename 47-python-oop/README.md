@@ -1,12 +1,10 @@
 # 🏗️ Python OOP (Object-Oriented Programming)
 
-
 ## 📺 Video Tutorial
 
 **Learn Python Object Oriented Programming! 🚗** (15:31)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/1XE-_s4ZBT8)
-
 
 ## What You'll Learn
 
@@ -736,3 +734,11 @@ car2 = Car("blue")  # Independent colors
 ← [Previous: 45 - Hangman Game](../45-hangman-game/README.md) | [Next: 47 - Class Variables](../47-class-variables/README.md) →
 
 [↑ Back to Main README](../README.md)
+
+## 🎓 Key Takeaways from Video
+
+1. Variables store data values that can be reused
+2. Define functions using the def keyword
+3. Import modules to use external code
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*

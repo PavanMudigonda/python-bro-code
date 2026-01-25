@@ -1,12 +1,10 @@
 # 📦 Modules
 
-
 ## 📺 Video Tutorial
 
 **What are Python modules? 📨** (7:57)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/XcfxkHrHTVE)
-
 
 ## What You'll Learn
 
@@ -654,3 +652,11 @@ Create a modular web scraping framework.
 - **Previous:** [38. Match Case Statements](../38-match-case-statements/README.md)
 - **Next:** [40. Scope Resolution](../40-scope-resolution/README.md)
 - **[Back to Main README](../README.md)**
+
+## 🎓 Key Takeaways from Video
+
+1. Lists store multiple items in a single variable
+2. Define functions using the def keyword
+3. Import modules to use external code
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*

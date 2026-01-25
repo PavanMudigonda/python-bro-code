@@ -1,12 +1,10 @@
 # 🔐 Encryption Program
 
-
 ## 📺 Video Tutorial
 
 **Encryption program in Python 🔐** (9:47)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/vsLBErLWBhA)
-
 
 ## What You'll Learn
 
@@ -887,3 +885,11 @@ Implement signature verification:
 ← [Previous: 43 - Slot Machine](../43-slot-machine/README.md) | [Next: 45 - Hangman Game](../45-hangman-game/README.md) →
 
 [↑ Back to Main README](../README.md)
+
+## 🎓 Key Takeaways from Video
+
+1. Import modules to use external code
+2. Follow along with the video for hands-on practice
+3. Experiment with the code examples to deepen understanding
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*

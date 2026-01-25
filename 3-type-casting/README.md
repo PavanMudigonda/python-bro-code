@@ -1,6 +1,5 @@
 # Chapter 3: Type Casting
 
-
 ## 📺 Video Tutorial
 
 **Learn type casting in 7 minutes! 💱** (7:39)
@@ -149,5 +148,14 @@ Modify `main.py` to create a program that:
 3. Asks for their height in meters (convert to float)
 4. Displays all information with proper types
 
+## 🎓 Key Takeaways from Video
+
+1. Strings are text data enclosed in quotes
+2. Follow along with the video for hands-on practice
+3. Experiment with the code examples to deepen understanding
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
+
 ## 🔗 Next Chapter
 Continue to [Chapter 4: User Input](../4-user-input/) to learn how to interact with users!
+

@@ -1,6 +1,5 @@
 # Chapter 18: For Loops
 
-
 ## 📺 Video Tutorial
 
 **Learn Python for loops in 5 minutes! 🔁** (5:47)
@@ -517,5 +516,15 @@ Modify `main.py` to:
 4. Calculate factorial
 5. Find all multiples of 3 in a range
 
+## 🎓 Key Takeaways from Video
+
+1. Strings are text data enclosed in quotes
+2. Understanding the proper syntax is important
+3. Use loops to repeat actions
+4. Use if-elif-else for conditional logic
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
+
 ## 🔗 Next Chapter
 Continue to [Chapter 19: Countdown Timer](../19-timer/) to build a real countdown timer application!
+

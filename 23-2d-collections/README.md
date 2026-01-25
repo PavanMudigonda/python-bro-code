@@ -1,12 +1,10 @@
 # 📊 2D Collections (Nested Lists & Matrices)
 
-
 ## 📺 Video Tutorial
 
 **Python 2D collections are easy! ⬜** (5:55)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/Xy6qeQWQwwFw)
-
 
 ## What You'll Learn
 
@@ -483,3 +481,11 @@ Create a program that validates and solves Sudoku puzzles.
 - **Previous:** [22. Shopping Cart Program](../22-shopping-cart/README.md)
 - **Next:** [24. Quiz Game](../24-quiz-game/README.md)
 - **[Back to Main README](../README.md)**
+
+## 🎓 Key Takeaways from Video
+
+1. Lists store multiple items in a single variable
+2. Use loops to repeat actions
+3. Follow along with the video for hands-on practice
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*

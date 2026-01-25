@@ -1,12 +1,10 @@
 # ⭐ Args and Kwargs
 
-
 ## 📺 Video Tutorial
 
 **Python *ARGS & **KWARGS are awesome! 📦** (6:57)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/Vh__2V2tXUM)
-
 
 ## What You'll Learn
 
@@ -759,3 +757,13 @@ Create a data processing pipeline using *args and **kwargs.
 - **Previous:** [33. Keyword Arguments](../33-keyword-arguments/README.md)
 - **Next:** [35. Iterables](../35-iterables/README.md)
 - **[Back to Main README](../README.md)**
+
+## 🎓 Key Takeaways from Video
+
+1. Functions are reusable blocks of code
+2. Understanding the proper syntax is important
+3. Define functions using the def keyword
+4. Use loops to repeat actions
+5. Use if-elif-else for conditional logic
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*

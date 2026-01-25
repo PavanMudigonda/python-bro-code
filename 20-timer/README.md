@@ -1,12 +1,10 @@
 # Chapter 20: Countdown Timer
 
-
 ## 📺 Video Tutorial
 
 **Countdown timer program in Python ⌛** (8:59)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/KseiSR0MCTI)
-
 
 ## 📺 Video Tutorial
 
@@ -558,5 +556,14 @@ Modify `main.py` to:
 5. Save timer history
 6. Add multiple preset timers
 
+## 🎓 Key Takeaways from Video
+
+1. Functions are reusable blocks of code
+2. Import modules to use external code
+3. Use loops to repeat actions
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
+
 ## 🔗 Next Chapter
 Continue to [Chapter 20: Nested Loops](../20-nested-loops/) to learn about loops within loops!
+

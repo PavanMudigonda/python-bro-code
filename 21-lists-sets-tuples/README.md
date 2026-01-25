@@ -1,6 +1,5 @@
 # Chapter 21: Sets 🎲
 
-
 ## 📺 Video Tutorial
 
 **Python lists, sets, and tuples explained 🍍** (13:04)
@@ -298,3 +297,11 @@ Build a permissions manager:
 - [← Previous: Chapter 21 - Lists](../21-lists/)
 - [→ Next: Chapter 22 - Shopping Cart Program](../22-shopping-cart/)
 - [↑ Back to Main](../../README.md)
+
+## 🎓 Key Takeaways from Video
+
+1. Variables store data values that can be reused
+2. Use loops to repeat actions
+3. Follow along with the video for hands-on practice
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*

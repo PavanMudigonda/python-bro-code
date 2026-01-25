@@ -1,12 +1,10 @@
 # Chapter 19: Nested Loops
 
-
 ## 📺 Video Tutorial
 
 **Nested loops in Python are easy ➿** (6:12)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/APWy6Pc83gE)
-
 
 ## 📺 Video Tutorial
 
@@ -598,5 +596,14 @@ Modify `task.py` to:
 5. Create a simple text-based game board
 6. Build a pattern menu system
 
+## 🎓 Key Takeaways from Video
+
+1. Loops repeat code multiple times
+2. Use loops to repeat actions
+3. Use if-elif-else for conditional logic
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
+
 ## 🔗 Next Chapter
 Continue to [Chapter 21: Lists](../21-lists/) to learn about Python's most versatile data structure!
+

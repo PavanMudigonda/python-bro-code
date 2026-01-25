@@ -1,12 +1,10 @@
 # Chapter 14: String Indexing and Slicing
 
-
 ## 📺 Video Tutorial
 
 **String indexing in Python is easy ✂️** (6:17)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/7pXf1DUuaIo)
-
 
 ## 📺 Video Tutorial
 
@@ -175,5 +173,14 @@ extension = filename[filename.rfind('.')+1:]
 print(extension)  # "pdf"
 ```
 
+## 🎓 Key Takeaways from Video
+
+1. Strings are text data enclosed in quotes
+2. Follow along with the video for hands-on practice
+3. Experiment with the code examples to deepen understanding
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
+
 ## 🔗 Next Chapter
 Continue to [Chapter 15: Format Specifiers](../15-format/) to learn advanced string formatting!
+

@@ -1,6 +1,5 @@
 # Chapter 43: Credit Card Validator
 
-
 ## 📺 Video Tutorial
 
 **Credit card validator in Python 💳** (8:49)
@@ -290,6 +289,14 @@ Extend to validate:
 - Always validate format before applying algorithm
 - Card type can be identified from first digits
 
+## 🎓 Key Takeaways from Video
+
+1. Lists store multiple items in a single variable
+2. Use loops to repeat actions
+3. Use if-elif-else for conditional logic
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
+
 ## 🔗 Next Chapter
 
 Continue to [Chapter 44: Banking Program](../42-banking-program/) to build a complete banking application!
@@ -297,3 +304,4 @@ Continue to [Chapter 44: Banking Program](../42-banking-program/) to build a com
 ---
 
 **Security Note:** This validates the format only. Real validation requires checking with the card issuer. Never store card numbers in plain text!
+

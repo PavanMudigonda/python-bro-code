@@ -1,12 +1,10 @@
 # 📝 List Comprehensions
 
-
 ## 📺 Video Tutorial
 
 **Learn Python LIST COMPREHENSIONS in 10 minutes! 📃** (10:22)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/YlY2g2xrl6Q)
-
 
 ## What You'll Learn
 
@@ -553,3 +551,11 @@ Generate formatted reports from raw data.
 - **Previous:** [36. Membership Operators](../36-membership-operators/README.md)
 - **Next:** [38. Match Case Statements](../38-match-case-statements/README.md)
 - **[Back to Main README](../README.md)**
+
+## 🎓 Key Takeaways from Video
+
+1. Lists store multiple items in a single variable
+2. Use loops to repeat actions
+3. Follow along with the video for hands-on practice
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*

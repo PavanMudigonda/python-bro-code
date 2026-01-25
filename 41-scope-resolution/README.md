@@ -1,12 +1,10 @@
 # 🔍 Scope Resolution
 
-
 ## 📺 Video Tutorial
 
 **What is Python scope resolution? 🔬** (8:05)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/XN83IECAscM)
-
 
 ## What You'll Learn
 
@@ -715,3 +713,11 @@ Build a hierarchical configuration system.
 - **Previous:** [39. Modules](../39-modules/README.md)
 - **Next:** [41. If Name Main](../41-if-name-main/README.md)
 - **[Back to Main README](../README.md)**
+
+## 🎓 Key Takeaways from Video
+
+1. Variables store data values that can be reused
+2. Define functions using the def keyword
+3. Follow along with the video for hands-on practice
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*

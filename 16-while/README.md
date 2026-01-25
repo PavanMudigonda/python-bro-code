@@ -1,6 +1,5 @@
 # Chapter 16: While Loops
 
-
 ## 📺 Video Tutorial
 
 **While loops in Python are easy! ♾️** (8:04)
@@ -165,5 +164,14 @@ while True:
 4. **Dice Game**: Roll until you get 6
 5. **Calculator Loop**: Perform calculations until user quits
 
+## 🎓 Key Takeaways from Video
+
+1. Strings are text data enclosed in quotes
+2. Use loops to repeat actions
+3. Use if-elif-else for conditional logic
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
+
 ## 🔗 Next Chapter
 Continue to [Chapter 17: Interest Calculator](../17-interest-calculator/) to build a compound interest calculator!
+

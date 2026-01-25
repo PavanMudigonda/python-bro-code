@@ -1,12 +1,10 @@
 # 🎯 If __name__ == "__main__"
 
-
 ## 📺 Video Tutorial
 
 **if __name__ == '__main__' for Python beginners 📥** (6:05)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/8A0E1dSyjFM)
-
 
 ## What You'll Learn
 
@@ -1155,3 +1153,11 @@ Develop an API testing and documentation tool:
 ← [Previous: 40 - Scope Resolution](../40-scope-resolution/README.md) | [Next: 42 - Banking Program](../42-banking-program/README.md) →
 
 [↑ Back to Main README](../README.md)
+
+## 🎓 Key Takeaways from Video
+
+1. Strings are text data enclosed in quotes
+2. Define functions using the def keyword
+3. Import modules to use external code
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*

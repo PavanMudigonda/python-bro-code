@@ -1,12 +1,10 @@
 # 🎯 Number Guessing Game
 
-
 ## 📺 Video Tutorial
 
 **Let's code a Python NUMBER GUESSING GAME! 🔢** (9:09)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/jcKe13D6bao)
-
 
 ## What You'll Learn
 
@@ -556,3 +554,13 @@ Numbers follow a hidden pattern.
 - **Previous:** [27. Random Numbers](../27-random-numbers/README.md)
 - **Next:** [29. Rock Paper Scissors Game](../29-rock-paper-scissors-game/README.md)
 - **[Back to Main README](../README.md)**
+
+## 🎓 Key Takeaways from Video
+
+1. Variables store data values that can be reused
+2. Import modules to use external code
+3. Use loops to repeat actions
+4. Use if-elif-else for conditional logic
+5. Test your code to ensure it works correctly
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
