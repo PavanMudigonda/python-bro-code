@@ -1,6 +1,5 @@
 # Chapter 14: Email Slicer Program
 
-
 ## 📺 Video Tutorial
 
 **Python email slicer program 📧** (4:07)
@@ -222,6 +221,14 @@ email = f"{first_name.lower()}.{last_name.lower()}@{company}.com"
 - Always validate email format before processing
 - String slicing is powerful for text processing
 
+## 🎓 Key Takeaways from Video
+
+1. Variables store data values that can be reused
+2. Test your code to ensure it works correctly
+3. Follow along with the video for hands-on practice
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
+
 ## 🔗 Next Chapter
 
 Continue to [Chapter 15: Format Specifiers](../15-format/) to learn advanced string formatting!
@@ -229,3 +236,4 @@ Continue to [Chapter 15: Format Specifiers](../15-format/) to learn advanced str
 ---
 
 **Practice Tip:** Try extending this to validate email formats more thoroughly - check for valid characters, proper domain structure, etc!
+

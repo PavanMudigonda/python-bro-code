@@ -1,6 +1,5 @@
 # Chapter 1: Print Statement
 
-
 ## 📺 Video Tutorial
 
 **Start coding with PYTHON in 5 minutes! 🐍** (5:13)
@@ -65,5 +64,16 @@ Comments are lines that Python ignores. They help explain your code:
 print("This is code")  # This is also a comment
 ```
 
+## 🎓 Key Takeaways from Video
+
+1. Download Python interpreter from python.org
+2. Install an IDE (PyCharm or VS Code) for writing Python code
+3. Add Python to PATH during installation (Windows)
+4. Create a new Python project and file
+5. Lists store multiple items in a single variable
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
+
 ## 🔗 Next Chapter
 Continue to [Chapter 2: Variables](../2-variables/) to learn about storing data!
+

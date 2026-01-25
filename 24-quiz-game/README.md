@@ -1,12 +1,10 @@
 # 🎯 Quiz Game
 
-
 ## 📺 Video Tutorial
 
 **Create a QUIZ GAME with Python 💯** (14:14)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/zehwgTB0vV8)
-
 
 ## What You'll Learn
 
@@ -483,3 +481,11 @@ Create a competitive quiz game for 2-4 players.
 - **Previous:** [23. 2D Collections](../23-2d-collections/README.md)
 - **Next:** [25. Dictionaries](../25-dictionaries/README.md)
 - **[Back to Main README](../README.md)**
+
+## 🎓 Key Takeaways from Video
+
+1. Variables store data values that can be reused
+2. Define functions using the def keyword
+3. Use if-elif-else for conditional logic
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*

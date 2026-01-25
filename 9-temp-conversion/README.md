@@ -1,6 +1,5 @@
 # Chapter 10: Temperature Converter Program
 
-
 ## 📺 Video Tutorial
 
 **Python temperature conversion program 🌡️** (5:44)
@@ -310,5 +309,14 @@ Output:
  40 | 104.0
 ```
 
+## 🎓 Key Takeaways from Video
+
+1. Variables store data values that can be reused
+2. Use if-elif-else for conditional logic
+3. Follow along with the video for hands-on practice
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
+
 ## 🔗 Next Chapter
 Continue to [Chapter 11: Logical Operators](../11-logical/) to learn about AND, OR, and NOT operations!
+

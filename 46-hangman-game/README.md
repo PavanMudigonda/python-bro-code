@@ -1,12 +1,10 @@
 # 🎮 Hangman Game
 
-
 ## 📺 Video Tutorial
 
 **Let's code a HANGMAN GAME in Python! 🕺** (21:13)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/ag8NtD1e0Kc)
-
 
 ## What You'll Learn
 
@@ -689,3 +687,13 @@ if "_" not in hint:  # All letters revealed
 ← [Previous: 44 - Encryption Program](../44-encryption-program/README.md) | [Next: 46 - Python OOP](../46-python-oop/README.md) →
 
 [↑ Back to Main README](../README.md)
+
+## 🎓 Key Takeaways from Video
+
+1. Variables store data values that can be reused
+2. Define functions using the def keyword
+3. Import modules to use external code
+4. Use loops to repeat actions
+5. Use if-elif-else for conditional logic
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*

@@ -1,12 +1,10 @@
 # 🎲 Dice Roller Program
 
-
 ## 📺 Video Tutorial
 
 **Code a dice roller program in 10 minutes! 🎲** (10:24)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/x-Ag2_bJ40Y)
-
 
 ## What You'll Learn
 
@@ -581,3 +579,11 @@ Full combat system using various dice types.
 - **Previous:** [29. Rock Paper Scissors Game](../29-rock-paper-scissors-game/README.md)
 - **Next:** [31. Functions](../31-functions/README.md)
 - **[Back to Main README](../README.md)**
+
+## 🎓 Key Takeaways from Video
+
+1. Import modules to use external code
+2. Use loops to repeat actions
+3. Use comments to document your code
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*

@@ -1,6 +1,5 @@
 # Chapter 17: Compound Interest Calculator
 
-
 ## 📺 Video Tutorial
 
 **Code an interest calculator in 7 minutes! 💵** (7:35)
@@ -359,5 +358,14 @@ Modify `main.py` to:
 4. Add option for monthly compounding
 5. Calculate how long to reach a specific goal
 
+## 🎓 Key Takeaways from Video
+
+1. Use loops to repeat actions
+2. Use if-elif-else for conditional logic
+3. Follow along with the video for hands-on practice
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
+
 ## 🔗 Next Chapter
 Continue to [Chapter 18: For Loops](../18-for/) to learn about iteration and the for loop!
+

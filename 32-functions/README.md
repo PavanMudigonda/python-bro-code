@@ -1,12 +1,10 @@
 # 🔧 Functions
 
-
 ## 📺 Video Tutorial
 
 **Functions in Python are easy 📞** (9:05)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/89cGQjB5R4M)
-
 
 ## What You'll Learn
 
@@ -693,3 +691,11 @@ Organize banking program into well-structured functions.
 - **Previous:** [30. Dice Roller Program](../30-dice-roller-program/README.md)
 - **Next:** [32. Default Arguments](../32-default-arguments/README.md)
 - **[Back to Main README](../README.md)**
+
+## 🎓 Key Takeaways from Video
+
+1. Functions are reusable blocks of code
+2. Define functions using the def keyword
+3. Follow along with the video for hands-on practice
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*

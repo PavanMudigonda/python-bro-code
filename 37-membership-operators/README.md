@@ -1,12 +1,10 @@
 # ✅ Membership Operators
 
-
 ## 📺 Video Tutorial
 
 **Learn Python MEMBERSHIP OPERATORS in 8 minutes! 🔎** (8:23)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/OJ5E7VLsZQM)
-
 
 ## What You'll Learn
 
@@ -507,3 +505,11 @@ Build an inventory checker for a game.
 - **Previous:** [35. Iterables](../35-iterables/README.md)
 - **Next:** [37. List Comprehensions](../37-list-comprehensions/README.md)
 - **[Back to Main README](../README.md)**
+
+## 🎓 Key Takeaways from Video
+
+1. Variables store data values that can be reused
+2. Use if-elif-else for conditional logic
+3. Test your code to ensure it works correctly
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*

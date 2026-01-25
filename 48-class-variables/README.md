@@ -1,12 +1,10 @@
 # 📊 Class Variables
 
-
 ## 📺 Video Tutorial
 
 **Learn class variables in 8 minutes! 🎓** (8:47)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/bytvWg4fPB0)
-
 
 ## What You'll Learn
 
@@ -757,3 +755,11 @@ class Circle:
 ← [Previous: 46 - Python OOP](../46-python-oop/README.md) | [Next: 48 - Inheritance](../48-inheritance/README.md) →
 
 [↑ Back to Main README](../README.md)
+
+## 🎓 Key Takeaways from Video
+
+1. Variables store data values that can be reused
+2. Follow along with the video for hands-on practice
+3. Experiment with the code examples to deepen understanding
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*

@@ -1,12 +1,10 @@
 # 🔀 Match Case Statements
 
-
 ## 📺 Video Tutorial
 
 **Learn Python MATCH-CASE STATEMENTS in 5 minutes! 📆** (5:46)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/L7tT0NZF-Ag)
-
 
 ## What You'll Learn
 
@@ -672,3 +670,11 @@ Create a network protocol router.
 - **Previous:** [37. List Comprehensions](../37-list-comprehensions/README.md)
 - **Next:** [39. Modules](../39-modules/README.md)
 - **[Back to Main README](../README.md)**
+
+## 🎓 Key Takeaways from Video
+
+1. Functions are reusable blocks of code
+2. Understanding the proper syntax is important
+3. Use if-elif-else for conditional logic
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*

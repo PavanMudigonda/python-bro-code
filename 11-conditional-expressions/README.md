@@ -1,12 +1,10 @@
 # Chapter 12: Conditional Expressions (Ternary Operator)
 
-
 ## 📺 Video Tutorial
 
 **Learn conditional expressions in 5 minutes! ❓** (5:21)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/TYyKQBC4bwE)
-
 
 ## 📺 Video Tutorial
 
@@ -151,5 +149,14 @@ print(f"Your badge: {badge}")
 4. Create BMI category determiner
 5. Build a simple voting eligibility checker
 
+## 🎓 Key Takeaways from Video
+
+1. Variables store data values that can be reused
+2. Use if-elif-else for conditional logic
+3. Follow along with the video for hands-on practice
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
+
 ## 🔗 Next Chapter
 Continue to [Chapter 13: String Methods](../13-string/) to explore string manipulation techniques!
+

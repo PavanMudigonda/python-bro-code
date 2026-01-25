@@ -1,12 +1,10 @@
 # 📖 Dictionaries
 
-
 ## 📺 Video Tutorial
 
 **Python dictionaries are easy 📙** (9:06)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/MZZSMaEAC2g)
-
 
 ## What You'll Learn
 
@@ -505,3 +503,11 @@ Simulate a basic analytics system for tracking website visits.
 - **Previous:** [24. Quiz Game](../24-quiz-game/README.md)
 - **Next:** [26. Concession Stand Program](../26-concession-stand-program/README.md)
 - **[Back to Main README](../README.md)**
+
+## 🎓 Key Takeaways from Video
+
+1. Dictionaries store data in key-value pairs
+2. Use loops to repeat actions
+3. Use if-elif-else for conditional logic
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*

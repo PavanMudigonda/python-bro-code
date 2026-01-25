@@ -1,6 +1,5 @@
 # Chapter 4: User Input
 
-
 ## 📺 Video Tutorial
 
 **User input in Python is easy + exercises ⌨️** (9:48)
@@ -149,5 +148,14 @@ Create an interactive program that:
 3. Asks for their favorite food
 4. Creates a personalized message using all the information
 
+## 🎓 Key Takeaways from Video
+
+1. Functions are reusable blocks of code
+2. Use if-elif-else for conditional logic
+3. Follow along with the video for hands-on practice
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
+
 ## 🔗 Next Chapter
 Continue to [Chapter 5: Madlibs Game](../5-madlibs-game/) to create a fun word game using user input!
+

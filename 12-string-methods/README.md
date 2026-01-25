@@ -1,12 +1,10 @@
 # Chapter 13: String Methods
 
-
 ## 📺 Video Tutorial
 
 **String methods in Python are easy! 〰️** (12:14)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/tb6EYiHtcXU)
-
 
 ## 📺 Video Tutorial
 
@@ -163,5 +161,14 @@ else:
 4. **Acronym Generator**: Create acronyms from phrases (e.g., "For Your Information" → "FYI")
 5. **Text Reverser**: Reverse words and sentences in different ways
 
+## 🎓 Key Takeaways from Video
+
+1. Strings are text data enclosed in quotes
+2. Define functions using the def keyword
+3. Use if-elif-else for conditional logic
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
+
 ## 🔗 Next Chapter
 Continue to [Chapter 14: Indexing](../14-index/) to learn how to access individual characters!
+

@@ -1,6 +1,5 @@
 # Chapter 15: Format Specifiers
 
-
 ## 📺 Video Tutorial
 
 **Learn Python format specifiers in 5 minutes! 💬** (5:32)
@@ -195,5 +194,14 @@ print(f"{number:,}")     # 1,234,567
 4. **Time Display**: Format seconds into HH:MM:SS with zero padding
 5. **Product Catalog**: Create aligned product catalog with prices
 
+## 🎓 Key Takeaways from Video
+
+1. Strings are text data enclosed in quotes
+2. Follow along with the video for hands-on practice
+3. Experiment with the code examples to deepen understanding
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
+
 ## 🔗 Next Chapter
 Continue to [Chapter 16: While Loops](../16-while/) to learn about repetition and iteration!
+

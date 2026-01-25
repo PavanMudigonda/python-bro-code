@@ -1,12 +1,10 @@
 # Chapter 7: If-Elif-Else Statements
 
-
 ## 📺 Video Tutorial
 
 **If statements in Python are easy (if, elif, else) 🤔** (12:07)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/FvMPfrgGeKs)
-
 
 ## 📺 Video Tutorial
 
@@ -282,5 +280,14 @@ Remember: In an if-elif-else chain:
 - Once a True condition is found, it executes that block and **skips the rest**
 - The `else` block is **optional** and runs if all conditions are False
 
+## 🎓 Key Takeaways from Video
+
+1. Use if-elif-else for conditional logic
+2. Follow along with the video for hands-on practice
+3. Experiment with the code examples to deepen understanding
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
+
 ## 🔗 Next Chapter
 Continue to [Chapter 8: Calculator](../8-calculator/) to build a functional calculator program!
+

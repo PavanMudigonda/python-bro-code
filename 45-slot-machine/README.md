@@ -1,12 +1,10 @@
 # 🎰 Slot Machine Program
 
-
 ## 📺 Video Tutorial
 
 **Let's code a beginners Python SLOT MACHINE 🎰** (16:38)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/f5J3YiZ3XX8)
-
 
 ## What You'll Learn
 
@@ -1345,3 +1343,13 @@ Build a comprehensive lottery system:
 ← [Previous: 42 - Banking Program](../42-banking-program/README.md) | [Next: 44 - Encryption Program](../44-encryption-program/README.md) →
 
 [↑ Back to Main README](../README.md)
+
+## 🎓 Key Takeaways from Video
+
+1. Functions are reusable blocks of code
+2. Define functions using the def keyword
+3. Import modules to use external code
+4. Use loops to repeat actions
+5. Use if-elif-else for conditional logic
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*

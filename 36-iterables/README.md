@@ -1,12 +1,10 @@
 # 🔄 Iterables
 
-
 ## 📺 Video Tutorial
 
 **Learn Python iterables in 6 minutes! 🔂** (6:48)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/VL_g3LjsFqs)
-
 
 ## What You'll Learn
 
@@ -730,3 +728,11 @@ Create a custom file reader with advanced iteration.
 - **Previous:** [34. Args and Kwargs](../34-args-kwargs/README.md)
 - **Next:** [36. Membership Operators](../36-membership-operators/README.md)
 - **[Back to Main README](../README.md)**
+
+## 🎓 Key Takeaways from Video
+
+1. Lists store multiple items in a single variable
+2. Use loops to repeat actions
+3. Use if-elif-else for conditional logic
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*

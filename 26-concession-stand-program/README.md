@@ -1,12 +1,10 @@
 # 🍿 Concession Stand Program
 
-
 ## 📺 Video Tutorial
 
 **Python concession stand program 🍿** (10:46)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/PbkIzW_70EI)
-
 
 ## What You'll Learn
 
@@ -534,3 +532,11 @@ Create a meal plan system for university dining halls.
 - **Previous:** [25. Dictionaries](../25-dictionaries/README.md)
 - **Next:** [27. Random Numbers](../27-random-numbers/README.md)
 - **[Back to Main README](../README.md)**
+
+## 🎓 Key Takeaways from Video
+
+1. Dictionaries store data in key-value pairs
+2. Use loops to repeat actions
+3. Use if-elif-else for conditional logic
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
