@@ -3,12 +3,9 @@
 
 ## 📺 Video Tutorial
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/jc7TBgMS_kw)
+**Math in Python is easy! 📐** (10:03)
 
-
-## 📺 Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/jc7TBgMS_kw)
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/jc7TBgMS_kw)
 
 ## 📚 What You'll Learn
 Create a fun word game that combines user input and string formatting to generate silly stories!

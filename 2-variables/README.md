@@ -3,16 +3,9 @@
 
 ## 📺 Video Tutorial
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/7IoQ5BGkTJo)
+**Learn Python VARIABLES in 10 minutes! ❎** (10:20)
 
-
-## 📺 Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/7IoQ5BGkTJo)
-
-## � Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-Chapter_2-red?style=for-the-badge&logo=youtube)](https://youtu.be/dvJ6J2H5KjQ)
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/7IoQ5BGkTJo)
 
 ## �📚 What You'll Learn
 Variables are fundamental in programming - they let you store and manipulate data in your programs!

@@ -3,7 +3,9 @@
 
 ## 📺 Video Tutorial
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/fn68QNcatfo)
+**ROCK PAPER SCISSORS game in Python 🗿** (13:38)
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/fn68QNcatfo)
 
 
 ## What You'll Learn

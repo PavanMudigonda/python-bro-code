@@ -3,12 +3,9 @@
 
 ## 📺 Video Tutorial
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/FrvBwdAU2dQ)
+**Learn Python format specifiers in 5 minutes! 💬** (5:32)
 
-
-## 📺 Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/FrvBwdAU2dQ)
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/FrvBwdAU2dQ)
 
 ## 📚 What You'll Learn
 Master advanced string formatting to display numbers, prices, and data professionally!

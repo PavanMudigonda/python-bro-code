@@ -3,7 +3,9 @@
 
 ## 📺 Video Tutorial
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/Xy6qeQWQwFw)
+**Python 2D collections are easy! ⬜** (5:55)
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/Xy6qeQWQwwFw)
 
 
 ## What You'll Learn

@@ -3,7 +3,9 @@
 
 ## 📺 Video Tutorial
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/MZZSMaEAC2g)
+**Python dictionaries are easy 📙** (9:06)
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/MZZSMaEAC2g)
 
 
 ## What You'll Learn
