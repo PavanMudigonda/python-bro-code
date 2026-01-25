@@ -3,7 +3,9 @@
 
 ## 📺 Video Tutorial
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/kbyHLU9JqjE)
+**Python shopping cart program 🛒** (9:12)
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/kbyHLU9JqjE)
 
 
 ## What You'll Learn

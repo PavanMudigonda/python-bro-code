@@ -3,12 +3,9 @@
 
 ## 📺 Video Tutorial
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/rRTjPnVooxE)
+**While loops in Python are easy! ♾️** (8:04)
 
-
-## 📺 Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/rRTjPnVooxE)
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/rRTjPnVooxE)
 
 ## 📚 What You'll Learn
 Execute code repeatedly while a condition is true - essential for creating interactive programs!

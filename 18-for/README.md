@@ -3,12 +3,9 @@
 
 ## 📺 Video Tutorial
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/KWgYha0clzw)
+**Learn Python for loops in 5 minutes! 🔁** (5:47)
 
-
-## 📺 Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/KWgYha0clzw)
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/KWgYha0clzw)
 
 ## 📚 What You'll Learn
 Master the for loop - Python's most elegant way to iterate through sequences and repeat code!
