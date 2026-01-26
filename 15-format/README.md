@@ -1,14 +1,10 @@
 # Chapter 15: Format Specifiers
 
-
 ## 📺 Video Tutorial
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/FrvBwdAU2dQ)
+**Learn Python format specifiers in 5 minutes! 💬** (5:32)
 
-
-## 📺 Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/FrvBwdAU2dQ)
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/FrvBwdAU2dQ)
 
 ## 📚 What You'll Learn
 Master advanced string formatting to display numbers, prices, and data professionally!
@@ -198,5 +194,14 @@ print(f"{number:,}")     # 1,234,567
 4. **Time Display**: Format seconds into HH:MM:SS with zero padding
 5. **Product Catalog**: Create aligned product catalog with prices
 
+## 🎓 Key Takeaways from Video
+
+1. Strings are text data enclosed in quotes
+2. Follow along with the video for hands-on practice
+3. Experiment with the code examples to deepen understanding
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
+
 ## 🔗 Next Chapter
 Continue to [Chapter 16: While Loops](../16-while/) to learn about repetition and iteration!
+

@@ -1,14 +1,10 @@
 # Chapter 17: Compound Interest Calculator
 
-
 ## 📺 Video Tutorial
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/aM5dttidg4Q)
+**Code an interest calculator in 7 minutes! 💵** (7:35)
 
-
-## 📺 Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/aM5dttidg4Q)
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/aM5dttidg4Q)
 
 ## 📚 What You'll Learn
 Calculate compound interest using mathematical formulas in Python - a practical application of math and programming!
@@ -362,5 +358,14 @@ Modify `main.py` to:
 4. Add option for monthly compounding
 5. Calculate how long to reach a specific goal
 
+## 🎓 Key Takeaways from Video
+
+1. Use loops to repeat actions
+2. Use if-elif-else for conditional logic
+3. Follow along with the video for hands-on practice
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
+
 ## 🔗 Next Chapter
 Continue to [Chapter 18: For Loops](../18-for/) to learn about iteration and the for loop!
+

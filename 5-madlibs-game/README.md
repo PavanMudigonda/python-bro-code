@@ -1,14 +1,10 @@
 # Chapter 5: Madlibs Game
 
-
 ## 📺 Video Tutorial
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/jc7TBgMS_kw)
+**Math in Python is easy! 📐** (10:03)
 
-
-## 📺 Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/jc7TBgMS_kw)
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/jc7TBgMS_kw)
 
 ## 📚 What You'll Learn
 Create a fun word game that combines user input and string formatting to generate silly stories!
@@ -173,5 +169,14 @@ Create a madlib that uses at least 10 different words and tells a complete story
 - Creative prompts lead to funnier results
 - Programs can be fun and educational at the same time!
 
+## 🎓 Key Takeaways from Video
+
+1. Functions are reusable blocks of code
+2. Import modules to use external code
+3. Follow along with the video for hands-on practice
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
+
 ## 🔗 Next Chapter
 Continue to [Chapter 6: Arithmetic & Math](../6-arithmetics-maths/) to learn about mathematical operations in Python!
+

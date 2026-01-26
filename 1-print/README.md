@@ -1,18 +1,10 @@
 # Chapter 1: Print Statement
 
-
 ## 📺 Video Tutorial
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/Sg4GMVMdOPo)
+**Start coding with PYTHON in 5 minutes! 🐍** (5:13)
 
-
-## 📺 Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/Sg4GMVMdOPo)
-
-## � Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-Chapter_1-red?style=for-the-badge&logo=youtube)](https://youtu.be/N4mEzFDjqtA)
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/Sg4GMVMdOPo)
 
 ## �📚 What You'll Learn
 In this chapter, you'll learn about the `print()` function, which is your first step in Python programming!
@@ -72,5 +64,16 @@ Comments are lines that Python ignores. They help explain your code:
 print("This is code")  # This is also a comment
 ```
 
+## 🎓 Key Takeaways from Video
+
+1. Download Python interpreter from python.org
+2. Install an IDE (PyCharm or VS Code) for writing Python code
+3. Add Python to PATH during installation (Windows)
+4. Create a new Python project and file
+5. Lists store multiple items in a single variable
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
+
 ## 🔗 Next Chapter
 Continue to [Chapter 2: Variables](../2-variables/) to learn about storing data!
+

@@ -1,20 +1,12 @@
 # Chapter 3: Type Casting
 
-
 ## 📺 Video Tutorial
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/Qtq83lAoogM)
+**Learn type casting in 7 minutes! 💱** (7:39)
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/Qtq83lAoogM)
 
-## 📺 Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/Qtq83lAoogM)
-
-## � Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-Chapter_3-red?style=for-the-badge&logo=youtube)](https://youtu.be/0UlkjwfJvNE)
-
-## �📚 What You'll Learn
+## 📚 What You'll Learn
 Type casting is the process of converting data from one type to another - essential for working with user input and performing calculations!
 
 ## 🎯 Learning Objectives
@@ -156,5 +148,14 @@ Modify `main.py` to create a program that:
 3. Asks for their height in meters (convert to float)
 4. Displays all information with proper types
 
+## 🎓 Key Takeaways from Video
+
+1. Strings are text data enclosed in quotes
+2. Follow along with the video for hands-on practice
+3. Experiment with the code examples to deepen understanding
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
+
 ## 🔗 Next Chapter
 Continue to [Chapter 4: User Input](../4-user-input/) to learn how to interact with users!
+

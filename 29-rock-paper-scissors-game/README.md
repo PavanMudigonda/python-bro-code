@@ -1,10 +1,10 @@
 # ✊✋✌️ Rock Paper Scissors Game
 
-
 ## 📺 Video Tutorial
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/fn68QNcatfo)
+**ROCK PAPER SCISSORS game in Python 🗿** (13:38)
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/fn68QNcatfo)
 
 ## What You'll Learn
 
@@ -635,3 +635,12 @@ Turn-based battle game using RPS mechanics.
 - **Previous:** [28. Number Guessing Game](../28-number-guessing-game/README.md)
 - **Next:** [30. Dice Roller Program](../30-dice-roller-program/README.md)
 - **[Back to Main README](../README.md)**
+
+## 🎓 Key Takeaways from Video
+
+1. Variables store data values that can be reused
+2. Import modules to use external code
+3. Use loops to repeat actions
+4. Use if-elif-else for conditional logic
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*

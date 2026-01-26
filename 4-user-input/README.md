@@ -1,14 +1,10 @@
 # Chapter 4: User Input
 
-
 ## 📺 Video Tutorial
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/nMCOB8KElwo)
+**User input in Python is easy + exercises ⌨️** (9:48)
 
-
-## 📺 Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/nMCOB8KElwo)
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/nMCOB8KElwo)
 
 ## 📚 What You'll Learn
 Learn how to make your programs interactive by accepting input from users!
@@ -152,5 +148,14 @@ Create an interactive program that:
 3. Asks for their favorite food
 4. Creates a personalized message using all the information
 
+## 🎓 Key Takeaways from Video
+
+1. Functions are reusable blocks of code
+2. Use if-elif-else for conditional logic
+3. Follow along with the video for hands-on practice
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
+
 ## 🔗 Next Chapter
 Continue to [Chapter 5: Madlibs Game](../5-madlibs-game/) to create a fun word game using user input!
+

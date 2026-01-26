@@ -1,18 +1,10 @@
 # Chapter 2: Variables and Data Types
 
-
 ## 📺 Video Tutorial
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/7IoQ5BGkTJo)
+**Learn Python VARIABLES in 10 minutes! ❎** (10:20)
 
-
-## 📺 Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/7IoQ5BGkTJo)
-
-## � Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-Chapter_2-red?style=for-the-badge&logo=youtube)](https://youtu.be/dvJ6J2H5KjQ)
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/7IoQ5BGkTJo)
 
 ## �📚 What You'll Learn
 Variables are fundamental in programming - they let you store and manipulate data in your programs!
@@ -128,5 +120,14 @@ print(full_name)  # Output: John Doe
 ## 🚀 Try It Yourself
 Modify `main.py` to create variables about yourself and print them in creative ways!
 
+## 🎓 Key Takeaways from Video
+
+1. Variables store data values that can be reused
+2. Use if-elif-else for conditional logic
+3. Follow along with the video for hands-on practice
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
+
 ## 🔗 Next Chapter
 Continue to [Chapter 3: Type Casting](../3-type-casting/) to learn how to convert between data types!
+

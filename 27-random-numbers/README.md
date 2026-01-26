@@ -1,10 +1,10 @@
 # 🎲 Random Numbers
 
-
 ## 📺 Video Tutorial
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/piJc18hcH0Y)
+**Generate random numbers in Python 🎲** (9:27)
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/piJc18hcH0Y)
 
 ## What You'll Learn
 
@@ -493,3 +493,12 @@ Simulate evolution using random mutations and selection.
 - **Previous:** [26. Concession Stand Program](../26-concession-stand-program/README.md)
 - **Next:** [28. Number Guessing Game](../28-number-guessing-game/README.md)
 - **[Back to Main README](../README.md)**
+
+## 🎓 Key Takeaways from Video
+
+1. Lists store multiple items in a single variable
+2. Import modules to use external code
+3. Use loops to repeat actions
+4. Use if-elif-else for conditional logic
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*

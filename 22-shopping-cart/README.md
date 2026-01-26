@@ -1,10 +1,10 @@
 # 🛒 Shopping Cart Program
 
-
 ## 📺 Video Tutorial
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/kbyHLU9JqjE)
+**Python shopping cart program 🛒** (9:12)
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/kbyHLU9JqjE)
 
 ## What You'll Learn
 
@@ -413,3 +413,11 @@ Create a program that compares prices across multiple stores for the same items.
 - **Previous:** [21. Lists](../21-lists/README.md)
 - **Next:** [23. 2D Collections](../23-2d-collections/README.md)
 - **[Back to Main README](../README.md)**
+
+## 🎓 Key Takeaways from Video
+
+1. Lists store multiple items in a single variable
+2. Use loops to repeat actions
+3. Use if-elif-else for conditional logic
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*

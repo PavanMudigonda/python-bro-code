@@ -1,14 +1,10 @@
 # Chapter 18: For Loops
 
-
 ## 📺 Video Tutorial
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/KWgYha0clzw)
+**Learn Python for loops in 5 minutes! 🔁** (5:47)
 
-
-## 📺 Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/KWgYha0clzw)
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/KWgYha0clzw)
 
 ## 📚 What You'll Learn
 Master the for loop - Python's most elegant way to iterate through sequences and repeat code!
@@ -520,5 +516,15 @@ Modify `main.py` to:
 4. Calculate factorial
 5. Find all multiples of 3 in a range
 
+## 🎓 Key Takeaways from Video
+
+1. Strings are text data enclosed in quotes
+2. Understanding the proper syntax is important
+3. Use loops to repeat actions
+4. Use if-elif-else for conditional logic
+
+> 💡 *These points cover the main concepts from the video tutorial to help reinforce your learning.*
+
 ## 🔗 Next Chapter
 Continue to [Chapter 19: Countdown Timer](../19-timer/) to build a real countdown timer application!
+
