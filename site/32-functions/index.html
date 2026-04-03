@@ -1,0 +1,3828 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Python Bro Code examples.">
+      
+      
+        <meta name="author" content="Pavan Mudigonda">
+      
+      
+      
+        <link rel="prev" href="../31-encryption-program/">
+      
+      
+        <link rel="next" href="../33-default-arguments/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Chapter 32: Functions - Python Bro Code Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#functions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Python Bro Code Docs" class="md-header__button md-logo" aria-label="Python Bro Code Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Bro Code Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 32: Functions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/pavanmudigonda/python-bro-code" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pavanmudigonda/python-bro-code
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Python Bro Code Docs" class="md-nav__button md-logo" aria-label="Python Bro Code Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Python Bro Code Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/pavanmudigonda/python-bro-code" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pavanmudigonda/python-bro-code
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-print/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1: Print
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-type-casting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3: Type Casting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-user-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4: User Input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-madlibs-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5: Madlibs Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-if-statements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: If Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 7: Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-weight-conversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 8: Weight Conversion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-temp-conversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 9: Temp Conversion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-logical-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 10: Logical Operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-conditional-expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 11: Conditional Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-string-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 12: String Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-string-indexing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 13: String Indexing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-email-slicer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 14: Email Slicer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 15: Format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-while/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 16: While
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-interest-calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 17: Interest Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-for/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 18: For
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-nested-loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 19: Nested Loops
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-timer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 20: Timer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-lists-sets-tuples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 21: Lists Sets Tuples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-shopping-cart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 22: Shopping Cart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-2d-collections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 23: 2d Collections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-quiz-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 24: Quiz Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-dictionaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 25: Dictionaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-concession-stand-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 26: Concession Stand Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-random-numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 27: Random Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28-number-guessing-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 28: Number Guessing Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../29-rock-paper-scissors-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 29: Rock Paper Scissors Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30-dice-roller-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 30: Dice Roller Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../31-encryption-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 31: Encryption Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 32: Functions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 32: Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#video-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📺 Video Tutorial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You'll Learn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept Explanation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concept Explanation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are Functions?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-anatomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Anatomy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters-vs-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters vs Arguments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return Values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-if-__name__-__main__-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The if __name__ == "__main__" Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-design-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Design Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Function Design Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-single-responsibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Single Responsibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-descriptive-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Descriptive Names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-keep-functions-small" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Keep Functions Small
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-use-docstrings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Use Docstrings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-scope-in-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variable Scope in Functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-simple-function-no-parameters-no-return" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Simple Function (No Parameters, No Return)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-function-with-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Function with Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-function-with-return-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Function with Return Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4-function-with-multiple-return-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 4: Function with Multiple Return Values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-5-temperature-converter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 5: Temperature Converter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-6-input-validation-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 6: Input Validation Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-7-complete-program-with-main-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 7: Complete Program with Main Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice Exercises
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practice Exercises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beginner-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beginner Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intermediate-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intermediate Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Mistakes to Avoid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Mistakes to Avoid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mistake-1-forgetting-to-return-a-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 1: Forgetting to Return a Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-2-confusing-parameters-and-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 2: Confusing Parameters and Arguments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-3-incorrect-indentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 3: Incorrect Indentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-4-modifying-global-variables-without-declaring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 4: Modifying Global Variables Without Declaring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Applications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real-World Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-web-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Web Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-data-science" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Data Science
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-automation-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Automation Scripts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-game-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Game Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenge-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge Projects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Challenge Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-unit-converter-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Unit Converter Library
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-math-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Math Library
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-string-utilities-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. String Utilities Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-statistics-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Statistics Calculator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-banking-system-with-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Banking System with Functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways-from-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 Key Takeaways from Video
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../33-default-arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 33: Default Arguments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../34-keyword-arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 34: Keyword Arguments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../35-args-kwargs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 35: Args Kwargs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../36-iterables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 36: Iterables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../37-membership-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 37: Membership Operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../38-list-comprehensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 38: List Comprehensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../39-match-case-statements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 39: Match Case Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../40-modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 40: Modules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../41-scope-resolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 41: Scope Resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../42-if-name-main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 42: If Name Main
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../43-credit-card-validator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 43: Credit Card Validator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../44-banking-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 44: Banking Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../45-slot-machine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 45: Slot Machine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../46-hangman-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 46: Hangman Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../47-python-oop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 47: Python Oop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../48-class-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 48: Class Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../49-inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 49: Inheritance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../50-multiple-inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 50: Multiple Inheritance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../51-abstract-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 51: Abstract Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../55-aggregation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 55: Aggregation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../56-composition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 56: Composition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../57-nested-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 57: Nested Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../63-lambda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 63: Lambda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../64-sorting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 64: Sorting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../65-zip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 65: Zip
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../66-recursion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 66: Recursion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../71-execution-time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 71: Execution Time
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../74-iterators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 74: Iterators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../75-generators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 75: Generators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../76-generator-expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 76: Generator Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../77-data-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 77: Data Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../92-qr-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 92: Qr Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../93-music-player/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 93: Music Player
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#video-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📺 Video Tutorial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You'll Learn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept Explanation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concept Explanation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are Functions?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-anatomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Anatomy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters-vs-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters vs Arguments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return Values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-if-__name__-__main__-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The if __name__ == "__main__" Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-design-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Design Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Function Design Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-single-responsibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Single Responsibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-descriptive-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Descriptive Names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-keep-functions-small" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Keep Functions Small
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-use-docstrings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Use Docstrings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-scope-in-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variable Scope in Functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-simple-function-no-parameters-no-return" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Simple Function (No Parameters, No Return)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-function-with-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Function with Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-function-with-return-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Function with Return Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4-function-with-multiple-return-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 4: Function with Multiple Return Values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-5-temperature-converter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 5: Temperature Converter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-6-input-validation-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 6: Input Validation Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-7-complete-program-with-main-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 7: Complete Program with Main Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice Exercises
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practice Exercises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beginner-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beginner Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intermediate-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intermediate Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Mistakes to Avoid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Mistakes to Avoid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mistake-1-forgetting-to-return-a-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 1: Forgetting to Return a Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-2-confusing-parameters-and-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 2: Confusing Parameters and Arguments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-3-incorrect-indentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 3: Incorrect Indentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-4-modifying-global-variables-without-declaring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 4: Modifying Global Variables Without Declaring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Applications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real-World Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-web-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Web Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-data-science" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Data Science
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-automation-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Automation Scripts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-game-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Game Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenge-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge Projects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Challenge Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-unit-converter-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Unit Converter Library
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-math-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Math Library
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-string-utilities-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. String Utilities Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-statistics-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Statistics Calculator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-banking-system-with-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Banking System with Functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways-from-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 Key Takeaways from Video
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="functions">🔧 Functions</h1>
+<h2 id="video-tutorial">📺 Video Tutorial</h2>
+<p><strong>Functions in Python are easy 📞</strong> (9:05)</p>
+<p><a href="https://youtu.be/89cGQjB5R4M"><img alt="Watch on YouTube" src="https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&amp;logo=youtube" /></a></p>
+<h2 id="what-youll-learn">What You'll Learn</h2>
+<p>In this chapter, you'll master Python functions - reusable blocks of code that perform specific tasks. You'll learn how to define functions with parameters, call them with arguments, use return values, and understand why functions are essential for writing organized, maintainable, and DRY (Don't Repeat Yourself) code.</p>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<ul>
+<li>Define functions using the <code>def</code> keyword and proper syntax</li>
+<li>Understand parameters vs arguments and how data flows into functions</li>
+<li>Use return statements to send data back from functions</li>
+<li>Apply the <code>if __name__ == "__main__"</code> pattern for script execution</li>
+<li>Create modular, reusable code with well-named functions</li>
+<li>Organize complex programs by breaking them into smaller function-based units</li>
+</ul>
+<h2 id="concept-explanation">Concept Explanation</h2>
+<h3 id="what-are-functions">What are Functions?</h3>
+<p>Functions are reusable blocks of code that perform a specific task. Think of them as mini-programs within your program. Instead of writing the same code multiple times, you write it once in a function and call it whenever needed.</p>
+<p><strong>Why Use Functions?</strong></p>
+<pre><code class="language-python"># Without functions - repetitive code
+print(&quot;Happy Birthday Sarah!&quot;)
+print(&quot;You are 20 years old!&quot;)
+print()
+
+print(&quot;Happy Birthday Mike!&quot;)
+print(&quot;You are 25 years old!&quot;)
+print()
+
+print(&quot;Happy Birthday Lisa!&quot;)
+print(&quot;You are 30 years old!&quot;)
+print()
+
+# With functions - DRY (Don't Repeat Yourself)
+def happy_birthday(name, age):
+    print(f&quot;Happy Birthday {name}!&quot;)
+    print(f&quot;You are {age} years old!&quot;)
+    print()
+
+happy_birthday(&quot;Sarah&quot;, 20)
+happy_birthday(&quot;Mike&quot;, 25)
+happy_birthday(&quot;Lisa&quot;, 30)
+</code></pre>
+<p>The function version is cleaner, easier to maintain, and if you need to change the message format, you only update it in one place.</p>
+<h3 id="function-anatomy">Function Anatomy</h3>
+<p>A function has several key parts:</p>
+<pre><code class="language-python">def function_name(parameter1, parameter2):  # Definition line
+    &quot;&quot;&quot;Docstring - describes what function does&quot;&quot;&quot;
+    # Function body - indented code block
+    result = parameter1 + parameter2
+    return result  # Return value (optional)
+</code></pre>
+<ol>
+<li><strong><code>def</code> keyword</strong> - Tells Python you're defining a function</li>
+<li><strong>Function name</strong> - Should be descriptive (use snake_case)</li>
+<li><strong>Parameters</strong> - Variables that receive values (in parentheses)</li>
+<li>**Colon <code>:</code> ** - Marks end of definition line</li>
+<li><strong>Docstring</strong> - Optional documentation string (recommended!)</li>
+<li><strong>Function body</strong> - Indented code that runs when function is called</li>
+<li><strong><code>return</code> statement</strong> - Sends a value back to caller (optional)</li>
+</ol>
+<h3 id="parameters-vs-arguments">Parameters vs Arguments</h3>
+<p><strong>Parameters</strong> are variables in the function definition:</p>
+<pre><code class="language-python">def greet(name, greeting):  # name and greeting are PARAMETERS
+    print(f&quot;{greeting}, {name}!&quot;)
+</code></pre>
+<p><strong>Arguments</strong> are the actual values you pass when calling:</p>
+<pre><code class="language-python">greet(&quot;Alice&quot;, &quot;Hello&quot;)  # &quot;Alice&quot; and &quot;Hello&quot; are ARGUMENTS
+</code></pre>
+<p>Think of parameters as placeholders, and arguments as the actual data.</p>
+<h3 id="return-values">Return Values</h3>
+<p>Functions can send data back using <code>return</code>:</p>
+<pre><code class="language-python">def add(a, b):
+    return a + b  # Send sum back to caller
+
+result = add(5, 3)  # result = 8
+print(result)
+</code></pre>
+<p>Without <code>return</code>, functions implicitly return <code>None</code>:</p>
+<pre><code class="language-python">def greet(name):
+    print(f&quot;Hello {name}&quot;)  # No return statement
+
+result = greet(&quot;Bob&quot;)  # Prints &quot;Hello Bob&quot;
+print(result)  # Prints &quot;None&quot;
+</code></pre>
+<h3 id="the-if-__name__-__main__-pattern">The <code>if __name__ == "__main__"</code> Pattern</h3>
+<p>This special pattern prevents code from running when your file is imported as a module:</p>
+<pre><code class="language-python">def my_function():
+    print(&quot;Function called&quot;)
+
+# This code only runs if script is executed directly
+if __name__ == &quot;__main__&quot;:
+    my_function()
+</code></pre>
+<p><strong>How it works:</strong>
+- <code>__name__</code> is a special variable Python sets automatically
+- When script runs directly: <code>__name__ == "__main__"</code>
+- When script is imported: <code>__name__ == "module_name"</code></p>
+<p>This lets you write reusable modules that can be both imported and executed.</p>
+<h3 id="function-design-best-practices">Function Design Best Practices</h3>
+<h4 id="1-single-responsibility">1. <strong>Single Responsibility</strong></h4>
+<p>Each function should do one thing well:</p>
+<pre><code class="language-python"># Bad - does too much
+def process_user(name, email, age):
+    # validate email
+    # save to database
+    # send welcome email
+    # update analytics
+    pass
+
+# Good - single responsibility
+def validate_email(email):
+    return &quot;@&quot; in email
+
+def save_user(name, email, age):
+    # save to database
+    pass
+
+def send_welcome_email(email):
+    # send email
+    pass
+</code></pre>
+<h4 id="2-descriptive-names">2. <strong>Descriptive Names</strong></h4>
+<p>Function names should describe what they do:</p>
+<pre><code class="language-python"># Bad
+def calc(x, y):
+    return x * y
+
+# Good
+def calculate_area(width, height):
+    return width * height
+</code></pre>
+<h4 id="3-keep-functions-small">3. <strong>Keep Functions Small</strong></h4>
+<p>Aim for functions that fit on one screen (typically 10-20 lines).</p>
+<h4 id="4-use-docstrings">4. <strong>Use Docstrings</strong></h4>
+<p>Document what your function does:</p>
+<pre><code class="language-python">def calculate_bmi(weight_kg, height_m):
+    &quot;&quot;&quot;
+    Calculate Body Mass Index.
+
+    Parameters:
+        weight_kg (float): Weight in kilograms
+        height_m (float): Height in meters
+
+    Returns:
+        float: BMI value
+    &quot;&quot;&quot;
+    return weight_kg / (height_m ** 2)
+</code></pre>
+<h3 id="variable-scope-in-functions">Variable Scope in Functions</h3>
+<p>Variables defined inside functions are <strong>local</strong> - they only exist within that function:</p>
+<pre><code class="language-python">def my_function():
+    x = 10  # Local variable
+    print(x)
+
+my_function()  # Prints 10
+print(x)  # Error! x doesn't exist outside function
+</code></pre>
+<h2 id="examples">Examples</h2>
+<h3 id="example-1-simple-function-no-parameters-no-return">Example 1: Simple Function (No Parameters, No Return)</h3>
+<pre><code class="language-python">def greet():
+    &quot;&quot;&quot;Display a simple greeting.&quot;&quot;&quot;
+    print(&quot;Hello!&quot;)
+    print(&quot;Welcome to Python functions&quot;)
+
+# Call the function
+greet()
+# Output:
+# Hello!
+# Welcome to Python functions
+</code></pre>
+<h3 id="example-2-function-with-parameters">Example 2: Function with Parameters</h3>
+<pre><code class="language-python">def greet_person(name, time_of_day):
+    &quot;&quot;&quot;
+    Greet a person based on time of day.
+
+    Parameters:
+        name (str): Person's name
+        time_of_day (str): morning, afternoon, or evening
+    &quot;&quot;&quot;
+    print(f&quot;Good {time_of_day}, {name}!&quot;)
+
+greet_person(&quot;Alice&quot;, &quot;morning&quot;)   # Good morning, Alice!
+greet_person(&quot;Bob&quot;, &quot;afternoon&quot;)   # Good afternoon, Bob!
+greet_person(&quot;Charlie&quot;, &quot;evening&quot;) # Good evening, Charlie!
+</code></pre>
+<h3 id="example-3-function-with-return-value">Example 3: Function with Return Value</h3>
+<pre><code class="language-python">def calculate_area(length, width):
+    &quot;&quot;&quot;
+    Calculate area of a rectangle.
+
+    Parameters:
+        length (float): Length of rectangle
+        width (float): Width of rectangle
+
+    Returns:
+        float: Area of rectangle
+    &quot;&quot;&quot;
+    area = length * width
+    return area
+
+# Use returned value
+room_area = calculate_area(5, 4)
+print(f&quot;Room area: {room_area} sq meters&quot;)  # Room area: 20 sq meters
+
+# Can use directly in expressions
+total_area = calculate_area(5, 4) + calculate_area(3, 3)
+print(f&quot;Total area: {total_area}&quot;)  # Total area: 29
+</code></pre>
+<h3 id="example-4-function-with-multiple-return-values">Example 4: Function with Multiple Return Values</h3>
+<pre><code class="language-python">def get_statistics(numbers):
+    &quot;&quot;&quot;
+    Calculate statistics for a list of numbers.
+
+    Parameters:
+        numbers (list): List of numbers
+
+    Returns:
+        tuple: (minimum, maximum, average)
+    &quot;&quot;&quot;
+    minimum = min(numbers)
+    maximum = max(numbers)
+    average = sum(numbers) / len(numbers)
+
+    return minimum, maximum, average  # Returns tuple
+
+# Unpack returned values
+scores = [85, 92, 78, 90, 88]
+min_score, max_score, avg_score = get_statistics(scores)
+
+print(f&quot;Min: {min_score}&quot;)   # Min: 78
+print(f&quot;Max: {max_score}&quot;)   # Max: 92
+print(f&quot;Avg: {avg_score}&quot;)   # Avg: 86.6
+</code></pre>
+<h3 id="example-5-temperature-converter">Example 5: Temperature Converter</h3>
+<pre><code class="language-python">def celsius_to_fahrenheit(celsius):
+    &quot;&quot;&quot;
+    Convert Celsius to Fahrenheit.
+
+    Parameters:
+        celsius (float): Temperature in Celsius
+
+    Returns:
+        float: Temperature in Fahrenheit
+    &quot;&quot;&quot;
+    fahrenheit = (celsius * 9/5) + 32
+    return fahrenheit
+
+def fahrenheit_to_celsius(fahrenheit):
+    &quot;&quot;&quot;
+    Convert Fahrenheit to Celsius.
+
+    Parameters:
+        fahrenheit (float): Temperature in Fahrenheit
+
+    Returns:
+        float: Temperature in Celsius
+    &quot;&quot;&quot;
+    celsius = (fahrenheit - 32) * 5/9
+    return celsius
+
+# Test conversions
+temp_c = 25
+temp_f = celsius_to_fahrenheit(temp_c)
+print(f&quot;{temp_c}°C = {temp_f}°F&quot;)  # 25°C = 77.0°F
+
+temp_f = 98.6
+temp_c = fahrenheit_to_celsius(temp_f)
+print(f&quot;{temp_f}°F = {temp_c:.1f}°C&quot;)  # 98.6°F = 37.0°C
+</code></pre>
+<h3 id="example-6-input-validation-function">Example 6: Input Validation Function</h3>
+<pre><code class="language-python">def get_positive_number(prompt):
+    &quot;&quot;&quot;
+    Get a positive number from user.
+
+    Parameters:
+        prompt (str): Message to display to user
+
+    Returns:
+        float: Valid positive number
+    &quot;&quot;&quot;
+    while True:
+        try:
+            number = float(input(prompt))
+            if number &gt; 0:
+                return number
+            else:
+                print(&quot;Please enter a positive number.&quot;)
+        except ValueError:
+            print(&quot;Invalid input. Please enter a number.&quot;)
+
+# Use the function
+age = get_positive_number(&quot;Enter your age: &quot;)
+weight = get_positive_number(&quot;Enter your weight (kg): &quot;)
+height = get_positive_number(&quot;Enter your height (m): &quot;)
+
+bmi = weight / (height ** 2)
+print(f&quot;Your BMI is {bmi:.1f}&quot;)
+</code></pre>
+<h3 id="example-7-complete-program-with-main-function">Example 7: Complete Program with Main Function</h3>
+<pre><code class="language-python">def display_menu():
+    &quot;&quot;&quot;Display calculator menu.&quot;&quot;&quot;
+    print(&quot;\n===== CALCULATOR =====&quot;)
+    print(&quot;1. Add&quot;)
+    print(&quot;2. Subtract&quot;)
+    print(&quot;3. Multiply&quot;)
+    print(&quot;4. Divide&quot;)
+    print(&quot;5. Exit&quot;)
+    print(&quot;=&quot; * 22)
+
+def add(a, b):
+    &quot;&quot;&quot;Return sum of two numbers.&quot;&quot;&quot;
+    return a + b
+
+def subtract(a, b):
+    &quot;&quot;&quot;Return difference of two numbers.&quot;&quot;&quot;
+    return a - b
+
+def multiply(a, b):
+    &quot;&quot;&quot;Return product of two numbers.&quot;&quot;&quot;
+    return a * b
+
+def divide(a, b):
+    &quot;&quot;&quot;Return quotient of two numbers.&quot;&quot;&quot;
+    if b == 0:
+        return &quot;Error: Division by zero&quot;
+    return a / b
+
+def get_numbers():
+    &quot;&quot;&quot;Get two numbers from user.&quot;&quot;&quot;
+    num1 = float(input(&quot;Enter first number: &quot;))
+    num2 = float(input(&quot;Enter second number: &quot;))
+    return num1, num2
+
+def main():
+    &quot;&quot;&quot;Main calculator program.&quot;&quot;&quot;
+    while True:
+        display_menu()
+        choice = input(&quot;\nEnter choice (1-5): &quot;)
+
+        if choice == &quot;5&quot;:
+            print(&quot;Thank you for using the calculator!&quot;)
+            break
+
+        if choice in [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;]:
+            num1, num2 = get_numbers()
+
+            if choice == &quot;1&quot;:
+                result = add(num1, num2)
+                operation = &quot;+&quot;
+            elif choice == &quot;2&quot;:
+                result = subtract(num1, num2)
+                operation = &quot;-&quot;
+            elif choice == &quot;3&quot;:
+                result = multiply(num1, num2)
+                operation = &quot;*&quot;
+            elif choice == &quot;4&quot;:
+                result = divide(num1, num2)
+                operation = &quot;/&quot;
+
+            print(f&quot;\n{num1} {operation} {num2} = {result}&quot;)
+        else:
+            print(&quot;Invalid choice. Please try again.&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<h2 id="practice-exercises">Practice Exercises</h2>
+<h3 id="beginner-level">Beginner Level</h3>
+<ol>
+<li>
+<p><strong>Simple Greeting</strong>: Write a function <code>say_hello()</code> that prints "Hello, World!" when called.</p>
+</li>
+<li>
+<p><strong>Name Printer</strong>: Create a function <code>print_name(name)</code> that takes a name parameter and prints "Your name is [name]".</p>
+</li>
+<li>
+<p><strong>Square Calculator</strong>: Write a function <code>square(number)</code> that returns the square of a number.</p>
+</li>
+<li>
+<p><strong>Age Calculator</strong>: Create <code>calculate_age(birth_year, current_year)</code> that returns the person's age.</p>
+</li>
+<li>
+<p><strong>Even or Odd</strong>: Write a function <code>is_even(number)</code> that returns <code>True</code> if the number is even, <code>False</code> otherwise.</p>
+</li>
+</ol>
+<h3 id="intermediate-level">Intermediate Level</h3>
+<ol>
+<li>
+<p><strong>Grade Calculator</strong>: Create a function that takes a score (0-100) and returns the letter grade (A, B, C, D, F).</p>
+</li>
+<li>
+<p><strong>Password Validator</strong>: Write a function that checks if a password is at least 8 characters and contains both letters and numbers.</p>
+</li>
+<li>
+<p><strong>List Reverser</strong>: Create a function that takes a list and returns it reversed (without using built-in <code>reversed()</code> or slicing).</p>
+</li>
+<li>
+<p><strong>Prime Checker</strong>: Write a function <code>is_prime(n)</code> that returns whether a number is prime.</p>
+</li>
+<li>
+<p><strong>String Counter</strong>: Create a function that counts how many times a specific character appears in a string.</p>
+</li>
+</ol>
+<h3 id="advanced-level">Advanced Level</h3>
+<ol>
+<li>
+<p><strong>Fibonacci Generator</strong>: Write a function that generates the first n Fibonacci numbers and returns them as a list.</p>
+</li>
+<li>
+<p><strong>Anagram Checker</strong>: Create a function that determines if two strings are anagrams of each other.</p>
+</li>
+<li>
+<p><strong>Matrix Transposer</strong>: Write a function that transposes a 2D list (matrix) - swap rows and columns.</p>
+</li>
+<li>
+<p><strong>Recursive Factorial</strong>: Implement factorial calculation using recursion.</p>
+</li>
+<li>
+<p><strong>Function Decorator</strong>: Create a function that measures and prints the execution time of another function.</p>
+</li>
+</ol>
+<h2 id="common-mistakes-to-avoid">Common Mistakes to Avoid</h2>
+<h3 id="mistake-1-forgetting-to-return-a-value">Mistake 1: Forgetting to Return a Value</h3>
+<p><strong>Wrong:</strong></p>
+<pre><code class="language-python">def add(a, b):
+    sum_value = a + b
+    # Forgot to return!
+
+result = add(5, 3)
+print(result)  # Prints None
+</code></pre>
+<p><strong>Correct:</strong></p>
+<pre><code class="language-python">def add(a, b):
+    sum_value = a + b
+    return sum_value  # Or: return a + b
+
+result = add(5, 3)
+print(result)  # Prints 8
+</code></pre>
+<p><strong>Why:</strong> Without <code>return</code>, the function returns <code>None</code> by default. You must explicitly return a value if you want to use it.</p>
+<h3 id="mistake-2-confusing-parameters-and-arguments">Mistake 2: Confusing Parameters and Arguments</h3>
+<p><strong>Wrong:</strong></p>
+<pre><code class="language-python">def greet(name):
+    print(f&quot;Hello {name}&quot;)
+
+# Using wrong variable name
+greet(person)  # NameError: person is not defined
+</code></pre>
+<p><strong>Correct:</strong></p>
+<pre><code class="language-python">def greet(name):
+    print(f&quot;Hello {name}&quot;)
+
+person = &quot;Alice&quot;
+greet(person)  # Pass the variable as argument
+# or
+greet(&quot;Alice&quot;)  # Pass value directly
+</code></pre>
+<p><strong>Why:</strong> Parameters are placeholders in the function definition. Arguments are the actual values you pass when calling.</p>
+<h3 id="mistake-3-incorrect-indentation">Mistake 3: Incorrect Indentation</h3>
+<p><strong>Wrong:</strong></p>
+<pre><code class="language-python">def calculate_sum(a, b):
+total = a + b  # Not indented!
+return total
+
+# IndentationError
+</code></pre>
+<p><strong>Correct:</strong></p>
+<pre><code class="language-python">def calculate_sum(a, b):
+    total = a + b  # Properly indented
+    return total
+</code></pre>
+<p><strong>Why:</strong> Function body must be indented (4 spaces is standard). Python uses indentation to define code blocks.</p>
+<h3 id="mistake-4-modifying-global-variables-without-declaring">Mistake 4: Modifying Global Variables Without Declaring</h3>
+<p><strong>Wrong:</strong></p>
+<pre><code class="language-python">count = 0
+
+def increment():
+    count = count + 1  # UnboundLocalError!
+
+increment()
+</code></pre>
+<p><strong>Correct:</strong></p>
+<pre><code class="language-python">count = 0
+
+def increment():
+    global count  # Declare we're using global variable
+    count = count + 1
+
+increment()
+print(count)  # 1
+
+# OR BETTER - use return instead:
+def increment(value):
+    return value + 1
+
+count = increment(count)
+</code></pre>
+<p><strong>Why:</strong> Python treats <code>count</code> as a local variable if you assign to it, causing an error. Better to avoid global variables and use parameters/returns instead.</p>
+<h2 id="real-world-applications">Real-World Applications</h2>
+<h3 id="1-web-development">1. <strong>Web Development</strong></h3>
+<p>Functions are fundamental in web frameworks like Django and Flask. Routes are functions that handle HTTP requests:</p>
+<pre><code class="language-python">@app.route('/user/&lt;username&gt;')
+def show_user_profile(username):
+    # Show user profile page
+    return render_template('profile.html', user=username)
+</code></pre>
+<h3 id="2-data-science">2. <strong>Data Science</strong></h3>
+<p>Data processing pipelines use functions to clean, transform, and analyze data:</p>
+<pre><code class="language-python">def clean_data(dataframe):
+    # Remove nulls, fix formatting, normalize
+    return cleaned_df
+
+def calculate_statistics(dataframe):
+    # Compute mean, median, std dev
+    return stats_dict
+</code></pre>
+<h3 id="3-automation-scripts">3. <strong>Automation Scripts</strong></h3>
+<p>Functions organize automation tasks into reusable components:</p>
+<pre><code class="language-python">def backup_files(source_dir, backup_dir):
+    # Copy files from source to backup
+    pass
+
+def send_email_notification(status):
+    # Send email about backup status
+    pass
+</code></pre>
+<h3 id="4-game-development">4. <strong>Game Development</strong></h3>
+<p>Game logic is built from functions for movement, collision detection, scoring:</p>
+<pre><code class="language-python">def check_collision(player, enemies):
+    # Detect if player hit enemy
+    return collision_detected
+
+def update_score(points):
+    # Add points to player score
+    return new_score
+</code></pre>
+<h2 id="challenge-projects">Challenge Projects</h2>
+<h3 id="1-unit-converter-library">1. <strong>Unit Converter Library</strong></h3>
+<p>Create a module with conversion functions for various units.</p>
+<p><strong>Requirements:</strong>
+- Temperature (C, F, K)
+- Length (meters, feet, miles, km)
+- Weight (kg, pounds, ounces)
+- Time (seconds, minutes, hours, days)
+- Each conversion as a separate function
+- Main menu to select conversion type</p>
+<h3 id="2-math-library">2. <strong>Math Library</strong></h3>
+<p>Build your own math library with common functions.</p>
+<p><strong>Requirements:</strong>
+- factorial(n)
+- power(base, exponent) - without using <code>**</code>
+- gcd(a, b) - greatest common divisor
+- lcm(a, b) - least common multiple
+- is_perfect_square(n)
+- nth_root(number, n)
+- All functions properly documented</p>
+<h3 id="3-string-utilities-module">3. <strong>String Utilities Module</strong></h3>
+<p>Collection of useful string manipulation functions.</p>
+<p><strong>Requirements:</strong>
+- reverse_string(s)
+- is_palindrome(s)
+- count_vowels(s)
+- count_words(s)
+- title_case(s) - capitalize first letter of each word
+- remove_duplicates(s) - remove duplicate characters
+- Test suite for each function</p>
+<h3 id="4-statistics-calculator">4. <strong>Statistics Calculator</strong></h3>
+<p>Statistical analysis functions for data lists.</p>
+<p><strong>Requirements:</strong>
+- mean(data)
+- median(data)
+- mode(data)
+- variance(data)
+- standard_deviation(data)
+- quartiles(data) - return Q1, Q2, Q3
+- Handle edge cases (empty lists, etc.)</p>
+<h3 id="5-banking-system-with-functions">5. <strong>Banking System with Functions</strong></h3>
+<p>Organize banking program into well-structured functions.</p>
+<p><strong>Requirements:</strong>
+- create_account(name, initial_balance)
+- deposit(account, amount)
+- withdraw(account, amount)
+- transfer(from_account, to_account, amount)
+- display_account(account)
+- calculate_interest(account, rate)
+- transaction_history(account)
+- Input validation functions</p>
+<hr />
+<h2 id="navigation">Navigation</h2>
+<ul>
+<li><strong>Previous:</strong> <a href="../30-dice-roller-program/">30. Dice Roller Program</a></li>
+<li><strong>Next:</strong> <a href="32-default-arguments.md">32. Default Arguments</a></li>
+<li><strong><a href="../README.md">Back to Main README</a></strong></li>
+</ul>
+<h2 id="key-takeaways-from-video">🎓 Key Takeaways from Video</h2>
+<ol>
+<li>Functions are reusable blocks of code</li>
+<li>Define functions using the def keyword</li>
+<li>Follow along with the video for hands-on practice</li>
+</ol>
+<blockquote>
+<p>💡 <em>These points cover the main concepts from the video tutorial to help reinforce your learning.</em></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

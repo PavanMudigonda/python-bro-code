@@ -1,0 +1,4059 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Python Bro Code examples.">
+      
+      
+        <meta name="author" content="Pavan Mudigonda">
+      
+      
+      
+        <link rel="prev" href="../33-default-arguments/">
+      
+      
+        <link rel="next" href="../35-args-kwargs/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Chapter 34: Keyword Arguments - Python Bro Code Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#keyword-arguments" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Python Bro Code Docs" class="md-header__button md-logo" aria-label="Python Bro Code Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Bro Code Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 34: Keyword Arguments
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/pavanmudigonda/python-bro-code" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pavanmudigonda/python-bro-code
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Python Bro Code Docs" class="md-nav__button md-logo" aria-label="Python Bro Code Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Python Bro Code Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/pavanmudigonda/python-bro-code" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pavanmudigonda/python-bro-code
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-print/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1: Print
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-type-casting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3: Type Casting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-user-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4: User Input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-madlibs-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5: Madlibs Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-if-statements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: If Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 7: Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-weight-conversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 8: Weight Conversion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-temp-conversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 9: Temp Conversion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-logical-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 10: Logical Operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-conditional-expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 11: Conditional Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-string-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 12: String Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-string-indexing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 13: String Indexing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-email-slicer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 14: Email Slicer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 15: Format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-while/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 16: While
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-interest-calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 17: Interest Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-for/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 18: For
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-nested-loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 19: Nested Loops
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-timer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 20: Timer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-lists-sets-tuples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 21: Lists Sets Tuples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-shopping-cart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 22: Shopping Cart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-2d-collections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 23: 2d Collections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-quiz-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 24: Quiz Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-dictionaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 25: Dictionaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-concession-stand-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 26: Concession Stand Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-random-numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 27: Random Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28-number-guessing-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 28: Number Guessing Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../29-rock-paper-scissors-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 29: Rock Paper Scissors Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30-dice-roller-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 30: Dice Roller Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../31-encryption-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 31: Encryption Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../32-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 32: Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../33-default-arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 33: Default Arguments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 34: Keyword Arguments
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 34: Keyword Arguments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#video-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📺 Video Tutorial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You'll Learn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept Explanation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concept Explanation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-keyword-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are Keyword Arguments?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-use-keyword-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Use Keyword Arguments?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why Use Keyword Arguments?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-improved-readability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Improved Readability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-order-independence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Order Independence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-skip-optional-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Skip Optional Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-prevent-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Prevent Errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixing-positional-and-keyword-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mixing Positional and Keyword Arguments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-keyword-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use Keyword Arguments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyword-only-arguments-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keyword-Only Arguments (Advanced)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-use-descriptive-parameter-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Use Descriptive Parameter Names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-consistency-in-your-codebase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Consistency in Your Codebase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-document-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Document Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-basic-keyword-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Basic Keyword Arguments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-configuration-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Configuration Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-email-sending-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Email Sending Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4-database-query-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 4: Database Query Builder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-5-image-processor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 5: Image Processor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-6-api-request-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 6: API Request Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-7-advanced-reporting-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 7: Advanced Reporting Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice Exercises
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practice Exercises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beginner-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beginner Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intermediate-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intermediate Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Mistakes to Avoid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Mistakes to Avoid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mistake-1-keyword-argument-before-positional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 1: Keyword Argument Before Positional
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-2-misspelling-parameter-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 2: Misspelling Parameter Names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-3-passing-same-argument-twice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 3: Passing Same Argument Twice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-4-not-using-keyword-arguments-when-they-would-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 4: Not Using Keyword Arguments When They Would Help
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Applications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real-World Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-django-web-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Django Web Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-data-science-with-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Data Science with Pandas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-matplotlib-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Matplotlib Visualization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-machine-learning-with-scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Machine Learning with scikit-learn
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenge-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge Projects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Challenge Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-universal-logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Universal Logger
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-smart-search-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Smart Search Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-data-validator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Data Validator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-template-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Template Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-api-client-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. API Client Generator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways-from-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 Key Takeaways from Video
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../35-args-kwargs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 35: Args Kwargs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../36-iterables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 36: Iterables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../37-membership-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 37: Membership Operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../38-list-comprehensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 38: List Comprehensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../39-match-case-statements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 39: Match Case Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../40-modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 40: Modules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../41-scope-resolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 41: Scope Resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../42-if-name-main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 42: If Name Main
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../43-credit-card-validator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 43: Credit Card Validator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../44-banking-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 44: Banking Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../45-slot-machine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 45: Slot Machine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../46-hangman-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 46: Hangman Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../47-python-oop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 47: Python Oop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../48-class-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 48: Class Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../49-inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 49: Inheritance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../50-multiple-inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 50: Multiple Inheritance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../51-abstract-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 51: Abstract Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../55-aggregation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 55: Aggregation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../56-composition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 56: Composition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../57-nested-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 57: Nested Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../63-lambda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 63: Lambda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../64-sorting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 64: Sorting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../65-zip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 65: Zip
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../66-recursion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 66: Recursion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../71-execution-time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 71: Execution Time
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../74-iterators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 74: Iterators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../75-generators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 75: Generators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../76-generator-expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 76: Generator Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../77-data-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 77: Data Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../92-qr-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 92: Qr Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../93-music-player/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 93: Music Player
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#video-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📺 Video Tutorial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You'll Learn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept Explanation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concept Explanation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-keyword-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are Keyword Arguments?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-use-keyword-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Use Keyword Arguments?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why Use Keyword Arguments?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-improved-readability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Improved Readability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-order-independence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Order Independence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-skip-optional-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Skip Optional Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-prevent-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Prevent Errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixing-positional-and-keyword-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mixing Positional and Keyword Arguments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-keyword-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use Keyword Arguments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyword-only-arguments-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keyword-Only Arguments (Advanced)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-use-descriptive-parameter-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Use Descriptive Parameter Names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-consistency-in-your-codebase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Consistency in Your Codebase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-document-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Document Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-basic-keyword-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Basic Keyword Arguments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-configuration-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Configuration Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-email-sending-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Email Sending Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4-database-query-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 4: Database Query Builder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-5-image-processor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 5: Image Processor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-6-api-request-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 6: API Request Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-7-advanced-reporting-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 7: Advanced Reporting Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice Exercises
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practice Exercises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beginner-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beginner Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intermediate-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intermediate Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Mistakes to Avoid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Mistakes to Avoid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mistake-1-keyword-argument-before-positional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 1: Keyword Argument Before Positional
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-2-misspelling-parameter-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 2: Misspelling Parameter Names
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-3-passing-same-argument-twice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 3: Passing Same Argument Twice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-4-not-using-keyword-arguments-when-they-would-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 4: Not Using Keyword Arguments When They Would Help
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Applications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real-World Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-django-web-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Django Web Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-data-science-with-pandas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Data Science with Pandas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-matplotlib-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Matplotlib Visualization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-machine-learning-with-scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Machine Learning with scikit-learn
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenge-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge Projects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Challenge Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-universal-logger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Universal Logger
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-smart-search-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Smart Search Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-data-validator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Data Validator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-template-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Template Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-api-client-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. API Client Generator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways-from-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 Key Takeaways from Video
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="keyword-arguments">🏷️ Keyword Arguments</h1>
+<h2 id="video-tutorial">📺 Video Tutorial</h2>
+<p><strong>Python keyword arguments are awesome! 🗝️</strong> (5:16)</p>
+<p><a href="https://youtu.be/7QCHpAtlSMo"><img alt="Watch on YouTube" src="https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&amp;logo=youtube" /></a></p>
+<h2 id="what-youll-learn">What You'll Learn</h2>
+<p>In this chapter, you'll master keyword arguments - a powerful Python feature that lets you pass arguments by parameter name rather than position. You'll learn how keyword arguments improve code readability, reduce errors, enable flexible function calls, and create self-documenting code that's easier to maintain.</p>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<ul>
+<li>Call functions using keyword arguments (name=value syntax)</li>
+<li>Understand advantages of keyword arguments over positional arguments</li>
+<li>Mix positional and keyword arguments correctly</li>
+<li>Use keyword arguments to skip optional parameters</li>
+<li>Write more readable and maintainable function calls</li>
+<li>Apply best practices for when to use keyword vs positional arguments</li>
+</ul>
+<h2 id="concept-explanation">Concept Explanation</h2>
+<h3 id="what-are-keyword-arguments">What are Keyword Arguments?</h3>
+<p>Keyword arguments are arguments passed to a function with the parameter name explicitly specified using the <code>name=value</code> syntax.</p>
+<p><strong>Positional Arguments (Traditional Way):</strong></p>
+<pre><code class="language-python">def greet(greeting, title, first, last):
+    print(f&quot;{greeting} {title} {first} {last}&quot;)
+
+# Order matters - must match parameter order
+greet(&quot;Hello&quot;, &quot;Mr&quot;, &quot;John&quot;, &quot;Doe&quot;)
+</code></pre>
+<p><strong>Keyword Arguments (Named Way):</strong></p>
+<pre><code class="language-python"># Order doesn't matter - names are explicit
+greet(greeting=&quot;Hello&quot;, title=&quot;Mr&quot;, first=&quot;John&quot;, last=&quot;Doe&quot;)
+
+# Can be in any order!
+greet(last=&quot;Doe&quot;, first=&quot;John&quot;, greeting=&quot;Hello&quot;, title=&quot;Mr&quot;)
+</code></pre>
+<h3 id="why-use-keyword-arguments">Why Use Keyword Arguments?</h3>
+<h4 id="1-improved-readability">1. <strong>Improved Readability</strong></h4>
+<p>Code becomes self-documenting:</p>
+<pre><code class="language-python"># Positional - what do these mean?
+create_user(&quot;alice&quot;, 25, &quot;alice@email.com&quot;, True, False)
+
+# Keyword - crystal clear!
+create_user(
+    username=&quot;alice&quot;,
+    age=25,
+    email=&quot;alice@email.com&quot;,
+    active=True,
+    admin=False
+)
+</code></pre>
+<h4 id="2-order-independence">2. <strong>Order Independence</strong></h4>
+<p>Don't need to remember parameter order:</p>
+<pre><code class="language-python">def book_flight(from_city, to_city, date, passengers, class_type):
+    pass
+
+# Positional - must remember exact order
+book_flight(&quot;NYC&quot;, &quot;LAX&quot;, &quot;2024-05-15&quot;, 2, &quot;economy&quot;)
+
+# Keyword - order doesn't matter
+book_flight(
+    to_city=&quot;LAX&quot;,
+    from_city=&quot;NYC&quot;,
+    passengers=2,
+    date=&quot;2024-05-15&quot;,
+    class_type=&quot;economy&quot;
+)
+</code></pre>
+<h4 id="3-skip-optional-parameters">3. <strong>Skip Optional Parameters</strong></h4>
+<p>Can specify only the parameters you want to change:</p>
+<pre><code class="language-python">def format_text(text, bold=False, italic=False, underline=False, 
+                color=&quot;black&quot;, size=12):
+    pass
+
+# Positional - must provide all or use positional order
+format_text(&quot;Hello&quot;, False, False, False, &quot;red&quot;, 12)
+
+# Keyword - specify only what you need
+format_text(&quot;Hello&quot;, color=&quot;red&quot;)
+format_text(&quot;Hello&quot;, bold=True, size=16)
+</code></pre>
+<h4 id="4-prevent-errors">4. <strong>Prevent Errors</strong></h4>
+<p>Explicit names prevent mistakes:</p>
+<pre><code class="language-python">def set_alarm(hour, minute, am_pm):
+    pass
+
+# Positional - easy to swap hour and minute
+set_alarm(30, 7, &quot;AM&quot;)  # WRONG - meant 7:30, got 30:07
+
+# Keyword - prevents confusion
+set_alarm(hour=7, minute=30, am_pm=&quot;AM&quot;)  # CORRECT
+</code></pre>
+<h3 id="mixing-positional-and-keyword-arguments">Mixing Positional and Keyword Arguments</h3>
+<p>You can combine both styles, but <strong>positional must come first</strong>:</p>
+<pre><code class="language-python">def create_account(username, password, email, notifications=True):
+    pass
+
+# ✓ VALID - positional then keyword
+create_account(&quot;alice&quot;, &quot;pass123&quot;, &quot;alice@email.com&quot;, notifications=False)
+
+# ✓ VALID - some positional, some keyword
+create_account(&quot;alice&quot;, &quot;pass123&quot;, email=&quot;alice@email.com&quot;)
+
+# ✓ VALID - all keyword
+create_account(username=&quot;alice&quot;, password=&quot;pass123&quot;, email=&quot;alice@email.com&quot;)
+
+# ✗ INVALID - keyword before positional
+create_account(username=&quot;alice&quot;, &quot;pass123&quot;, &quot;alice@email.com&quot;)  # SyntaxError!
+</code></pre>
+<h3 id="when-to-use-keyword-arguments">When to Use Keyword Arguments</h3>
+<p><strong>Use Keyword Arguments When:</strong></p>
+<ol>
+<li><strong>Function has many parameters</strong> (3+ is a good rule of thumb)
+   ```python
+   # Hard to read
+   connect("localhost", 5432, "admin", "pass", 30, True, False)</li>
+</ol>
+<p># Easy to read
+   connect(
+       host="localhost",
+       port=5432,
+       user="admin",
+       password="pass",
+       timeout=30,
+       ssl=True,
+       debug=False
+   )
+   ```</p>
+<ol>
+<li><strong>Parameters are boolean flags</strong>
+   ```python
+   # What do these True/False mean?
+   process_data(data, True, False, True)</li>
+</ol>
+<p># Now it's obvious
+   process_data(data, normalize=True, cache=False, async_mode=True)
+   ```</p>
+<ol>
+<li><strong>You want to skip optional parameters</strong>
+   ```python
+   def send_email(to, subject, body, cc=None, bcc=None, priority="normal"):
+       pass</li>
+</ol>
+<p># Skip cc and bcc, set priority
+   send_email("user@example.com", "Hello", "Message", priority="high")
+   ```</p>
+<ol>
+<li><strong>Parameter order isn't intuitive</strong>
+   ```python
+   # Which is width and which is height?
+   create_rectangle(200, 100)</li>
+</ol>
+<p># Clear and explicit
+   create_rectangle(width=200, height=100)
+   ```</p>
+<p><strong>Use Positional Arguments When:</strong></p>
+<ol>
+<li>
+<p><strong>Function has 1-2 obvious parameters</strong>
+   <code>python
+   # These are fine with positional
+   print("Hello")
+   len([1, 2, 3])
+   max(5, 10)</code></p>
+</li>
+<li>
+<p><strong>Order is natural and obvious</strong>
+   <code>python
+   # From/to order is intuitive
+   range(1, 10)
+   substring.replace("old", "new")</code></p>
+</li>
+</ol>
+<h3 id="keyword-only-arguments-advanced">Keyword-Only Arguments (Advanced)</h3>
+<p>You can force parameters to be keyword-only using <code>*</code>:</p>
+<pre><code class="language-python">def create_user(username, *, email, age):
+    # username can be positional or keyword
+    # email and age MUST be keyword
+    pass
+
+# ✓ VALID
+create_user(&quot;alice&quot;, email=&quot;alice@email.com&quot;, age=25)
+
+# ✗ INVALID - email and age must be keyword
+create_user(&quot;alice&quot;, &quot;alice@email.com&quot;, 25)  # TypeError!
+</code></pre>
+<p>This prevents mistakes when parameter order might be confusing.</p>
+<h3 id="best-practices">Best Practices</h3>
+<h4 id="1-use-descriptive-parameter-names">1. <strong>Use Descriptive Parameter Names</strong></h4>
+<pre><code class="language-python"># Bad - unclear names
+def calc(x, y, z):
+    pass
+
+# Good - clear names
+def calculate_price(base_price, tax_rate, discount):
+    pass
+</code></pre>
+<h4 id="2-consistency-in-your-codebase">2. <strong>Consistency in Your Codebase</strong></h4>
+<pre><code class="language-python"># If you use keyword arguments for similar functions, be consistent
+create_user(username=&quot;alice&quot;, email=&quot;alice@email.com&quot;)
+create_admin(username=&quot;bob&quot;, email=&quot;bob@email.com&quot;)  # Same style
+</code></pre>
+<h4 id="3-document-parameters">3. <strong>Document Parameters</strong></h4>
+<pre><code class="language-python">def complex_function(param1, param2, param3=None, param4=False):
+    &quot;&quot;&quot;
+    Brief description.
+
+    Parameters:
+        param1 (type): Description
+        param2 (type): Description
+        param3 (type, optional): Description. Defaults to None.
+        param4 (bool, optional): Description. Defaults to False.
+    &quot;&quot;&quot;
+    pass
+</code></pre>
+<h2 id="examples">Examples</h2>
+<h3 id="example-1-basic-keyword-arguments">Example 1: Basic Keyword Arguments</h3>
+<pre><code class="language-python">def introduce_person(greeting, title, first_name, last_name):
+    &quot;&quot;&quot;Print a formal introduction.&quot;&quot;&quot;
+    print(f&quot;{greeting} {title} {first_name} {last_name}&quot;)
+
+# Positional - order matters
+introduce_person(&quot;Hello&quot;, &quot;Dr&quot;, &quot;Jane&quot;, &quot;Smith&quot;)
+
+# Keyword - order doesn't matter
+introduce_person(
+    last_name=&quot;Smith&quot;,
+    first_name=&quot;Jane&quot;,
+    greeting=&quot;Hello&quot;,
+    title=&quot;Dr&quot;
+)
+
+# Mixed - positional first, then keyword
+introduce_person(&quot;Hello&quot;, &quot;Dr&quot;, last_name=&quot;Smith&quot;, first_name=&quot;Jane&quot;)
+
+# Output for all: Hello Dr Jane Smith
+</code></pre>
+<h3 id="example-2-configuration-function">Example 2: Configuration Function</h3>
+<pre><code class="language-python">def configure_server(hostname, port, ssl=True, timeout=30, 
+                     max_connections=100, debug=False):
+    &quot;&quot;&quot;
+    Configure server settings.
+
+    Parameters:
+        hostname (str): Server hostname
+        port (int): Port number
+        ssl (bool): Enable SSL (default: True)
+        timeout (int): Timeout in seconds (default: 30)
+        max_connections (int): Max concurrent connections (default: 100)
+        debug (bool): Enable debug mode (default: False)
+    &quot;&quot;&quot;
+    print(f&quot;Server Configuration:&quot;)
+    print(f&quot;  Host: {hostname}:{port}&quot;)
+    print(f&quot;  SSL: {ssl}&quot;)
+    print(f&quot;  Timeout: {timeout}s&quot;)
+    print(f&quot;  Max Connections: {max_connections}&quot;)
+    print(f&quot;  Debug: {debug}&quot;)
+
+# Basic configuration
+configure_server(&quot;api.example.com&quot;, 443)
+
+# Enable debug mode
+configure_server(&quot;localhost&quot;, 8000, debug=True)
+
+# Full customization with keyword arguments
+configure_server(
+    hostname=&quot;prod.example.com&quot;,
+    port=443,
+    ssl=True,
+    timeout=60,
+    max_connections=500,
+    debug=False
+)
+</code></pre>
+<h3 id="example-3-email-sending-function">Example 3: Email Sending Function</h3>
+<pre><code class="language-python">def send_email(recipient, subject, body, sender=&quot;noreply@company.com&quot;,
+               cc=None, bcc=None, attachments=None, priority=&quot;normal&quot;):
+    &quot;&quot;&quot;
+    Send an email with various options.
+
+    Parameters:
+        recipient (str): Recipient email address
+        subject (str): Email subject
+        body (str): Email body content
+        sender (str): Sender email (default: noreply@company.com)
+        cc (str): CC address (default: None)
+        bcc (str): BCC address (default: None)
+        attachments (list): List of file paths (default: None)
+        priority (str): Email priority (default: normal)
+    &quot;&quot;&quot;
+    print(f&quot;Sending email:&quot;)
+    print(f&quot;  From: {sender}&quot;)
+    print(f&quot;  To: {recipient}&quot;)
+    if cc:
+        print(f&quot;  CC: {cc}&quot;)
+    if bcc:
+        print(f&quot;  BCC: {bcc}&quot;)
+    print(f&quot;  Subject: {subject}&quot;)
+    print(f&quot;  Priority: {priority}&quot;)
+    if attachments:
+        print(f&quot;  Attachments: {', '.join(attachments)}&quot;)
+    print(f&quot;  Body: {body[:50]}...&quot;)
+
+# Simple email
+send_email(&quot;user@example.com&quot;, &quot;Hello&quot;, &quot;This is a test message&quot;)
+
+# With CC and priority
+send_email(
+    recipient=&quot;user@example.com&quot;,
+    subject=&quot;Important Update&quot;,
+    body=&quot;Please review the attached document&quot;,
+    cc=&quot;manager@example.com&quot;,
+    priority=&quot;high&quot;
+)
+
+# Complex email with all options
+send_email(
+    recipient=&quot;client@example.com&quot;,
+    subject=&quot;Project Proposal&quot;,
+    body=&quot;Please find attached our project proposal...&quot;,
+    sender=&quot;sales@company.com&quot;,
+    cc=&quot;team@company.com&quot;,
+    bcc=&quot;archive@company.com&quot;,
+    attachments=[&quot;proposal.pdf&quot;, &quot;budget.xlsx&quot;],
+    priority=&quot;high&quot;
+)
+</code></pre>
+<h3 id="example-4-database-query-builder">Example 4: Database Query Builder</h3>
+<pre><code class="language-python">def build_query(table, columns=&quot;*&quot;, where=None, order_by=None, 
+                limit=None, offset=0):
+    &quot;&quot;&quot;
+    Build a SQL SELECT query.
+
+    Parameters:
+        table (str): Table name
+        columns (str): Columns to select (default: *)
+        where (str): WHERE clause (default: None)
+        order_by (str): ORDER BY clause (default: None)
+        limit (int): LIMIT number (default: None)
+        offset (int): OFFSET number (default: 0)
+
+    Returns:
+        str: SQL query string
+    &quot;&quot;&quot;
+    query = f&quot;SELECT {columns} FROM {table}&quot;
+
+    if where:
+        query += f&quot; WHERE {where}&quot;
+
+    if order_by:
+        query += f&quot; ORDER BY {order_by}&quot;
+
+    if limit:
+        query += f&quot; LIMIT {limit}&quot;
+        if offset:
+            query += f&quot; OFFSET {offset}&quot;
+
+    return query
+
+# Simple query
+print(build_query(&quot;users&quot;))
+# SELECT * FROM users
+
+# With WHERE clause
+print(build_query(&quot;users&quot;, where=&quot;age &gt; 18&quot;))
+# SELECT * FROM users WHERE age &gt; 18
+
+# Complex query with keyword arguments
+print(build_query(
+    table=&quot;products&quot;,
+    columns=&quot;id, name, price&quot;,
+    where=&quot;category = 'electronics'&quot;,
+    order_by=&quot;price DESC&quot;,
+    limit=10
+))
+# SELECT id, name, price FROM products 
+# WHERE category = 'electronics' ORDER BY price DESC LIMIT 10
+
+# Pagination
+print(build_query(
+    table=&quot;posts&quot;,
+    order_by=&quot;created_at DESC&quot;,
+    limit=20,
+    offset=40
+))
+# SELECT * FROM posts ORDER BY created_at DESC LIMIT 20 OFFSET 40
+</code></pre>
+<h3 id="example-5-image-processor">Example 5: Image Processor</h3>
+<pre><code class="language-python">def process_image(filename, resize=None, rotate=0, flip=None,
+                  brightness=1.0, contrast=1.0, output_format=&quot;jpg&quot;):
+    &quot;&quot;&quot;
+    Process an image with various transformations.
+
+    Parameters:
+        filename (str): Input file path
+        resize (tuple): New size as (width, height) (default: None)
+        rotate (int): Rotation degrees (default: 0)
+        flip (str): Flip direction 'horizontal' or 'vertical' (default: None)
+        brightness (float): Brightness multiplier (default: 1.0)
+        contrast (float): Contrast multiplier (default: 1.0)
+        output_format (str): Output format (default: jpg)
+    &quot;&quot;&quot;
+    print(f&quot;Processing: {filename}&quot;)
+
+    if resize:
+        print(f&quot;  Resizing to {resize[0]}x{resize[1]}&quot;)
+
+    if rotate != 0:
+        print(f&quot;  Rotating {rotate} degrees&quot;)
+
+    if flip:
+        print(f&quot;  Flipping {flip}&quot;)
+
+    if brightness != 1.0:
+        print(f&quot;  Adjusting brightness: {brightness}&quot;)
+
+    if contrast != 1.0:
+        print(f&quot;  Adjusting contrast: {contrast}&quot;)
+
+    print(f&quot;  Output format: {output_format}&quot;)
+
+# Simple processing
+process_image(&quot;photo.jpg&quot;)
+
+# Resize only
+process_image(&quot;photo.jpg&quot;, resize=(800, 600))
+
+# Multiple transformations using keyword arguments
+process_image(
+    filename=&quot;photo.jpg&quot;,
+    resize=(1920, 1080),
+    rotate=90,
+    brightness=1.2,
+    output_format=&quot;png&quot;
+)
+
+# Complete transformation
+process_image(
+    &quot;landscape.jpg&quot;,
+    resize=(1200, 800),
+    rotate=180,
+    flip=&quot;horizontal&quot;,
+    brightness=1.1,
+    contrast=1.3,
+    output_format=&quot;webp&quot;
+)
+</code></pre>
+<h3 id="example-6-api-request-function">Example 6: API Request Function</h3>
+<pre><code class="language-python">def api_request(endpoint, method=&quot;GET&quot;, headers=None, params=None,
+                data=None, timeout=30, verify_ssl=True):
+    &quot;&quot;&quot;
+    Make an API request (simulated).
+
+    Parameters:
+        endpoint (str): API endpoint URL
+        method (str): HTTP method (default: GET)
+        headers (dict): Request headers (default: None)
+        params (dict): URL parameters (default: None)
+        data (dict): Request body data (default: None)
+        timeout (int): Timeout in seconds (default: 30)
+        verify_ssl (bool): Verify SSL certificate (default: True)
+    &quot;&quot;&quot;
+    print(f&quot;API Request:&quot;)
+    print(f&quot;  URL: {endpoint}&quot;)
+    print(f&quot;  Method: {method}&quot;)
+    print(f&quot;  Timeout: {timeout}s&quot;)
+    print(f&quot;  SSL Verification: {verify_ssl}&quot;)
+
+    if headers:
+        print(f&quot;  Headers: {headers}&quot;)
+    if params:
+        print(f&quot;  Params: {params}&quot;)
+    if data:
+        print(f&quot;  Data: {data}&quot;)
+
+# Simple GET request
+api_request(&quot;https://api.example.com/users&quot;)
+
+# GET with parameters
+api_request(
+    endpoint=&quot;https://api.example.com/search&quot;,
+    params={&quot;q&quot;: &quot;python&quot;, &quot;limit&quot;: 10}
+)
+
+# POST request with data
+api_request(
+    endpoint=&quot;https://api.example.com/users&quot;,
+    method=&quot;POST&quot;,
+    data={&quot;name&quot;: &quot;Alice&quot;, &quot;email&quot;: &quot;alice@example.com&quot;},
+    headers={&quot;Content-Type&quot;: &quot;application/json&quot;}
+)
+
+# Complex request
+api_request(
+    endpoint=&quot;https://api.example.com/data&quot;,
+    method=&quot;PUT&quot;,
+    headers={
+        &quot;Authorization&quot;: &quot;Bearer token123&quot;,
+        &quot;Content-Type&quot;: &quot;application/json&quot;
+    },
+    data={&quot;status&quot;: &quot;active&quot;},
+    timeout=60,
+    verify_ssl=False
+)
+</code></pre>
+<h3 id="example-7-advanced-reporting-function">Example 7: Advanced Reporting Function</h3>
+<pre><code class="language-python">def generate_report(title, data, report_type=&quot;summary&quot;, 
+                    include_charts=True, include_stats=True,
+                    page_size=&quot;A4&quot;, orientation=&quot;portrait&quot;,
+                    font_size=12, color_scheme=&quot;default&quot;):
+    &quot;&quot;&quot;
+    Generate a customizable report.
+
+    Parameters:
+        title (str): Report title
+        data (list): Report data
+        report_type (str): Type of report (default: summary)
+        include_charts (bool): Include charts (default: True)
+        include_stats (bool): Include statistics (default: True)
+        page_size (str): Page size (default: A4)
+        orientation (str): Page orientation (default: portrait)
+        font_size (int): Base font size (default: 12)
+        color_scheme (str): Color scheme (default: default)
+    &quot;&quot;&quot;
+    print(f&quot;{'='*50}&quot;)
+    print(f&quot;GENERATING REPORT: {title}&quot;)
+    print(f&quot;{'='*50}&quot;)
+    print(f&quot;Type: {report_type}&quot;)
+    print(f&quot;Data points: {len(data)}&quot;)
+    print(f&quot;Page: {page_size} {orientation}&quot;)
+    print(f&quot;Font size: {font_size}pt&quot;)
+    print(f&quot;Color scheme: {color_scheme}&quot;)
+    print(f&quot;Include charts: {include_charts}&quot;)
+    print(f&quot;Include statistics: {include_stats}&quot;)
+
+# Basic report
+sales_data = [100, 150, 200, 175, 225]
+generate_report(&quot;Monthly Sales&quot;, sales_data)
+
+# Customized report
+generate_report(
+    title=&quot;Annual Financial Report&quot;,
+    data=sales_data,
+    report_type=&quot;detailed&quot;,
+    page_size=&quot;Letter&quot;,
+    orientation=&quot;landscape&quot;,
+    color_scheme=&quot;corporate&quot;
+)
+
+# Minimal report (no charts/stats)
+generate_report(
+    &quot;Quick Summary&quot;,
+    sales_data,
+    include_charts=False,
+    include_stats=False,
+    font_size=10
+)
+</code></pre>
+<h2 id="practice-exercises">Practice Exercises</h2>
+<h3 id="beginner-level">Beginner Level</h3>
+<ol>
+<li>
+<p><strong>Person Profile</strong>: Create a function <code>create_profile(name, age, city, country)</code> and call it using keyword arguments in different orders.</p>
+</li>
+<li>
+<p><strong>Pizza Order</strong>: Write <code>order_pizza(size, crust, toppings)</code> and practice calling it with keyword arguments.</p>
+</li>
+<li>
+<p><strong>Book Info</strong>: Create <code>display_book(title, author, year, pages)</code> and call it with mixed positional and keyword arguments.</p>
+</li>
+<li>
+<p><strong>Calculator</strong>: Write <code>calculate(num1, num2, operation)</code> and call it using keyword arguments for clarity.</p>
+</li>
+<li>
+<p><strong>Color Mixer</strong>: Create <code>mix_colors(color1, color2, ratio)</code> where ratio defaults to 0.5, use keyword arguments.</p>
+</li>
+</ol>
+<h3 id="intermediate-level">Intermediate Level</h3>
+<ol>
+<li>
+<p><strong>Event Scheduler</strong>: Create a function with parameters for event name, date, time, location, attendees, and optional notes. Use keyword arguments for flexibility.</p>
+</li>
+<li>
+<p><strong>Product Filter</strong>: Write a function that filters products by category, price range, brand, and availability. Use keyword arguments to make filters optional.</p>
+</li>
+<li>
+<p><strong>User Registration</strong>: Create a registration function with required fields (username, email) and optional fields (phone, address, preferences). Demonstrate keyword argument usage.</p>
+</li>
+<li>
+<p><strong>Chart Generator</strong>: Write a function that creates charts with customizable title, data, chart type, colors, and legend. Use keyword arguments for customization.</p>
+</li>
+<li>
+<p><strong>Notification System</strong>: Create a function that sends notifications with type, message, recipient, priority, and optional scheduled time. Use keyword arguments.</p>
+</li>
+</ol>
+<h3 id="advanced-level">Advanced Level</h3>
+<ol>
+<li>
+<p><strong>API Wrapper</strong>: Create a comprehensive API wrapper function with method, endpoint, headers, params, body, auth, timeout, and retry logic. Use keyword-only arguments for optional parameters.</p>
+</li>
+<li>
+<p><strong>Database ORM</strong>: Write a query builder that uses keyword arguments for table, select, where, join, group_by, having, order_by, and limit clauses.</p>
+</li>
+<li>
+<p><strong>Report Generator</strong>: Create a complex report generator with 10+ optional parameters using keyword arguments, including output format, styling, filters, and sorting.</p>
+</li>
+<li>
+<p><strong>Config Manager</strong>: Write a configuration manager that accepts arbitrary keyword arguments and validates them against a schema.</p>
+</li>
+<li>
+<p><strong>ML Model Trainer</strong>: Create a function that trains a model with hyperparameters passed as keyword arguments (learning_rate, epochs, batch_size, optimizer, etc.).</p>
+</li>
+</ol>
+<h2 id="common-mistakes-to-avoid">Common Mistakes to Avoid</h2>
+<h3 id="mistake-1-keyword-argument-before-positional">Mistake 1: Keyword Argument Before Positional</h3>
+<p><strong>Wrong:</strong></p>
+<pre><code class="language-python">def greet(greeting, title, first, last):
+    print(f&quot;{greeting} {title} {first} {last}&quot;)
+
+# SyntaxError: positional argument follows keyword argument
+greet(greeting=&quot;Hello&quot;, title=&quot;Mr&quot;, &quot;John&quot;, &quot;Doe&quot;)
+</code></pre>
+<p><strong>Correct:</strong></p>
+<pre><code class="language-python"># Positional arguments must come first
+greet(&quot;Hello&quot;, &quot;Mr&quot;, first=&quot;John&quot;, last=&quot;Doe&quot;)
+
+# Or use all keyword arguments
+greet(greeting=&quot;Hello&quot;, title=&quot;Mr&quot;, first=&quot;John&quot;, last=&quot;Doe&quot;)
+</code></pre>
+<p><strong>Why:</strong> Python requires positional arguments to come before keyword arguments in function calls.</p>
+<h3 id="mistake-2-misspelling-parameter-names">Mistake 2: Misspelling Parameter Names</h3>
+<p><strong>Wrong:</strong></p>
+<pre><code class="language-python">def create_user(username, email, age):
+    pass
+
+# TypeError: create_user() got an unexpected keyword argument 'user_name'
+create_user(user_name=&quot;alice&quot;, email=&quot;alice@example.com&quot;, age=25)
+</code></pre>
+<p><strong>Correct:</strong></p>
+<pre><code class="language-python"># Use exact parameter names
+create_user(username=&quot;alice&quot;, email=&quot;alice@example.com&quot;, age=25)
+</code></pre>
+<p><strong>Why:</strong> Keyword argument names must exactly match parameter names. Typos cause errors.</p>
+<h3 id="mistake-3-passing-same-argument-twice">Mistake 3: Passing Same Argument Twice</h3>
+<p><strong>Wrong:</strong></p>
+<pre><code class="language-python">def greet(name, greeting):
+    print(f&quot;{greeting}, {name}!&quot;)
+
+# TypeError: greet() got multiple values for argument 'name'
+greet(&quot;Alice&quot;, name=&quot;Bob&quot;)
+</code></pre>
+<p><strong>Correct:</strong></p>
+<pre><code class="language-python"># Choose one way to pass the argument
+greet(&quot;Alice&quot;, greeting=&quot;Hello&quot;)
+# or
+greet(name=&quot;Alice&quot;, greeting=&quot;Hello&quot;)
+</code></pre>
+<p><strong>Why:</strong> You can't pass the same parameter both positionally and by keyword.</p>
+<h3 id="mistake-4-not-using-keyword-arguments-when-they-would-help">Mistake 4: Not Using Keyword Arguments When They Would Help</h3>
+<p><strong>Wrong:</strong></p>
+<pre><code class="language-python"># What do these mean?
+configure_app(True, False, True, 30, &quot;localhost&quot;, 8080, False)
+# Very hard to understand!
+</code></pre>
+<p><strong>Correct:</strong></p>
+<pre><code class="language-python"># Much clearer with keyword arguments
+configure_app(
+    debug=True,
+    testing=False,
+    logging=True,
+    timeout=30,
+    host=&quot;localhost&quot;,
+    port=8080,
+    ssl=False
+)
+</code></pre>
+<p><strong>Why:</strong> Keyword arguments make code self-documenting and easier to maintain.</p>
+<h2 id="real-world-applications">Real-World Applications</h2>
+<h3 id="1-django-web-framework">1. <strong>Django Web Framework</strong></h3>
+<p>Django extensively uses keyword arguments for clarity:</p>
+<pre><code class="language-python"># URL routing
+path('articles/&lt;int:year&gt;/', views.year_archive, name='year_archive')
+
+# Database queries
+Article.objects.filter(pub_date__year=2024, status='published')
+
+# Form creation
+forms.CharField(max_length=100, required=True, label='Username')
+</code></pre>
+<h3 id="2-data-science-with-pandas">2. <strong>Data Science with Pandas</strong></h3>
+<p>Pandas functions use keyword arguments for flexible data manipulation:</p>
+<pre><code class="language-python">df.read_csv(
+    'data.csv',
+    sep=',',
+    header=0,
+    names=['col1', 'col2'],
+    dtype={'col1': int},
+    parse_dates=['date_column']
+)
+</code></pre>
+<h3 id="3-matplotlib-visualization">3. <strong>Matplotlib Visualization</strong></h3>
+<p>Plotting functions use keywords for customization:</p>
+<pre><code class="language-python">plt.plot(
+    x, y,
+    color='blue',
+    linestyle='--',
+    linewidth=2,
+    marker='o',
+    label='Data'
+)
+</code></pre>
+<h3 id="4-machine-learning-with-scikit-learn">4. <strong>Machine Learning with scikit-learn</strong></h3>
+<p>ML models are configured with keyword arguments:</p>
+<pre><code class="language-python">model = RandomForestClassifier(
+    n_estimators=100,
+    max_depth=10,
+    min_samples_split=5,
+    random_state=42
+)
+</code></pre>
+<h2 id="challenge-projects">Challenge Projects</h2>
+<h3 id="1-universal-logger">1. <strong>Universal Logger</strong></h3>
+<p>Create a logging system with extensive keyword arguments.</p>
+<p><strong>Requirements:</strong>
+- Required: message
+- Keywords: level, timestamp, file, line_number, function_name, color, format
+- Support different log levels
+- Optional file output
+- Colored console output
+- Custom formatting</p>
+<h3 id="2-smart-search-function">2. <strong>Smart Search Function</strong></h3>
+<p>Build a search engine with flexible keyword arguments.</p>
+<p><strong>Requirements:</strong>
+- Required: query, data
+- Keywords: case_sensitive, fuzzy_match, max_results, sort_by, filters
+- Support multiple search modes
+- Ranking algorithm with keyword params
+- Filter by multiple criteria</p>
+<h3 id="3-data-validator">3. <strong>Data Validator</strong></h3>
+<p>Create a comprehensive validation function.</p>
+<p><strong>Requirements:</strong>
+- Required: data, schema
+- Keywords: strict_mode, coerce_types, custom_validators, error_format
+- Validate different data types
+- Custom error messages
+- Optional type coercion
+- Nested validation support</p>
+<h3 id="4-template-engine">4. <strong>Template Engine</strong></h3>
+<p>Build a template renderer with keyword arguments.</p>
+<p><strong>Requirements:</strong>
+- Required: template, context
+- Keywords: autoescape, trim_blocks, cache, filters, globals
+- Variable substitution
+- Control structures
+- Custom filters via keywords
+- Template inheritance</p>
+<h3 id="5-api-client-generator">5. <strong>API Client Generator</strong></h3>
+<p>Create an API client builder using keyword arguments.</p>
+<p><strong>Requirements:</strong>
+- Required: base_url
+- Keywords: auth, headers, timeout, retries, verify_ssl, proxies, hooks
+- Support different auth methods (passed as keywords)
+- Configurable retry logic
+- Custom request/response hooks
+- Session management</p>
+<hr />
+<h2 id="navigation">Navigation</h2>
+<ul>
+<li><strong>Previous:</strong> <a href="32-default-arguments.md">32. Default Arguments</a></li>
+<li><strong>Next:</strong> <a href="34-args-kwargs.md">34. Args and Kwargs</a></li>
+<li><strong><a href="../README.md">Back to Main README</a></strong></li>
+</ul>
+<h2 id="key-takeaways-from-video">🎓 Key Takeaways from Video</h2>
+<ol>
+<li>Functions are reusable blocks of code</li>
+<li>Understanding the proper syntax is important</li>
+<li>Define functions using the def keyword</li>
+<li>Use loops to repeat actions</li>
+</ol>
+<blockquote>
+<p>💡 <em>These points cover the main concepts from the video tutorial to help reinforce your learning.</em></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

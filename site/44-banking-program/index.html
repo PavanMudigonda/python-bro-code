@@ -1,0 +1,4521 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Python Bro Code examples.">
+      
+      
+        <meta name="author" content="Pavan Mudigonda">
+      
+      
+      
+        <link rel="prev" href="../43-credit-card-validator/">
+      
+      
+        <link rel="next" href="../45-slot-machine/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Chapter 44: Banking Program - Python Bro Code Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#banking-program" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Python Bro Code Docs" class="md-header__button md-logo" aria-label="Python Bro Code Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Bro Code Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 44: Banking Program
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/pavanmudigonda/python-bro-code" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pavanmudigonda/python-bro-code
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Python Bro Code Docs" class="md-nav__button md-logo" aria-label="Python Bro Code Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Python Bro Code Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/pavanmudigonda/python-bro-code" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pavanmudigonda/python-bro-code
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-print/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1: Print
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-type-casting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3: Type Casting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-user-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4: User Input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-madlibs-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5: Madlibs Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-if-statements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: If Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 7: Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-weight-conversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 8: Weight Conversion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-temp-conversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 9: Temp Conversion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-logical-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 10: Logical Operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-conditional-expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 11: Conditional Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-string-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 12: String Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-string-indexing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 13: String Indexing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-email-slicer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 14: Email Slicer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 15: Format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-while/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 16: While
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-interest-calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 17: Interest Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-for/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 18: For
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-nested-loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 19: Nested Loops
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-timer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 20: Timer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-lists-sets-tuples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 21: Lists Sets Tuples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-shopping-cart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 22: Shopping Cart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-2d-collections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 23: 2d Collections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-quiz-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 24: Quiz Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-dictionaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 25: Dictionaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-concession-stand-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 26: Concession Stand Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-random-numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 27: Random Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28-number-guessing-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 28: Number Guessing Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../29-rock-paper-scissors-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 29: Rock Paper Scissors Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30-dice-roller-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 30: Dice Roller Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../31-encryption-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 31: Encryption Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../32-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 32: Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../33-default-arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 33: Default Arguments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../34-keyword-arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 34: Keyword Arguments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../35-args-kwargs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 35: Args Kwargs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../36-iterables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 36: Iterables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../37-membership-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 37: Membership Operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../38-list-comprehensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 38: List Comprehensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../39-match-case-statements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 39: Match Case Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../40-modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 40: Modules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../41-scope-resolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 41: Scope Resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../42-if-name-main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 42: If Name Main
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../43-credit-card-validator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 43: Credit Card Validator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 44: Banking Program
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 44: Banking Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#video-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📺 Video Tutorial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You'll Learn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept Explanation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concept Explanation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#program-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Program Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling-with-try-except" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Handling with Try-Except
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Input Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#match-case-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Match-Case Statements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#program-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Program Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Design Principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business-logic-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Logic Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-experience-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Experience Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-basic-banking-program-complete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Basic Banking Program (Complete)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-banking-with-transaction-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Banking with Transaction History
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-multi-account-banking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Multi-Account Banking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4-banking-with-interest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 4: Banking with Interest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-5-banking-with-file-persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 5: Banking with File Persistence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-6-banking-with-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 6: Banking with Limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-7-banking-with-pin-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 7: Banking with PIN Protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice Exercises
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practice Exercises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beginner-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beginner Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intermediate-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intermediate Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Mistakes to Avoid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Mistakes to Avoid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mistake-1-forgetting-the-global-keyword" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 1: Forgetting the global Keyword
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-2-not-handling-invalid-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 2: Not Handling Invalid Input
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-3-missing-business-logic-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 3: Missing Business Logic Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-4-poor-user-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 4: Poor User Feedback
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Applications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real-World Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-financial-management-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Financial Management Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-point-of-sale-pos-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Point of Sale (POS) Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-resource-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Resource Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-game-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Game Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenge-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge Projects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Challenge Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-full-featured-banking-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Full-Featured Banking Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-restaurant-management-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Restaurant Management System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-personal-budget-tracker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Personal Budget Tracker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-inventory-management-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Inventory Management System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-cryptocurrency-portfolio-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Cryptocurrency Portfolio Manager
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways-from-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 Key Takeaways from Video
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../45-slot-machine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 45: Slot Machine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../46-hangman-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 46: Hangman Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../47-python-oop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 47: Python Oop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../48-class-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 48: Class Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../49-inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 49: Inheritance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../50-multiple-inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 50: Multiple Inheritance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../51-abstract-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 51: Abstract Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../55-aggregation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 55: Aggregation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../56-composition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 56: Composition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../57-nested-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 57: Nested Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../63-lambda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 63: Lambda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../64-sorting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 64: Sorting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../65-zip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 65: Zip
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../66-recursion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 66: Recursion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../71-execution-time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 71: Execution Time
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../74-iterators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 74: Iterators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../75-generators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 75: Generators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../76-generator-expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 76: Generator Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../77-data-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 77: Data Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../92-qr-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 92: Qr Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../93-music-player/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 93: Music Player
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#video-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📺 Video Tutorial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You'll Learn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept Explanation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concept Explanation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#program-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Program Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling-with-try-except" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Handling with Try-Except
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Input Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#match-case-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Match-Case Statements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#program-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Program Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Design Principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business-logic-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Logic Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-experience-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Experience Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-basic-banking-program-complete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Basic Banking Program (Complete)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-banking-with-transaction-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Banking with Transaction History
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-multi-account-banking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Multi-Account Banking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4-banking-with-interest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 4: Banking with Interest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-5-banking-with-file-persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 5: Banking with File Persistence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-6-banking-with-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 6: Banking with Limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-7-banking-with-pin-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 7: Banking with PIN Protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice Exercises
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practice Exercises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beginner-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beginner Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intermediate-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intermediate Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Exercises
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Mistakes to Avoid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Mistakes to Avoid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mistake-1-forgetting-the-global-keyword" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 1: Forgetting the global Keyword
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-2-not-handling-invalid-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 2: Not Handling Invalid Input
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-3-missing-business-logic-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 3: Missing Business Logic Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-4-poor-user-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 4: Poor User Feedback
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Applications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real-World Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-financial-management-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Financial Management Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-point-of-sale-pos-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Point of Sale (POS) Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-resource-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Resource Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-game-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Game Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenge-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge Projects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Challenge Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-full-featured-banking-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Full-Featured Banking Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-restaurant-management-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Restaurant Management System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-personal-budget-tracker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Personal Budget Tracker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-inventory-management-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Inventory Management System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-cryptocurrency-portfolio-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Cryptocurrency Portfolio Manager
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways-from-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 Key Takeaways from Video
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="banking-program">🏦 Banking Program</h1>
+<h2 id="video-tutorial">📺 Video Tutorial</h2>
+<p><strong>Let's code a beginners Python BANKING PROGRAM 💰</strong> (13:38)</p>
+<p><a href="https://youtu.be/8aW3tkIul-8"><img alt="Watch on YouTube" src="https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&amp;logo=youtube" /></a></p>
+<h2 id="what-youll-learn">What You'll Learn</h2>
+<p>In this chapter, you'll build a complete banking application that demonstrates professional program design. You'll learn how to manage global state, organize code into functions, handle errors gracefully, validate user input, and create an interactive menu-driven interface using Python's match-case statement. This project brings together multiple concepts to create a real-world application.</p>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<ul>
+<li>Use global variables to manage application state across functions</li>
+<li>Implement error handling with try-except blocks to prevent crashes</li>
+<li>Validate user input for business logic (positive amounts, sufficient funds)</li>
+<li>Create menu-driven programs with match-case statements (Python 3.10+)</li>
+<li>Design modular functions with clear responsibilities</li>
+<li>Build user-friendly interfaces with informative prompts and error messages</li>
+</ul>
+<h2 id="concept-explanation">Concept Explanation</h2>
+<h3 id="program-architecture">Program Architecture</h3>
+<p>The banking program demonstrates professional application structure:</p>
+<pre><code>┌─────────────────────────┐
+│   Global State          │
+│   (balance variable)    │
+└─────────────────────────┘
+           ↓
+┌─────────────────────────┐
+│   Main Program Loop     │
+│   (menu system)         │
+└─────────────────────────┘
+           ↓
+┌─────────────────────────┐
+│   Action Functions      │
+│   (show/deposit/withdraw)│
+└─────────────────────────┘
+</code></pre>
+<h3 id="global-variables">Global Variables</h3>
+<p>Global variables maintain state across function calls:</p>
+<pre><code class="language-python"># Global variable - accessible by all functions
+balance = 0
+
+def show_balance():
+    # Read global variable (no 'global' keyword needed)
+    print(f&quot;Balance: ${balance}&quot;)
+
+def deposit():
+    global balance  # Need 'global' keyword to modify
+    balance += 100
+</code></pre>
+<p><strong>When to use <code>global</code> keyword:</strong>
+- <strong>Reading</strong>: Not needed - functions can read global variables directly
+- <strong>Modifying</strong>: Required - must declare <code>global variable_name</code> before modifying</p>
+<pre><code class="language-python">balance = 1000
+
+def read_balance():
+    # No 'global' needed - just reading
+    print(balance)  # Works!
+
+def update_balance():
+    # 'global' needed - modifying
+    global balance
+    balance += 100  # Works!
+
+def broken_update():
+    # Forgot 'global' keyword
+    balance = balance + 100  # UnboundLocalError!
+</code></pre>
+<h3 id="error-handling-with-try-except">Error Handling with Try-Except</h3>
+<p>Prevents crashes from invalid input:</p>
+<pre><code class="language-python">try:
+    # Code that might raise an exception
+    amount = float(input(&quot;Enter amount: &quot;))
+
+except ValueError:
+    # Handle specific error type
+    print(&quot;Please enter a valid number&quot;)
+</code></pre>
+<p><strong>Exception Handling Flow:</strong></p>
+<pre><code>User enters: &quot;abc&quot; → float() raises ValueError → except block catches it → Program continues
+User enters: &quot;100&quot; → float() succeeds → except block skipped → Program continues
+</code></pre>
+<h3 id="input-validation">Input Validation</h3>
+<p>Multiple layers of validation ensure data integrity:</p>
+<pre><code class="language-python">def deposit():
+    global balance
+
+    try:
+        # Layer 1: Type validation (try-except)
+        amount = float(input(&quot;Enter amount: &quot;))
+
+        # Layer 2: Business logic validation (if statement)
+        if amount &lt;= 0:
+            print(&quot;Amount must be positive&quot;)
+            return
+
+        # All validations passed - proceed
+        balance += amount
+
+    except ValueError:
+        print(&quot;Invalid input - please enter a number&quot;)
+</code></pre>
+<p><strong>Validation Layers:</strong>
+1. <strong>Type Validation</strong>: Is input the correct data type? (try-except)
+2. <strong>Range Validation</strong>: Is value in acceptable range? (if statements)
+3. <strong>Business Logic</strong>: Does operation make sense? (custom validation)</p>
+<h3 id="match-case-statements">Match-Case Statements</h3>
+<p>Modern menu handling (Python 3.10+):</p>
+<pre><code class="language-python">choice = input(&quot;Enter choice (1-4): &quot;)
+
+match choice:
+    case &quot;1&quot;:
+        show_balance()
+    case &quot;2&quot;:
+        deposit()
+    case &quot;3&quot;:
+        withdraw()
+    case &quot;4&quot;:
+        print(&quot;Goodbye!&quot;)
+    case _:  # Default case (like 'else')
+        print(&quot;Invalid choice&quot;)
+</code></pre>
+<p><strong>Match-case vs If-elif:</strong></p>
+<pre><code class="language-python"># Old way (if-elif)
+if choice == &quot;1&quot;:
+    show_balance()
+elif choice == &quot;2&quot;:
+    deposit()
+elif choice == &quot;3&quot;:
+    withdraw()
+else:
+    print(&quot;Invalid&quot;)
+
+# New way (match-case) - cleaner!
+match choice:
+    case &quot;1&quot;: show_balance()
+    case &quot;2&quot;: deposit()
+    case &quot;3&quot;: withdraw()
+    case _: print(&quot;Invalid&quot;)
+</code></pre>
+<h3 id="program-flow">Program Flow</h3>
+<pre><code>Start
+  ↓
+Initialize balance = 0
+  ↓
+Main Loop:
+  ├─ Display Menu
+  ├─ Get user choice
+  ├─ Match choice:
+  │   ├─ &quot;1&quot; → Show Balance
+  │   ├─ &quot;2&quot; → Deposit
+  │   ├─ &quot;3&quot; → Withdraw
+  │   ├─ &quot;4&quot; → Exit
+  │   └─ _   → Invalid
+  └─ Repeat until exit
+</code></pre>
+<h3 id="function-design-principles">Function Design Principles</h3>
+<p>Each function has a single, clear responsibility:</p>
+<pre><code class="language-python">def show_balance():
+    &quot;&quot;&quot;Single responsibility: Display balance&quot;&quot;&quot;
+    print(f&quot;Balance: ${balance}&quot;)
+
+def deposit():
+    &quot;&quot;&quot;Single responsibility: Add money&quot;&quot;&quot;
+    global balance
+    try:
+        amount = float(input(&quot;Enter deposit: &quot;))
+        if amount &lt;= 0:
+            print(&quot;Must be positive&quot;)
+            return
+        balance += amount
+    except ValueError:
+        print(&quot;Invalid input&quot;)
+
+def withdraw():
+    &quot;&quot;&quot;Single responsibility: Remove money&quot;&quot;&quot;
+    global balance
+    try:
+        amount = float(input(&quot;Enter withdrawal: &quot;))
+        if amount &lt;= 0:
+            print(&quot;Must be positive&quot;)
+            return
+        if amount &gt; balance:
+            print(&quot;Insufficient funds&quot;)
+            return
+        balance -= amount
+    except ValueError:
+        print(&quot;Invalid input&quot;)
+</code></pre>
+<h3 id="business-logic-validation">Business Logic Validation</h3>
+<p>Banking operations require specific business rules:</p>
+<p><strong>Deposit Rules:</strong>
+1. Amount must be numeric (type validation)
+2. Amount must be positive (business rule)</p>
+<p><strong>Withdrawal Rules:</strong>
+1. Amount must be numeric (type validation)
+2. Amount must be positive (business rule)
+3. Amount must not exceed balance (business rule)</p>
+<pre><code class="language-python">def withdraw():
+    global balance
+
+    try:
+        amount = float(input(&quot;Enter amount: &quot;))
+
+        # Business Rule 1: Positive amounts only
+        if amount &lt;= 0:
+            print(&quot;Amount must be positive&quot;)
+            return
+
+        # Business Rule 2: Sufficient funds check
+        if amount &gt; balance:
+            print(&quot;Insufficient funds&quot;)
+            return
+
+        # All rules passed - execute transaction
+        balance -= amount
+        print(f&quot;Withdrawal successful! Balance: ${balance}&quot;)
+
+    except ValueError:
+        print(&quot;Invalid input&quot;)
+</code></pre>
+<h3 id="user-experience-considerations">User Experience Considerations</h3>
+<p><strong>Clear Prompts:</strong></p>
+<pre><code class="language-python"># Bad: Confusing
+amount = float(input(&quot;$: &quot;))
+
+# Good: Clear
+amount = float(input(&quot;Enter amount to deposit: &quot;))
+</code></pre>
+<p><strong>Informative Feedback:</strong></p>
+<pre><code class="language-python"># Bad: Silent failure
+if amount &lt;= 0:
+    return
+
+# Good: Explain what happened
+if amount &lt;= 0:
+    print(&quot;Entered amount is not valid. Enter a positive amount.&quot;)
+    return
+</code></pre>
+<p><strong>Consistent Formatting:</strong></p>
+<pre><code class="language-python"># Use consistent currency formatting
+print(f&quot;Balance: ${balance:.2f}&quot;)  # Always 2 decimal places
+</code></pre>
+<h2 id="examples">Examples</h2>
+<h3 id="example-1-basic-banking-program-complete">Example 1: Basic Banking Program (Complete)</h3>
+<pre><code class="language-python"># Banking Program - Complete Implementation
+
+balance = 0  # Global variable for account balance
+
+def show_balance():
+    &quot;&quot;&quot;Display current account balance.&quot;&quot;&quot;
+    print(f&quot;Your current balance is: ${balance:.2f}&quot;)
+
+def deposit():
+    &quot;&quot;&quot;Add money to account with validation.&quot;&quot;&quot;
+    global balance
+
+    try:
+        amount = float(input(&quot;Enter amount to deposit: $&quot;))
+
+        if amount &lt;= 0:
+            print(&quot;Amount must be positive.&quot;)
+            return
+
+        balance += amount
+        print(f&quot;Deposit successful! New balance: ${balance:.2f}&quot;)
+
+    except ValueError:
+        print(&quot;Invalid input. Please enter a number.&quot;)
+
+def withdraw():
+    &quot;&quot;&quot;Remove money from account with validation.&quot;&quot;&quot;
+    global balance
+
+    try:
+        amount = float(input(&quot;Enter amount to withdraw: $&quot;))
+
+        if amount &lt;= 0:
+            print(&quot;Amount must be positive.&quot;)
+            return
+
+        if amount &gt; balance:
+            print(&quot;Insufficient funds.&quot;)
+            return
+
+        balance -= amount
+        print(f&quot;Withdrawal successful! New balance: ${balance:.2f}&quot;)
+
+    except ValueError:
+        print(&quot;Invalid input. Please enter a number.&quot;)
+
+def main():
+    &quot;&quot;&quot;Main program loop with menu.&quot;&quot;&quot;
+    is_running = True
+
+    while is_running:
+        print(&quot;\n&quot; + &quot;=&quot;*30)
+        print(&quot;     SIMPLE BANK&quot;)
+        print(&quot;=&quot;*30)
+        print(&quot;1. Show Balance&quot;)
+        print(&quot;2. Deposit&quot;)
+        print(&quot;3. Withdraw&quot;)
+        print(&quot;4. Exit&quot;)
+
+        choice = input(&quot;\nEnter choice (1-4): &quot;).strip()
+
+        match choice:
+            case &quot;1&quot;:
+                show_balance()
+            case &quot;2&quot;:
+                deposit()
+            case &quot;3&quot;:
+                withdraw()
+            case &quot;4&quot;:
+                print(&quot;\nThank you for banking with us!&quot;)
+                is_running = False
+            case _:
+                print(&quot;Invalid choice. Please enter 1-4.&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<h3 id="example-2-banking-with-transaction-history">Example 2: Banking with Transaction History</h3>
+<pre><code class="language-python"># Banking with transaction history tracking
+
+balance = 0
+transactions = []  # List to store transaction history
+
+def show_balance():
+    &quot;&quot;&quot;Display current balance.&quot;&quot;&quot;
+    print(f&quot;\nCurrent Balance: ${balance:.2f}&quot;)
+
+def deposit():
+    &quot;&quot;&quot;Deposit money and record transaction.&quot;&quot;&quot;
+    global balance
+
+    try:
+        amount = float(input(&quot;Enter deposit amount: $&quot;))
+
+        if amount &lt;= 0:
+            print(&quot;Amount must be positive.&quot;)
+            return
+
+        balance += amount
+        transactions.append(f&quot;Deposit: +${amount:.2f}&quot;)
+        print(f&quot;Deposited ${amount:.2f}. New balance: ${balance:.2f}&quot;)
+
+    except ValueError:
+        print(&quot;Invalid input.&quot;)
+
+def withdraw():
+    &quot;&quot;&quot;Withdraw money and record transaction.&quot;&quot;&quot;
+    global balance
+
+    try:
+        amount = float(input(&quot;Enter withdrawal amount: $&quot;))
+
+        if amount &lt;= 0:
+            print(&quot;Amount must be positive.&quot;)
+            return
+
+        if amount &gt; balance:
+            print(f&quot;Insufficient funds. Available: ${balance:.2f}&quot;)
+            return
+
+        balance -= amount
+        transactions.append(f&quot;Withdrawal: -${amount:.2f}&quot;)
+        print(f&quot;Withdrew ${amount:.2f}. New balance: ${balance:.2f}&quot;)
+
+    except ValueError:
+        print(&quot;Invalid input.&quot;)
+
+def show_history():
+    &quot;&quot;&quot;Display transaction history.&quot;&quot;&quot;
+    if not transactions:
+        print(&quot;\nNo transactions yet.&quot;)
+        return
+
+    print(&quot;\nTransaction History:&quot;)
+    print(&quot;-&quot; * 30)
+    for i, transaction in enumerate(transactions, 1):
+        print(f&quot;{i}. {transaction}&quot;)
+
+def main():
+    &quot;&quot;&quot;Main program with transaction history.&quot;&quot;&quot;
+    while True:
+        print(&quot;\n&quot; + &quot;=&quot;*30)
+        print(&quot;1. Show Balance&quot;)
+        print(&quot;2. Deposit&quot;)
+        print(&quot;3. Withdraw&quot;)
+        print(&quot;4. Transaction History&quot;)
+        print(&quot;5. Exit&quot;)
+
+        choice = input(&quot;\nChoice: &quot;).strip()
+
+        match choice:
+            case &quot;1&quot;: show_balance()
+            case &quot;2&quot;: deposit()
+            case &quot;3&quot;: withdraw()
+            case &quot;4&quot;: show_history()
+            case &quot;5&quot;:
+                print(&quot;Goodbye!&quot;)
+                break
+            case _:
+                print(&quot;Invalid choice.&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<h3 id="example-3-multi-account-banking">Example 3: Multi-Account Banking</h3>
+<pre><code class="language-python"># Banking system with multiple accounts
+
+accounts = {}  # Dictionary: {account_number: balance}
+
+def create_account():
+    &quot;&quot;&quot;Create a new bank account.&quot;&quot;&quot;
+    account_num = input(&quot;Enter account number: &quot;).strip()
+
+    if account_num in accounts:
+        print(&quot;Account already exists!&quot;)
+        return
+
+    try:
+        initial = float(input(&quot;Initial deposit: $&quot;))
+        if initial &lt; 0:
+            print(&quot;Cannot open account with negative balance.&quot;)
+            return
+
+        accounts[account_num] = initial
+        print(f&quot;Account {account_num} created with ${initial:.2f}&quot;)
+
+    except ValueError:
+        print(&quot;Invalid amount.&quot;)
+
+def show_balance():
+    &quot;&quot;&quot;Show balance for specific account.&quot;&quot;&quot;
+    account_num = input(&quot;Enter account number: &quot;).strip()
+
+    if account_num not in accounts:
+        print(&quot;Account not found.&quot;)
+        return
+
+    print(f&quot;Account {account_num} balance: ${accounts[account_num]:.2f}&quot;)
+
+def deposit():
+    &quot;&quot;&quot;Deposit to specific account.&quot;&quot;&quot;
+    account_num = input(&quot;Enter account number: &quot;).strip()
+
+    if account_num not in accounts:
+        print(&quot;Account not found.&quot;)
+        return
+
+    try:
+        amount = float(input(&quot;Deposit amount: $&quot;))
+        if amount &lt;= 0:
+            print(&quot;Amount must be positive.&quot;)
+            return
+
+        accounts[account_num] += amount
+        print(f&quot;Deposited ${amount:.2f}. New balance: ${accounts[account_num]:.2f}&quot;)
+
+    except ValueError:
+        print(&quot;Invalid amount.&quot;)
+
+def transfer():
+    &quot;&quot;&quot;Transfer money between accounts.&quot;&quot;&quot;
+    from_acc = input(&quot;From account: &quot;).strip()
+    to_acc = input(&quot;To account: &quot;).strip()
+
+    if from_acc not in accounts or to_acc not in accounts:
+        print(&quot;One or both accounts not found.&quot;)
+        return
+
+    try:
+        amount = float(input(&quot;Transfer amount: $&quot;))
+
+        if amount &lt;= 0:
+            print(&quot;Amount must be positive.&quot;)
+            return
+
+        if accounts[from_acc] &lt; amount:
+            print(&quot;Insufficient funds.&quot;)
+            return
+
+        accounts[from_acc] -= amount
+        accounts[to_acc] += amount
+        print(f&quot;Transferred ${amount:.2f} from {from_acc} to {to_acc}&quot;)
+
+    except ValueError:
+        print(&quot;Invalid amount.&quot;)
+
+def main():
+    &quot;&quot;&quot;Main program for multi-account banking.&quot;&quot;&quot;
+    while True:
+        print(&quot;\n&quot; + &quot;=&quot;*30)
+        print(&quot;MULTI-ACCOUNT BANK&quot;)
+        print(&quot;=&quot;*30)
+        print(&quot;1. Create Account&quot;)
+        print(&quot;2. Show Balance&quot;)
+        print(&quot;3. Deposit&quot;)
+        print(&quot;4. Transfer&quot;)
+        print(&quot;5. Exit&quot;)
+
+        choice = input(&quot;\nChoice: &quot;).strip()
+
+        match choice:
+            case &quot;1&quot;: create_account()
+            case &quot;2&quot;: show_balance()
+            case &quot;3&quot;: deposit()
+            case &quot;4&quot;: transfer()
+            case &quot;5&quot;:
+                print(&quot;Thank you!&quot;)
+                break
+            case _:
+                print(&quot;Invalid choice.&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<h3 id="example-4-banking-with-interest">Example 4: Banking with Interest</h3>
+<pre><code class="language-python"># Banking program with interest calculations
+
+balance = 0.0
+interest_rate = 0.02  # 2% annual interest
+
+def show_balance():
+    &quot;&quot;&quot;Display current balance.&quot;&quot;&quot;
+    print(f&quot;Current Balance: ${balance:.2f}&quot;)
+    print(f&quot;Interest Rate: {interest_rate * 100}%&quot;)
+
+def deposit():
+    &quot;&quot;&quot;Deposit money.&quot;&quot;&quot;
+    global balance
+
+    try:
+        amount = float(input(&quot;Deposit amount: $&quot;))
+        if amount &lt;= 0:
+            print(&quot;Amount must be positive.&quot;)
+            return
+
+        balance += amount
+        print(f&quot;Deposited ${amount:.2f}&quot;)
+
+    except ValueError:
+        print(&quot;Invalid input.&quot;)
+
+def withdraw():
+    &quot;&quot;&quot;Withdraw money.&quot;&quot;&quot;
+    global balance
+
+    try:
+        amount = float(input(&quot;Withdrawal amount: $&quot;))
+        if amount &lt;= 0:
+            print(&quot;Amount must be positive.&quot;)
+            return
+        if amount &gt; balance:
+            print(&quot;Insufficient funds.&quot;)
+            return
+
+        balance -= amount
+        print(f&quot;Withdrew ${amount:.2f}&quot;)
+
+    except ValueError:
+        print(&quot;Invalid input.&quot;)
+
+def apply_interest():
+    &quot;&quot;&quot;Apply interest to current balance.&quot;&quot;&quot;
+    global balance
+
+    interest = balance * interest_rate
+    balance += interest
+    print(f&quot;Interest applied: ${interest:.2f}&quot;)
+    print(f&quot;New balance: ${balance:.2f}&quot;)
+
+def set_interest_rate():
+    &quot;&quot;&quot;Change interest rate.&quot;&quot;&quot;
+    global interest_rate
+
+    try:
+        rate = float(input(&quot;Enter new interest rate (e.g., 0.02 for 2%): &quot;))
+        if rate &lt; 0 or rate &gt; 1:
+            print(&quot;Rate must be between 0 and 1.&quot;)
+            return
+
+        interest_rate = rate
+        print(f&quot;Interest rate set to {interest_rate * 100}%&quot;)
+
+    except ValueError:
+        print(&quot;Invalid input.&quot;)
+
+def main():
+    &quot;&quot;&quot;Main program with interest.&quot;&quot;&quot;
+    while True:
+        print(&quot;\n&quot; + &quot;=&quot;*30)
+        print(&quot;1. Show Balance&quot;)
+        print(&quot;2. Deposit&quot;)
+        print(&quot;3. Withdraw&quot;)
+        print(&quot;4. Apply Interest&quot;)
+        print(&quot;5. Set Interest Rate&quot;)
+        print(&quot;6. Exit&quot;)
+
+        choice = input(&quot;\nChoice: &quot;).strip()
+
+        match choice:
+            case &quot;1&quot;: show_balance()
+            case &quot;2&quot;: deposit()
+            case &quot;3&quot;: withdraw()
+            case &quot;4&quot;: apply_interest()
+            case &quot;5&quot;: set_interest_rate()
+            case &quot;6&quot;:
+                print(&quot;Goodbye!&quot;)
+                break
+            case _:
+                print(&quot;Invalid choice.&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<h3 id="example-5-banking-with-file-persistence">Example 5: Banking with File Persistence</h3>
+<pre><code class="language-python"># Banking with saving/loading from file
+
+import json
+
+balance = 0.0
+SAVE_FILE = &quot;bank_data.json&quot;
+
+def load_data():
+    &quot;&quot;&quot;Load balance from file.&quot;&quot;&quot;
+    global balance
+
+    try:
+        with open(SAVE_FILE, 'r') as f:
+            data = json.load(f)
+            balance = data.get('balance', 0.0)
+        print(f&quot;Loaded balance: ${balance:.2f}&quot;)
+    except FileNotFoundError:
+        print(&quot;No saved data found. Starting with $0.&quot;)
+    except json.JSONDecodeError:
+        print(&quot;Error reading save file. Starting with $0.&quot;)
+
+def save_data():
+    &quot;&quot;&quot;Save balance to file.&quot;&quot;&quot;
+    try:
+        with open(SAVE_FILE, 'w') as f:
+            json.dump({'balance': balance}, f)
+        print(&quot;Data saved successfully.&quot;)
+    except Exception as e:
+        print(f&quot;Error saving data: {e}&quot;)
+
+def show_balance():
+    &quot;&quot;&quot;Display balance.&quot;&quot;&quot;
+    print(f&quot;Current Balance: ${balance:.2f}&quot;)
+
+def deposit():
+    &quot;&quot;&quot;Deposit money.&quot;&quot;&quot;
+    global balance
+
+    try:
+        amount = float(input(&quot;Deposit: $&quot;))
+        if amount &lt;= 0:
+            print(&quot;Must be positive.&quot;)
+            return
+
+        balance += amount
+        save_data()  # Auto-save after transaction
+        print(f&quot;Deposited ${amount:.2f}&quot;)
+
+    except ValueError:
+        print(&quot;Invalid input.&quot;)
+
+def withdraw():
+    &quot;&quot;&quot;Withdraw money.&quot;&quot;&quot;
+    global balance
+
+    try:
+        amount = float(input(&quot;Withdraw: $&quot;))
+        if amount &lt;= 0:
+            print(&quot;Must be positive.&quot;)
+            return
+        if amount &gt; balance:
+            print(&quot;Insufficient funds.&quot;)
+            return
+
+        balance -= amount
+        save_data()  # Auto-save after transaction
+        print(f&quot;Withdrew ${amount:.2f}&quot;)
+
+    except ValueError:
+        print(&quot;Invalid input.&quot;)
+
+def main():
+    &quot;&quot;&quot;Main program with persistence.&quot;&quot;&quot;
+    load_data()  # Load saved data on startup
+
+    while True:
+        print(&quot;\n&quot; + &quot;=&quot;*30)
+        print(&quot;1. Show Balance&quot;)
+        print(&quot;2. Deposit&quot;)
+        print(&quot;3. Withdraw&quot;)
+        print(&quot;4. Exit&quot;)
+
+        choice = input(&quot;\nChoice: &quot;).strip()
+
+        match choice:
+            case &quot;1&quot;: show_balance()
+            case &quot;2&quot;: deposit()
+            case &quot;3&quot;: withdraw()
+            case &quot;4&quot;:
+                save_data()
+                print(&quot;Goodbye!&quot;)
+                break
+            case _:
+                print(&quot;Invalid choice.&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<h3 id="example-6-banking-with-limits">Example 6: Banking with Limits</h3>
+<pre><code class="language-python"># Banking with withdrawal limits and fees
+
+balance = 0.0
+daily_limit = 500.0
+daily_withdrawn = 0.0
+withdrawal_fee = 2.0
+
+def show_balance():
+    &quot;&quot;&quot;Display balance and limits.&quot;&quot;&quot;
+    print(f&quot;Balance: ${balance:.2f}&quot;)
+    print(f&quot;Daily limit: ${daily_limit:.2f}&quot;)
+    print(f&quot;Withdrawn today: ${daily_withdrawn:.2f}&quot;)
+    print(f&quot;Remaining: ${daily_limit - daily_withdrawn:.2f}&quot;)
+
+def deposit():
+    &quot;&quot;&quot;Deposit money.&quot;&quot;&quot;
+    global balance
+
+    try:
+        amount = float(input(&quot;Deposit: $&quot;))
+        if amount &lt;= 0:
+            print(&quot;Must be positive.&quot;)
+            return
+
+        balance += amount
+        print(f&quot;Deposited ${amount:.2f}&quot;)
+
+    except ValueError:
+        print(&quot;Invalid input.&quot;)
+
+def withdraw():
+    &quot;&quot;&quot;Withdraw with limits and fees.&quot;&quot;&quot;
+    global balance, daily_withdrawn
+
+    try:
+        amount = float(input(&quot;Withdraw: $&quot;))
+
+        if amount &lt;= 0:
+            print(&quot;Must be positive.&quot;)
+            return
+
+        # Check daily limit
+        if daily_withdrawn + amount &gt; daily_limit:
+            remaining = daily_limit - daily_withdrawn
+            print(f&quot;Daily limit exceeded. Remaining: ${remaining:.2f}&quot;)
+            return
+
+        # Calculate total with fee
+        total = amount + withdrawal_fee
+
+        if total &gt; balance:
+            print(f&quot;Insufficient funds (amount + ${withdrawal_fee:.2f} fee).&quot;)
+            return
+
+        balance -= total
+        daily_withdrawn += amount
+        print(f&quot;Withdrew ${amount:.2f} (fee: ${withdrawal_fee:.2f})&quot;)
+        print(f&quot;New balance: ${balance:.2f}&quot;)
+
+    except ValueError:
+        print(&quot;Invalid input.&quot;)
+
+def reset_daily_limit():
+    &quot;&quot;&quot;Reset daily withdrawal counter.&quot;&quot;&quot;
+    global daily_withdrawn
+    daily_withdrawn = 0.0
+    print(&quot;Daily limit reset.&quot;)
+
+def main():
+    &quot;&quot;&quot;Main program with limits.&quot;&quot;&quot;
+    while True:
+        print(&quot;\n&quot; + &quot;=&quot;*30)
+        print(&quot;1. Show Balance&quot;)
+        print(&quot;2. Deposit&quot;)
+        print(&quot;3. Withdraw&quot;)
+        print(&quot;4. Reset Daily Limit&quot;)
+        print(&quot;5. Exit&quot;)
+
+        choice = input(&quot;\nChoice: &quot;).strip()
+
+        match choice:
+            case &quot;1&quot;: show_balance()
+            case &quot;2&quot;: deposit()
+            case &quot;3&quot;: withdraw()
+            case &quot;4&quot;: reset_daily_limit()
+            case &quot;5&quot;:
+                print(&quot;Goodbye!&quot;)
+                break
+            case _:
+                print(&quot;Invalid choice.&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<h3 id="example-7-banking-with-pin-protection">Example 7: Banking with PIN Protection</h3>
+<pre><code class="language-python"># Banking with PIN authentication
+
+balance = 0.0
+pin = &quot;1234&quot;  # In real app, use hashing!
+logged_in = False
+
+def login():
+    &quot;&quot;&quot;Authenticate user with PIN.&quot;&quot;&quot;
+    global logged_in
+
+    attempts = 3
+
+    while attempts &gt; 0:
+        entered_pin = input(&quot;Enter PIN: &quot;)
+
+        if entered_pin == pin:
+            logged_in = True
+            print(&quot;Login successful!&quot;)
+            return True
+        else:
+            attempts -= 1
+            if attempts &gt; 0:
+                print(f&quot;Incorrect PIN. {attempts} attempts remaining.&quot;)
+            else:
+                print(&quot;Too many failed attempts. Access denied.&quot;)
+
+    return False
+
+def logout():
+    &quot;&quot;&quot;Logout user.&quot;&quot;&quot;
+    global logged_in
+    logged_in = False
+    print(&quot;Logged out successfully.&quot;)
+
+def require_auth(func):
+    &quot;&quot;&quot;Decorator to require authentication.&quot;&quot;&quot;
+    def wrapper():
+        if not logged_in:
+            print(&quot;Please login first.&quot;)
+            return
+        func()
+    return wrapper
+
+@require_auth
+def show_balance():
+    &quot;&quot;&quot;Display balance (requires auth).&quot;&quot;&quot;
+    print(f&quot;Balance: ${balance:.2f}&quot;)
+
+@require_auth
+def deposit():
+    &quot;&quot;&quot;Deposit money (requires auth).&quot;&quot;&quot;
+    global balance
+
+    try:
+        amount = float(input(&quot;Deposit: $&quot;))
+        if amount &lt;= 0:
+            print(&quot;Must be positive.&quot;)
+            return
+
+        balance += amount
+        print(f&quot;Deposited ${amount:.2f}&quot;)
+
+    except ValueError:
+        print(&quot;Invalid input.&quot;)
+
+@require_auth
+def withdraw():
+    &quot;&quot;&quot;Withdraw money (requires auth).&quot;&quot;&quot;
+    global balance
+
+    try:
+        amount = float(input(&quot;Withdraw: $&quot;))
+        if amount &lt;= 0:
+            print(&quot;Must be positive.&quot;)
+            return
+        if amount &gt; balance:
+            print(&quot;Insufficient funds.&quot;)
+            return
+
+        balance -= amount
+        print(f&quot;Withdrew ${amount:.2f}&quot;)
+
+    except ValueError:
+        print(&quot;Invalid input.&quot;)
+
+def main():
+    &quot;&quot;&quot;Main program with authentication.&quot;&quot;&quot;
+    while True:
+        print(&quot;\n&quot; + &quot;=&quot;*30)
+        print(&quot;1. Login&quot;)
+        print(&quot;2. Show Balance&quot;)
+        print(&quot;3. Deposit&quot;)
+        print(&quot;4. Withdraw&quot;)
+        print(&quot;5. Logout&quot;)
+        print(&quot;6. Exit&quot;)
+
+        choice = input(&quot;\nChoice: &quot;).strip()
+
+        match choice:
+            case &quot;1&quot;: login()
+            case &quot;2&quot;: show_balance()
+            case &quot;3&quot;: deposit()
+            case &quot;4&quot;: withdraw()
+            case &quot;5&quot;: logout()
+            case &quot;6&quot;:
+                print(&quot;Goodbye!&quot;)
+                break
+            case _:
+                print(&quot;Invalid choice.&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<h2 id="practice-exercises">Practice Exercises</h2>
+<h3 id="beginner-exercises">Beginner Exercises</h3>
+<ol>
+<li><strong>Simple Counter</strong></li>
+<li>Create a global counter variable</li>
+<li>Functions: increment(), decrement(), show_count(), reset()</li>
+<li>Menu system with match-case</li>
+<li>
+<p>Input validation for increment/decrement amounts</p>
+</li>
+<li>
+<p><strong>Temperature Manager</strong></p>
+</li>
+<li>Global variable for current temperature</li>
+<li>Functions: set_temp(), show_temp(), adjust_temp()</li>
+<li>Validate temperature is reasonable (-50 to 50°C)</li>
+<li>
+<p>Display temperature in both Celsius and Fahrenheit</p>
+</li>
+<li>
+<p><strong>Score Tracker</strong></p>
+</li>
+<li>Global score variable starting at 0</li>
+<li>Functions: add_points(), subtract_points(), show_score()</li>
+<li>Prevent negative scores</li>
+<li>
+<p>Keep track of high score</p>
+</li>
+<li>
+<p><strong>To-Do Counter</strong></p>
+</li>
+<li>Global variable for number of tasks</li>
+<li>Functions: add_task(), complete_task(), show_tasks()</li>
+<li>Cannot complete more tasks than exist</li>
+<li>
+<p>Show completed vs remaining</p>
+</li>
+<li>
+<p><strong>Basic Calculator</strong></p>
+</li>
+<li>Global result variable</li>
+<li>Functions: add(), subtract(), multiply(), divide(), clear()</li>
+<li>Handle division by zero</li>
+<li>Display running total</li>
+</ol>
+<h3 id="intermediate-exercises">Intermediate Exercises</h3>
+<ol>
+<li><strong>Enhanced Banking</strong></li>
+<li>Add minimum balance requirement ($100)</li>
+<li>Charge $5 fee for going below minimum</li>
+<li>Track number of transactions</li>
+<li>
+<p>Generate monthly statement</p>
+</li>
+<li>
+<p><strong>Savings Goal Tracker</strong></p>
+</li>
+<li>Set savings goal amount</li>
+<li>Track deposits toward goal</li>
+<li>Show progress percentage</li>
+<li>Calculate time to reach goal at current rate</li>
+<li>
+<p>Prevent withdrawals that break goal progress</p>
+</li>
+<li>
+<p><strong>Budget Manager</strong></p>
+</li>
+<li>Set monthly budget</li>
+<li>Track spending in categories (food, transport, etc.)</li>
+<li>Warn when approaching budget limit</li>
+<li>Generate spending report</li>
+<li>
+<p>Reset monthly</p>
+</li>
+<li>
+<p><strong>Inventory System</strong></p>
+</li>
+<li>Track multiple items (dictionary)</li>
+<li>Functions: add_item(), remove_item(), update_quantity()</li>
+<li>Check stock levels</li>
+<li>Generate low-stock alerts</li>
+<li>
+<p>Calculate total inventory value</p>
+</li>
+<li>
+<p><strong>Student Grade Manager</strong></p>
+</li>
+<li>Store grades for multiple students (nested dictionary)</li>
+<li>Add/update/delete grades</li>
+<li>Calculate averages</li>
+<li>Generate report cards</li>
+<li>Find class average</li>
+</ol>
+<h3 id="advanced-exercises">Advanced Exercises</h3>
+<ol>
+<li><strong>Complete Banking System</strong></li>
+<li>Multiple account types (checking, savings, credit)</li>
+<li>Different interest rates per account</li>
+<li>Transaction history with timestamps</li>
+<li>Export statements to CSV</li>
+<li>Monthly account fees</li>
+<li>
+<p>Overdraft protection</p>
+</li>
+<li>
+<p><strong>Investment Portfolio Manager</strong></p>
+</li>
+<li>Track multiple investments</li>
+<li>Calculate portfolio value</li>
+<li>Show gains/losses</li>
+<li>Rebalancing recommendations</li>
+<li>Risk assessment</li>
+<li>
+<p>Generate performance reports</p>
+</li>
+<li>
+<p><strong>Store Management System</strong></p>
+</li>
+<li>Inventory tracking</li>
+<li>Sales processing</li>
+<li>Customer loyalty points</li>
+<li>Discount calculations</li>
+<li>Daily/weekly/monthly reports</li>
+<li>
+<p>Low stock auto-alerts</p>
+</li>
+<li>
+<p><strong>Library Management</strong></p>
+</li>
+<li>Book checkout/return system</li>
+<li>Fine calculations for late returns</li>
+<li>Member management</li>
+<li>Reservation system</li>
+<li>Generate usage statistics</li>
+<li>
+<p>Database persistence</p>
+</li>
+<li>
+<p><strong>Restaurant Order System</strong></p>
+</li>
+<li>Menu management</li>
+<li>Order taking</li>
+<li>Bill calculation with tax and tip</li>
+<li>Table management</li>
+<li>Kitchen order queue</li>
+<li>Daily sales reports</li>
+</ol>
+<h2 id="common-mistakes-to-avoid">Common Mistakes to Avoid</h2>
+<h3 id="mistake-1-forgetting-the-global-keyword">Mistake 1: Forgetting the global Keyword</h3>
+<p>❌ <strong>Wrong:</strong></p>
+<pre><code class="language-python">balance = 0
+
+def deposit():
+    # Forgot 'global' keyword
+    balance = balance + 100  # UnboundLocalError!
+    print(f&quot;Balance: {balance}&quot;)
+
+deposit()
+</code></pre>
+<p>✅ <strong>Correct:</strong></p>
+<pre><code class="language-python">balance = 0
+
+def deposit():
+    global balance  # Declare we're modifying global variable
+    balance = balance + 100
+    print(f&quot;Balance: {balance}&quot;)
+
+deposit()  # Works correctly
+</code></pre>
+<p><strong>Why:</strong> Without <code>global</code>, Python treats <code>balance</code> as a local variable, but tries to use it before assignment, causing an error.</p>
+<h3 id="mistake-2-not-handling-invalid-input">Mistake 2: Not Handling Invalid Input</h3>
+<p>❌ <strong>Wrong:</strong></p>
+<pre><code class="language-python">def deposit():
+    global balance
+    # No error handling - crashes on non-numeric input
+    amount = float(input(&quot;Enter amount: &quot;))
+    balance += amount
+</code></pre>
+<p>✅ <strong>Correct:</strong></p>
+<pre><code class="language-python">def deposit():
+    global balance
+
+    try:
+        amount = float(input(&quot;Enter amount: &quot;))
+        if amount &lt;= 0:
+            print(&quot;Amount must be positive.&quot;)
+            return
+        balance += amount
+        print(&quot;Deposit successful!&quot;)
+
+    except ValueError:
+        print(&quot;Invalid input. Please enter a number.&quot;)
+</code></pre>
+<p><strong>Why:</strong> Users can enter anything. Error handling prevents crashes and provides helpful feedback.</p>
+<h3 id="mistake-3-missing-business-logic-validation">Mistake 3: Missing Business Logic Validation</h3>
+<p>❌ <strong>Wrong:</strong></p>
+<pre><code class="language-python">def withdraw():
+    global balance
+
+    try:
+        amount = float(input(&quot;Withdraw: $&quot;))
+        # No validation - allows negative amounts and overdrafts!
+        balance -= amount
+        print(f&quot;Withdrew ${amount}&quot;)
+
+    except ValueError:
+        print(&quot;Invalid input.&quot;)
+</code></pre>
+<p>✅ <strong>Correct:</strong></p>
+<pre><code class="language-python">def withdraw():
+    global balance
+
+    try:
+        amount = float(input(&quot;Withdraw: $&quot;))
+
+        # Validate positive amount
+        if amount &lt;= 0:
+            print(&quot;Amount must be positive.&quot;)
+            return
+
+        # Validate sufficient funds
+        if amount &gt; balance:
+            print(f&quot;Insufficient funds. Available: ${balance:.2f}&quot;)
+            return
+
+        balance -= amount
+        print(f&quot;Withdrew ${amount:.2f}&quot;)
+
+    except ValueError:
+        print(&quot;Invalid input.&quot;)
+</code></pre>
+<p><strong>Why:</strong> Type validation alone isn't enough. Business rules (positive amounts, sufficient funds) must be explicitly checked.</p>
+<h3 id="mistake-4-poor-user-feedback">Mistake 4: Poor User Feedback</h3>
+<p>❌ <strong>Wrong:</strong></p>
+<pre><code class="language-python">def deposit():
+    global balance
+
+    try:
+        amount = float(input(&quot;$&quot;))  # Unclear prompt
+        if amount &lt;= 0:
+            return  # Silent failure
+        balance += amount
+        print(&quot;OK&quot;)  # Vague feedback
+
+    except ValueError:
+        print(&quot;Error&quot;)  # Unhelpful error message
+</code></pre>
+<p>✅ <strong>Correct:</strong></p>
+<pre><code class="language-python">def deposit():
+    global balance
+
+    try:
+        amount = float(input(&quot;Enter deposit amount: $&quot;))
+
+        if amount &lt;= 0:
+            print(&quot;Amount must be positive. Please try again.&quot;)
+            return
+
+        balance += amount
+        print(f&quot;Successfully deposited ${amount:.2f}&quot;)
+        print(f&quot;New balance: ${balance:.2f}&quot;)
+
+    except ValueError:
+        print(&quot;Invalid input. Please enter a numeric value.&quot;)
+</code></pre>
+<p><strong>Why:</strong> Clear prompts and informative feedback create better user experience and help users understand what went wrong.</p>
+<h2 id="real-world-applications">Real-World Applications</h2>
+<h3 id="1-financial-management-systems">1. <strong>Financial Management Systems</strong></h3>
+<p>Banking programs are the foundation of financial software:</p>
+<p><strong>Examples:</strong>
+- ATM software interfaces
+- Mobile banking apps
+- Personal finance managers
+- Accounting software
+- Cryptocurrency wallets</p>
+<p><strong>Key Features:</strong>
+- Transaction processing with validation
+- Balance management
+- Security and authentication
+- Audit trails and logging
+- Regulatory compliance checks</p>
+<h3 id="2-point-of-sale-pos-systems">2. <strong>Point of Sale (POS) Systems</strong></h3>
+<p>Retail and restaurant systems use similar patterns:</p>
+<p><strong>Examples:</strong>
+- Cash register software
+- Restaurant order systems
+- E-commerce checkout
+- Inventory management
+- Sales tracking</p>
+<p><strong>Key Features:</strong>
+- Menu-driven interfaces
+- Transaction validation
+- Inventory updates
+- Receipt generation
+- Daily sales reports</p>
+<h3 id="3-resource-management">3. <strong>Resource Management</strong></h3>
+<p>Track and manage limited resources:</p>
+<p><strong>Examples:</strong>
+- Server resource monitoring
+- Cloud computing billing
+- Energy usage tracking
+- Database connection pools
+- API rate limiting</p>
+<p><strong>Key Features:</strong>
+- Usage tracking
+- Limit enforcement
+- Quota management
+- Alert systems
+- Usage analytics</p>
+<h3 id="4-game-development">4. <strong>Game Development</strong></h3>
+<p>Games use similar state management:</p>
+<p><strong>Examples:</strong>
+- Player health/mana systems
+- Inventory management
+- Currency and shops
+- Experience and leveling
+- Resource gathering games</p>
+<p><strong>Key Features:</strong>
+- State persistence
+- Transaction validation
+- Balance calculations
+- Limit enforcement
+- Progress tracking</p>
+<h2 id="challenge-projects">Challenge Projects</h2>
+<h3 id="1-full-featured-banking-application">1. <strong>Full-Featured Banking Application</strong></h3>
+<p>Build a complete banking system with all the features:</p>
+<p><strong>Requirements:</strong>
+- Multiple account types (checking, savings, credit card)
+- User authentication with PIN
+- Transaction history with timestamps
+- Interest calculations
+- Monthly statements
+- Bill pay functionality
+- Account transfers
+- ATM simulation with daily limits
+- Data persistence (JSON or SQLite)
+- Error logging</p>
+<p><strong>Skills Applied:</strong>
+- Global state management
+- Complex validation logic
+- File I/O
+- Date/time handling
+- Report generation</p>
+<h3 id="2-restaurant-management-system">2. <strong>Restaurant Management System</strong></h3>
+<p>Create a complete restaurant order and management system:</p>
+<p><strong>Requirements:</strong>
+- Table management (open/close tables)
+- Menu with prices and categories
+- Order taking and modification
+- Bill calculation (tax, tip, split bill)
+- Kitchen display system
+- Inventory tracking
+- Daily sales reports
+- Employee shift tracking
+- Reservation system</p>
+<p><strong>Skills Applied:</strong>
+- Multi-entity state management
+- Complex calculations
+- Time-based operations
+- Report generation</p>
+<h3 id="3-personal-budget-tracker">3. <strong>Personal Budget Tracker</strong></h3>
+<p>Build a comprehensive budgeting application:</p>
+<p><strong>Requirements:</strong>
+- Multiple budget categories
+- Income and expense tracking
+- Recurring transactions
+- Budget vs actual comparison
+- Spending alerts and warnings
+- Monthly/yearly reports
+- Goal setting and tracking
+- Data visualization (charts)
+- Export to CSV/Excel
+- Multi-user support</p>
+<p><strong>Skills Applied:</strong>
+- Category management
+- Time series data
+- Calculations and analytics
+- Data export
+- User preferences</p>
+<h3 id="4-inventory-management-system">4. <strong>Inventory Management System</strong></h3>
+<p>Create a warehouse/store inventory system:</p>
+<p><strong>Requirements:</strong>
+- Product database with SKUs
+- Stock level tracking
+- Purchase orders
+- Sales processing
+- Low stock alerts
+- Supplier management
+- Price management
+- Stock valuation
+- Inventory reports
+- Barcode support (simulation)</p>
+<p><strong>Skills Applied:</strong>
+- Complex data structures
+- Business logic validation
+- Reporting
+- Alert systems</p>
+<h3 id="5-cryptocurrency-portfolio-manager">5. <strong>Cryptocurrency Portfolio Manager</strong></h3>
+<p>Build a crypto trading and tracking system:</p>
+<p><strong>Requirements:</strong>
+- Multiple cryptocurrency support
+- Buy/sell transactions
+- Portfolio value calculation
+- Profit/loss tracking
+- Price alerts
+- Transaction fees
+- Historical data
+- Performance analytics
+- Risk assessment
+- Tax reporting</p>
+<p><strong>Skills Applied:</strong>
+- Financial calculations
+- Real-time data (simulated)
+- Complex reporting
+- Multi-currency handling</p>
+<hr />
+<h2 id="navigation">Navigation</h2>
+<p>← <a href="41-if-name-main.md">Previous: 41 - If Name Main</a> | <a href="43-slot-machine.md">Next: 43 - Slot Machine</a> →</p>
+<p><a href="../README.md">↑ Back to Main README</a></p>
+<h2 id="key-takeaways-from-video">🎓 Key Takeaways from Video</h2>
+<ol>
+<li>Functions are reusable blocks of code</li>
+<li>Define functions using the def keyword</li>
+<li>Use loops to repeat actions</li>
+<li>Use if-elif-else for conditional logic</li>
+<li>Test your code to ensure it works correctly</li>
+</ol>
+<blockquote>
+<p>💡 <em>These points cover the main concepts from the video tutorial to help reinforce your learning.</em></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

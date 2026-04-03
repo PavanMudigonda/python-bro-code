@@ -1,0 +1,3771 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Python Bro Code examples.">
+      
+      
+        <meta name="author" content="Pavan Mudigonda">
+      
+      
+      
+        <link rel="prev" href="../28-number-guessing-game/">
+      
+      
+        <link rel="next" href="../30-dice-roller-program/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Chapter 29: Rock Paper Scissors Game - Python Bro Code Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rock-paper-scissors-game" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Python Bro Code Docs" class="md-header__button md-logo" aria-label="Python Bro Code Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Bro Code Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 29: Rock Paper Scissors Game
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/pavanmudigonda/python-bro-code" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pavanmudigonda/python-bro-code
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Python Bro Code Docs" class="md-nav__button md-logo" aria-label="Python Bro Code Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Python Bro Code Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/pavanmudigonda/python-bro-code" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pavanmudigonda/python-bro-code
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-print/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1: Print
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-type-casting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3: Type Casting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-user-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4: User Input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-madlibs-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5: Madlibs Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-if-statements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: If Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 7: Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-weight-conversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 8: Weight Conversion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-temp-conversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 9: Temp Conversion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-logical-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 10: Logical Operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-conditional-expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 11: Conditional Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-string-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 12: String Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-string-indexing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 13: String Indexing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-email-slicer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 14: Email Slicer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 15: Format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-while/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 16: While
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-interest-calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 17: Interest Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-for/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 18: For
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-nested-loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 19: Nested Loops
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-timer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 20: Timer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-lists-sets-tuples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 21: Lists Sets Tuples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-shopping-cart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 22: Shopping Cart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-2d-collections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 23: 2d Collections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-quiz-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 24: Quiz Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-dictionaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 25: Dictionaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-concession-stand-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 26: Concession Stand Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-random-numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 27: Random Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28-number-guessing-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 28: Number Guessing Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 29: Rock Paper Scissors Game
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 29: Rock Paper Scissors Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#video-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📺 Video Tutorial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You'll Learn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept Explanation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concept Explanation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-rock-paper-scissors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Rock Paper Scissors?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#game-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Game Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#program-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Program Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Program Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-data-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Data Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-random-computer-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Random Computer Choice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-input-validation-with-membership" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Input Validation with Membership
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-nested-conditional-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Nested Conditional Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#game-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Game Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#membership-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Membership Operators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decision-tree-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Tree Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-basic-membership-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Basic Membership Operators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-simple-rock-paper-scissors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Simple Rock Paper Scissors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-input-validation-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Input Validation Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4-complete-game-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 4: Complete Game Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-5-with-replay-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 5: With Replay Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-6-with-score-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 6: With Score Tracking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-7-full-featured-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 7: Full Featured Version
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice Exercises
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practice Exercises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beginner-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beginner Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intermediate-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intermediate Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Mistakes to Avoid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Mistakes to Avoid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mistake-1-not-handling-case-sensitivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 1: Not Handling Case Sensitivity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-2-incomplete-win-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 2: Incomplete Win Conditions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-3-resetting-computer-choice-in-wrong-place" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 3: Resetting Computer Choice in Wrong Place
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-4-not-resetting-player-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 4: Not Resetting Player Choice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Applications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real-World Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-game-theory-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Game Theory Research
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-conflict-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Conflict Resolution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-robot-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Robot Programming
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-tournament-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Tournament Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenge-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge Projects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Challenge Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-rock-paper-scissors-lizard-spock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Rock Paper Scissors Lizard Spock
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ai-that-learns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. AI That Learns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-rps-championship-tournament" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. RPS Championship Tournament
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-rps-casino" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. RPS Casino
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-rps-battle-rpg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. RPS Battle RPG
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways-from-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 Key Takeaways from Video
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30-dice-roller-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 30: Dice Roller Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../31-encryption-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 31: Encryption Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../32-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 32: Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../33-default-arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 33: Default Arguments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../34-keyword-arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 34: Keyword Arguments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../35-args-kwargs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 35: Args Kwargs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../36-iterables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 36: Iterables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../37-membership-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 37: Membership Operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../38-list-comprehensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 38: List Comprehensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../39-match-case-statements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 39: Match Case Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../40-modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 40: Modules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../41-scope-resolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 41: Scope Resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../42-if-name-main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 42: If Name Main
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../43-credit-card-validator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 43: Credit Card Validator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../44-banking-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 44: Banking Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../45-slot-machine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 45: Slot Machine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../46-hangman-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 46: Hangman Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../47-python-oop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 47: Python Oop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../48-class-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 48: Class Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../49-inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 49: Inheritance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../50-multiple-inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 50: Multiple Inheritance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../51-abstract-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 51: Abstract Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../55-aggregation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 55: Aggregation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../56-composition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 56: Composition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../57-nested-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 57: Nested Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../63-lambda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 63: Lambda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../64-sorting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 64: Sorting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../65-zip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 65: Zip
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../66-recursion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 66: Recursion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../71-execution-time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 71: Execution Time
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../74-iterators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 74: Iterators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../75-generators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 75: Generators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../76-generator-expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 76: Generator Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../77-data-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 77: Data Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../92-qr-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 92: Qr Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../93-music-player/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 93: Music Player
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#video-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📺 Video Tutorial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You'll Learn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept Explanation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concept Explanation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-rock-paper-scissors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is Rock Paper Scissors?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#game-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Game Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#program-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Program Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Program Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-data-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Data Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-random-computer-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Random Computer Choice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-input-validation-with-membership" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Input Validation with Membership
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-nested-conditional-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Nested Conditional Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#game-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Game Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#membership-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Membership Operators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decision-tree-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Tree Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-basic-membership-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Basic Membership Operators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-simple-rock-paper-scissors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Simple Rock Paper Scissors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-input-validation-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Input Validation Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4-complete-game-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 4: Complete Game Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-5-with-replay-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 5: With Replay Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-6-with-score-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 6: With Score Tracking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-7-full-featured-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 7: Full Featured Version
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice Exercises
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practice Exercises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beginner-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beginner Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intermediate-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intermediate Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Mistakes to Avoid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Mistakes to Avoid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mistake-1-not-handling-case-sensitivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 1: Not Handling Case Sensitivity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-2-incomplete-win-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 2: Incomplete Win Conditions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-3-resetting-computer-choice-in-wrong-place" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 3: Resetting Computer Choice in Wrong Place
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-4-not-resetting-player-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 4: Not Resetting Player Choice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Applications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real-World Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-game-theory-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Game Theory Research
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-conflict-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Conflict Resolution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-robot-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Robot Programming
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-tournament-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Tournament Systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenge-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge Projects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Challenge Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-rock-paper-scissors-lizard-spock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Rock Paper Scissors Lizard Spock
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ai-that-learns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. AI That Learns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-rps-championship-tournament" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. RPS Championship Tournament
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-rps-casino" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. RPS Casino
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-rps-battle-rpg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. RPS Battle RPG
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways-from-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 Key Takeaways from Video
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="rock-paper-scissors-game">✊✋✌️ Rock Paper Scissors Game</h1>
+<h2 id="video-tutorial">📺 Video Tutorial</h2>
+<p><strong>ROCK PAPER SCISSORS game in Python 🗿</strong> (13:38)</p>
+<p><a href="https://youtu.be/fn68QNcatfo"><img alt="Watch on YouTube" src="https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&amp;logo=youtube" /></a></p>
+<h2 id="what-youll-learn">What You'll Learn</h2>
+<p>In this chapter, you'll build the classic Rock Paper Scissors game, demonstrating how to use random computer opponents, implement game logic with nested conditionals, validate input with membership operators, and create replay functionality with game loops.</p>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<ul>
+<li>Implement classic game rules with conditional logic</li>
+<li>Use random.choice() for computer opponent decision-making</li>
+<li>Apply membership operators (in, not in) for input validation</li>
+<li>Create game loops with replay functionality</li>
+<li>Structure nested if-elif statements for complex logic</li>
+<li>Design clear user interaction patterns</li>
+</ul>
+<h2 id="concept-explanation">Concept Explanation</h2>
+<h3 id="what-is-rock-paper-scissors">What is Rock Paper Scissors?</h3>
+<p>Rock Paper Scissors is a simple hand game played between two players. Each player simultaneously forms one of three shapes:
+- <strong>Rock</strong> (fist) - beats scissors
+- <strong>Paper</strong> (flat hand) - beats rock
+- <strong>Scissors</strong> (two fingers) - beats paper</p>
+<h3 id="game-rules">Game Rules</h3>
+<p>The win conditions follow a circular logic:</p>
+<pre><code>Rock crushes Scissors → Rock wins
+Scissors cuts Paper → Scissors wins
+Paper covers Rock → Paper wins
+Same choice → Tie
+</code></pre>
+<p>This creates a balanced game where each choice has one win and one loss condition.</p>
+<h3 id="program-structure">Program Structure</h3>
+<h4 id="1-data-storage">1. <strong>Data Storage</strong></h4>
+<p>Use a tuple to store valid options:</p>
+<pre><code class="language-python">options = (&quot;rock&quot;, &quot;paper&quot;, &quot;scissors&quot;)
+</code></pre>
+<p>Tuples are perfect because:
+- Game options never change (immutable)
+- Memory efficient
+- Signals these are constants</p>
+<h4 id="2-random-computer-choice">2. <strong>Random Computer Choice</strong></h4>
+<pre><code class="language-python">import random
+computer = random.choice(options)
+</code></pre>
+<p>This gives the computer a fair, random selection each game.</p>
+<h4 id="3-input-validation-with-membership">3. <strong>Input Validation with Membership</strong></h4>
+<p>The <strong>membership operator</strong> checks if a value exists in a sequence:</p>
+<pre><code class="language-python">player = input(&quot;Choose: &quot;).lower()
+while player not in options:
+    player = input(&quot;Invalid! Choose rock, paper, or scissors: &quot;).lower()
+</code></pre>
+<p>This prevents invalid input before processing game logic.</p>
+<h4 id="4-nested-conditional-logic">4. <strong>Nested Conditional Logic</strong></h4>
+<p>The game logic requires checking multiple conditions:</p>
+<pre><code class="language-python">if player == computer:
+    print(&quot;Tie!&quot;)
+elif player == &quot;rock&quot;:
+    if computer == &quot;scissors&quot;:
+        print(&quot;You win!&quot;)
+    else:  # computer == &quot;paper&quot;
+        print(&quot;You lose!&quot;)
+# ... more conditions
+</code></pre>
+<h3 id="game-flow">Game Flow</h3>
+<ol>
+<li><strong>Setup</strong> - Define valid options, initialize player choice</li>
+<li><strong>Computer Selection</strong> - Randomly choose from options</li>
+<li><strong>Game Loop</strong> - While user wants to play:</li>
+<li><strong>Input Loop</strong> - Get and validate player choice</li>
+<li><strong>Comparison</strong> - Check for tie first, then evaluate each player choice</li>
+<li><strong>Display Result</strong> - Show outcome with explanation</li>
+<li><strong>Replay</strong> - Ask if player wants another round</li>
+<li><strong>Exit</strong> - End game when player declines</li>
+</ol>
+<h3 id="membership-operators">Membership Operators</h3>
+<p>Python provides two membership operators:</p>
+<pre><code class="language-python"># 'in' operator
+if &quot;rock&quot; in options:
+    print(&quot;Found!&quot;)
+
+# 'not in' operator  
+if player not in options:
+    print(&quot;Invalid choice!&quot;)
+</code></pre>
+<p>These are cleaner than multiple comparisons:</p>
+<pre><code class="language-python"># Without membership operator (verbose)
+if player == &quot;rock&quot; or player == &quot;paper&quot; or player == &quot;scissors&quot;:
+    # valid
+
+# With membership operator (clean)
+if player in options:
+    # valid
+</code></pre>
+<h3 id="decision-tree-structure">Decision Tree Structure</h3>
+<p>The complete game logic as a decision tree:</p>
+<pre><code>Is player == computer?
+├─ Yes → Tie
+└─ No → Check player choice
+    ├─ Rock?
+    │   ├─ vs Paper → Lose
+    │   └─ vs Scissors → Win
+    ├─ Paper?
+    │   ├─ vs Scissors → Lose
+    │   └─ vs Rock → Win
+    └─ Scissors?
+        ├─ vs Rock → Lose
+        └─ vs Paper → Win
+</code></pre>
+<h2 id="examples">Examples</h2>
+<h3 id="example-1-basic-membership-operators">Example 1: Basic Membership Operators</h3>
+<pre><code class="language-python"># Using 'in' operator
+fruits = (&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;)
+
+if &quot;apple&quot; in fruits:
+    print(&quot;Found!&quot;)  # Executes
+
+if &quot;orange&quot; in fruits:
+    print(&quot;Found!&quot;)  # Doesn't execute
+
+# Using 'not in' operator
+if &quot;orange&quot; not in fruits:
+    print(&quot;Not found!&quot;)  # Executes
+
+# With user input
+choice = input(&quot;Enter a fruit: &quot;).lower()
+if choice in fruits:
+    print(f&quot;{choice} is available&quot;)
+else:
+    print(f&quot;{choice} is not available&quot;)
+</code></pre>
+<h3 id="example-2-simple-rock-paper-scissors">Example 2: Simple Rock Paper Scissors</h3>
+<pre><code class="language-python">import random
+
+options = (&quot;rock&quot;, &quot;paper&quot;, &quot;scissors&quot;)
+
+player = input(&quot;Choose rock, paper, or scissors: &quot;).lower()
+computer = random.choice(options)
+
+print(f&quot;You chose: {player}&quot;)
+print(f&quot;Computer chose: {computer}&quot;)
+
+if player == computer:
+    print(&quot;Tie!&quot;)
+elif player == &quot;rock&quot; and computer == &quot;scissors&quot;:
+    print(&quot;You win!&quot;)
+elif player == &quot;rock&quot; and computer == &quot;paper&quot;:
+    print(&quot;You lose!&quot;)
+</code></pre>
+<h3 id="example-3-input-validation-loop">Example 3: Input Validation Loop</h3>
+<pre><code class="language-python">options = (&quot;rock&quot;, &quot;paper&quot;, &quot;scissors&quot;)
+player = None
+
+# Keep asking until valid input
+while player not in options:
+    player = input(&quot;rock, paper, or scissors: &quot;).lower()
+
+    if player not in options:
+        print(&quot;Invalid! Try again.&quot;)
+
+print(f&quot;You chose: {player}&quot;)
+</code></pre>
+<h3 id="example-4-complete-game-logic">Example 4: Complete Game Logic</h3>
+<pre><code class="language-python">import random
+
+options = (&quot;rock&quot;, &quot;paper&quot;, &quot;scissors&quot;)
+player = input(&quot;Choose: &quot;).lower()
+computer = random.choice(options)
+
+print(f&quot;\nYou: {player}&quot;)
+print(f&quot;Computer: {computer}\n&quot;)
+
+if player == computer:
+    print(&quot;It's a tie!&quot;)
+elif player == &quot;rock&quot;:
+    if computer == &quot;scissors&quot;:
+        print(&quot;Rock crushes scissors - You win! 🎉&quot;)
+    else:  # paper
+        print(&quot;Paper covers rock - You lose! 😢&quot;)
+elif player == &quot;paper&quot;:
+    if computer == &quot;rock&quot;:
+        print(&quot;Paper covers rock - You win! 🎉&quot;)
+    else:  # scissors
+        print(&quot;Scissors cuts paper - You lose! 😢&quot;)
+elif player == &quot;scissors&quot;:
+    if computer == &quot;paper&quot;:
+        print(&quot;Scissors cuts paper - You win! 🎉&quot;)
+    else:  # rock
+        print(&quot;Rock crushes scissors - You lose! 😢&quot;)
+</code></pre>
+<h3 id="example-5-with-replay-functionality">Example 5: With Replay Functionality</h3>
+<pre><code class="language-python">import random
+
+options = (&quot;rock&quot;, &quot;paper&quot;, &quot;scissors&quot;)
+playing = True
+
+while playing:
+    player = None
+    computer = random.choice(options)
+
+    # Input validation
+    while player not in options:
+        player = input(&quot;rock, paper, scissors: &quot;).lower()
+
+    # Game logic
+    print(f&quot;Computer chose: {computer}&quot;)
+
+    if player == computer:
+        print(&quot;Tie!&quot;)
+    elif (player == &quot;rock&quot; and computer == &quot;scissors&quot;) or \
+         (player == &quot;paper&quot; and computer == &quot;rock&quot;) or \
+         (player == &quot;scissors&quot; and computer == &quot;paper&quot;):
+        print(&quot;You win!&quot;)
+    else:
+        print(&quot;You lose!&quot;)
+
+    # Replay
+    again = input(&quot;\nPlay again? (yes/no): &quot;).lower()
+    if again != &quot;yes&quot;:
+        playing = False
+
+print(&quot;Thanks for playing!&quot;)
+</code></pre>
+<h3 id="example-6-with-score-tracking">Example 6: With Score Tracking</h3>
+<pre><code class="language-python">import random
+
+options = (&quot;rock&quot;, &quot;paper&quot;, &quot;scissors&quot;)
+player_score = 0
+computer_score = 0
+playing = True
+
+print(&quot;=== ROCK PAPER SCISSORS ===&quot;)
+print(&quot;First to 3 wins!\n&quot;)
+
+while playing:
+    player = None
+
+    # Input validation
+    while player not in options:
+        player = input(&quot;Your choice: &quot;).lower()
+
+    computer = random.choice(options)
+    print(f&quot;Computer chose: {computer}&quot;)
+
+    # Determine winner
+    if player == computer:
+        print(&quot;Tie! No points.\n&quot;)
+    elif (player == &quot;rock&quot; and computer == &quot;scissors&quot;) or \
+         (player == &quot;paper&quot; and computer == &quot;rock&quot;) or \
+         (player == &quot;scissors&quot; and computer == &quot;paper&quot;):
+        print(&quot;You win this round! 🎉\n&quot;)
+        player_score += 1
+    else:
+        print(&quot;Computer wins this round! 😢\n&quot;)
+        computer_score += 1
+
+    # Display score
+    print(f&quot;Score - You: {player_score}, Computer: {computer_score}&quot;)
+
+    # Check for winner
+    if player_score == 3:
+        print(&quot;\n🏆 YOU WIN THE GAME! 🏆&quot;)
+        playing = False
+    elif computer_score == 3:
+        print(&quot;\n💻 COMPUTER WINS THE GAME! 💻&quot;)
+        playing = False
+
+    print(&quot;-&quot; * 30)
+</code></pre>
+<h3 id="example-7-full-featured-version">Example 7: Full Featured Version</h3>
+<pre><code class="language-python">import random
+
+def get_player_choice(options):
+    &quot;&quot;&quot;Get and validate player input&quot;&quot;&quot;
+    player = None
+    while player not in options:
+        player = input(&quot;\n🎮 rock, paper, or scissors: &quot;).lower()
+        if player not in options:
+            print(&quot;❌ Invalid choice! Try again.&quot;)
+    return player
+
+def determine_winner(player, computer):
+    &quot;&quot;&quot;Determine game outcome&quot;&quot;&quot;
+    if player == computer:
+        return &quot;tie&quot;
+
+    win_conditions = {
+        &quot;rock&quot;: &quot;scissors&quot;,
+        &quot;paper&quot;: &quot;rock&quot;,
+        &quot;scissors&quot;: &quot;paper&quot;
+    }
+
+    if win_conditions[player] == computer:
+        return &quot;player&quot;
+    else:
+        return &quot;computer&quot;
+
+def display_result(player, computer, winner):
+    &quot;&quot;&quot;Display game result with explanation&quot;&quot;&quot;
+    actions = {
+        (&quot;rock&quot;, &quot;scissors&quot;): &quot;Rock crushes scissors&quot;,
+        (&quot;scissors&quot;, &quot;paper&quot;): &quot;Scissors cuts paper&quot;,
+        (&quot;paper&quot;, &quot;rock&quot;): &quot;Paper covers rock&quot;,
+        (&quot;scissors&quot;, &quot;rock&quot;): &quot;Rock crushes scissors&quot;,
+        (&quot;paper&quot;, &quot;scissors&quot;): &quot;Scissors cuts paper&quot;,
+        (&quot;rock&quot;, &quot;paper&quot;): &quot;Paper covers rock&quot;
+    }
+
+    print(f&quot;\n{'='*40}&quot;)
+    print(f&quot;You chose: {player.upper()}&quot;)
+    print(f&quot;Computer chose: {computer.upper()}&quot;)
+    print(f&quot;{'='*40}&quot;)
+
+    if winner == &quot;tie&quot;:
+        print(&quot;🤝 It's a TIE!&quot;)
+    else:
+        action = actions.get((player, computer)) or actions.get((computer, player))
+        if winner == &quot;player&quot;:
+            print(f&quot;✅ {action}&quot;)
+            print(&quot;🎉 YOU WIN!&quot;)
+        else:
+            print(f&quot;❌ {action}&quot;)
+            print(&quot;😢 YOU LOSE!&quot;)
+
+def main():
+    &quot;&quot;&quot;Main game function&quot;&quot;&quot;
+    options = (&quot;rock&quot;, &quot;paper&quot;, &quot;scissors&quot;)
+    player_wins = 0
+    computer_wins = 0
+    ties = 0
+
+    print(&quot;\n&quot; + &quot;=&quot;*40)
+    print(&quot;    ROCK PAPER SCISSORS GAME&quot;)
+    print(&quot;=&quot;*40)
+
+    playing = True
+
+    while playing:
+        # Get choices
+        player = get_player_choice(options)
+        computer = random.choice(options)
+
+        # Determine winner
+        winner = determine_winner(player, computer)
+
+        # Update statistics
+        if winner == &quot;player&quot;:
+            player_wins += 1
+        elif winner == &quot;computer&quot;:
+            computer_wins += 1
+        else:
+            ties += 1
+
+        # Display result
+        display_result(player, computer, winner)
+
+        # Show statistics
+        print(f&quot;\n📊 Statistics:&quot;)
+        print(f&quot;   Wins: {player_wins} | Losses: {computer_wins} | Ties: {ties}&quot;)
+
+        # Play again?
+        print(&quot;\n&quot; + &quot;-&quot;*40)
+        again = input(&quot;Play again? (yes/no): &quot;).lower()
+        if again != &quot;yes&quot;:
+            playing = False
+
+    # Final summary
+    print(&quot;\n&quot; + &quot;=&quot;*40)
+    print(&quot;         GAME OVER&quot;)
+    print(&quot;=&quot;*40)
+    print(f&quot;Final Score:&quot;)
+    print(f&quot;  You: {player_wins} wins&quot;)
+    print(f&quot;  Computer: {computer_wins} wins&quot;)
+    print(f&quot;  Ties: {ties}&quot;)
+
+    if player_wins &gt; computer_wins:
+        print(&quot;\n🏆 YOU ARE THE CHAMPION! 🏆&quot;)
+    elif computer_wins &gt; player_wins:
+        print(&quot;\n💻 COMPUTER IS THE CHAMPION! 💻&quot;)
+    else:
+        print(&quot;\n🤝 IT'S A DRAW! 🤝&quot;)
+
+    print(&quot;\nThanks for playing! 👋\n&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<h2 id="practice-exercises">Practice Exercises</h2>
+<h3 id="beginner-level">Beginner Level</h3>
+<ol>
+<li>
+<p><strong>Fixed Choices</strong>: Create a game where both player and computer choices are hardcoded. Determine winner.</p>
+</li>
+<li>
+<p><strong>One Round</strong>: Build a single round game with player input and random computer choice.</p>
+</li>
+<li>
+<p><strong>Tie Checker</strong>: Write a program that only checks if choices are the same (tie).</p>
+</li>
+<li>
+<p><strong>Win Condition Only</strong>: Check only if player wins, ignore loss and tie.</p>
+</li>
+<li>
+<p><strong>Choice Display</strong>: Display both choices before showing the result.</p>
+</li>
+</ol>
+<h3 id="intermediate-level">Intermediate Level</h3>
+<ol>
+<li>
+<p><strong>Best of Three</strong>: Play 3 rounds and declare overall winner based on wins.</p>
+</li>
+<li>
+<p><strong>Win Percentage</strong>: Track total games and display win percentage.</p>
+</li>
+<li>
+<p><strong>Choice Statistics</strong>: Track how often each choice (rock/paper/scissors) is selected by both players.</p>
+</li>
+<li>
+<p><strong>Streak Tracker</strong>: Track and display longest winning streak.</p>
+</li>
+<li>
+<p><strong>Difficulty Levels</strong>: Add "easy" mode (computer chooses randomly) and "hard" mode (computer tries to predict player's pattern).</p>
+</li>
+</ol>
+<h3 id="advanced-level">Advanced Level</h3>
+<ol>
+<li>
+<p><strong>Extended Version</strong>: Add "lizard" and "spock" options (Rock Paper Scissors Lizard Spock variant with 5 choices).</p>
+</li>
+<li>
+<p><strong>AI Opponent</strong>: Create a computer that learns from player's previous choices and adapts strategy.</p>
+</li>
+<li>
+<p><strong>Tournament Mode</strong>: Multiple players compete in elimination rounds.</p>
+</li>
+<li>
+<p><strong>Multiplayer</strong>: Two human players instead of player vs computer.</p>
+</li>
+<li>
+<p><strong>Statistical Analysis</strong>: After 100 games, show detailed analytics (most common choices, win rates per choice, pattern detection).</p>
+</li>
+</ol>
+<h2 id="common-mistakes-to-avoid">Common Mistakes to Avoid</h2>
+<h3 id="mistake-1-not-handling-case-sensitivity">Mistake 1: Not Handling Case Sensitivity</h3>
+<p><strong>Wrong:</strong></p>
+<pre><code class="language-python">options = (&quot;rock&quot;, &quot;paper&quot;, &quot;scissors&quot;)
+player = input(&quot;Choose: &quot;)  # User enters &quot;Rock&quot;
+if player in options:  # &quot;Rock&quot; != &quot;rock&quot;
+    print(&quot;Valid&quot;)  # Won't execute
+</code></pre>
+<p><strong>Correct:</strong></p>
+<pre><code class="language-python">options = (&quot;rock&quot;, &quot;paper&quot;, &quot;scissors&quot;)
+player = input(&quot;Choose: &quot;).lower()  # Convert to lowercase
+if player in options:
+    print(&quot;Valid&quot;)
+</code></pre>
+<p><strong>Why:</strong> User input case varies. Always normalize to lowercase for comparison.</p>
+<h3 id="mistake-2-incomplete-win-conditions">Mistake 2: Incomplete Win Conditions</h3>
+<p><strong>Wrong:</strong></p>
+<pre><code class="language-python">if player == &quot;rock&quot;:
+    if computer == &quot;paper&quot;:
+        print(&quot;You lose!&quot;)
+    # Missing scissors case!
+</code></pre>
+<p><strong>Correct:</strong></p>
+<pre><code class="language-python">if player == &quot;rock&quot;:
+    if computer == &quot;paper&quot;:
+        print(&quot;You lose!&quot;)
+    elif computer == &quot;scissors&quot;:
+        print(&quot;You win!&quot;)
+    # Now complete
+</code></pre>
+<p><strong>Why:</strong> Must handle all possible computer choices for each player choice.</p>
+<h3 id="mistake-3-resetting-computer-choice-in-wrong-place">Mistake 3: Resetting Computer Choice in Wrong Place</h3>
+<p><strong>Wrong:</strong></p>
+<pre><code class="language-python">computer = random.choice(options)  # Only once!
+
+while True:
+    player = input(&quot;Choose: &quot;).lower()
+    # computer is same every game!
+</code></pre>
+<p><strong>Correct:</strong></p>
+<pre><code class="language-python">while True:
+    computer = random.choice(options)  # New choice each game
+    player = input(&quot;Choose: &quot;).lower()
+</code></pre>
+<p><strong>Why:</strong> Computer needs a fresh random choice for each round.</p>
+<h3 id="mistake-4-not-resetting-player-choice">Mistake 4: Not Resetting Player Choice</h3>
+<p><strong>Wrong:</strong></p>
+<pre><code class="language-python">player = None
+
+while running:
+    while player not in options:  # First time only!
+        player = input(&quot;Choose: &quot;)
+    # player keeps old value in next iteration
+</code></pre>
+<p><strong>Correct:</strong></p>
+<pre><code class="language-python">while running:
+    player = None  # Reset each round
+    while player not in options:
+        player = input(&quot;Choose: &quot;).lower()
+</code></pre>
+<p><strong>Why:</strong> Player choice must be reset each round to prompt for new input.</p>
+<h2 id="real-world-applications">Real-World Applications</h2>
+<h3 id="1-game-theory-research">1. <strong>Game Theory Research</strong></h3>
+<p>Rock Paper Scissors is studied in game theory, economics, and psychology to understand strategic decision-making, prediction, and randomness in competitive scenarios.</p>
+<h3 id="2-conflict-resolution">2. <strong>Conflict Resolution</strong></h3>
+<p>Used as a simple, fair decision-making tool in casual situations when a random, unbiased choice is needed between two parties.</p>
+<h3 id="3-robot-programming">3. <strong>Robot Programming</strong></h3>
+<p>Teaching robots to play RPS helps demonstrate basic AI concepts like decision trees, pattern recognition, and strategy adaptation.</p>
+<h3 id="4-tournament-systems">4. <strong>Tournament Systems</strong></h3>
+<p>The game is used in actual competitive tournaments worldwide, demonstrating how simple rules can create complex strategic depth.</p>
+<h2 id="challenge-projects">Challenge Projects</h2>
+<h3 id="1-rock-paper-scissors-lizard-spock">1. <strong>Rock Paper Scissors Lizard Spock</strong></h3>
+<p>Expand to the 5-option variant from "The Big Bang Theory".</p>
+<p><strong>Requirements:</strong>
+- Implement all 5 options (rock, paper, scissors, lizard, spock)
+- 10 different win conditions
+- Display rule explanations
+- Track statistics for all options</p>
+<h3 id="2-ai-that-learns">2. <strong>AI That Learns</strong></h3>
+<p>Create a computer opponent that improves over time.</p>
+<p><strong>Requirements:</strong>
+- Track player's choice history
+- Detect patterns (if player chooses rock twice, likely paper next)
+- Adapt strategy based on history
+- Display AI "confidence level"
+- Compare random vs learning AI performance</p>
+<h3 id="3-rps-championship-tournament">3. <strong>RPS Championship Tournament</strong></h3>
+<p>Host a multi-player elimination tournament.</p>
+<p><strong>Requirements:</strong>
+- Support 8+ players
+- Bracket-style elimination
+- Best of 3 per match
+- Display tournament bracket
+- Crown champion</p>
+<h3 id="4-rps-casino">4. <strong>RPS Casino</strong></h3>
+<p>Gambling version with betting system.</p>
+<p><strong>Requirements:</strong>
+- Starting balance of $100
+- Place bets before each round
+- Win doubles bet, lose forfeits bet
+- Track balance over time
+- Bankruptcy detection
+- High score leaderboard</p>
+<h3 id="5-rps-battle-rpg">5. <strong>RPS Battle RPG</strong></h3>
+<p>Turn-based battle game using RPS mechanics.</p>
+<p><strong>Requirements:</strong>
+- Health points for player and enemy
+- RPS determines damage dealt
+- Special moves and powerups
+- Multiple enemy types
+- Boss battles
+- Level progression</p>
+<hr />
+<h2 id="navigation">Navigation</h2>
+<ul>
+<li><strong>Previous:</strong> <a href="../28-number-guessing-game/">28. Number Guessing Game</a></li>
+<li><strong>Next:</strong> <a href="../30-dice-roller-program/">30. Dice Roller Program</a></li>
+<li><strong><a href="../README.md">Back to Main README</a></strong></li>
+</ul>
+<h2 id="key-takeaways-from-video">🎓 Key Takeaways from Video</h2>
+<ol>
+<li>Variables store data values that can be reused</li>
+<li>Import modules to use external code</li>
+<li>Use loops to repeat actions</li>
+<li>Use if-elif-else for conditional logic</li>
+</ol>
+<blockquote>
+<p>💡 <em>These points cover the main concepts from the video tutorial to help reinforce your learning.</em></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

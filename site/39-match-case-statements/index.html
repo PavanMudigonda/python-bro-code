@@ -1,0 +1,3723 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Python Bro Code examples.">
+      
+      
+        <meta name="author" content="Pavan Mudigonda">
+      
+      
+      
+        <link rel="prev" href="../38-list-comprehensions/">
+      
+      
+        <link rel="next" href="../40-modules/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Chapter 39: Match Case Statements - Python Bro Code Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#match-case-statements" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Python Bro Code Docs" class="md-header__button md-logo" aria-label="Python Bro Code Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Bro Code Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 39: Match Case Statements
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/pavanmudigonda/python-bro-code" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pavanmudigonda/python-bro-code
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Python Bro Code Docs" class="md-nav__button md-logo" aria-label="Python Bro Code Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Python Bro Code Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/pavanmudigonda/python-bro-code" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pavanmudigonda/python-bro-code
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-print/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1: Print
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-type-casting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3: Type Casting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-user-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4: User Input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-madlibs-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5: Madlibs Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-if-statements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: If Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 7: Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-weight-conversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 8: Weight Conversion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-temp-conversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 9: Temp Conversion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-logical-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 10: Logical Operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-conditional-expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 11: Conditional Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-string-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 12: String Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-string-indexing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 13: String Indexing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-email-slicer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 14: Email Slicer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 15: Format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-while/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 16: While
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-interest-calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 17: Interest Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-for/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 18: For
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-nested-loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 19: Nested Loops
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-timer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 20: Timer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-lists-sets-tuples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 21: Lists Sets Tuples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-shopping-cart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 22: Shopping Cart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-2d-collections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 23: 2d Collections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-quiz-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 24: Quiz Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-dictionaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 25: Dictionaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-concession-stand-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 26: Concession Stand Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-random-numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 27: Random Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28-number-guessing-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 28: Number Guessing Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../29-rock-paper-scissors-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 29: Rock Paper Scissors Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30-dice-roller-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 30: Dice Roller Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../31-encryption-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 31: Encryption Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../32-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 32: Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../33-default-arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 33: Default Arguments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../34-keyword-arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 34: Keyword Arguments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../35-args-kwargs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 35: Args Kwargs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../36-iterables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 36: Iterables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../37-membership-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 37: Membership Operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../38-list-comprehensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 38: List Comprehensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 39: Match Case Statements
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 39: Match Case Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#video-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📺 Video Tutorial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You'll Learn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept Explanation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concept Explanation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-match-case-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are Match-Case Statements?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Syntax
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-wildcard-pattern-_" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Wildcard Pattern (_)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combining-cases-with-or" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combining Cases with | (OR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-match-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use Match-Case
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#match-case-vs-if-elif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Match-Case vs If-Elif
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-pattern-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Pattern Matching
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-http-status-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: HTTP Status Codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-weekendweekday-checker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Weekend/Weekday Checker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Calculator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4-traffic-light-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 4: Traffic Light System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-5-grade-letter-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 5: Grade Letter System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-6-menu-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 6: Menu System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-7-game-command-parser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 7: Game Command Parser
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice Exercises
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practice Exercises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beginner-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beginner Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intermediate-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intermediate Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Mistakes to Avoid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Mistakes to Avoid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mistake-1-using-match-case-in-python-310" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 1: Using Match-Case in Python &lt; 3.10
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-2-forgetting-the-wildcard-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 2: Forgetting the Wildcard Case
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-3-using-range-comparisons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 3: Using Range Comparisons
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-4-case-fall-through-assumption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 4: Case Fall-Through Assumption
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Applications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real-World Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-api-route-handlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. API Route Handlers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-state-machines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. State Machines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-event-handlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Event Handlers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-command-dispatchers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Command Dispatchers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenge-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge Projects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Challenge Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-vending-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Vending Machine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-text-adventure-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Text Adventure Game
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-cli-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. CLI Tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-state-machine-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. State Machine Calculator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-protocol-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Protocol Router
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways-from-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 Key Takeaways from Video
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../40-modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 40: Modules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../41-scope-resolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 41: Scope Resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../42-if-name-main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 42: If Name Main
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../43-credit-card-validator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 43: Credit Card Validator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../44-banking-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 44: Banking Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../45-slot-machine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 45: Slot Machine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../46-hangman-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 46: Hangman Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../47-python-oop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 47: Python Oop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../48-class-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 48: Class Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../49-inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 49: Inheritance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../50-multiple-inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 50: Multiple Inheritance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../51-abstract-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 51: Abstract Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../55-aggregation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 55: Aggregation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../56-composition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 56: Composition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../57-nested-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 57: Nested Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../63-lambda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 63: Lambda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../64-sorting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 64: Sorting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../65-zip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 65: Zip
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../66-recursion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 66: Recursion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../71-execution-time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 71: Execution Time
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../74-iterators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 74: Iterators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../75-generators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 75: Generators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../76-generator-expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 76: Generator Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../77-data-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 77: Data Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../92-qr-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 92: Qr Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../93-music-player/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 93: Music Player
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#video-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📺 Video Tutorial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You'll Learn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept Explanation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concept Explanation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-match-case-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are Match-Case Statements?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Syntax
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-wildcard-pattern-_" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Wildcard Pattern (_)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combining-cases-with-or" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combining Cases with | (OR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-match-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use Match-Case
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#match-case-vs-if-elif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Match-Case vs If-Elif
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-pattern-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Pattern Matching
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-http-status-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: HTTP Status Codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-weekendweekday-checker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Weekend/Weekday Checker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Calculator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4-traffic-light-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 4: Traffic Light System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-5-grade-letter-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 5: Grade Letter System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-6-menu-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 6: Menu System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-7-game-command-parser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 7: Game Command Parser
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice Exercises
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practice Exercises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beginner-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beginner Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intermediate-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intermediate Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Mistakes to Avoid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Mistakes to Avoid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mistake-1-using-match-case-in-python-310" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 1: Using Match-Case in Python &lt; 3.10
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-2-forgetting-the-wildcard-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 2: Forgetting the Wildcard Case
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-3-using-range-comparisons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 3: Using Range Comparisons
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-4-case-fall-through-assumption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 4: Case Fall-Through Assumption
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Applications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real-World Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-api-route-handlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. API Route Handlers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-state-machines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. State Machines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-event-handlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Event Handlers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-command-dispatchers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Command Dispatchers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenge-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge Projects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Challenge Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-vending-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Vending Machine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-text-adventure-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Text Adventure Game
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-cli-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. CLI Tool
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-state-machine-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. State Machine Calculator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-protocol-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Protocol Router
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways-from-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 Key Takeaways from Video
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="match-case-statements">🔀 Match Case Statements</h1>
+<h2 id="video-tutorial">📺 Video Tutorial</h2>
+<p><strong>Learn Python MATCH-CASE STATEMENTS in 5 minutes! 📆</strong> (5:46)</p>
+<p><a href="https://youtu.be/L7tT0NZF-Ag"><img alt="Watch on YouTube" src="https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&amp;logo=youtube" /></a></p>
+<h2 id="what-youll-learn">What You'll Learn</h2>
+<p>In this chapter, you'll learn about match-case statements (introduced in Python 3.10) - a powerful alternative to multiple if-elif-else chains. You'll discover how to write cleaner, more readable conditional logic using pattern matching, handle multiple values with the OR operator, and implement sophisticated matching patterns that go beyond simple value comparisons.</p>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<ul>
+<li>Understand match-case syntax introduced in Python 3.10+</li>
+<li>Replace complex if-elif chains with cleaner match-case statements</li>
+<li>Use the <code>|</code> (OR) operator to combine multiple cases</li>
+<li>Implement the wildcard <code>_</code> pattern as a default case</li>
+<li>Apply pattern matching to various data types</li>
+<li>Recognize when match-case is more appropriate than if-elif</li>
+</ul>
+<h2 id="concept-explanation">Concept Explanation</h2>
+<h3 id="what-are-match-case-statements">What are Match-Case Statements?</h3>
+<p>Match-case statements (also called "structural pattern matching") provide a cleaner way to handle multiple conditional branches. They're similar to <code>switch</code> statements in other programming languages but more powerful.</p>
+<p><strong>Old Way (if-elif-else):</strong></p>
+<pre><code class="language-python">def day_of_week(day):
+    if day == 1:
+        return &quot;Monday&quot;
+    elif day == 2:
+        return &quot;Tuesday&quot;
+    elif day == 3:
+        return &quot;Wednesday&quot;
+    elif day == 4:
+        return &quot;Thursday&quot;
+    elif day == 5:
+        return &quot;Friday&quot;
+    elif day == 6:
+        return &quot;Saturday&quot;
+    elif day == 7:
+        return &quot;Sunday&quot;
+    else:
+        return &quot;Invalid day&quot;
+</code></pre>
+<p><strong>New Way (match-case):</strong></p>
+<pre><code class="language-python">def day_of_week(day):
+    match day:
+        case 1:
+            return &quot;Monday&quot;
+        case 2:
+            return &quot;Tuesday&quot;
+        case 3:
+            return &quot;Wednesday&quot;
+        case 4:
+            return &quot;Thursday&quot;
+        case 5:
+            return &quot;Friday&quot;
+        case 6:
+            return &quot;Saturday&quot;
+        case 7:
+            return &quot;Sunday&quot;
+        case _:  # Default case (wildcard)
+            return &quot;Invalid day&quot;
+</code></pre>
+<h3 id="basic-syntax">Basic Syntax</h3>
+<pre><code class="language-python">match value:
+    case pattern1:
+        # code for pattern1
+    case pattern2:
+        # code for pattern2
+    case _:
+        # default case (optional)
+</code></pre>
+<p><strong>Key Components:</strong>
+- <code>match</code> - Keyword to start match statement
+- <code>value</code> - Expression to match against
+- <code>case</code> - Keyword for each pattern
+- <code>_</code> - Wildcard that matches anything (default case)</p>
+<h3 id="the-wildcard-pattern-_">The Wildcard Pattern (_)</h3>
+<p>The underscore <code>_</code> acts as a default case that matches anything:</p>
+<pre><code class="language-python">match status_code:
+    case 200:
+        print(&quot;OK&quot;)
+    case 404:
+        print(&quot;Not Found&quot;)
+    case 500:
+        print(&quot;Server Error&quot;)
+    case _:  # Catches everything else
+        print(&quot;Unknown status&quot;)
+</code></pre>
+<h3 id="combining-cases-with-or">Combining Cases with | (OR)</h3>
+<p>Use <code>|</code> to match multiple values in one case:</p>
+<pre><code class="language-python">match day:
+    case &quot;Saturday&quot; | &quot;Sunday&quot;:
+        print(&quot;Weekend!&quot;)
+    case &quot;Monday&quot; | &quot;Tuesday&quot; | &quot;Wednesday&quot; | &quot;Thursday&quot; | &quot;Friday&quot;:
+        print(&quot;Weekday&quot;)
+    case _:
+        print(&quot;Invalid day&quot;)
+</code></pre>
+<p>This is much cleaner than:</p>
+<pre><code class="language-python">if day in [&quot;Saturday&quot;, &quot;Sunday&quot;]:
+    print(&quot;Weekend!&quot;)
+elif day in [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;]:
+    print(&quot;Weekday&quot;)
+</code></pre>
+<h3 id="when-to-use-match-case">When to Use Match-Case</h3>
+<p><strong>Use match-case when:</strong>
+1. You have many (3+) conditions on the same value
+2. Checking discrete values (not ranges)
+3. Want cleaner, more readable code
+4. Using Python 3.10+</p>
+<p><strong>Use if-elif when:</strong>
+1. Range comparisons (<code>if x &gt; 10</code>)
+2. Multiple different conditions
+3. Need to support Python &lt; 3.10
+4. Only 1-2 conditions</p>
+<h3 id="match-case-vs-if-elif">Match-Case vs If-Elif</h3>
+<pre><code class="language-python"># Range check - use if-elif
+if score &gt;= 90:
+    grade = &quot;A&quot;
+elif score &gt;= 80:
+    grade = &quot;B&quot;
+elif score &gt;= 70:
+    grade = &quot;C&quot;
+
+# Discrete values - use match-case
+match command:
+    case &quot;start&quot;:
+        start_game()
+    case &quot;stop&quot;:
+        stop_game()
+    case &quot;pause&quot;:
+        pause_game()
+</code></pre>
+<h3 id="advanced-pattern-matching">Advanced Pattern Matching</h3>
+<p><strong>Match with Conditions (Guards):</strong></p>
+<pre><code class="language-python">match value:
+    case x if x &gt; 0:
+        print(&quot;Positive&quot;)
+    case x if x &lt; 0:
+        print(&quot;Negative&quot;)
+    case _:
+        print(&quot;Zero&quot;)
+</code></pre>
+<p><strong>Match Sequences:</strong></p>
+<pre><code class="language-python">match point:
+    case (0, 0):
+        print(&quot;Origin&quot;)
+    case (0, y):
+        print(f&quot;On Y-axis at {y}&quot;)
+    case (x, 0):
+        print(f&quot;On X-axis at {x}&quot;)
+    case (x, y):
+        print(f&quot;Point at ({x}, {y})&quot;)
+</code></pre>
+<p><strong>Match Types:</strong></p>
+<pre><code class="language-python">match value:
+    case int():
+        print(&quot;It's an integer&quot;)
+    case str():
+        print(&quot;It's a string&quot;)
+    case list():
+        print(&quot;It's a list&quot;)
+    case _:
+        print(&quot;Unknown type&quot;)
+</code></pre>
+<h2 id="examples">Examples</h2>
+<h3 id="example-1-http-status-codes">Example 1: HTTP Status Codes</h3>
+<pre><code class="language-python">def get_status_message(status_code):
+    &quot;&quot;&quot;Return message for HTTP status code.&quot;&quot;&quot;
+    match status_code:
+        case 200:
+            return &quot;OK - Success&quot;
+        case 201:
+            return &quot;Created&quot;
+        case 400:
+            return &quot;Bad Request&quot;
+        case 401:
+            return &quot;Unauthorized&quot;
+        case 403:
+            return &quot;Forbidden&quot;
+        case 404:
+            return &quot;Not Found&quot;
+        case 500:
+            return &quot;Internal Server Error&quot;
+        case _:
+            return &quot;Unknown Status Code&quot;
+
+print(get_status_message(200))  # OK - Success
+print(get_status_message(404))  # Not Found
+print(get_status_message(999))  # Unknown Status Code
+</code></pre>
+<h3 id="example-2-weekendweekday-checker">Example 2: Weekend/Weekday Checker</h3>
+<pre><code class="language-python">def is_weekend(day):
+    &quot;&quot;&quot;
+    Check if a day is a weekend.
+
+    Parameters:
+        day (str): Name of the day
+
+    Returns:
+        bool: True if weekend, False if weekday
+    &quot;&quot;&quot;
+    match day:
+        case &quot;Saturday&quot; | &quot;Sunday&quot;:
+            return True
+        case &quot;Monday&quot; | &quot;Tuesday&quot; | &quot;Wednesday&quot; | &quot;Thursday&quot; | &quot;Friday&quot;:
+            return False
+        case _:
+            return False  # Invalid day
+
+print(is_weekend(&quot;Saturday&quot;))   # True
+print(is_weekend(&quot;Monday&quot;))     # False
+print(is_weekend(&quot;Sunday&quot;))     # True
+print(is_weekend(&quot;InvalidDay&quot;)) # False
+</code></pre>
+<h3 id="example-3-calculator">Example 3: Calculator</h3>
+<pre><code class="language-python">def calculate(num1, num2, operation):
+    &quot;&quot;&quot;
+    Perform calculation based on operation.
+
+    Parameters:
+        num1 (float): First number
+        num2 (float): Second number
+        operation (str): Operation (+, -, *, /, **, %)
+
+    Returns:
+        float or str: Result or error message
+    &quot;&quot;&quot;
+    match operation:
+        case &quot;+&quot;:
+            return num1 + num2
+        case &quot;-&quot;:
+            return num1 - num2
+        case &quot;*&quot;:
+            return num1 * num2
+        case &quot;/&quot;:
+            if num2 == 0:
+                return &quot;Error: Division by zero&quot;
+            return num1 / num2
+        case &quot;**&quot;:
+            return num1 ** num2
+        case &quot;%&quot;:
+            return num1 % num2
+        case _:
+            return &quot;Error: Unknown operation&quot;
+
+print(calculate(10, 5, &quot;+&quot;))   # 15
+print(calculate(10, 5, &quot;*&quot;))   # 50
+print(calculate(10, 0, &quot;/&quot;))   # Error: Division by zero
+print(calculate(10, 5, &quot;^&quot;))   # Error: Unknown operation
+</code></pre>
+<h3 id="example-4-traffic-light-system">Example 4: Traffic Light System</h3>
+<pre><code class="language-python">def traffic_light_action(color):
+    &quot;&quot;&quot;
+    Return action for traffic light color.
+
+    Parameters:
+        color (str): Traffic light color
+
+    Returns:
+        str: Action to take
+    &quot;&quot;&quot;
+    match color.lower():
+        case &quot;red&quot;:
+            return &quot;STOP&quot;
+        case &quot;yellow&quot; | &quot;amber&quot;:
+            return &quot;SLOW DOWN&quot;
+        case &quot;green&quot;:
+            return &quot;GO&quot;
+        case _:
+            return &quot;INVALID COLOR&quot;
+
+print(traffic_light_action(&quot;Red&quot;))     # STOP
+print(traffic_light_action(&quot;Green&quot;))   # GO
+print(traffic_light_action(&quot;Yellow&quot;))  # SLOW DOWN
+print(traffic_light_action(&quot;Amber&quot;))   # SLOW DOWN
+print(traffic_light_action(&quot;Blue&quot;))    # INVALID COLOR
+</code></pre>
+<h3 id="example-5-grade-letter-system">Example 5: Grade Letter System</h3>
+<pre><code class="language-python">def number_to_letter_grade(score):
+    &quot;&quot;&quot;
+    Convert numeric score to letter grade.
+
+    Parameters:
+        score (int): Score out of 100
+
+    Returns:
+        str: Letter grade
+    &quot;&quot;&quot;
+    match score:
+        case s if s &gt;= 90:
+            return &quot;A&quot;
+        case s if s &gt;= 80:
+            return &quot;B&quot;
+        case s if s &gt;= 70:
+            return &quot;C&quot;
+        case s if s &gt;= 60:
+            return &quot;D&quot;
+        case s if s &gt;= 0:
+            return &quot;F&quot;
+        case _:
+            return &quot;Invalid Score&quot;
+
+print(number_to_letter_grade(95))  # A
+print(number_to_letter_grade(82))  # B
+print(number_to_letter_grade(65))  # D
+print(number_to_letter_grade(-5))  # Invalid Score
+</code></pre>
+<h3 id="example-6-menu-system">Example 6: Menu System</h3>
+<pre><code class="language-python">def process_menu_choice(choice):
+    &quot;&quot;&quot;
+    Process user menu selection.
+
+    Parameters:
+        choice (int): Menu option number
+    &quot;&quot;&quot;
+    match choice:
+        case 1:
+            print(&quot;Opening new file...&quot;)
+            return &quot;open&quot;
+        case 2:
+            print(&quot;Saving file...&quot;)
+            return &quot;save&quot;
+        case 3:
+            print(&quot;Printing document...&quot;)
+            return &quot;print&quot;
+        case 4:
+            print(&quot;Closing application...&quot;)
+            return &quot;exit&quot;
+        case _:
+            print(&quot;Invalid option! Please choose 1-4&quot;)
+            return &quot;invalid&quot;
+
+print(&quot;=== FILE MENU ===&quot;)
+print(&quot;1. Open&quot;)
+print(&quot;2. Save&quot;)
+print(&quot;3. Print&quot;)
+print(&quot;4. Exit&quot;)
+
+result = process_menu_choice(2)  # Saving file...
+result = process_menu_choice(5)  # Invalid option! Please choose 1-4
+</code></pre>
+<h3 id="example-7-game-command-parser">Example 7: Game Command Parser</h3>
+<pre><code class="language-python">def parse_game_command(command):
+    &quot;&quot;&quot;
+    Parse and execute game commands.
+
+    Parameters:
+        command (str): User command
+    &quot;&quot;&quot;
+    match command.lower():
+        case &quot;north&quot; | &quot;n&quot;:
+            print(&quot;You move north.&quot;)
+        case &quot;south&quot; | &quot;s&quot;:
+            print(&quot;You move south.&quot;)
+        case &quot;east&quot; | &quot;e&quot;:
+            print(&quot;You move east.&quot;)
+        case &quot;west&quot; | &quot;w&quot;:
+            print(&quot;You move west.&quot;)
+        case &quot;look&quot; | &quot;l&quot;:
+            print(&quot;You look around.&quot;)
+        case &quot;inventory&quot; | &quot;i&quot;:
+            print(&quot;You check your inventory.&quot;)
+        case &quot;help&quot; | &quot;h&quot; | &quot;?&quot;:
+            print(&quot;Available commands: north, south, east, west, look, inventory, quit&quot;)
+        case &quot;quit&quot; | &quot;q&quot; | &quot;exit&quot;:
+            print(&quot;Thanks for playing!&quot;)
+        case _:
+            print(&quot;Unknown command. Type 'help' for available commands.&quot;)
+
+parse_game_command(&quot;north&quot;)      # You move north.
+parse_game_command(&quot;n&quot;)          # You move north.
+parse_game_command(&quot;inventory&quot;)  # You check your inventory.
+parse_game_command(&quot;invalid&quot;)    # Unknown command...
+</code></pre>
+<h2 id="practice-exercises">Practice Exercises</h2>
+<h3 id="beginner-level">Beginner Level</h3>
+<ol>
+<li>
+<p><strong>Month Name</strong>: Create a function that converts month number (1-12) to name using match-case.</p>
+</li>
+<li>
+<p><strong>Rock Paper Scissors</strong>: Implement game logic using match-case for winner determination.</p>
+</li>
+<li>
+<p><strong>Temperature Unit</strong>: Convert temperatures using match-case for unit selection (C, F, K).</p>
+</li>
+<li>
+<p><strong>Card Rank</strong>: Map playing card numbers (1-13) to ranks (Ace, 2-10, Jack, Queen, King).</p>
+</li>
+<li>
+<p><strong>Planet Position</strong>: Return planet name based on position from sun (1-8).</p>
+</li>
+</ol>
+<h3 id="intermediate-level">Intermediate Level</h3>
+<ol>
+<li>
+<p><strong>BMI Calculator</strong>: Use match-case to categorize BMI values into underweight, normal, overweight, obese.</p>
+</li>
+<li>
+<p><strong>File Extension Handler</strong>: Determine file type based on extension using match-case.</p>
+</li>
+<li>
+<p><strong>HTTP Method Router</strong>: Route HTTP methods (GET, POST, PUT, DELETE) to appropriate handlers.</p>
+</li>
+<li>
+<p><strong>Chess Piece Mover</strong>: Validate chess moves based on piece type using match-case.</p>
+</li>
+<li>
+<p><strong>Currency Converter</strong>: Convert between currencies using match-case for currency selection.</p>
+</li>
+</ol>
+<h3 id="advanced-level">Advanced Level</h3>
+<ol>
+<li>
+<p><strong>State Machine</strong>: Implement a finite state machine using match-case for transitions.</p>
+</li>
+<li>
+<p><strong>Expression Evaluator</strong>: Build a calculator that parses expressions using pattern matching.</p>
+</li>
+<li>
+<p><strong>JSON Type Handler</strong>: Handle different JSON data types with pattern matching.</p>
+</li>
+<li>
+<p><strong>Command Line Parser</strong>: Parse command-line arguments using advanced pattern matching.</p>
+</li>
+<li>
+<p><strong>Protocol Handler</strong>: Route different network protocols to handlers using match-case.</p>
+</li>
+</ol>
+<h2 id="common-mistakes-to-avoid">Common Mistakes to Avoid</h2>
+<h3 id="mistake-1-using-match-case-in-python-310">Mistake 1: Using Match-Case in Python &lt; 3.10</h3>
+<p><strong>Wrong:</strong></p>
+<pre><code class="language-python"># SyntaxError in Python 3.9 and earlier
+match value:
+    case 1:
+        print(&quot;One&quot;)
+</code></pre>
+<p><strong>Correct:</strong></p>
+<pre><code class="language-python"># Use if-elif for older Python versions
+if value == 1:
+    print(&quot;One&quot;)
+elif value == 2:
+    print(&quot;Two&quot;)
+</code></pre>
+<p><strong>Why:</strong> Match-case only works in Python 3.10+. Check your Python version first.</p>
+<h3 id="mistake-2-forgetting-the-wildcard-case">Mistake 2: Forgetting the Wildcard Case</h3>
+<p><strong>Wrong:</strong></p>
+<pre><code class="language-python">match color:
+    case &quot;red&quot;:
+        print(&quot;Red&quot;)
+    case &quot;blue&quot;:
+        print(&quot;Blue&quot;)
+# No default - what if color is &quot;green&quot;?
+</code></pre>
+<p><strong>Correct:</strong></p>
+<pre><code class="language-python">match color:
+    case &quot;red&quot;:
+        print(&quot;Red&quot;)
+    case &quot;blue&quot;:
+        print(&quot;Blue&quot;)
+    case _:  # Handles all other cases
+        print(&quot;Other color&quot;)
+</code></pre>
+<p><strong>Why:</strong> Without <code>_</code>, unmatched values fall through silently. Always include a default case.</p>
+<h3 id="mistake-3-using-range-comparisons">Mistake 3: Using Range Comparisons</h3>
+<p><strong>Wrong:</strong></p>
+<pre><code class="language-python"># This doesn't work as expected
+match score:
+    case &gt; 90:  # SyntaxError
+        print(&quot;A&quot;)
+</code></pre>
+<p><strong>Correct:</strong></p>
+<pre><code class="language-python"># Use if-elif for range comparisons
+if score &gt; 90:
+    print(&quot;A&quot;)
+elif score &gt; 80:
+    print(&quot;B&quot;)
+
+# Or use guards in match-case
+match score:
+    case s if s &gt; 90:
+        print(&quot;A&quot;)
+    case s if s &gt; 80:
+        print(&quot;B&quot;)
+</code></pre>
+<p><strong>Why:</strong> Match-case is for exact matches. Use if-elif or guards for ranges.</p>
+<h3 id="mistake-4-case-fall-through-assumption">Mistake 4: Case Fall-Through Assumption</h3>
+<p><strong>Wrong:</strong></p>
+<pre><code class="language-python"># In some languages, cases &quot;fall through&quot;
+# Python match-case does NOT fall through!
+match value:
+    case 1:
+        print(&quot;One&quot;)
+        # No break needed - automatically exits
+    case 2:
+        print(&quot;Two&quot;)
+</code></pre>
+<p><strong>Correct:</strong></p>
+<pre><code class="language-python"># Python match-case automatically breaks
+# No fall-through behavior
+match value:
+    case 1:
+        print(&quot;One&quot;)
+        # Automatically exits here
+    case 2:
+        print(&quot;Two&quot;)  # Only executes if value is 2
+</code></pre>
+<p><strong>Why:</strong> Unlike C/Java switch, Python's match-case doesn't fall through. Each case is isolated.</p>
+<h2 id="real-world-applications">Real-World Applications</h2>
+<h3 id="1-api-route-handlers">1. <strong>API Route Handlers</strong></h3>
+<pre><code class="language-python">match request.method:
+    case &quot;GET&quot;:
+        return handle_get(request)
+    case &quot;POST&quot;:
+        return handle_post(request)
+    case &quot;DELETE&quot;:
+        return handle_delete(request)
+</code></pre>
+<h3 id="2-state-machines">2. <strong>State Machines</strong></h3>
+<pre><code class="language-python">match current_state:
+    case &quot;idle&quot;:
+        transition_to_running()
+    case &quot;running&quot;:
+        process_data()
+    case &quot;error&quot;:
+        handle_error()
+</code></pre>
+<h3 id="3-event-handlers">3. <strong>Event Handlers</strong></h3>
+<pre><code class="language-python">match event.type:
+    case &quot;mouse_click&quot;:
+        handle_click(event)
+    case &quot;key_press&quot;:
+        handle_key(event)
+    case &quot;window_close&quot;:
+        shutdown()
+</code></pre>
+<h3 id="4-command-dispatchers">4. <strong>Command Dispatchers</strong></h3>
+<pre><code class="language-python">match command:
+    case &quot;start&quot;:
+        start_service()
+    case &quot;stop&quot;:
+        stop_service()
+    case &quot;restart&quot;:
+        restart_service()
+</code></pre>
+<h2 id="challenge-projects">Challenge Projects</h2>
+<h3 id="1-vending-machine">1. <strong>Vending Machine</strong></h3>
+<p>Build a vending machine simulator with match-case.</p>
+<p><strong>Requirements:</strong>
+- Product selection (1-9)
+- Payment processing
+- Change calculation
+- Error handling
+- Inventory management</p>
+<h3 id="2-text-adventure-game">2. <strong>Text Adventure Game</strong></h3>
+<p>Create a text adventure using match-case for commands.</p>
+<p><strong>Requirements:</strong>
+- Movement commands (n, s, e, w)
+- Action commands (take, drop, use)
+- Multiple room types
+- Inventory system
+- Win/lose conditions</p>
+<h3 id="3-cli-tool">3. <strong>CLI Tool</strong></h3>
+<p>Build a command-line tool with match-case routing.</p>
+<p><strong>Requirements:</strong>
+- Multiple commands
+- Subcommands
+- Help system
+- Error handling
+- Argument parsing</p>
+<h3 id="4-state-machine-calculator">4. <strong>State Machine Calculator</strong></h3>
+<p>Implement a calculator with state machine logic.</p>
+<p><strong>Requirements:</strong>
+- Different states (entering, operation, result)
+- Transition logic with match-case
+- Error state handling
+- Memory functions
+- Operation history</p>
+<h3 id="5-protocol-router">5. <strong>Protocol Router</strong></h3>
+<p>Create a network protocol router.</p>
+<p><strong>Requirements:</strong>
+- Different protocols (HTTP, FTP, SSH, etc.)
+- Port routing
+- Request parsing
+- Response handling
+- Logging system</p>
+<hr />
+<h2 id="navigation">Navigation</h2>
+<ul>
+<li><strong>Previous:</strong> <a href="37-list-comprehensions.md">37. List Comprehensions</a></li>
+<li><strong>Next:</strong> <a href="39-modules.md">39. Modules</a></li>
+<li><strong><a href="../README.md">Back to Main README</a></strong></li>
+</ul>
+<h2 id="key-takeaways-from-video">🎓 Key Takeaways from Video</h2>
+<ol>
+<li>Functions are reusable blocks of code</li>
+<li>Understanding the proper syntax is important</li>
+<li>Use if-elif-else for conditional logic</li>
+</ol>
+<blockquote>
+<p>💡 <em>These points cover the main concepts from the video tutorial to help reinforce your learning.</em></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

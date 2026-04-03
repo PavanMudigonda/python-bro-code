@@ -10,3 +10,68 @@ theme:
 
 nav:
   - Home: index.md
+  - 'Chapter 1: Print': 1-print.md
+  - 'Chapter 2: Variables': 2-variables.md
+  - 'Chapter 3: Type Casting': 3-type-casting.md
+  - 'Chapter 4: User Input': 4-user-input.md
+  - 'Chapter 5: Madlibs Game': 5-madlibs-game.md
+  - 'Chapter 6: If Statements': 6-if-statements.md
+  - 'Chapter 7: Calculator': 7-calculator.md
+  - 'Chapter 8: Weight Conversion': 8-weight-conversion.md
+  - 'Chapter 9: Temp Conversion': 9-temp-conversion.md
+  - 'Chapter 10: Logical Operators': 10-logical-operators.md
+  - 'Chapter 11: Conditional Expressions': 11-conditional-expressions.md
+  - 'Chapter 12: String Methods': 12-string-methods.md
+  - 'Chapter 13: String Indexing': 13-string-indexing.md
+  - 'Chapter 14: Email Slicer': 14-email-slicer.md
+  - 'Chapter 15: Format': 15-format.md
+  - 'Chapter 16: While': 16-while.md
+  - 'Chapter 17: Interest Calculator': 17-interest-calculator.md
+  - 'Chapter 18: For': 18-for.md
+  - 'Chapter 19: Nested Loops': 19-nested-loops.md
+  - 'Chapter 20: Timer': 20-timer.md
+  - 'Chapter 21: Lists Sets Tuples': 21-lists-sets-tuples.md
+  - 'Chapter 22: Shopping Cart': 22-shopping-cart.md
+  - 'Chapter 23: 2d Collections': 23-2d-collections.md
+  - 'Chapter 24: Quiz Game': 24-quiz-game.md
+  - 'Chapter 25: Dictionaries': 25-dictionaries.md
+  - 'Chapter 26: Concession Stand Program': 26-concession-stand-program.md
+  - 'Chapter 27: Random Numbers': 27-random-numbers.md
+  - 'Chapter 28: Number Guessing Game': 28-number-guessing-game.md
+  - 'Chapter 29: Rock Paper Scissors Game': 29-rock-paper-scissors-game.md
+  - 'Chapter 30: Dice Roller Program': 30-dice-roller-program.md
+  - 'Chapter 31: Encryption Program': 31-encryption-program.md
+  - 'Chapter 32: Functions': 32-functions.md
+  - 'Chapter 33: Default Arguments': 33-default-arguments.md
+  - 'Chapter 34: Keyword Arguments': 34-keyword-arguments.md
+  - 'Chapter 35: Args Kwargs': 35-args-kwargs.md
+  - 'Chapter 36: Iterables': 36-iterables.md
+  - 'Chapter 37: Membership Operators': 37-membership-operators.md
+  - 'Chapter 38: List Comprehensions': 38-list-comprehensions.md
+  - 'Chapter 39: Match Case Statements': 39-match-case-statements.md
+  - 'Chapter 40: Modules': 40-modules.md
+  - 'Chapter 41: Scope Resolution': 41-scope-resolution.md
+  - 'Chapter 42: If Name Main': 42-if-name-main.md
+  - 'Chapter 43: Credit Card Validator': 43-credit-card-validator.md
+  - 'Chapter 44: Banking Program': 44-banking-program.md
+  - 'Chapter 45: Slot Machine': 45-slot-machine.md
+  - 'Chapter 46: Hangman Game': 46-hangman-game.md
+  - 'Chapter 47: Python Oop': 47-python-oop.md
+  - 'Chapter 48: Class Variables': 48-class-variables.md
+  - 'Chapter 49: Inheritance': 49-inheritance.md
+  - 'Chapter 50: Multiple Inheritance': 50-multiple-inheritance.md
+  - 'Chapter 51: Abstract Classes': 51-abstract-classes.md
+  - 'Chapter 55: Aggregation': 55-aggregation.md
+  - 'Chapter 56: Composition': 56-composition.md
+  - 'Chapter 57: Nested Classes': 57-nested-classes.md
+  - 'Chapter 63: Lambda': 63-lambda.md
+  - 'Chapter 64: Sorting': 64-sorting.md
+  - 'Chapter 65: Zip': 65-zip.md
+  - 'Chapter 66: Recursion': 66-recursion.md
+  - 'Chapter 71: Execution Time': 71-execution-time.md
+  - 'Chapter 74: Iterators': 74-iterators.md
+  - 'Chapter 75: Generators': 75-generators.md
+  - 'Chapter 76: Generator Expressions': 76-generator-expressions.md
+  - 'Chapter 77: Data Classes': 77-data-classes.md
+  - 'Chapter 92: Qr Codes': 92-qr-codes.md
+  - 'Chapter 93: Music Player': 93-music-player.md

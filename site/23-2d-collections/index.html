@@ -1,0 +1,3603 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Python Bro Code examples.">
+      
+      
+        <meta name="author" content="Pavan Mudigonda">
+      
+      
+      
+        <link rel="prev" href="../22-shopping-cart/">
+      
+      
+        <link rel="next" href="../24-quiz-game/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Chapter 23: 2d Collections - Python Bro Code Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2d-collections-nested-lists-matrices" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Python Bro Code Docs" class="md-header__button md-logo" aria-label="Python Bro Code Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Bro Code Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 23: 2d Collections
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/pavanmudigonda/python-bro-code" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pavanmudigonda/python-bro-code
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Python Bro Code Docs" class="md-nav__button md-logo" aria-label="Python Bro Code Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Python Bro Code Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/pavanmudigonda/python-bro-code" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pavanmudigonda/python-bro-code
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-print/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1: Print
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-type-casting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3: Type Casting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-user-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4: User Input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-madlibs-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5: Madlibs Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-if-statements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: If Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 7: Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-weight-conversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 8: Weight Conversion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-temp-conversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 9: Temp Conversion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-logical-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 10: Logical Operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-conditional-expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 11: Conditional Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-string-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 12: String Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-string-indexing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 13: String Indexing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-email-slicer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 14: Email Slicer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 15: Format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-while/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 16: While
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-interest-calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 17: Interest Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-for/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 18: For
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-nested-loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 19: Nested Loops
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-timer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 20: Timer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-lists-sets-tuples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 21: Lists Sets Tuples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-shopping-cart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 22: Shopping Cart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 23: 2d Collections
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 23: 2d Collections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#video-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📺 Video Tutorial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You'll Learn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept Explanation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concept Explanation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-2d-collections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are 2D Collections?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualizing-2d-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualizing 2D Lists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Double Indexing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-2d-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating 2D Lists
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating 2D Lists">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-1-direct-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 1: Direct Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-from-existing-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 2: From Existing Lists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-3-using-list-comprehension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 3: Using List Comprehension
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nested Iteration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-2d-list-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common 2D List Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-creating-and-accessing-2d-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Creating and Accessing 2D Lists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-modifying-2d-list-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Modifying 2D List Elements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-nested-loops-for-2d-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Nested Loops for 2D Lists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4-number-pad-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 4: Number Pad Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-5-tic-tac-toe-board" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 5: Tic-Tac-Toe Board
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-6-matrix-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 6: Matrix Operations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-7-student-grades-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 7: Student Grades Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice Exercises
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practice Exercises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beginner-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beginner Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intermediate-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intermediate Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Mistakes to Avoid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Mistakes to Avoid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mistake-1-shallow-copy-creating-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 1: Shallow Copy Creating References
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-2-confusing-rowcolumn-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 2: Confusing Row/Column Order
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-3-forgetting-to-print-newlines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 3: Forgetting to Print Newlines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-4-incorrect-loop-range-for-indices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 4: Incorrect Loop Range for Indices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Applications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real-World Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-image-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Image Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-spreadsheet-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Spreadsheet Applications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-game-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Game Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-scientific-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Scientific Computing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenge-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge Projects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Challenge Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-conways-game-of-life" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Conway's Game of Life
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-minesweeper-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Minesweeper Game
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-seat-reservation-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Seat Reservation System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-image-ascii-art-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Image ASCII Art Generator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-sudoku-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Sudoku Solver
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways-from-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 Key Takeaways from Video
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-quiz-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 24: Quiz Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-dictionaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 25: Dictionaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-concession-stand-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 26: Concession Stand Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-random-numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 27: Random Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28-number-guessing-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 28: Number Guessing Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../29-rock-paper-scissors-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 29: Rock Paper Scissors Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30-dice-roller-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 30: Dice Roller Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../31-encryption-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 31: Encryption Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../32-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 32: Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../33-default-arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 33: Default Arguments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../34-keyword-arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 34: Keyword Arguments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../35-args-kwargs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 35: Args Kwargs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../36-iterables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 36: Iterables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../37-membership-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 37: Membership Operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../38-list-comprehensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 38: List Comprehensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../39-match-case-statements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 39: Match Case Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../40-modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 40: Modules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../41-scope-resolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 41: Scope Resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../42-if-name-main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 42: If Name Main
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../43-credit-card-validator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 43: Credit Card Validator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../44-banking-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 44: Banking Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../45-slot-machine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 45: Slot Machine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../46-hangman-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 46: Hangman Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../47-python-oop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 47: Python Oop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../48-class-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 48: Class Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../49-inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 49: Inheritance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../50-multiple-inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 50: Multiple Inheritance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../51-abstract-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 51: Abstract Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../55-aggregation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 55: Aggregation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../56-composition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 56: Composition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../57-nested-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 57: Nested Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../63-lambda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 63: Lambda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../64-sorting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 64: Sorting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../65-zip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 65: Zip
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../66-recursion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 66: Recursion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../71-execution-time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 71: Execution Time
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../74-iterators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 74: Iterators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../75-generators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 75: Generators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../76-generator-expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 76: Generator Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../77-data-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 77: Data Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../92-qr-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 92: Qr Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../93-music-player/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 93: Music Player
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#video-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📺 Video Tutorial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You'll Learn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept Explanation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concept Explanation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-2d-collections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What are 2D Collections?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualizing-2d-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualizing 2D Lists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Double Indexing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-2d-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating 2D Lists
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating 2D Lists">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-1-direct-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 1: Direct Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-from-existing-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 2: From Existing Lists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-3-using-list-comprehension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 3: Using List Comprehension
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nested Iteration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-2d-list-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common 2D List Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-creating-and-accessing-2d-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Creating and Accessing 2D Lists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-modifying-2d-list-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Modifying 2D List Elements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-nested-loops-for-2d-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Nested Loops for 2D Lists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4-number-pad-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 4: Number Pad Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-5-tic-tac-toe-board" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 5: Tic-Tac-Toe Board
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-6-matrix-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 6: Matrix Operations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-7-student-grades-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 7: Student Grades Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice Exercises
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practice Exercises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beginner-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beginner Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intermediate-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intermediate Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Mistakes to Avoid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Mistakes to Avoid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mistake-1-shallow-copy-creating-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 1: Shallow Copy Creating References
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-2-confusing-rowcolumn-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 2: Confusing Row/Column Order
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-3-forgetting-to-print-newlines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 3: Forgetting to Print Newlines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-4-incorrect-loop-range-for-indices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 4: Incorrect Loop Range for Indices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Applications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real-World Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-image-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Image Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-spreadsheet-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Spreadsheet Applications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-game-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Game Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-scientific-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Scientific Computing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenge-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge Projects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Challenge Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-conways-game-of-life" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Conway's Game of Life
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-minesweeper-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Minesweeper Game
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-seat-reservation-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Seat Reservation System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-image-ascii-art-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Image ASCII Art Generator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-sudoku-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Sudoku Solver
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways-from-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 Key Takeaways from Video
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="2d-collections-nested-lists-matrices">📊 2D Collections (Nested Lists &amp; Matrices)</h1>
+<h2 id="video-tutorial">📺 Video Tutorial</h2>
+<p><strong>Python 2D collections are easy! ⬜</strong> (5:55)</p>
+<p><a href="https://youtu.be/Xy6qeQWQwwFw"><img alt="Watch on YouTube" src="https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&amp;logo=youtube" /></a></p>
+<h2 id="what-youll-learn">What You'll Learn</h2>
+<p>In this chapter, you'll explore two-dimensional (2D) data structures using nested lists to create matrices, tables, and grids. You'll learn how to organize data in rows and columns, access elements using double indexing, and iterate through multi-dimensional data structures effectively.</p>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<ul>
+<li>Create and manipulate 2D lists (lists containing other lists)</li>
+<li>Access elements using row and column indices [row][col]</li>
+<li>Iterate through nested structures using nested loops</li>
+<li>Understand the relationship between 1D and 2D data structures</li>
+<li>Modify elements in multi-dimensional collections</li>
+<li>Apply 2D lists to practical problems like grids and tables</li>
+</ul>
+<h2 id="concept-explanation">Concept Explanation</h2>
+<h3 id="what-are-2d-collections">What are 2D Collections?</h3>
+<p>A <strong>2D collection</strong> (or 2D list) is a list that contains other lists as its elements. Think of it like a spreadsheet with rows and columns, a game board, or a table of data.</p>
+<pre><code class="language-python"># A simple 2D list (3 rows, 3 columns)
+grid = [
+    [1, 2, 3],    # Row 0
+    [4, 5, 6],    # Row 1
+    [7, 8, 9]     # Row 2
+]
+</code></pre>
+<h3 id="visualizing-2d-lists">Visualizing 2D Lists</h3>
+<pre><code>Index:     [0] [1] [2]
+         ┌───┬───┬───┐
+    [0]  │ 1 │ 2 │ 3 │
+         ├───┼───┼───┤
+    [1]  │ 4 │ 5 │ 6 │
+         ├───┼───┼───┤
+    [2]  │ 7 │ 8 │ 9 │
+         └───┴───┴───┘
+</code></pre>
+<h3 id="double-indexing">Double Indexing</h3>
+<p>To access an element in a 2D list, use <strong>double bracket notation</strong>:</p>
+<pre><code class="language-python">grid[row][column]
+</code></pre>
+<ul>
+<li><strong>First bracket</strong> selects the row (which list)</li>
+<li><strong>Second bracket</strong> selects the column (which element in that list)</li>
+</ul>
+<pre><code class="language-python">grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+grid[0][1]  # Row 0, Column 1 → 2
+grid[1][0]  # Row 1, Column 0 → 4
+grid[2][2]  # Row 2, Column 2 → 9
+</code></pre>
+<h3 id="creating-2d-lists">Creating 2D Lists</h3>
+<p>There are several ways to create 2D lists:</p>
+<h4 id="method-1-direct-definition">Method 1: Direct Definition</h4>
+<pre><code class="language-python">matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+</code></pre>
+<h4 id="method-2-from-existing-lists">Method 2: From Existing Lists</h4>
+<pre><code class="language-python">fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+vegetables = [&quot;carrot&quot;, &quot;lettuce&quot;, &quot;onion&quot;]
+meats = [&quot;beef&quot;, &quot;chicken&quot;, &quot;pork&quot;]
+
+# Combine into 2D list
+groceries = [fruits, vegetables, meats]
+</code></pre>
+<h4 id="method-3-using-list-comprehension">Method 3: Using List Comprehension</h4>
+<pre><code class="language-python"># Create 3x3 grid filled with zeros
+grid = [[0 for _ in range(3)] for _ in range(3)]
+</code></pre>
+<h3 id="nested-iteration">Nested Iteration</h3>
+<p>To process all elements in a 2D list, use <strong>nested loops</strong>:</p>
+<pre><code class="language-python">groceries = [
+    [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;],
+    [&quot;carrot&quot;, &quot;lettuce&quot;, &quot;onion&quot;],
+    [&quot;beef&quot;, &quot;chicken&quot;, &quot;pork&quot;]
+]
+
+# Outer loop: iterate through rows
+for collection in groceries:
+    # Inner loop: iterate through items in each row
+    for food in collection:
+        print(food)
+</code></pre>
+<h3 id="common-2d-list-patterns">Common 2D List Patterns</h3>
+<ol>
+<li><strong>Grid/Matrix</strong> - Equal-sized rows and columns</li>
+<li><strong>Table</strong> - Data organized in rows with named columns</li>
+<li><strong>Jagged Array</strong> - Rows of different lengths</li>
+<li><strong>Game Board</strong> - Chess, Tic-Tac-Toe, etc.</li>
+</ol>
+<h2 id="examples">Examples</h2>
+<h3 id="example-1-creating-and-accessing-2d-lists">Example 1: Creating and Accessing 2D Lists</h3>
+<pre><code class="language-python"># Create a 2D list from separate lists
+fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+vegetables = [&quot;carrot&quot;, &quot;lettuce&quot;, &quot;onion&quot;]
+meats = [&quot;beef&quot;, &quot;chicken&quot;, &quot;pork&quot;]
+
+groceries = [fruits, vegetables, meats]
+
+# Access specific elements
+print(groceries[0][1])  # &quot;banana&quot;
+print(groceries[1][0])  # &quot;carrot&quot;
+print(groceries[2][2])  # &quot;pork&quot;
+print(groceries[1][1])  # &quot;lettuce&quot;
+</code></pre>
+<h3 id="example-2-modifying-2d-list-elements">Example 2: Modifying 2D List Elements</h3>
+<pre><code class="language-python">groceries = [
+    [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;],
+    [&quot;carrot&quot;, &quot;lettuce&quot;, &quot;onion&quot;],
+    [&quot;beef&quot;, &quot;chicken&quot;, &quot;pork&quot;]
+]
+
+# Change banana to blueberry
+groceries[0][1] = &quot;blueberry&quot;
+
+print(groceries[0])  # ['apple', 'blueberry', 'cherry']
+</code></pre>
+<h3 id="example-3-nested-loops-for-2d-lists">Example 3: Nested Loops for 2D Lists</h3>
+<pre><code class="language-python">groceries = [
+    [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;],
+    [&quot;carrot&quot;, &quot;lettuce&quot;, &quot;onion&quot;],
+    [&quot;beef&quot;, &quot;chicken&quot;, &quot;pork&quot;]
+]
+
+# Print each item with category
+categories = [&quot;Fruits&quot;, &quot;Vegetables&quot;, &quot;Meats&quot;]
+
+for i in range(len(groceries)):
+    print(f&quot;\n{categories[i]}:&quot;)
+    for item in groceries[i]:
+        print(f&quot;  - {item}&quot;)
+
+# Output:
+# Fruits:
+#   - apple
+#   - banana
+#   - cherry
+# Vegetables:
+#   - carrot
+#   - lettuce
+#   - onion
+# Meats:
+#   - beef
+#   - chicken
+#   - pork
+</code></pre>
+<h3 id="example-4-number-pad-example">Example 4: Number Pad Example</h3>
+<pre><code class="language-python"># Representing a phone keypad
+num_pad = (
+    (7, 8, 9),
+    (4, 5, 6),
+    (1, 2, 3),
+    (&quot;*&quot;, 0, &quot;#&quot;)
+)
+
+# Display the keypad
+for row in num_pad:
+    for button in row:
+        print(button, end=&quot; &quot;)
+    print()  # New line after each row
+
+# Output:
+# 7 8 9 
+# 4 5 6 
+# 1 2 3 
+# * 0 # 
+</code></pre>
+<h3 id="example-5-tic-tac-toe-board">Example 5: Tic-Tac-Toe Board</h3>
+<pre><code class="language-python"># Create empty tic-tac-toe board
+board = [
+    [&quot;-&quot;, &quot;-&quot;, &quot;-&quot;],
+    [&quot;-&quot;, &quot;-&quot;, &quot;-&quot;],
+    [&quot;-&quot;, &quot;-&quot;, &quot;-&quot;]
+]
+
+# Place some moves
+board[0][0] = &quot;X&quot;
+board[1][1] = &quot;O&quot;
+board[2][2] = &quot;X&quot;
+
+# Display board
+for row in board:
+    print(&quot; &quot;.join(row))
+
+# Output:
+# X - -
+# - O -
+# - - X
+</code></pre>
+<h3 id="example-6-matrix-operations">Example 6: Matrix Operations</h3>
+<pre><code class="language-python"># Create a 3x3 matrix
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+# Calculate sum of all elements
+total = 0
+for row in matrix:
+    for num in row:
+        total += num
+
+print(f&quot;Sum of all elements: {total}&quot;)  # 45
+
+# Find maximum value
+max_val = matrix[0][0]
+for row in matrix:
+    for num in row:
+        if num &gt; max_val:
+            max_val = num
+
+print(f&quot;Maximum value: {max_val}&quot;)  # 9
+</code></pre>
+<h3 id="example-7-student-grades-table">Example 7: Student Grades Table</h3>
+<pre><code class="language-python"># Student grades: [name, math, science, english]
+students = [
+    [&quot;Alice&quot;, 85, 92, 88],
+    [&quot;Bob&quot;, 78, 85, 90],
+    [&quot;Charlie&quot;, 92, 88, 85]
+]
+
+# Display formatted table
+print(f&quot;{'Name':&lt;10} {'Math':&lt;6} {'Science':&lt;8} {'English':&lt;8} {'Average':&lt;8}&quot;)
+print(&quot;=&quot; * 50)
+
+for student in students:
+    name = student[0]
+    grades = student[1:]
+    average = sum(grades) / len(grades)
+    print(f&quot;{name:&lt;10} {grades[0]:&lt;6} {grades[1]:&lt;8} {grades[2]:&lt;8} {average:&lt;8.2f}&quot;)
+
+# Output:
+# Name       Math   Science  English  Average 
+# ==================================================
+# Alice      85     92       88       88.33   
+# Bob        78     85       90       84.33   
+# Charlie    92     88       85       88.33   
+</code></pre>
+<h2 id="practice-exercises">Practice Exercises</h2>
+<h3 id="beginner-level">Beginner Level</h3>
+<ol>
+<li>
+<p><strong>Create and Display</strong>: Create a 2D list with 3 rows and 4 columns of your favorite numbers. Print each row on a separate line.</p>
+</li>
+<li>
+<p><strong>Access Practice</strong>: Create a 2D list representing a 3x3 grid. Access and print the elements at positions [0][0], [1][1], and [2][2] (the diagonal).</p>
+</li>
+<li>
+<p><strong>Modify Elements</strong>: Create a 2D list of colors. Change the element at position [1][1] and print the entire modified list.</p>
+</li>
+<li>
+<p><strong>Count Elements</strong>: Create a 2D list and count the total number of elements across all rows.</p>
+</li>
+<li>
+<p><strong>Row Sums</strong>: Create a 2D list of numbers. Calculate and print the sum of each row.</p>
+</li>
+</ol>
+<h3 id="intermediate-level">Intermediate Level</h3>
+<ol>
+<li>
+<p><strong>Transpose Matrix</strong>: Write a program to transpose a 3x3 matrix (swap rows and columns).</p>
+</li>
+<li>
+<p><strong>Checkerboard Pattern</strong>: Create an 8x8 2D list representing a checkerboard with alternating "B" and "W" for black and white squares.</p>
+</li>
+<li>
+<p><strong>Find Element</strong>: Search for a specific value in a 2D list and return its row and column indices.</p>
+</li>
+<li>
+<p><strong>Border Elements</strong>: Print only the border elements of a 2D matrix (first/last row and first/last column).</p>
+</li>
+<li>
+<p><strong>Row and Column Averages</strong>: Calculate the average of each row and each column in a 2D list of numbers.</p>
+</li>
+</ol>
+<h3 id="advanced-level">Advanced Level</h3>
+<ol>
+<li>
+<p><strong>Spiral Print</strong>: Print elements of a 2D matrix in spiral order (clockwise from outside to inside).</p>
+</li>
+<li>
+<p><strong>Rotate Matrix</strong>: Rotate a square matrix 90 degrees clockwise.</p>
+</li>
+<li>
+<p><strong>Saddle Point</strong>: Find a saddle point in a matrix (element that is minimum in its row and maximum in its column).</p>
+</li>
+<li>
+<p><strong>Pascal's Triangle</strong>: Generate the first n rows of Pascal's Triangle using a 2D list.</p>
+</li>
+<li>
+<p><strong>Matrix Multiplication</strong>: Implement matrix multiplication for two compatible 2D matrices.</p>
+</li>
+</ol>
+<h2 id="common-mistakes-to-avoid">Common Mistakes to Avoid</h2>
+<h3 id="mistake-1-shallow-copy-creating-references">Mistake 1: Shallow Copy Creating References</h3>
+<p><strong>Wrong:</strong></p>
+<pre><code class="language-python"># This creates 3 references to the SAME list!
+matrix = [[0] * 3] * 3
+matrix[0][0] = 1
+print(matrix)
+# Output: [[1, 0, 0], [1, 0, 0], [1, 0, 0]]
+# All rows changed!
+</code></pre>
+<p><strong>Correct:</strong></p>
+<pre><code class="language-python"># Create separate lists for each row
+matrix = [[0] * 3 for _ in range(3)]
+matrix[0][0] = 1
+print(matrix)
+# Output: [[1, 0, 0], [0, 0, 0], [0, 0, 0]]
+# Only first row changed
+</code></pre>
+<p><strong>Why:</strong> <code>[[0] * 3] * 3</code> repeats the same list object 3 times, not creating independent copies.</p>
+<h3 id="mistake-2-confusing-rowcolumn-order">Mistake 2: Confusing Row/Column Order</h3>
+<p><strong>Wrong:</strong></p>
+<pre><code class="language-python">matrix = [[1, 2, 3], [4, 5, 6]]
+# Trying to access column 2, row 1
+value = matrix[2][1]  # IndexError!
+</code></pre>
+<p><strong>Correct:</strong></p>
+<pre><code class="language-python">matrix = [[1, 2, 3], [4, 5, 6]]
+# Correct: row first, then column
+value = matrix[1][2]  # 6
+</code></pre>
+<p><strong>Why:</strong> Always use <code>matrix[row][column]</code>, not <code>matrix[column][row]</code>.</p>
+<h3 id="mistake-3-forgetting-to-print-newlines">Mistake 3: Forgetting to Print Newlines</h3>
+<p><strong>Wrong:</strong></p>
+<pre><code class="language-python">matrix = [[1, 2], [3, 4]]
+for row in matrix:
+    for num in row:
+        print(num, end=&quot; &quot;)
+# Output: 1 2 3 4 (all on one line!)
+</code></pre>
+<p><strong>Correct:</strong></p>
+<pre><code class="language-python">matrix = [[1, 2], [3, 4]]
+for row in matrix:
+    for num in row:
+        print(num, end=&quot; &quot;)
+    print()  # Newline after each row
+# Output:
+# 1 2 
+# 3 4 
+</code></pre>
+<p><strong>Why:</strong> Need explicit <code>print()</code> after inner loop to move to next line.</p>
+<h3 id="mistake-4-incorrect-loop-range-for-indices">Mistake 4: Incorrect Loop Range for Indices</h3>
+<p><strong>Wrong:</strong></p>
+<pre><code class="language-python">matrix = [[1, 2, 3], [4, 5, 6]]
+for i in range(len(matrix)):
+    for j in range(len(matrix)):  # Wrong!
+        print(matrix[i][j])
+# IndexError when j &gt;= 3 (row has only 3 elements)
+</code></pre>
+<p><strong>Correct:</strong></p>
+<pre><code class="language-python">matrix = [[1, 2, 3], [4, 5, 6]]
+for i in range(len(matrix)):
+    for j in range(len(matrix[i])):  # Correct
+        print(matrix[i][j])
+</code></pre>
+<p><strong>Why:</strong> Number of rows may differ from number of columns. Use <code>len(matrix[i])</code> for column count.</p>
+<h2 id="real-world-applications">Real-World Applications</h2>
+<h3 id="1-image-processing">1. <strong>Image Processing</strong></h3>
+<p>Digital images are stored as 2D arrays (or 3D for color) where each element represents a pixel's color value. Photo editing software manipulates these matrices to apply filters, adjust brightness, or detect edges.</p>
+<h3 id="2-spreadsheet-applications">2. <strong>Spreadsheet Applications</strong></h3>
+<p>Excel, Google Sheets, and other spreadsheet programs use 2D data structures to store and manipulate cell data. Each cell can be referenced by row and column, just like 2D lists.</p>
+<h3 id="3-game-development">3. <strong>Game Development</strong></h3>
+<p>Board games (Chess, Checkers, Tic-Tac-Toe), tile-based games (Sudoku, Minesweeper), and level maps in video games use 2D grids to represent game state and player positions.</p>
+<h3 id="4-scientific-computing">4. <strong>Scientific Computing</strong></h3>
+<p>Matrices are fundamental in physics simulations, engineering calculations, machine learning (neural network weights), and data analysis. Libraries like NumPy build on 2D array concepts.</p>
+<h2 id="challenge-projects">Challenge Projects</h2>
+<h3 id="1-conways-game-of-life">1. <strong>Conway's Game of Life</strong></h3>
+<p>Implement the classic cellular automaton where cells live or die based on their neighbors.</p>
+<p><strong>Requirements:</strong>
+- Create a 20x20 grid of cells (0 = dead, 1 = alive)
+- Implement the rules for cell birth/death
+- Animate multiple generations
+- Add patterns like gliders and oscillators</p>
+<h3 id="2-minesweeper-game">2. <strong>Minesweeper Game</strong></h3>
+<p>Create a simplified version of Minesweeper with mine placement and number calculation.</p>
+<p><strong>Requirements:</strong>
+- Generate random mine positions
+- Calculate numbers showing adjacent mines
+- Reveal cells when clicked
+- Detect win/lose conditions</p>
+<h3 id="3-seat-reservation-system">3. <strong>Seat Reservation System</strong></h3>
+<p>Build a movie theater seat booking system using a 2D grid.</p>
+<p><strong>Requirements:</strong>
+- Display seat availability (O = available, X = booked)
+- Allow user to select row and seat
+- Prevent double-booking
+- Calculate total revenue
+- Show most popular rows</p>
+<h3 id="4-image-ascii-art-generator">4. <strong>Image ASCII Art Generator</strong></h3>
+<p>Convert a simple 2D number matrix into ASCII art.</p>
+<p><strong>Requirements:</strong>
+- Create brightness matrix (0-9 scale)
+- Map numbers to ASCII characters
+- Display the ASCII art
+- Allow loading different patterns</p>
+<h3 id="5-sudoku-solver">5. <strong>Sudoku Solver</strong></h3>
+<p>Create a program that validates and solves Sudoku puzzles.</p>
+<p><strong>Requirements:</strong>
+- Represent 9x9 Sudoku board as 2D list
+- Validate row, column, and 3x3 box constraints
+- Implement backtracking algorithm to solve
+- Display solution step-by-step</p>
+<hr />
+<h2 id="navigation">Navigation</h2>
+<ul>
+<li><strong>Previous:</strong> <a href="../22-shopping-cart/">22. Shopping Cart Program</a></li>
+<li><strong>Next:</strong> <a href="../24-quiz-game/">24. Quiz Game</a></li>
+<li><strong><a href="../README.md">Back to Main README</a></strong></li>
+</ul>
+<h2 id="key-takeaways-from-video">🎓 Key Takeaways from Video</h2>
+<ol>
+<li>Lists store multiple items in a single variable</li>
+<li>Use loops to repeat actions</li>
+<li>Follow along with the video for hands-on practice</li>
+</ol>
+<blockquote>
+<p>💡 <em>These points cover the main concepts from the video tutorial to help reinforce your learning.</em></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

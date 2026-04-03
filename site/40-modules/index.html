@@ -1,0 +1,3896 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Python Bro Code examples.">
+      
+      
+        <meta name="author" content="Pavan Mudigonda">
+      
+      
+      
+        <link rel="prev" href="../39-match-case-statements/">
+      
+      
+        <link rel="next" href="../41-scope-resolution/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Chapter 40: Modules - Python Bro Code Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modules" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Python Bro Code Docs" class="md-header__button md-logo" aria-label="Python Bro Code Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Bro Code Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 40: Modules
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/pavanmudigonda/python-bro-code" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pavanmudigonda/python-bro-code
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Python Bro Code Docs" class="md-nav__button md-logo" aria-label="Python Bro Code Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Python Bro Code Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/pavanmudigonda/python-bro-code" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pavanmudigonda/python-bro-code
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-print/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1: Print
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-type-casting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3: Type Casting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-user-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4: User Input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-madlibs-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5: Madlibs Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-if-statements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: If Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 7: Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-weight-conversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 8: Weight Conversion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-temp-conversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 9: Temp Conversion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-logical-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 10: Logical Operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-conditional-expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 11: Conditional Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-string-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 12: String Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-string-indexing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 13: String Indexing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-email-slicer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 14: Email Slicer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 15: Format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-while/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 16: While
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-interest-calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 17: Interest Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-for/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 18: For
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-nested-loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 19: Nested Loops
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-timer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 20: Timer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-lists-sets-tuples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 21: Lists Sets Tuples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-shopping-cart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 22: Shopping Cart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-2d-collections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 23: 2d Collections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-quiz-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 24: Quiz Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-dictionaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 25: Dictionaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-concession-stand-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 26: Concession Stand Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-random-numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 27: Random Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28-number-guessing-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 28: Number Guessing Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../29-rock-paper-scissors-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 29: Rock Paper Scissors Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30-dice-roller-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 30: Dice Roller Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../31-encryption-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 31: Encryption Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../32-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 32: Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../33-default-arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 33: Default Arguments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../34-keyword-arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 34: Keyword Arguments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../35-args-kwargs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 35: Args Kwargs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../36-iterables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 36: Iterables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../37-membership-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 37: Membership Operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../38-list-comprehensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 38: List Comprehensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../39-match-case-statements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 39: Match Case Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 40: Modules
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 40: Modules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#video-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📺 Video Tutorial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You'll Learn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept Explanation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concept Explanation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a Module?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-import-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Import Syntax
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Import Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-import-entire-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Import Entire Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-import-specific-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Import Specific Items
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-import-with-alias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Import with Alias
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-import-everything-not-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Import Everything (Not Recommended!)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-custom-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating Custom Modules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-name-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The name Variable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-styles-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Import Styles Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-built-in-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Built-in Modules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Built-in Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#math-mathematical-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        math - Mathematical functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random-random-number-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        random - Random number generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime-date-and-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        datetime - Date and time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#os-operating-system-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        os - Operating system functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-search-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module Search Path
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-using-math-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Using math Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-using-random-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Using random Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-creating-custom-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Creating Custom Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4-different-import-styles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 4: Different Import Styles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-5-using-datetime-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 5: Using datetime Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-6-custom-geometry-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 6: Custom Geometry Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-7-using-os-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 7: Using os Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice Exercises
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practice Exercises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beginner-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beginner Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intermediate-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intermediate Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Mistakes to Avoid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Mistakes to Avoid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mistake-1-circular-imports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 1: Circular Imports
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-2-using-from-module-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 2: Using from module import *
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-3-module-naming-conflicts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 3: Module Naming Conflicts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-4-forgetting-__name__-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 4: Forgetting __name__ Check
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Applications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real-World Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-web-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Web Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-data-science" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Data Science
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Automation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenge-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge Projects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Challenge Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-utility-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Utility Library
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-game-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Game Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-data-processing-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Data Processing Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-cli-tool-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. CLI Tool Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-web-scraper-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Web Scraper Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways-from-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 Key Takeaways from Video
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../41-scope-resolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 41: Scope Resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../42-if-name-main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 42: If Name Main
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../43-credit-card-validator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 43: Credit Card Validator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../44-banking-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 44: Banking Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../45-slot-machine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 45: Slot Machine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../46-hangman-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 46: Hangman Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../47-python-oop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 47: Python Oop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../48-class-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 48: Class Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../49-inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 49: Inheritance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../50-multiple-inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 50: Multiple Inheritance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../51-abstract-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 51: Abstract Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../55-aggregation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 55: Aggregation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../56-composition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 56: Composition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../57-nested-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 57: Nested Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../63-lambda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 63: Lambda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../64-sorting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 64: Sorting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../65-zip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 65: Zip
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../66-recursion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 66: Recursion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../71-execution-time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 71: Execution Time
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../74-iterators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 74: Iterators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../75-generators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 75: Generators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../76-generator-expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 76: Generator Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../77-data-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 77: Data Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../92-qr-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 92: Qr Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../93-music-player/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 93: Music Player
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#video-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📺 Video Tutorial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You'll Learn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concept Explanation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concept Explanation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a Module?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-import-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Import Syntax
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Import Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-import-entire-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Import Entire Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-import-specific-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Import Specific Items
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-import-with-alias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Import with Alias
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-import-everything-not-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Import Everything (Not Recommended!)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-custom-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating Custom Modules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-name-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The name Variable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-styles-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Import Styles Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-built-in-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Built-in Modules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Built-in Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#math-mathematical-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        math - Mathematical functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random-random-number-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        random - Random number generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datetime-date-and-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        datetime - Date and time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#os-operating-system-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        os - Operating system functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-search-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Module Search Path
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-using-math-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Using math Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-using-random-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Using random Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-creating-custom-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Creating Custom Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4-different-import-styles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 4: Different Import Styles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-5-using-datetime-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 5: Using datetime Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-6-custom-geometry-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 6: Custom Geometry Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-7-using-os-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 7: Using os Module
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice Exercises
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practice Exercises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#beginner-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Beginner Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intermediate-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intermediate Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Mistakes to Avoid
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Mistakes to Avoid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mistake-1-circular-imports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 1: Circular Imports
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-2-using-from-module-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 2: Using from module import *
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-3-module-naming-conflicts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 3: Module Naming Conflicts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-4-forgetting-__name__-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 4: Forgetting __name__ Check
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Applications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Real-World Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-web-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Web Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-data-science" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Data Science
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Automation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenge-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge Projects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Challenge Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-utility-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Utility Library
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-game-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Game Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-data-processing-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Data Processing Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-cli-tool-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. CLI Tool Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-web-scraper-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Web Scraper Framework
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways-from-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 Key Takeaways from Video
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="modules">📦 Modules</h1>
+<h2 id="video-tutorial">📺 Video Tutorial</h2>
+<p><strong>What are Python modules? 📨</strong> (7:57)</p>
+<p><a href="https://youtu.be/XcfxkHrHTVE"><img alt="Watch on YouTube" src="https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&amp;logo=youtube" /></a></p>
+<h2 id="what-youll-learn">What You'll Learn</h2>
+<p>In this chapter, you'll learn about Python modules - files containing Python code that you can import and reuse in other programs. You'll discover how to import built-in modules, create your own custom modules, use different import styles, and organize your code into reusable, maintainable components that promote the DRY (Don't Repeat Yourself) principle.</p>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<ul>
+<li>Understand what modules are and why they're important</li>
+<li>Import and use built-in Python modules</li>
+<li>Create your own custom modules</li>
+<li>Use different import syntaxes (<code>import</code>, <code>from...import</code>, <code>as</code>)</li>
+<li>Understand the <code>__name__</code> variable and <code>if __name__ == "__main__"</code> pattern</li>
+<li>Organize code into reusable modules for better project structure</li>
+</ul>
+<h2 id="concept-explanation">Concept Explanation</h2>
+<h3 id="what-is-a-module">What is a Module?</h3>
+<p>A <strong>module</strong> is simply a file containing Python code (functions, variables, classes) that you can import and use in other programs.</p>
+<p><strong>Why Use Modules?</strong>
+1. <strong>Code Reusability</strong> - Write once, use many times
+2. <strong>Organization</strong> - Break large programs into smaller, manageable files
+3. <strong>Namespace Separation</strong> - Avoid naming conflicts
+4. <strong>Maintainability</strong> - Update code in one place</p>
+<p><strong>Types of Modules:</strong>
+- <strong>Built-in modules</strong> - Included with Python (math, random, datetime)
+- <strong>Third-party modules</strong> - Installed via pip (requests, numpy, pandas)
+- <strong>Custom modules</strong> - Your own Python files</p>
+<h3 id="basic-import-syntax">Basic Import Syntax</h3>
+<h4 id="1-import-entire-module">1. <strong>Import Entire Module</strong></h4>
+<pre><code class="language-python">import math
+
+result = math.sqrt(16)
+print(result)  # 4.0
+</code></pre>
+<h4 id="2-import-specific-items">2. <strong>Import Specific Items</strong></h4>
+<pre><code class="language-python">from math import sqrt, pi
+
+print(sqrt(16))  # 4.0
+print(pi)        # 3.14159...
+</code></pre>
+<h4 id="3-import-with-alias">3. <strong>Import with Alias</strong></h4>
+<pre><code class="language-python">import math as m
+
+print(m.sqrt(16))  # 4.0
+</code></pre>
+<h4 id="4-import-everything-not-recommended">4. <strong>Import Everything</strong> (Not Recommended!)</h4>
+<pre><code class="language-python">from math import *
+
+print(sqrt(16))  # 4.0 - no prefix needed
+# Problem: Can cause naming conflicts!
+</code></pre>
+<h3 id="creating-custom-modules">Creating Custom Modules</h3>
+<p>Any Python file can be a module. Just save your code in a <code>.py</code> file and import it!</p>
+<p><strong>example.py</strong> (Your custom module):</p>
+<pre><code class="language-python"># example.py - Custom module
+
+pi = 3.14159
+
+def square(x):
+    &quot;&quot;&quot;Return the square of x.&quot;&quot;&quot;
+    return x ** 2
+
+def cube(x):
+    &quot;&quot;&quot;Return the cube of x.&quot;&quot;&quot;
+    return x ** 3
+
+def circumference(radius):
+    &quot;&quot;&quot;Calculate circumference of a circle.&quot;&quot;&quot;
+    return 2 * pi * radius
+
+def area(radius):
+    &quot;&quot;&quot;Calculate area of a circle.&quot;&quot;&quot;
+    return pi * (radius ** 2)
+</code></pre>
+<p><strong>main.py</strong> (Using the custom module):</p>
+<pre><code class="language-python"># main.py
+import example
+
+# Access module variables
+print(example.pi)  # 3.14159
+
+# Call module functions
+print(example.square(5))           # 25
+print(example.cube(3))             # 27
+print(example.circumference(10))   # 62.8318
+print(example.area(5))             # 78.53975
+</code></pre>
+<h3 id="the-name-variable">The <strong>name</strong> Variable</h3>
+<p>Every Python module has a special variable called <code>__name__</code>:
+- When module is <strong>run directly</strong>: <code>__name__ == "__main__"</code>
+- When module is <strong>imported</strong>: <code>__name__ == "module_name"</code></p>
+<p>This allows you to write code that only runs when the file is executed directly:</p>
+<p><strong>example.py</strong>:</p>
+<pre><code class="language-python"># example.py
+def greet(name):
+    print(f&quot;Hello, {name}!&quot;)
+
+# This only runs when example.py is executed directly
+if __name__ == &quot;__main__&quot;:
+    print(&quot;Running example.py directly&quot;)
+    greet(&quot;Alice&quot;)
+</code></pre>
+<p><strong>main.py</strong>:</p>
+<pre><code class="language-python"># main.py
+import example
+
+# The if __name__ block in example.py doesn't run
+example.greet(&quot;Bob&quot;)  # Only this executes
+</code></pre>
+<h3 id="import-styles-comparison">Import Styles Comparison</h3>
+<pre><code class="language-python"># Style 1: Import module
+import math
+print(math.sqrt(16))  # Must use math. prefix
+
+# Style 2: Import specific items
+from math import sqrt
+print(sqrt(16))  # No prefix needed
+
+# Style 3: Import with alias
+import math as m
+print(m.sqrt(16))  # Use alias prefix
+
+# Style 4: Import all (avoid!)
+from math import *
+print(sqrt(16))  # No prefix, but can cause conflicts
+</code></pre>
+<h3 id="common-built-in-modules">Common Built-in Modules</h3>
+<h4 id="math-mathematical-functions"><strong>math</strong> - Mathematical functions</h4>
+<pre><code class="language-python">import math
+
+print(math.sqrt(25))     # 5.0
+print(math.pi)           # 3.14159...
+print(math.ceil(4.3))    # 5
+print(math.floor(4.7))   # 4
+</code></pre>
+<h4 id="random-random-number-generation"><strong>random</strong> - Random number generation</h4>
+<pre><code class="language-python">import random
+
+print(random.randint(1, 10))        # Random int 1-10
+print(random.choice(['a', 'b', 'c']))  # Random choice
+print(random.random())              # Random float 0-1
+</code></pre>
+<h4 id="datetime-date-and-time"><strong>datetime</strong> - Date and time</h4>
+<pre><code class="language-python">import datetime
+
+now = datetime.datetime.now()
+print(now)  # Current date and time
+</code></pre>
+<h4 id="os-operating-system-functions"><strong>os</strong> - Operating system functions</h4>
+<pre><code class="language-python">import os
+
+print(os.getcwd())  # Current working directory
+print(os.listdir())  # List files in directory
+</code></pre>
+<h3 id="module-search-path">Module Search Path</h3>
+<p>Python looks for modules in this order:
+1. Current directory
+2. PYTHONPATH environment variable
+3. Installation-dependent directories</p>
+<pre><code class="language-python">import sys
+print(sys.path)  # Shows module search paths
+</code></pre>
+<h2 id="examples">Examples</h2>
+<h3 id="example-1-using-math-module">Example 1: Using math Module</h3>
+<pre><code class="language-python">import math
+
+# Square root
+print(f&quot;Square root of 16: {math.sqrt(16)}&quot;)  # 4.0
+
+# Power
+print(f&quot;2 to the power of 3: {math.pow(2, 3)}&quot;)  # 8.0
+
+# Constants
+print(f&quot;Pi: {math.pi}&quot;)  # 3.14159...
+print(f&quot;Euler's number: {math.e}&quot;)  # 2.71828...
+
+# Trigonometry
+print(f&quot;Sin(90°): {math.sin(math.radians(90))}&quot;)  # 1.0
+print(f&quot;Cos(0°): {math.cos(math.radians(0))}&quot;)    # 1.0
+
+# Rounding
+print(f&quot;Ceiling of 4.3: {math.ceil(4.3)}&quot;)   # 5
+print(f&quot;Floor of 4.7: {math.floor(4.7)}&quot;)    # 4
+</code></pre>
+<h3 id="example-2-using-random-module">Example 2: Using random Module</h3>
+<pre><code class="language-python">import random
+
+# Random integer in range
+dice_roll = random.randint(1, 6)
+print(f&quot;Dice roll: {dice_roll}&quot;)
+
+# Random choice from list
+colors = [&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;, &quot;yellow&quot;]
+chosen_color = random.choice(colors)
+print(f&quot;Chosen color: {chosen_color}&quot;)
+
+# Random float 0-1
+random_float = random.random()
+print(f&quot;Random float: {random_float}&quot;)
+
+# Shuffle a list
+cards = [&quot;Ace&quot;, &quot;King&quot;, &quot;Queen&quot;, &quot;Jack&quot;]
+random.shuffle(cards)
+print(f&quot;Shuffled cards: {cards}&quot;)
+
+# Random sample (multiple choices)
+lottery_numbers = random.sample(range(1, 50), 6)
+print(f&quot;Lottery numbers: {lottery_numbers}&quot;)
+</code></pre>
+<h3 id="example-3-creating-custom-module">Example 3: Creating Custom Module</h3>
+<pre><code class="language-python"># calculator.py
+&quot;&quot;&quot;
+A simple calculator module.
+&quot;&quot;&quot;
+
+def add(a, b):
+    &quot;&quot;&quot;Add two numbers.&quot;&quot;&quot;
+    return a + b
+
+def subtract(a, b):
+    &quot;&quot;&quot;Subtract b from a.&quot;&quot;&quot;
+    return a - b
+
+def multiply(a, b):
+    &quot;&quot;&quot;Multiply two numbers.&quot;&quot;&quot;
+    return a * b
+
+def divide(a, b):
+    &quot;&quot;&quot;Divide a by b.&quot;&quot;&quot;
+    if b == 0:
+        return &quot;Error: Division by zero&quot;
+    return a / b
+
+# Test code (only runs when executed directly)
+if __name__ == &quot;__main__&quot;:
+    print(&quot;Testing calculator module...&quot;)
+    print(f&quot;10 + 5 = {add(10, 5)}&quot;)
+    print(f&quot;10 - 5 = {subtract(10, 5)}&quot;)
+    print(f&quot;10 * 5 = {multiply(10, 5)}&quot;)
+    print(f&quot;10 / 5 = {divide(10, 5)}&quot;)
+
+# main.py
+import calculator
+
+print(calculator.add(15, 7))       # 22
+print(calculator.multiply(4, 8))   # 32
+print(calculator.divide(20, 4))    # 5.0
+</code></pre>
+<h3 id="example-4-different-import-styles">Example 4: Different Import Styles</h3>
+<pre><code class="language-python"># Style 1: Import entire module
+import random
+print(random.randint(1, 10))
+
+# Style 2: Import specific function
+from random import choice
+colors = [&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;]
+print(choice(colors))
+
+# Style 3: Import with alias
+import random as r
+print(r.random())
+
+# Style 4: Import multiple items
+from math import sqrt, pi, e
+print(sqrt(16))
+print(pi)
+print(e)
+</code></pre>
+<h3 id="example-5-using-datetime-module">Example 5: Using datetime Module</h3>
+<pre><code class="language-python">import datetime
+
+# Current date and time
+now = datetime.datetime.now()
+print(f&quot;Current date and time: {now}&quot;)
+print(f&quot;Year: {now.year}&quot;)
+print(f&quot;Month: {now.month}&quot;)
+print(f&quot;Day: {now.day}&quot;)
+print(f&quot;Hour: {now.hour}&quot;)
+print(f&quot;Minute: {now.minute}&quot;)
+
+# Create specific date
+birthday = datetime.datetime(1990, 5, 15)
+print(f&quot;Birthday: {birthday}&quot;)
+
+# Date arithmetic
+days_alive = now - birthday
+print(f&quot;Days alive: {days_alive.days}&quot;)
+
+# Format date
+formatted = now.strftime(&quot;%B %d, %Y&quot;)
+print(f&quot;Formatted: {formatted}&quot;)  # Example: January 10, 2026
+</code></pre>
+<h3 id="example-6-custom-geometry-module">Example 6: Custom Geometry Module</h3>
+<pre><code class="language-python"># geometry.py
+&quot;&quot;&quot;Geometry calculations module.&quot;&quot;&quot;
+
+import math
+
+def circle_area(radius):
+    &quot;&quot;&quot;Calculate area of a circle.&quot;&quot;&quot;
+    return math.pi * (radius ** 2)
+
+def circle_circumference(radius):
+    &quot;&quot;&quot;Calculate circumference of a circle.&quot;&quot;&quot;
+    return 2 * math.pi * radius
+
+def rectangle_area(length, width):
+    &quot;&quot;&quot;Calculate area of a rectangle.&quot;&quot;&quot;
+    return length * width
+
+def rectangle_perimeter(length, width):
+    &quot;&quot;&quot;Calculate perimeter of a rectangle.&quot;&quot;&quot;
+    return 2 * (length + width)
+
+def triangle_area(base, height):
+    &quot;&quot;&quot;Calculate area of a triangle.&quot;&quot;&quot;
+    return 0.5 * base * height
+
+# Test the module
+if __name__ == &quot;__main__&quot;:
+    print(&quot;=== Geometry Module Tests ===&quot;)
+    print(f&quot;Circle (r=5) area: {circle_area(5):.2f}&quot;)
+    print(f&quot;Rectangle (4x6) area: {rectangle_area(4, 6)}&quot;)
+    print(f&quot;Triangle (b=8, h=5) area: {triangle_area(8, 5)}&quot;)
+
+# main.py
+import geometry
+
+print(geometry.circle_area(10))         # 314.159...
+print(geometry.rectangle_area(5, 8))    # 40
+print(geometry.triangle_area(10, 6))    # 30.0
+</code></pre>
+<h3 id="example-7-using-os-module">Example 7: Using os Module</h3>
+<pre><code class="language-python">import os
+
+# Current working directory
+print(f&quot;Current directory: {os.getcwd()}&quot;)
+
+# List files in directory
+print(f&quot;Files in current directory: {os.listdir()}&quot;)
+
+# Check if file exists
+if os.path.exists(&quot;example.txt&quot;):
+    print(&quot;File exists!&quot;)
+else:
+    print(&quot;File not found&quot;)
+
+# Get file size
+if os.path.exists(&quot;example.txt&quot;):
+    size = os.path.getsize(&quot;example.txt&quot;)
+    print(f&quot;File size: {size} bytes&quot;)
+
+# Create directory
+if not os.path.exists(&quot;new_folder&quot;):
+    os.mkdir(&quot;new_folder&quot;)
+    print(&quot;Directory created&quot;)
+</code></pre>
+<h2 id="practice-exercises">Practice Exercises</h2>
+<h3 id="beginner-level">Beginner Level</h3>
+<ol>
+<li>
+<p><strong>Import and Use</strong>: Import the <code>math</code> module and use 5 different functions from it.</p>
+</li>
+<li>
+<p><strong>Random Generator</strong>: Create a program that uses <code>random</code> module to simulate dice rolls.</p>
+</li>
+<li>
+<p><strong>Date Display</strong>: Use <code>datetime</code> to display current date in different formats.</p>
+</li>
+<li>
+<p><strong>Simple Module</strong>: Create a module with 3 functions for temperature conversions.</p>
+</li>
+<li>
+<p><strong>Import Styles</strong>: Practice all four import styles with the <code>random</code> module.</p>
+</li>
+</ol>
+<h3 id="intermediate-level">Intermediate Level</h3>
+<ol>
+<li>
+<p><strong>String Utils Module</strong>: Create a module with string manipulation functions (reverse, capitalize, count_vowels).</p>
+</li>
+<li>
+<p><strong>Math Library</strong>: Build a comprehensive math module with functions for factorial, GCD, LCM, isPrime.</p>
+</li>
+<li>
+<p><strong>File Utils</strong>: Create a module for file operations (read, write, append, delete).</p>
+</li>
+<li>
+<p><strong>Data Validator</strong>: Build a validation module for emails, phone numbers, URLs.</p>
+</li>
+<li>
+<p><strong>Game Module</strong>: Create a module for game utilities (score tracking, player management).</p>
+</li>
+</ol>
+<h3 id="advanced-level">Advanced Level</h3>
+<ol>
+<li>
+<p><strong>Package Structure</strong>: Create a package with multiple related modules organized in folders.</p>
+</li>
+<li>
+<p><strong>Module with Classes</strong>: Build a module containing classes for a bank account system.</p>
+</li>
+<li>
+<p><strong>Configuration Module</strong>: Create a module for loading and saving application configurations.</p>
+</li>
+<li>
+<p><strong>Database Module</strong>: Build a module that abstracts database operations.</p>
+</li>
+<li>
+<p><strong>API Client Module</strong>: Create a reusable module for making API requests with error handling.</p>
+</li>
+</ol>
+<h2 id="common-mistakes-to-avoid">Common Mistakes to Avoid</h2>
+<h3 id="mistake-1-circular-imports">Mistake 1: Circular Imports</h3>
+<p><strong>Wrong:</strong></p>
+<pre><code class="language-python"># module_a.py
+import module_b
+
+def func_a():
+    module_b.func_b()
+
+# module_b.py
+import module_a  # Circular import!
+
+def func_b():
+    module_a.func_a()
+</code></pre>
+<p><strong>Correct:</strong></p>
+<pre><code class="language-python"># Restructure to avoid circular dependencies
+# Or import inside function if necessary
+</code></pre>
+<p><strong>Why:</strong> Circular imports cause errors. Restructure your code to avoid them.</p>
+<h3 id="mistake-2-using-from-module-import">Mistake 2: Using <code>from module import *</code></h3>
+<p><strong>Wrong:</strong></p>
+<pre><code class="language-python">from math import *
+from random import *
+
+# Name conflicts possible!
+# Which module does choice() come from?
+</code></pre>
+<p><strong>Correct:</strong></p>
+<pre><code class="language-python">import math
+import random
+
+# Clear which module each function comes from
+math.sqrt(16)
+random.choice(['a', 'b'])
+</code></pre>
+<p><strong>Why:</strong> <code>import *</code> can cause naming conflicts and makes code less readable.</p>
+<h3 id="mistake-3-module-naming-conflicts">Mistake 3: Module Naming Conflicts</h3>
+<p><strong>Wrong:</strong></p>
+<pre><code class="language-python"># Don't name your file math.py - conflicts with built-in!
+# math.py (your file)
+def my_function():
+    pass
+
+# main.py
+import math  # Imports YOUR math.py, not built-in!
+</code></pre>
+<p><strong>Correct:</strong></p>
+<pre><code class="language-python"># Use descriptive, unique names
+# my_math_utils.py
+def my_function():
+    pass
+</code></pre>
+<p><strong>Why:</strong> Avoid naming your modules the same as built-in modules.</p>
+<h3 id="mistake-4-forgetting-__name__-check">Mistake 4: Forgetting <code>__name__</code> Check</h3>
+<p><strong>Wrong:</strong></p>
+<pre><code class="language-python"># module.py
+def useful_function():
+    return &quot;Result&quot;
+
+# Test code runs even when imported!
+print(&quot;Testing...&quot;)
+useful_function()
+</code></pre>
+<p><strong>Correct:</strong></p>
+<pre><code class="language-python"># module.py
+def useful_function():
+    return &quot;Result&quot;
+
+# Only runs when executed directly
+if __name__ == &quot;__main__&quot;:
+    print(&quot;Testing...&quot;)
+    useful_function()
+</code></pre>
+<p><strong>Why:</strong> Without <code>if __name__ == "__main__"</code>, test code runs every time module is imported.</p>
+<h2 id="real-world-applications">Real-World Applications</h2>
+<h3 id="1-web-development">1. <strong>Web Development</strong></h3>
+<pre><code class="language-python">from flask import Flask, request, jsonify
+from database import db_connect, db_query
+from auth import check_authentication
+</code></pre>
+<h3 id="2-data-science">2. <strong>Data Science</strong></h3>
+<pre><code class="language-python">import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+</code></pre>
+<h3 id="3-automation">3. <strong>Automation</strong></h3>
+<pre><code class="language-python">import os
+import shutil
+from datetime import datetime
+from email_utils import send_email
+</code></pre>
+<h3 id="4-testing">4. <strong>Testing</strong></h3>
+<pre><code class="language-python">import unittest
+from my_module import function_to_test
+</code></pre>
+<h2 id="challenge-projects">Challenge Projects</h2>
+<h3 id="1-utility-library">1. <strong>Utility Library</strong></h3>
+<p>Create a comprehensive utility module collection.</p>
+<p><strong>Requirements:</strong>
+- String utilities module
+- File operations module
+- Date/time helpers module
+- Data validators module
+- Math utilities module
+- Proper documentation</p>
+<h3 id="2-game-framework">2. <strong>Game Framework</strong></h3>
+<p>Build a reusable game framework as modules.</p>
+<p><strong>Requirements:</strong>
+- Player management module
+- Scoring system module
+- Inventory module
+- Combat system module
+- Save/load module
+- Example game using framework</p>
+<h3 id="3-data-processing-pipeline">3. <strong>Data Processing Pipeline</strong></h3>
+<p>Create modules for data processing.</p>
+<p><strong>Requirements:</strong>
+- Data loading module
+- Data cleaning module
+- Data transformation module
+- Data validation module
+- Data export module
+- Pipeline orchestrator</p>
+<h3 id="4-cli-tool-framework">4. <strong>CLI Tool Framework</strong></h3>
+<p>Build a framework for CLI tools.</p>
+<p><strong>Requirements:</strong>
+- Command parser module
+- Configuration module
+- Logging module
+- Error handling module
+- Help system module
+- Example CLI tool</p>
+<h3 id="5-web-scraper-framework">5. <strong>Web Scraper Framework</strong></h3>
+<p>Create a modular web scraping framework.</p>
+<p><strong>Requirements:</strong>
+- Request handler module
+- HTML parser module
+- Data extractor module
+- Storage module
+- Error handling module
+- Rate limiting module</p>
+<hr />
+<h2 id="navigation">Navigation</h2>
+<ul>
+<li><strong>Previous:</strong> <a href="38-match-case-statements.md">38. Match Case Statements</a></li>
+<li><strong>Next:</strong> <a href="40-scope-resolution.md">40. Scope Resolution</a></li>
+<li><strong><a href="../README.md">Back to Main README</a></strong></li>
+</ul>
+<h2 id="key-takeaways-from-video">🎓 Key Takeaways from Video</h2>
+<ol>
+<li>Lists store multiple items in a single variable</li>
+<li>Define functions using the def keyword</li>
+<li>Import modules to use external code</li>
+</ol>
+<blockquote>
+<p>💡 <em>These points cover the main concepts from the video tutorial to help reinforce your learning.</em></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3852 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Python Bro Code examples.">
+      
+      
+        <meta name="author" content="Pavan Mudigonda">
+      
+      
+      
+        <link rel="prev" href="../17-interest-calculator/">
+      
+      
+        <link rel="next" href="../19-nested-loops/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Chapter 18: For - Python Bro Code Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-18-for-loops" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Python Bro Code Docs" class="md-header__button md-logo" aria-label="Python Bro Code Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Bro Code Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 18: For
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/pavanmudigonda/python-bro-code" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pavanmudigonda/python-bro-code
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Python Bro Code Docs" class="md-nav__button md-logo" aria-label="Python Bro Code Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Python Bro Code Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/pavanmudigonda/python-bro-code" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pavanmudigonda/python-bro-code
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-print/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1: Print
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 2: Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-type-casting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3: Type Casting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-user-input/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4: User Input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-madlibs-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5: Madlibs Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-if-statements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: If Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 7: Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-weight-conversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 8: Weight Conversion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-temp-conversion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 9: Temp Conversion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-logical-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 10: Logical Operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-conditional-expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 11: Conditional Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-string-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 12: String Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-string-indexing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 13: String Indexing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-email-slicer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 14: Email Slicer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 15: Format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-while/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 16: While
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-interest-calculator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 17: Interest Calculator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 18: For
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 18: For
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#video-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📺 Video Tutorial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 What You'll Learn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 Concept Explanation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📖 Concept Explanation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-for-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a For Loop?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syntax
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-loop-vs-while-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Loop vs While Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💡 Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-basic-for-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Basic For Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-iterating-through-a-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Iterating Through a String
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-iterating-through-a-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Iterating Through a List
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4-using-range-with-different-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 4: Using range() with Different Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-5-countdown-with-reversed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 5: Countdown with Reversed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-6-sum-of-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 6: Sum of Numbers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-7-multiplication-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 7: Multiplication Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-8-enumerate-for-index-and-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 8: Enumerate for Index and Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-9-iterating-through-dictionary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 9: Iterating Through Dictionary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-10-nested-for-loops-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 10: Nested For Loops (Preview)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Common Mistakes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Common Mistakes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mistake-1-off-by-one-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 1: Off-by-One Errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-2-modifying-list-while-iterating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 2: Modifying List While Iterating
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-3-using-wrong-variable-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 3: Using Wrong Variable Name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-4-forgetting-range-around-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 4: Forgetting range() Around Numbers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✍️ Practice Exercises
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✍️ Practice Exercises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Easy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medium" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medium
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎮 Real-World Applications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎮 Real-World Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-1-grade-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application 1: Grade Calculator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-2-shopping-receipt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application 2: Shopping Receipt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-3-password-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application 3: Password Generator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-4-data-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application 4: Data Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-5-ascii-art-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application 5: ASCII Art Generator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenge-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Challenge Projects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Challenge Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#challenge-1-prime-number-finder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge 1: Prime Number Finder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenge-2-fibonacci-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge 2: Fibonacci Sequence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenge-3-statistics-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge 3: Statistics Calculator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenge-4-text-analyzer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge 4: Text Analyzer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenge-5-pattern-creator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge 5: Pattern Creator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#range-function-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Range() Function Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loop-control-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Loop Control Statements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 Loop Control Statements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#break-exit-loop-early" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Break - Exit Loop Early
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continue-skip-current-iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Continue - Skip Current Iteration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#else-with-for-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Else with For Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Common Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Common Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#count-occurrences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Count Occurrences
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-a-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build a String
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-maximum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Find Maximum
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-it-yourself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💪 Try It Yourself
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways-from-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 Key Takeaways from Video
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-chapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 Next Chapter
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-nested-loops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 19: Nested Loops
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-timer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 20: Timer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-lists-sets-tuples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 21: Lists Sets Tuples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-shopping-cart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 22: Shopping Cart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-2d-collections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 23: 2d Collections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-quiz-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 24: Quiz Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-dictionaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 25: Dictionaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-concession-stand-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 26: Concession Stand Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-random-numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 27: Random Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28-number-guessing-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 28: Number Guessing Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../29-rock-paper-scissors-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 29: Rock Paper Scissors Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30-dice-roller-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 30: Dice Roller Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../31-encryption-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 31: Encryption Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../32-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 32: Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../33-default-arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 33: Default Arguments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../34-keyword-arguments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 34: Keyword Arguments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../35-args-kwargs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 35: Args Kwargs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../36-iterables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 36: Iterables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../37-membership-operators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 37: Membership Operators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../38-list-comprehensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 38: List Comprehensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../39-match-case-statements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 39: Match Case Statements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../40-modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 40: Modules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../41-scope-resolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 41: Scope Resolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../42-if-name-main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 42: If Name Main
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../43-credit-card-validator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 43: Credit Card Validator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../44-banking-program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 44: Banking Program
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../45-slot-machine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 45: Slot Machine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../46-hangman-game/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 46: Hangman Game
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../47-python-oop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 47: Python Oop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../48-class-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 48: Class Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../49-inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 49: Inheritance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../50-multiple-inheritance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 50: Multiple Inheritance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../51-abstract-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 51: Abstract Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../55-aggregation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 55: Aggregation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../56-composition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 56: Composition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../57-nested-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 57: Nested Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../63-lambda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 63: Lambda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../64-sorting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 64: Sorting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../65-zip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 65: Zip
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../66-recursion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 66: Recursion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../71-execution-time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 71: Execution Time
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../74-iterators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 74: Iterators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../75-generators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 75: Generators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../76-generator-expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 76: Generator Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../77-data-classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 77: Data Classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../92-qr-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 92: Qr Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../93-music-player/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 93: Music Player
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#video-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📺 Video Tutorial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 What You'll Learn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📖 Concept Explanation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📖 Concept Explanation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-for-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is a For Loop?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syntax
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-loop-vs-while-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Loop vs While Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💡 Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-basic-for-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1: Basic For Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-iterating-through-a-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2: Iterating Through a String
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-iterating-through-a-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3: Iterating Through a List
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4-using-range-with-different-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 4: Using range() with Different Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-5-countdown-with-reversed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 5: Countdown with Reversed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-6-sum-of-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 6: Sum of Numbers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-7-multiplication-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 7: Multiplication Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-8-enumerate-for-index-and-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 8: Enumerate for Index and Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-9-iterating-through-dictionary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 9: Iterating Through Dictionary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-10-nested-for-loops-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 10: Nested For Loops (Preview)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Common Mistakes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Common Mistakes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mistake-1-off-by-one-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 1: Off-by-One Errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-2-modifying-list-while-iterating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 2: Modifying List While Iterating
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-3-using-wrong-variable-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 3: Using Wrong Variable Name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mistake-4-forgetting-range-around-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mistake 4: Forgetting range() Around Numbers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practice-exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✍️ Practice Exercises
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✍️ Practice Exercises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Easy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medium" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medium
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎮 Real-World Applications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎮 Real-World Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-1-grade-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application 1: Grade Calculator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-2-shopping-receipt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application 2: Shopping Receipt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-3-password-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application 3: Password Generator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-4-data-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application 4: Data Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-5-ascii-art-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application 5: ASCII Art Generator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenge-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Challenge Projects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Challenge Projects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#challenge-1-prime-number-finder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge 1: Prime Number Finder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenge-2-fibonacci-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge 2: Fibonacci Sequence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenge-3-statistics-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge 3: Statistics Calculator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenge-4-text-analyzer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge 4: Text Analyzer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenge-5-pattern-creator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge 5: Pattern Creator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#range-function-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Range() Function Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loop-control-statements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Loop Control Statements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 Loop Control Statements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#break-exit-loop-early" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Break - Exit Loop Early
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continue-skip-current-iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Continue - Skip Current Iteration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#else-with-for-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Else with For Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Common Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Common Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#count-occurrences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Count Occurrences
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-a-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build a String
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-maximum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Find Maximum
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-it-yourself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💪 Try It Yourself
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways-from-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 Key Takeaways from Video
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-chapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 Next Chapter
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="chapter-18-for-loops">Chapter 18: For Loops</h1>
+<h2 id="video-tutorial">📺 Video Tutorial</h2>
+<p><strong>Learn Python for loops in 5 minutes! 🔁</strong> (5:47)</p>
+<p><a href="https://youtu.be/KWgYha0clzw"><img alt="Watch on YouTube" src="https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&amp;logo=youtube" /></a></p>
+<h2 id="what-youll-learn">📚 What You'll Learn</h2>
+<p>Master the for loop - Python's most elegant way to iterate through sequences and repeat code!</p>
+<h2 id="learning-objectives">🎯 Learning Objectives</h2>
+<ul>
+<li>Understand for loop syntax and usage</li>
+<li>Use range() function effectively</li>
+<li>Iterate through strings, lists, and sequences</li>
+<li>Use reversed() and step parameters</li>
+<li>Apply enumerate() for indexed iteration</li>
+<li>Combine loops with conditionals</li>
+</ul>
+<h2 id="concept-explanation">📖 Concept Explanation</h2>
+<h3 id="what-is-a-for-loop">What is a For Loop?</h3>
+<p>A for loop iterates through a sequence (like a list, string, or range) and executes code for each item.</p>
+<h3 id="syntax">Syntax</h3>
+<pre><code class="language-python">for variable in sequence:
+    # code to execute for each item
+</code></pre>
+<h3 id="how-it-works">How It Works</h3>
+<ol>
+<li>Take first item from sequence</li>
+<li>Execute the code block</li>
+<li>Take next item</li>
+<li>Repeat until no items left</li>
+</ol>
+<h3 id="for-loop-vs-while-loop">For Loop vs While Loop</h3>
+<ul>
+<li><strong>For loop</strong>: When you know how many times to repeat</li>
+<li><strong>While loop</strong>: When you repeat until a condition is false</li>
+</ul>
+<h2 id="examples">💡 Examples</h2>
+<h3 id="example-1-basic-for-loop">Example 1: Basic For Loop</h3>
+<pre><code class="language-python">for i in range(5):
+    print(i)
+
+# Output: 0, 1, 2, 3, 4
+</code></pre>
+<h3 id="example-2-iterating-through-a-string">Example 2: Iterating Through a String</h3>
+<pre><code class="language-python">name = &quot;Python&quot;
+
+for letter in name:
+    print(letter)
+
+# Output:
+# P
+# y
+# t
+# h
+# o
+# n
+</code></pre>
+<h3 id="example-3-iterating-through-a-list">Example 3: Iterating Through a List</h3>
+<pre><code class="language-python">fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+
+for fruit in fruits:
+    print(f&quot;I like {fruit}&quot;)
+
+# Output:
+# I like apple
+# I like banana
+# I like cherry
+</code></pre>
+<h3 id="example-4-using-range-with-different-parameters">Example 4: Using range() with Different Parameters</h3>
+<pre><code class="language-python"># range(stop) - starts at 0
+for i in range(5):
+    print(i, end=&quot; &quot;)  # 0 1 2 3 4
+
+print()
+
+# range(start, stop)
+for i in range(2, 7):
+    print(i, end=&quot; &quot;)  # 2 3 4 5 6
+
+print()
+
+# range(start, stop, step)
+for i in range(0, 10, 2):
+    print(i, end=&quot; &quot;)  # 0 2 4 6 8
+</code></pre>
+<h3 id="example-5-countdown-with-reversed">Example 5: Countdown with Reversed</h3>
+<pre><code class="language-python"># Countdown from 10 to 1
+for i in range(10, 0, -1):
+    print(i)
+print(&quot;Blastoff!&quot;)
+
+# Alternative using reversed()
+for i in reversed(range(1, 11)):
+    print(i)
+print(&quot;Blastoff!&quot;)
+</code></pre>
+<h3 id="example-6-sum-of-numbers">Example 6: Sum of Numbers</h3>
+<pre><code class="language-python">total = 0
+
+for num in range(1, 11):
+    total += num
+
+print(f&quot;Sum of 1-10: {total}&quot;)  # 55
+</code></pre>
+<h3 id="example-7-multiplication-table">Example 7: Multiplication Table</h3>
+<pre><code class="language-python">number = 7
+
+print(f&quot;Multiplication table for {number}:\n&quot;)
+
+for i in range(1, 11):
+    result = number * i
+    print(f&quot;{number} × {i} = {result}&quot;)
+</code></pre>
+<h3 id="example-8-enumerate-for-index-and-value">Example 8: Enumerate for Index and Value</h3>
+<pre><code class="language-python">fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+
+for index, fruit in enumerate(fruits):
+    print(f&quot;{index}: {fruit}&quot;)
+
+# Output:
+# 0: apple
+# 1: banana
+# 2: cherry
+
+# Start index from 1
+for index, fruit in enumerate(fruits, start=1):
+    print(f&quot;{index}. {fruit}&quot;)
+</code></pre>
+<h3 id="example-9-iterating-through-dictionary">Example 9: Iterating Through Dictionary</h3>
+<pre><code class="language-python">student = {
+    &quot;name&quot;: &quot;Alice&quot;,
+    &quot;age&quot;: 20,
+    &quot;grade&quot;: &quot;A&quot;
+}
+
+# Iterate through keys
+for key in student:
+    print(f&quot;{key}: {student[key]}&quot;)
+
+# Iterate through key-value pairs
+for key, value in student.items():
+    print(f&quot;{key}: {value}&quot;)
+</code></pre>
+<h3 id="example-10-nested-for-loops-preview">Example 10: Nested For Loops (Preview)</h3>
+<pre><code class="language-python">for i in range(3):
+    for j in range(3):
+        print(f&quot;({i}, {j})&quot;, end=&quot; &quot;)
+    print()
+
+# Output:
+# (0, 0) (0, 1) (0, 2) 
+# (1, 0) (1, 1) (1, 2) 
+# (2, 0) (2, 1) (2, 2)
+</code></pre>
+<h2 id="common-mistakes">🔍 Common Mistakes</h2>
+<h3 id="mistake-1-off-by-one-errors">Mistake 1: Off-by-One Errors</h3>
+<pre><code class="language-python"># Wrong: range stops BEFORE the end
+for i in range(10):
+    print(i)  # Prints 0-9, NOT 0-10
+
+# Correct: Add 1 to include the number
+for i in range(11):
+    print(i)  # Prints 0-10
+
+# Or use appropriate start/stop
+for i in range(1, 11):
+    print(i)  # Prints 1-10
+</code></pre>
+<h3 id="mistake-2-modifying-list-while-iterating">Mistake 2: Modifying List While Iterating</h3>
+<pre><code class="language-python"># Dangerous!
+numbers = [1, 2, 3, 4, 5]
+for num in numbers:
+    if num % 2 == 0:
+        numbers.remove(num)  # Can skip elements!
+
+# Better approach
+numbers = [1, 2, 3, 4, 5]
+numbers = [num for num in numbers if num % 2 != 0]
+</code></pre>
+<h3 id="mistake-3-using-wrong-variable-name">Mistake 3: Using Wrong Variable Name</h3>
+<pre><code class="language-python">fruits = [&quot;apple&quot;, &quot;banana&quot;]
+
+# Confusing
+for fruit in fruits:
+    print(fruits)  # Prints whole list twice!
+
+# Clear
+for fruit in fruits:
+    print(fruit)  # Prints each fruit
+</code></pre>
+<h3 id="mistake-4-forgetting-range-around-numbers">Mistake 4: Forgetting range() Around Numbers</h3>
+<pre><code class="language-python"># Wrong
+for i in 5:  # TypeError!
+    print(i)
+
+# Correct
+for i in range(5):
+    print(i)
+</code></pre>
+<h2 id="practice-exercises">✍️ Practice Exercises</h2>
+<h3 id="easy">Easy</h3>
+<ol>
+<li>Print numbers 1-20</li>
+<li>Print even numbers from 2-20</li>
+<li>Print your name 10 times</li>
+<li>Sum numbers from 1-100</li>
+<li>Print each character in a word</li>
+</ol>
+<h3 id="medium">Medium</h3>
+<ol>
+<li>Create a multiplication table (1-12)</li>
+<li>Count vowels in a string</li>
+<li>Find factorial of a number</li>
+<li>Print Fibonacci sequence (first 10 numbers)</li>
+<li>Calculate average of a list of numbers</li>
+</ol>
+<h3 id="hard">Hard</h3>
+<ol>
+<li>Print prime numbers up to 50</li>
+<li>Reverse a string using a loop</li>
+<li>Find all divisors of a number</li>
+<li>Create a pattern printer</li>
+<li>Build a grade calculator for multiple students</li>
+</ol>
+<h2 id="real-world-applications">🎮 Real-World Applications</h2>
+<h3 id="application-1-grade-calculator">Application 1: Grade Calculator</h3>
+<pre><code class="language-python">print(&quot;=== Grade Calculator ===\n&quot;)
+
+num_students = int(input(&quot;How many students? &quot;))
+total_average = 0
+
+for i in range(1, num_students + 1):
+    print(f&quot;\nStudent {i}:&quot;)
+    grade = float(input(&quot;Enter grade: &quot;))
+    total_average += grade
+
+    if grade &gt;= 90:
+        letter = &quot;A&quot;
+    elif grade &gt;= 80:
+        letter = &quot;B&quot;
+    elif grade &gt;= 70:
+        letter = &quot;C&quot;
+    elif grade &gt;= 60:
+        letter = &quot;D&quot;
+    else:
+        letter = &quot;F&quot;
+
+    print(f&quot;Letter grade: {letter}&quot;)
+
+class_average = total_average / num_students
+print(f&quot;\nClass average: {class_average:.2f}&quot;)
+</code></pre>
+<h3 id="application-2-shopping-receipt">Application 2: Shopping Receipt</h3>
+<pre><code class="language-python">print(&quot;=== Shopping Receipt ===\n&quot;)
+
+items = []
+prices = []
+quantities = []
+
+num_items = int(input(&quot;How many items? &quot;))
+
+for i in range(num_items):
+    print(f&quot;\nItem {i + 1}:&quot;)
+    item = input(&quot;Item name: &quot;)
+    price = float(input(&quot;Price: $&quot;))
+    qty = int(input(&quot;Quantity: &quot;))
+
+    items.append(item)
+    prices.append(price)
+    quantities.append(qty)
+
+print(&quot;\n&quot; + &quot;=&quot;*40)
+print(&quot;RECEIPT&quot;)
+print(&quot;=&quot;*40)
+
+total = 0
+for i in range(num_items):
+    subtotal = prices[i] * quantities[i]
+    total += subtotal
+    print(f&quot;{items[i]:&lt;20} {quantities[i]}× ${prices[i]:.2f} = ${subtotal:.2f}&quot;)
+
+print(&quot;=&quot;*40)
+print(f&quot;{'TOTAL:':&lt;20} ${total:.2f}&quot;)
+print(&quot;=&quot;*40)
+</code></pre>
+<h3 id="application-3-password-generator">Application 3: Password Generator</h3>
+<pre><code class="language-python">import random
+
+print(&quot;=== Password Generator ===\n&quot;)
+
+length = int(input(&quot;Password length: &quot;))
+password = &quot;&quot;
+
+lowercase = &quot;abcdefghijklmnopqrstuvwxyz&quot;
+uppercase = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;
+digits = &quot;0123456789&quot;
+symbols = &quot;!@#$%^&amp;*&quot;
+
+all_chars = lowercase + uppercase + digits + symbols
+
+for i in range(length):
+    password += random.choice(all_chars)
+
+print(f&quot;Generated password: {password}&quot;)
+</code></pre>
+<h3 id="application-4-data-analysis">Application 4: Data Analysis</h3>
+<pre><code class="language-python"># Temperature analysis
+temperatures = [72, 75, 68, 70, 73, 71, 69, 74, 76, 72]
+
+total = 0
+highest = temperatures[0]
+lowest = temperatures[0]
+
+for temp in temperatures:
+    total += temp
+    if temp &gt; highest:
+        highest = temp
+    if temp &lt; lowest:
+        lowest = temp
+
+average = total / len(temperatures)
+
+print(f&quot;Average temperature: {average:.1f}°F&quot;)
+print(f&quot;Highest: {highest}°F&quot;)
+print(f&quot;Lowest: {lowest}°F&quot;)
+print(f&quot;Range: {highest - lowest}°F&quot;)
+</code></pre>
+<h3 id="application-5-ascii-art-generator">Application 5: ASCII Art Generator</h3>
+<pre><code class="language-python"># Triangle pattern
+height = int(input(&quot;Enter height: &quot;))
+
+for i in range(1, height + 1):
+    print(&quot;* &quot; * i)
+
+# Output for height=5:
+# * 
+# * * 
+# * * * 
+# * * * * 
+# * * * * *
+</code></pre>
+<h2 id="challenge-projects">🚀 Challenge Projects</h2>
+<h3 id="challenge-1-prime-number-finder">Challenge 1: Prime Number Finder</h3>
+<p>Create a program that:
+- Finds all prime numbers up to N
+- Shows how many primes were found
+- Calculates sum of all primes
+- Displays them in rows of 10</p>
+<h3 id="challenge-2-fibonacci-sequence">Challenge 2: Fibonacci Sequence</h3>
+<p>Build a program that:
+- Generates first N Fibonacci numbers
+- Shows the ratio between consecutive numbers
+- Calculates sum of even Fibonacci numbers
+- Finds Fibonacci numbers under a limit</p>
+<h3 id="challenge-3-statistics-calculator">Challenge 3: Statistics Calculator</h3>
+<p>Create a tool that:
+- Accepts multiple numbers from user
+- Calculates mean, median, mode
+- Finds range and standard deviation
+- Shows frequency distribution</p>
+<h3 id="challenge-4-text-analyzer">Challenge 4: Text Analyzer</h3>
+<p>Build a program that:
+- Counts words, sentences, paragraphs
+- Finds most common words
+- Calculates average word length
+- Identifies longest and shortest words</p>
+<h3 id="challenge-5-pattern-creator">Challenge 5: Pattern Creator</h3>
+<p>Create patterns like:</p>
+<pre><code>    *
+   ***
+  *****
+ *******
+*********
+</code></pre>
+<ul>
+<li>Allow user to choose height</li>
+<li>Create different shapes (diamond, pyramid, etc.)</li>
+<li>Use different characters</li>
+<li>Add colors (using ANSI codes)</li>
+</ul>
+<h2 id="range-function-reference">📚 Range() Function Reference</h2>
+<pre><code class="language-python"># Basic usage
+range(stop)           # 0 to stop-1
+range(start, stop)    # start to stop-1
+range(start, stop, step)  # start to stop-1, by step
+
+# Examples
+range(5)              # 0, 1, 2, 3, 4
+range(2, 8)           # 2, 3, 4, 5, 6, 7
+range(0, 10, 2)       # 0, 2, 4, 6, 8
+range(10, 0, -1)      # 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
+range(5, 0, -2)       # 5, 3, 1
+</code></pre>
+<h2 id="loop-control-statements">🔄 Loop Control Statements</h2>
+<h3 id="break-exit-loop-early">Break - Exit Loop Early</h3>
+<pre><code class="language-python">for i in range(10):
+    if i == 5:
+        break
+    print(i)
+# Prints: 0, 1, 2, 3, 4
+</code></pre>
+<h3 id="continue-skip-current-iteration">Continue - Skip Current Iteration</h3>
+<pre><code class="language-python">for i in range(6):
+    if i == 3:
+        continue
+    print(i)
+# Prints: 0, 1, 2, 4, 5
+</code></pre>
+<h3 id="else-with-for-loop">Else with For Loop</h3>
+<pre><code class="language-python">for i in range(5):
+    print(i)
+else:
+    print(&quot;Loop completed!&quot;)
+# Runs if loop wasn't broken
+</code></pre>
+<h2 id="common-patterns">🎯 Common Patterns</h2>
+<h3 id="count-occurrences">Count Occurrences</h3>
+<pre><code class="language-python">text = &quot;hello world&quot;
+count = 0
+
+for char in text:
+    if char == 'l':
+        count += 1
+
+print(f&quot;'l' appears {count} times&quot;)
+</code></pre>
+<h3 id="build-a-string">Build a String</h3>
+<pre><code class="language-python">result = &quot;&quot;
+
+for i in range(5):
+    result += str(i) + &quot; &quot;
+
+print(result)  # &quot;0 1 2 3 4 &quot;
+</code></pre>
+<h3 id="find-maximum">Find Maximum</h3>
+<pre><code class="language-python">numbers = [34, 78, 12, 90, 45]
+maximum = numbers[0]
+
+for num in numbers:
+    if num &gt; maximum:
+        maximum = num
+
+print(f&quot;Maximum: {maximum}&quot;)
+</code></pre>
+<h2 id="try-it-yourself">💪 Try It Yourself</h2>
+<p>Modify <code>main.py</code> to:
+1. Create a countdown timer
+2. Build a times table generator
+3. Make a number pattern printer
+4. Calculate factorial
+5. Find all multiples of 3 in a range</p>
+<h2 id="key-takeaways-from-video">🎓 Key Takeaways from Video</h2>
+<ol>
+<li>Strings are text data enclosed in quotes</li>
+<li>Understanding the proper syntax is important</li>
+<li>Use loops to repeat actions</li>
+<li>Use if-elif-else for conditional logic</li>
+</ol>
+<blockquote>
+<p>💡 <em>These points cover the main concepts from the video tutorial to help reinforce your learning.</em></p>
+</blockquote>
+<h2 id="next-chapter">🔗 Next Chapter</h2>
+<p>Continue to <a href="19-timer.md">Chapter 19: Countdown Timer</a> to build a real countdown timer application!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
