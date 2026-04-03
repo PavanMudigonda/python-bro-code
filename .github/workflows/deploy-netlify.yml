@@ -1,29 +1,61 @@
-# GitHub Actions workflow for deploying to Netlify
-
-name: Deploy to Netlify
+name: Deploy MkDocs to Netlify
 
 on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/checkout@v6
         with:
-          python-version: '3.12'
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: 'latest'
+          cache: pip
+          cache-dependency-path: requirements-docs.txt
 
       - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
+        run: pip install -r requirements-docs.txt
 
-      - name: Deploy to Netlify
-        uses: netlify/actions/cli@v2
+      - name: Generate MkDocs site
+        run: |
+          bash scripts/build_site.sh
+          mkdocs build
+        env:
+          GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
+
+      - name: Setup Node.js (for Netlify CLI)
+        uses: actions/setup-node@v6
         with:
-          args: deploy --site=$NETLIFY_SITE_ID --auth=$NETLIFY_AUTH_TOKEN
+          node-version: lts/*
+
+      - name: Install Netlify CLI
+        run: npm install -g netlify-cli
+
+      # Deploy preview for Pull Requests
+      - name: Deploy preview to Netlify
+        if: github.event_name == 'pull_request'
+        run: netlify deploy --dir=site --message="PR ${{ github.event.number }} - Run ${{ github.run_number }}"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      # Deploy to Production for Main branch pushes
+      - name: Deploy to Netlify Production
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: netlify deploy --prod --dir=site --message="Deploy Main - Run ${{ github.run_number }}"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
