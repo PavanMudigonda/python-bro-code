@@ -1,3 +1,5 @@
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigondaTR/python-bro-code/blob/main/28-number-guessing-game/28-number-guessing-game.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/PavanMudigondaTR/python-bro-code/main/28-number-guessing-game/28-number-guessing-game.ipynb)
+
 # 🎯 Number Guessing Game
 
 ## 📺 Video Tutorial

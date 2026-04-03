@@ -1,3 +1,5 @@
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigondaTR/python-bro-code/blob/main/8-weight-conversion/8-weight-conversion.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/PavanMudigondaTR/python-bro-code/main/8-weight-conversion/8-weight-conversion.ipynb)
+
 # Chapter 9: Weight Converter Program
 
 ## 📺 Video Tutorial
