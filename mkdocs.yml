@@ -1,0 +1,12 @@
+site_name: Python Bro Code Docs
+site_author: Pavan Mudigonda
+site_description: Documentation for Python Bro Code examples.
+
+repo_name: pavanmudigonda/python-bro-code
+repo_url: https://github.com/pavanmudigonda/python-bro-code
+
+theme:
+  name: material
+
+nav:
+  - Home: index.md

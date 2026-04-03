@@ -1,0 +1,3 @@
+[build]
+  command = "pip install -r requirements-docs.txt && bash scripts/build_site.sh && mkdocs build"
+  publish = "site"
