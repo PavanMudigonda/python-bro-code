@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # 🔀 Match Case Statements
 
 ## 🚀 Open Notebook
@@ -31,7 +41,7 @@ In this chapter, you'll learn about match-case statements (introduced in Python 
 Match-case statements (also called "structural pattern matching") provide a cleaner way to handle multiple conditional branches. They're similar to `switch` statements in other programming languages but more powerful.
 
 **Old Way (if-elif-else):**
-```python
+```{code-cell} python
 def day_of_week(day):
     if day == 1:
         return "Monday"
@@ -52,7 +62,7 @@ def day_of_week(day):
 ```
 
 **New Way (match-case):**
-```python
+```{code-cell} python
 def day_of_week(day):
     match day:
         case 1:
@@ -75,7 +85,7 @@ def day_of_week(day):
 
 ### Basic Syntax
 
-```python
+```{code-cell} python
 match value:
     case pattern1:
         # code for pattern1
@@ -95,7 +105,7 @@ match value:
 
 The underscore `_` acts as a default case that matches anything:
 
-```python
+```{code-cell} python
 match status_code:
     case 200:
         print("OK")
@@ -111,7 +121,7 @@ match status_code:
 
 Use `|` to match multiple values in one case:
 
-```python
+```{code-cell} python
 match day:
     case "Saturday" | "Sunday":
         print("Weekend!")
@@ -122,7 +132,7 @@ match day:
 ```
 
 This is much cleaner than:
-```python
+```{code-cell} python
 if day in ["Saturday", "Sunday"]:
     print("Weekend!")
 elif day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]:
@@ -145,7 +155,7 @@ elif day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]:
 
 ### Match-Case vs If-Elif
 
-```python
+```{code-cell} python
 # Range check - use if-elif
 if score >= 90:
     grade = "A"
@@ -167,7 +177,7 @@ match command:
 ### Advanced Pattern Matching
 
 **Match with Conditions (Guards):**
-```python
+```{code-cell} python
 match value:
     case x if x > 0:
         print("Positive")
@@ -178,7 +188,7 @@ match value:
 ```
 
 **Match Sequences:**
-```python
+```{code-cell} python
 match point:
     case (0, 0):
         print("Origin")
@@ -191,7 +201,7 @@ match point:
 ```
 
 **Match Types:**
-```python
+```{code-cell} python
 match value:
     case int():
         print("It's an integer")
@@ -206,7 +216,7 @@ match value:
 ## Examples
 
 ### Example 1: HTTP Status Codes
-```python
+```{code-cell} python
 def get_status_message(status_code):
     """Return message for HTTP status code."""
     match status_code:
@@ -233,7 +243,7 @@ print(get_status_message(999))  # Unknown Status Code
 ```
 
 ### Example 2: Weekend/Weekday Checker
-```python
+```{code-cell} python
 def is_weekend(day):
     """
     Check if a day is a weekend.
@@ -259,7 +269,7 @@ print(is_weekend("InvalidDay")) # False
 ```
 
 ### Example 3: Calculator
-```python
+```{code-cell} python
 def calculate(num1, num2, operation):
     """
     Perform calculation based on operation.
@@ -297,7 +307,7 @@ print(calculate(10, 5, "^"))   # Error: Unknown operation
 ```
 
 ### Example 4: Traffic Light System
-```python
+```{code-cell} python
 def traffic_light_action(color):
     """
     Return action for traffic light color.
@@ -326,7 +336,7 @@ print(traffic_light_action("Blue"))    # INVALID COLOR
 ```
 
 ### Example 5: Grade Letter System
-```python
+```{code-cell} python
 def number_to_letter_grade(score):
     """
     Convert numeric score to letter grade.
@@ -358,7 +368,7 @@ print(number_to_letter_grade(-5))  # Invalid Score
 ```
 
 ### Example 6: Menu System
-```python
+```{code-cell} python
 def process_menu_choice(choice):
     """
     Process user menu selection.
@@ -394,7 +404,7 @@ result = process_menu_choice(5)  # Invalid option! Please choose 1-4
 ```
 
 ### Example 7: Game Command Parser
-```python
+```{code-cell} python
 def parse_game_command(command):
     """
     Parse and execute game commands.
@@ -471,7 +481,7 @@ parse_game_command("invalid")    # Unknown command...
 ### Mistake 1: Using Match-Case in Python < 3.10
 
 **Wrong:**
-```python
+```{code-cell} python
 # SyntaxError in Python 3.9 and earlier
 match value:
     case 1:
@@ -479,7 +489,7 @@ match value:
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 # Use if-elif for older Python versions
 if value == 1:
     print("One")
@@ -492,7 +502,7 @@ elif value == 2:
 ### Mistake 2: Forgetting the Wildcard Case
 
 **Wrong:**
-```python
+```{code-cell} python
 match color:
     case "red":
         print("Red")
@@ -502,7 +512,7 @@ match color:
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 match color:
     case "red":
         print("Red")
@@ -517,7 +527,7 @@ match color:
 ### Mistake 3: Using Range Comparisons
 
 **Wrong:**
-```python
+```{code-cell} python
 # This doesn't work as expected
 match score:
     case > 90:  # SyntaxError
@@ -525,7 +535,7 @@ match score:
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 # Use if-elif for range comparisons
 if score > 90:
     print("A")
@@ -545,7 +555,7 @@ match score:
 ### Mistake 4: Case Fall-Through Assumption
 
 **Wrong:**
-```python
+```{code-cell} python
 # In some languages, cases "fall through"
 # Python match-case does NOT fall through!
 match value:
@@ -557,7 +567,7 @@ match value:
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 # Python match-case automatically breaks
 # No fall-through behavior
 match value:
@@ -573,7 +583,7 @@ match value:
 ## Real-World Applications
 
 ### 1. **API Route Handlers**
-```python
+```{code-cell} python
 match request.method:
     case "GET":
         return handle_get(request)
@@ -584,7 +594,7 @@ match request.method:
 ```
 
 ### 2. **State Machines**
-```python
+```{code-cell} python
 match current_state:
     case "idle":
         transition_to_running()
@@ -595,7 +605,7 @@ match current_state:
 ```
 
 ### 3. **Event Handlers**
-```python
+```{code-cell} python
 match event.type:
     case "mouse_click":
         handle_click(event)
@@ -606,7 +616,7 @@ match event.type:
 ```
 
 ### 4. **Command Dispatchers**
-```python
+```{code-cell} python
 match command:
     case "start":
         start_service()

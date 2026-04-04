@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Chapter 43: Credit Card Validator
 
 ## 🚀 Open Notebook
@@ -51,7 +61,7 @@ Credit card: `4532015112830366`
 ## 💡 Examples
 
 ### Basic Validator
-```python
+```{code-cell} python
 def validate_card(card_number):
     # Remove spaces and convert to string
     card_number = card_number.replace(" ", "")
@@ -88,7 +98,9 @@ else:
 ```
 
 ### Interactive Validator
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 def validate_card(card_number):
     # Remove spaces and hyphens
     card_number = card_number.replace(" ", "").replace("-", "")
@@ -131,7 +143,9 @@ else:
 ```
 
 ### With Card Type Detection
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 def get_card_type(card_number):
     """Identify the card type based on the first digits"""
     if card_number.startswith('4'):
@@ -204,7 +218,7 @@ Add validation for:
 
 ### Exercise 3: Batch Validator
 Create a program that validates multiple cards from a file:
-```python
+```{code-cell} python
 cards = [
     "4532015112830366",
     "6011514433546201",
@@ -221,7 +235,7 @@ for card in cards:
 ## 🔍 Common Mistakes
 
 ### 1. Not Reversing Before Doubling
-```python
+```{code-cell} python
 # ❌ Wrong - doubles wrong digits
 for i in range(1, len(digits), 2):
     digits[i] *= 2
@@ -233,7 +247,7 @@ for i in range(1, len(digits), 2):
 ```
 
 ### 2. Forgetting to Subtract 9
-```python
+```{code-cell} python
 # ❌ Wrong - doesn't handle > 9
 digits[i] *= 2
 
@@ -244,7 +258,7 @@ if digits[i] > 9:
 ```
 
 ### 3. Including Check Digit in Sum Before Adding
-```python
+```{code-cell} python
 # ❌ Wrong - check digit doubled
 digits = [int(d) for d in card_number]
 
@@ -265,7 +279,7 @@ digits = [int(d) for d in card_number[:-1]]
 
 ### Challenge 1: Card Generator
 Create valid test card numbers using the Luhn algorithm:
-```python
+```{code-cell} python
 def generate_card(prefix, length):
     # Generate random digits
     # Calculate check digit using Luhn

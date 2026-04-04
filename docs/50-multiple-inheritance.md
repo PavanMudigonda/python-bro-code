@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # 🔀 Multiple Inheritance
 
 
@@ -27,7 +37,7 @@ In this chapter, you'll explore multiple inheritance - a powerful but complex OO
 
 **Multiple Inheritance** allows a class to inherit from more than one parent class.
 
-```python
+```{code-cell} python
 # Single inheritance (normal)
 class Child(Parent):
     pass
@@ -42,7 +52,7 @@ A smartphone is both a phone AND a camera AND a music player - it has features f
 
 ### Basic Multiple Inheritance Syntax
 
-```python
+```{code-cell} python
 class Flyer:
     def fly(self):
         print("Flying in the air")
@@ -65,7 +75,7 @@ duck.swim()  # From Swimmer
 
 Python uses **C3 Linearization** to create a predictable order.
 
-```python
+```{code-cell} python
 class A:
     def method(self):
         print("A's method")
@@ -96,7 +106,7 @@ print(C.mro())
 
 **Diamond Problem** occurs when a class inherits from two classes that both inherit from a common parent.
 
-```python
+```{code-cell} python
        Animal
        /    \
     Flyer  Swimmer
@@ -104,7 +114,7 @@ print(C.mro())
         Duck
 ```
 
-```python
+```{code-cell} python
 class Animal:
     def __init__(self):
         print("Animal init")
@@ -143,7 +153,7 @@ print(Duck.mro())
 **ALWAYS use `super()`** instead of calling parent classes directly:
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 class Duck(Flyer, Swimmer):
     def __init__(self):
         Flyer.__init__(self)   # Might call Animal twice!
@@ -151,7 +161,7 @@ class Duck(Flyer, Swimmer):
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 class Duck(Flyer, Swimmer):
     def __init__(self):
         super().__init__()  # Follows MRO correctly
@@ -166,7 +176,7 @@ Mixins usually:
 - Provide specific methods
 - Are combined with other classes
 
-```python
+```{code-cell} python
 class JSONMixin:
     """Add JSON export capability."""
     def to_json(self):
@@ -206,7 +216,7 @@ print(person.to_xml())   # <object><name>Alice</name><age>30</age></object>
 - Composition would be clearer
 
 **Alternative: Composition**
-```python
+```{code-cell} python
 # Instead of: class Duck(Flyer, Swimmer)
 class Duck:
     def __init__(self):
@@ -224,7 +234,7 @@ class Duck:
 
 ### Example 1: Basic Multiple Inheritance
 
-```python
+```{code-cell} python
 class Animal:
     """Base animal class."""
     
@@ -275,7 +285,7 @@ print(f"\nDuck MRO: {[cls.__name__ for cls in Duck.mro()]}")
 
 ### Example 2: Mixin Classes for Serialization
 
-```python
+```{code-cell} python
 import json
 import pickle
 
@@ -357,7 +367,7 @@ print(f"\nRestored from JSON: {restored}")
 
 ### Example 3: Diamond Inheritance Pattern
 
-```python
+```{code-cell} python
 class Vehicle:
     """Base vehicle class."""
     
@@ -422,7 +432,7 @@ for cls in AmphibiousVehicle.mro():
 
 ### Example 4: Logging and Validation Mixins
 
-```python
+```{code-cell} python
 from datetime import datetime
 
 class LoggingMixin:
@@ -517,7 +527,7 @@ account.show_logs()
 
 ### Example 5: GUI Component System
 
-```python
+```{code-cell} python
 class Component:
     """Base UI component."""
     
@@ -614,7 +624,7 @@ print([cls.__name__ for cls in IconButton.mro()])
 
 ### Example 6: Role-Based Access System
 
-```python
+```{code-cell} python
 class User:
     """Base user class."""
     
@@ -688,7 +698,7 @@ print(f"Admin MRO: {[cls.__name__ for cls in Admin.mro()]}")
 
 ### Example 7: Smart Device System
 
-```python
+```{code-cell} python
 class Device:
     """Base device class."""
     
@@ -895,7 +905,7 @@ for cls in SmartPhone.mro():
 ### Mistake 1: Conflicting Methods
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 class A:
     def method(self):
         return "A"
@@ -912,7 +922,7 @@ print(c.method())  # "A" (first parent wins, but confusing!)
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 class C(A, B):
     def method(self):
         # Explicitly define behavior
@@ -922,7 +932,7 @@ class C(A, B):
 ### Mistake 2: Not Understanding MRO
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 class A:
     def __init__(self):
         print("A")
@@ -942,7 +952,7 @@ class D(B, C):
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 class A:
     def __init__(self):
         print("A")
@@ -963,7 +973,7 @@ class D(B, C):
 ### Mistake 3: Mutable Mixin Attributes
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 class ListMixin:
     items = []  # Shared by ALL instances!
     
@@ -972,7 +982,7 @@ class ListMixin:
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 class ListMixin:
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -982,7 +992,7 @@ class ListMixin:
 ### Mistake 4: Overusing Multiple Inheritance
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 # Too complex!
 class SuperUser(User, Admin, Moderator, 
                 PowerUser, PremiumUser, BetaTester):
@@ -990,7 +1000,7 @@ class SuperUser(User, Admin, Moderator,
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 # Use composition or simplify
 class User:
     def __init__(self):

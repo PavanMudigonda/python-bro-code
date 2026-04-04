@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Chapter 14: String Indexing and Slicing
 
 ## 🚀 Open Notebook
@@ -10,10 +20,6 @@
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/7pXf1DUuaIo)
 
 **String indexing in Python is easy ✂️** (6:17)
-
-## 📺 Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/7pXf1DUuaIo)
 
 ## 📚 What You'll Learn
 Access and extract parts of strings using indexing and slicing - essential for text processing!
@@ -36,7 +42,7 @@ Negative:-6-5-4-3-2-1
 ```
 
 ### Slicing Syntax
-```python
+```{code-cell} python
 string[start:end:step]
 ```
 - **start**: Beginning index (inclusive)
@@ -46,7 +52,7 @@ string[start:end:step]
 ## 💡 Examples
 
 ### Single Character Access
-```python
+```{code-cell} python
 word = "Python"
 print(word[0])   # P (first character)
 print(word[3])   # h (fourth character)
@@ -55,7 +61,7 @@ print(word[-2])  # o (second to last)
 ```
 
 ### Slicing Ranges
-```python
+```{code-cell} python
 text = "Programming"
 print(text[0:4])   # "Prog" (index 0 to 3)
 print(text[3:7])   # "gram" (index 3 to 6)
@@ -65,7 +71,7 @@ print(text[:])     # "Programming" (entire string)
 ```
 
 ### Step Parameter
-```python
+```{code-cell} python
 numbers = "0123456789"
 print(numbers[::2])   # "02468" (every 2nd char)
 print(numbers[1::2])  # "13579" (every 2nd, starting at 1)
@@ -73,7 +79,7 @@ print(numbers[::3])   # "0369" (every 3rd char)
 ```
 
 ### Reversing Strings
-```python
+```{code-cell} python
 word = "Python"
 print(word[::-1])  # "nohtyP" (reversed)
 
@@ -96,7 +102,7 @@ if word == word[::-1]:
 ## 🎮 Real-World Examples
 
 ### Credit Card Formatter
-```python
+```{code-cell} python
 card = "1234567812345678"
 formatted = f"{card[0:4]}-{card[4:8]}-{card[8:12]}-{card[12:16]}"
 print(formatted)  # 1234-5678-1234-5678
@@ -107,7 +113,7 @@ print(hidden)  # 1234-****-****-5678
 ```
 
 ### Extract Information
-```python
+```{code-cell} python
 date = "2024-01-15"
 year = date[0:4]    # "2024"
 month = date[5:7]   # "01"
@@ -116,7 +122,7 @@ print(f"Year: {year}, Month: {month}, Day: {day}")
 ```
 
 ### URL Parser
-```python
+```{code-cell} python
 url = "https://www.example.com/page"
 protocol = url[0:5]        # "https"
 domain = url[12:23]        # "example.com"
@@ -126,21 +132,21 @@ path = url[23:]            # "/page"
 ## 📝 Common Patterns
 
 ### First/Last N Characters
-```python
+```{code-cell} python
 text = "Hello World"
 first_5 = text[:5]    # "Hello"
 last_5 = text[-5:]    # "World"
 ```
 
 ### Remove First/Last N Characters
-```python
+```{code-cell} python
 text = "Hello World"
 without_first = text[1:]   # "ello World"
 without_last = text[:-1]   # "Hello Worl"
 ```
 
 ### Every Nth Character
-```python
+```{code-cell} python
 text = "ABCDEFGHIJ"
 every_2nd = text[::2]  # "ACEGI"
 every_3rd = text[::3]  # "ADGJ"
@@ -157,13 +163,13 @@ every_3rd = text[::3]  # "ADGJ"
 ## 🔍 Slicing Tricks
 
 ### Copy a String
-```python
+```{code-cell} python
 original = "Python"
 copy = original[:]  # Creates a copy
 ```
 
 ### Reverse Words
-```python
+```{code-cell} python
 sentence = "Hello World"
 words = sentence.split()
 reversed_words = [word[::-1] for word in words]
@@ -172,7 +178,7 @@ print(result)  # "olleH dlroW"
 ```
 
 ### Extract Extension
-```python
+```{code-cell} python
 filename = "document.pdf"
 extension = filename[filename.rfind('.')+1:]
 print(extension)  # "pdf"

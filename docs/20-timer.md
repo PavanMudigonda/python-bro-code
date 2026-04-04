@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Chapter 20: Countdown Timer
 
 ## 🚀 Open Notebook
@@ -10,10 +20,6 @@
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/KseiSR0MCTI)
 
 **Countdown timer program in Python ⌛** (8:59)
-
-## 📺 Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/KseiSR0MCTI)
 
 ## 📚 What You'll Learn
 Build a real countdown timer using Python's time module - combining loops, time operations, and user input!
@@ -32,7 +38,7 @@ Build a real countdown timer using Python's time module - combining loops, time 
 Python's `time` module provides time-related functions like delays, current time, and time measurements.
 
 ### Key Functions
-```python
+```{code-cell} python
 import time
 
 time.sleep(seconds)  # Pause execution
@@ -56,7 +62,7 @@ time.time()          # Current time in seconds since epoch
 ## 💡 Examples
 
 ### Example 1: Basic Sleep
-```python
+```{code-cell} python
 import time
 
 print("Starting...")
@@ -65,7 +71,7 @@ print("3 seconds have passed!")
 ```
 
 ### Example 2: Simple Countdown
-```python
+```{code-cell} python
 import time
 
 for i in range(5, 0, -1):
@@ -75,7 +81,7 @@ print("Time's up!")
 ```
 
 ### Example 3: Seconds to Time Format
-```python
+```{code-cell} python
 def format_time(seconds):
     hours = seconds // 3600
     minutes = (seconds % 3600) // 60
@@ -89,7 +95,9 @@ print(format_time(7200))  # 02:00:00
 ```
 
 ### Example 4: Time Input Converter
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 hours = int(input("Hours: "))
 minutes = int(input("Minutes: "))
 seconds = int(input("Seconds: "))
@@ -99,7 +107,7 @@ print(f"Total: {total_seconds} seconds")
 ```
 
 ### Example 5: Basic Countdown Timer
-```python
+```{code-cell} python
 import time
 
 def countdown(seconds):
@@ -117,7 +125,9 @@ countdown(10)
 ```
 
 ### Example 6: Full Featured Timer
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import time
 
 print("=== Countdown Timer ===\n")
@@ -144,7 +154,7 @@ print("🔔 Time's up!     ")
 ```
 
 ### Example 7: Pomodoro Timer
-```python
+```{code-cell} python
 import time
 
 def pomodoro_session(work_mins, break_mins):
@@ -173,7 +183,7 @@ pomodoro_session(25, 5)
 ```
 
 ### Example 8: Multiple Timers
-```python
+```{code-cell} python
 import time
 
 def run_timer(name, seconds):
@@ -191,7 +201,7 @@ print("\n🍝 Dinner is ready!")
 ```
 
 ### Example 9: Progress Bar Timer
-```python
+```{code-cell} python
 import time
 
 def timer_with_progress(seconds):
@@ -215,7 +225,7 @@ timer_with_progress(15)
 ```
 
 ### Example 10: Interval Timer
-```python
+```{code-cell} python
 import time
 
 def interval_timer(work_sec, rest_sec, rounds):
@@ -244,7 +254,7 @@ interval_timer(20, 10, 3)
 ## 🔍 Common Mistakes
 
 ### Mistake 1: Not Importing time Module
-```python
+```{code-cell} python
 # Wrong
 print("Wait 1 second...")
 sleep(1)  # NameError!
@@ -256,7 +266,7 @@ time.sleep(1)
 ```
 
 ### Mistake 2: Wrong Time Conversion
-```python
+```{code-cell} python
 # Wrong
 hours = 2
 minutes = 30
@@ -267,7 +277,7 @@ total_seconds = (hours * 3600) + (minutes * 60)  # = 9000
 ```
 
 ### Mistake 3: Display Format Issues
-```python
+```{code-cell} python
 # Poor formatting
 mins = 5
 secs = 3
@@ -278,7 +288,7 @@ print(f"{mins:02d}:{secs:02d}")  # 05:03
 ```
 
 ### Mistake 4: Infinite Loop
-```python
+```{code-cell} python
 # Wrong - never decrements
 seconds = 10
 while seconds > 0:
@@ -295,7 +305,7 @@ while seconds > 0:
 ```
 
 ### Mistake 5: Not Clearing Previous Output
-```python
+```{code-cell} python
 # Messy output
 for i in range(5, 0, -1):
     print(f"Time: {i}")
@@ -335,7 +345,9 @@ for i in range(5, 0, -1):
 ## 🎮 Real-World Applications
 
 ### Application 1: Study Timer
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import time
 
 def study_session():
@@ -368,7 +380,9 @@ study_session()
 ```
 
 ### Application 2: Cooking Assistant
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import time
 
 def cooking_timer():
@@ -403,7 +417,9 @@ cooking_timer()
 ```
 
 ### Application 3: Fitness Interval Timer
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import time
 
 def hiit_workout():
@@ -436,7 +452,9 @@ hiit_workout()
 ```
 
 ### Application 4: Presentation Timer
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import time
 
 def presentation_timer():
@@ -536,7 +554,7 @@ elapsed = time.time() - start
 
 ## 🎨 Display Formatting Tricks
 
-```python
+```{code-cell} python
 # Overwrite same line
 print("Loading...", end="\r")
 

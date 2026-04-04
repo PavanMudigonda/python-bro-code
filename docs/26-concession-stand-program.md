@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # 🍿 Concession Stand Program
 
 ## 🚀 Open Notebook
@@ -40,7 +50,7 @@ Dictionaries are perfect for menus because:
 4. **Easy Updates** - Add, remove, or change prices easily
 5. **Validation** - Built-in membership testing with `in` operator
 
-```python
+```{code-cell} python
 # Dictionary is perfect for this
 menu = {"pizza": 3.00, "hotdog": 2.50, "popcorn": 4.00}
 
@@ -54,7 +64,7 @@ prices = [3.00, 2.50, 4.00]
 #### 1. **Menu Dictionary**
 The core data structure storing items and prices:
 
-```python
+```{code-cell} python
 menu = {
     "pizza": "3.0",      # Item name (key) → Price (value)
     "nachos": "4.5",
@@ -65,7 +75,7 @@ menu = {
 #### 2. **Shopping Cart**
 A list to accumulate user selections:
 
-```python
+```{code-cell} python
 cart = []  # Stores item names selected by user
 cart.append("pizza")
 cart.append("popcorn")
@@ -74,7 +84,9 @@ cart.append("popcorn")
 #### 3. **Input Validation**
 Check if user's selection exists in menu:
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 food = input("Select item: ").lower()
 if menu.get(food) is not None:  # Item exists
     cart.append(food)
@@ -85,7 +97,7 @@ else:
 #### 4. **Total Calculation**
 Sum up prices from cart items:
 
-```python
+```{code-cell} python
 total = 0
 for item in cart:
     total += float(menu.get(item))
@@ -94,14 +106,14 @@ for item in cart:
 ### Key Patterns
 
 #### Dictionary Iteration
-```python
+```{code-cell} python
 # Loop through both keys and values
 for item, price in menu.items():
     print(f"{item}: ${price}")
 ```
 
 #### Safe Key Access
-```python
+```{code-cell} python
 # get() returns None if key doesn't exist
 price = menu.get("pizza")  # Safe
 
@@ -110,7 +122,7 @@ price = menu.get("pizza")  # Safe
 ```
 
 #### String to Float Conversion
-```python
+```{code-cell} python
 # Prices stored as strings in dictionary
 menu = {"pizza": "3.00"}
 
@@ -132,7 +144,7 @@ total = float(menu.get("pizza"))  # "3.00" → 3.0
 
 Professional menu display using f-strings:
 
-```python
+```{code-cell} python
 for item, price in menu.items():
     print(f"{item:10}: ${float(price):.2f}")
     # item:10 - left align in 10 characters
@@ -142,7 +154,7 @@ for item, price in menu.items():
 ## Examples
 
 ### Example 1: Basic Menu Dictionary
-```python
+```{code-cell} python
 # Create menu with items and prices
 menu = {
     "burger": 5.99,
@@ -165,7 +177,7 @@ for item, price in menu.items():
 ```
 
 ### Example 2: Adding Items to Cart
-```python
+```{code-cell} python
 menu = {"pizza": 3.00, "hotdog": 2.50, "soda": 1.50}
 cart = []
 
@@ -188,7 +200,7 @@ print(f"Cart: {cart}")
 ```
 
 ### Example 3: Calculating Total
-```python
+```{code-cell} python
 menu = {"pizza": 3.00, "hotdog": 2.50, "soda": 1.50}
 cart = ["pizza", "soda", "pizza"]
 
@@ -211,7 +223,9 @@ print(f"\nTotal: ${total:.2f}")
 ```
 
 ### Example 4: Input Validation
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 menu = {"pizza": 3.00, "burger": 5.00}
 
 # Get user input
@@ -232,7 +246,7 @@ else:
 ```
 
 ### Example 5: Formatted Menu Display
-```python
+```{code-cell} python
 menu = {
     "pizza": 3.0,
     "nachos": 4.5,
@@ -264,7 +278,9 @@ print("=" * 30)
 ```
 
 ### Example 6: Complete Simple Version
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # Menu setup
 menu = {
     "popcorn": 5.00,
@@ -310,7 +326,9 @@ else:
 ```
 
 ### Example 7: Enhanced with Quantity Tracking
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 menu = {"pizza": 3.00, "hotdog": 2.50, "soda": 1.50}
 
 # Use dictionary to track quantities
@@ -389,14 +407,14 @@ print(f"\nTotal: ${total:.2f}")
 ### Mistake 1: Not Converting String Prices to Float
 
 **Wrong:**
-```python
+```{code-cell} python
 menu = {"pizza": "3.00"}  # String price
 total = 0
 total += menu["pizza"]  # TypeError: can only concatenate str!
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 menu = {"pizza": "3.00"}  # String price
 total = 0
 total += float(menu["pizza"])  # Convert to float first
@@ -409,7 +427,9 @@ menu = {"pizza": 3.00}
 ### Mistake 2: Case Sensitivity Issues
 
 **Wrong:**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 menu = {"Pizza": 3.00, "Burger": 5.00}
 choice = input("Item: ")  # User enters "pizza"
 if choice in menu:  # "pizza" != "Pizza"
@@ -417,7 +437,9 @@ if choice in menu:  # "pizza" != "Pizza"
 ```
 
 **Correct:**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 menu = {"pizza": 3.00, "burger": 5.00}  # Lowercase keys
 choice = input("Item: ").lower()  # Convert input to lowercase
 if choice in menu:
@@ -429,14 +451,14 @@ if choice in menu:
 ### Mistake 3: Using Direct Access Instead of get()
 
 **Wrong:**
-```python
+```{code-cell} python
 menu = {"pizza": 3.00}
 item = "burger"
 price = menu[item]  # KeyError: 'burger'
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 menu = {"pizza": 3.00}
 item = "burger"
 price = menu.get(item)  # Returns None, no error
@@ -451,13 +473,13 @@ if item in menu:
 ### Mistake 4: Forgetting to Format Currency
 
 **Wrong:**
-```python
+```{code-cell} python
 total = 10.5
 print(f"Total: ${total}")  # $10.5 (missing zero)
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 total = 10.5
 print(f"Total: ${total:.2f}")  # $10.50 (always 2 decimals)
 ```

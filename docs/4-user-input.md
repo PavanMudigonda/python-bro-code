@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Chapter 4: User Input
 
 ## 🚀 Open Notebook
@@ -29,13 +39,17 @@ The `input()` function is used to get information from the user. It:
 3. Returns what the user typed as a **string**
 
 ### Syntax
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 variable = input("Your prompt message: ")
 ```
 
 ### Important: input() Always Returns a String!
 Even if the user types a number, `input()` returns it as text:
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 age = input("Enter your age: ")  # If user types 25, age = "25" (string)
 # To do math, convert it:
 age = int(input("Enter your age: "))  # Now age = 25 (integer)
@@ -44,13 +58,17 @@ age = int(input("Enter your age: "))  # Now age = 25 (integer)
 ## 💡 Examples
 
 ### Example 1: Simple Text Input
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 name = input("What is your name? ")
 print(f"Hello, {name}!")
 ```
 
 ### Example 2: Numeric Input
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # Wrong way (can't do math with strings):
 age = input("Enter your age: ")
 # next_year = age + 1  # Error!
@@ -62,7 +80,9 @@ print(f"Next year you'll be {next_year}")
 ```
 
 ### Example 3: Multiple Inputs
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 first_name = input("First name: ")
 last_name = input("Last name: ")
 age = int(input("Age: "))
@@ -71,7 +91,9 @@ print(f"Hello {first_name} {last_name}, you are {age} years old!")
 ```
 
 ### Example 4: Float Input
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 height = float(input("Enter your height in meters: "))
 print(f"Your height is {height}m")
 ```
@@ -86,7 +108,9 @@ print(f"Your height is {height}m")
 ## 🔍 Common Mistakes
 
 ### Mistake 1: Forgetting Type Conversion
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # Wrong:
 age = input("Age: ")  # age is "25" (string)
 print(age + 1)  # Error! Can't add string and number
@@ -97,7 +121,9 @@ print(age + 1)  # Works! Prints 26
 ```
 
 ### Mistake 2: Wrong Conversion Type
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # If user enters "3.14":
 number = int(input("Enter number: "))  # Error! Can't convert "3.14" to int
 
@@ -106,7 +132,9 @@ number = float(input("Enter number: "))  # Works! number = 3.14
 ```
 
 ### Mistake 3: Forgetting the Prompt
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 name = input()  # Works but user doesn't know what to enter
 name = input("Enter your name: ")  # Better! Clear instruction
 ```
@@ -114,18 +142,24 @@ name = input("Enter your name: ")  # Better! Clear instruction
 ## 📝 Input Patterns
 
 ### Pattern 1: Input on Same Line as Conversion
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 age = int(input("Enter age: "))
 ```
 
 ### Pattern 2: Input Then Convert (easier to debug)
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 age_str = input("Enter age: ")
 age = int(age_str)
 ```
 
 ### Pattern 3: Input with Validation (advanced)
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 age = input("Enter age: ")
 if age.isdigit():  # Check if input is a number
     age = int(age)
@@ -135,7 +169,9 @@ else:
 ```
 
 ## 🎮 Interactive Program Example
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # Simple greeting program
 name = input("What's your name? ")
 age = int(input("How old are you? "))

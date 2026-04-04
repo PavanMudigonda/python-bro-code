@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Chapter 1: Print Statement
 
 ## 🚀 Open Notebook
@@ -30,7 +40,7 @@ The `print()` function is one of Python's built-in functions that displays outpu
 - Output any information you want to see
 
 ### Syntax
-```python
+```{code-cell} python
 print("Your message here")
 ```
 
@@ -42,12 +52,12 @@ print("Your message here")
 ## 💡 Examples
 
 ### Basic Print
-```python
+```{code-cell} python
 print("Hello, World!")
 ```
 
 ### Multiple Lines
-```python
+```{code-cell} python
 print("Line 1")
 print("Line 2")
 print("Line 3")
@@ -64,7 +74,7 @@ Modify `main.py` to print information about yourself!
 
 ## 📝 Comments
 Comments are lines that Python ignores. They help explain your code:
-```python
+```{code-cell} python
 # This is a comment
 print("This is code")  # This is also a comment
 ```

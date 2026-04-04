@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Chapter 21: Sets 🎲
 
 ## 🚀 Open Notebook
@@ -42,7 +52,7 @@ A **set** is an unordered collection of unique items. Think of it like a bag of 
 *Can add/remove items, but items themselves must be immutable
 
 ### Set Syntax
-```python
+```{code-cell} python
 # Creating sets
 empty_set = set()  # Must use set(), not {}
 fruits = {"apple", "banana", "cherry"}
@@ -59,7 +69,7 @@ mixed = {1, "hello", 3.14}  # Different types OK
 ## Examples
 
 ### Example 1: Creating Sets
-```python
+```{code-cell} python
 # Basic set creation
 colors = {"red", "green", "blue"}
 
@@ -73,7 +83,7 @@ correct = set()  # This is an empty set
 ```
 
 ### Example 2: Automatic Duplicate Removal
-```python
+```{code-cell} python
 # Duplicates automatically removed
 fruits = {"apple", "banana", "apple", "cherry"}
 print(fruits)  # {'apple', 'banana', 'cherry'}
@@ -85,7 +95,7 @@ print(unique)  # {1, 2, 3, 4}
 ```
 
 ### Example 3: Adding and Removing
-```python
+```{code-cell} python
 fruits = {"apple", "banana"}
 
 # Add single item
@@ -102,7 +112,7 @@ fruits.discard("orange")  # No error even though orange not in set
 ```
 
 ### Example 4: Set Operations
-```python
+```{code-cell} python
 set_a = {1, 2, 3, 4}
 set_b = {3, 4, 5, 6}
 
@@ -120,7 +130,7 @@ print(set_a ^ set_b)  # {1, 2, 5, 6}
 ```
 
 ### Example 5: Membership Testing
-```python
+```{code-cell} python
 # Fast membership check
 valid_users = {"alice", "bob", "charlie"}
 
@@ -130,7 +140,7 @@ if user in valid_users:
 ```
 
 ### Example 6: Iterating Sets
-```python
+```{code-cell} python
 fruits = {"apple", "banana", "cherry"}
 
 # Order may vary each run!
@@ -139,7 +149,7 @@ for fruit in fruits:
 ```
 
 ### Example 7: Set Comprehension
-```python
+```{code-cell} python
 # Create set of squares
 squares = {x**2 for x in range(10)}
 print(squares)  # {0, 1, 4, 9, 16, 25, 36, 49, 64, 81}
@@ -176,7 +186,7 @@ print(vowels)  # {'o', 'e'}
 ## Common Mistakes to Avoid
 
 ### ❌ Mistake 1: Empty Set Syntax
-```python
+```{code-cell} python
 # WRONG: Creates dictionary, not set!
 empty = {}
 print(type(empty))  # <class 'dict'>
@@ -187,7 +197,7 @@ print(type(empty))  # <class 'set'>
 ```
 
 ### ❌ Mistake 2: Expecting Order
-```python
+```{code-cell} python
 # WRONG: Assuming sets maintain order
 numbers = {5, 2, 8, 1, 9}
 print(numbers)  # Order not guaranteed!
@@ -197,7 +207,7 @@ numbers = [5, 2, 8, 1, 9]
 ```
 
 ### ❌ Mistake 3: Trying to Index
-```python
+```{code-cell} python
 fruits = {"apple", "banana", "cherry"}
 # WRONG: Sets don't support indexing
 # print(fruits[0])  # TypeError!
@@ -208,7 +218,7 @@ print(fruits_list[0])
 ```
 
 ### ❌ Mistake 4: Mutable Items in Set
-```python
+```{code-cell} python
 # WRONG: Lists are mutable, can't be in sets
 # my_set = {[1, 2], [3, 4]}  # TypeError!
 
@@ -219,7 +229,7 @@ my_set = {(1, 2), (3, 4)}  # Works!
 ## Real-World Applications
 
 ### 1. Remove Duplicate Emails
-```python
+```{code-cell} python
 # Email list with duplicates
 emails = ["user@example.com", "admin@site.com", "user@example.com"]
 
@@ -229,7 +239,7 @@ print(f"Unique subscribers: {len(unique_emails)}")
 ```
 
 ### 2. Tag System
-```python
+```{code-cell} python
 post1_tags = {"python", "programming", "tutorial"}
 post2_tags = {"python", "web", "flask"}
 
@@ -239,7 +249,7 @@ print(f"Common tags: {common}")  # {'python'}
 ```
 
 ### 3. Permissions System
-```python
+```{code-cell} python
 user_permissions = {"read", "write"}
 required_permissions = {"read", "write", "delete"}
 
@@ -252,7 +262,7 @@ else:
 ```
 
 ### 4. Data Validation
-```python
+```{code-cell} python
 valid_statuses = {"pending", "approved", "rejected"}
 
 def validate_status(status):

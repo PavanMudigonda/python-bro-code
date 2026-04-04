@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Chapter 12: Conditional Expressions (Ternary Operator)
 
 ## 🚀 Open Notebook
@@ -10,10 +20,6 @@
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/TYyKQBC4bwE)
 
 **Learn conditional expressions in 5 minutes! ❓** (5:21)
-
-## 📺 Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/TYyKQBC4bwE)
 
 ## 📚 What You'll Learn
 Write compact, elegant one-line conditional statements using Python's ternary operator!
@@ -30,12 +36,12 @@ Write compact, elegant one-line conditional statements using Python's ternary op
 A ternary operator (conditional expression) is a compact way to write simple if-else statements in one line.
 
 ### Syntax
-```python
+```{code-cell} python
 value_if_true if condition else value_if_false
 ```
 
 ### Traditional vs Ternary
-```python
+```{code-cell} python
 # Traditional if-else
 if age >= 18:
     status = "Adult"
@@ -49,28 +55,28 @@ status = "Adult" if age >= 18 else "Minor"
 ## 💡 Examples
 
 ### Example 1: Even or Odd
-```python
+```{code-cell} python
 number = 7
 result = "EVEN" if number % 2 == 0 else "ODD"
 print(result)  # Output: ODD
 ```
 
 ### Example 2: Max of Two Numbers
-```python
+```{code-cell} python
 a, b = 15, 23
 maximum = a if a > b else b
 print(f"Max: {maximum}")  # Output: Max: 23
 ```
 
 ### Example 3: Pass/Fail
-```python
+```{code-cell} python
 score = 75
 result = "PASS" if score >= 60 else "FAIL"
 print(result)  # Output: PASS
 ```
 
 ### Example 4: Access Level
-```python
+```{code-cell} python
 user_role = "admin"
 access = "Full Access" if user_role == "admin" else "Limited Access"
 print(access)  # Output: Full Access
@@ -88,7 +94,7 @@ print(access)  # Output: Full Access
 ## 🔍 When to Use
 
 ### ✅ Good Use Cases
-```python
+```{code-cell} python
 # Simple value assignment
 status = "Open" if is_open else "Closed"
 
@@ -103,7 +109,7 @@ return True if value > 0 else False
 ```
 
 ### ❌ Avoid Ternary For
-```python
+```{code-cell} python
 # Complex logic (use regular if-else)
 result = "A" if score >= 90 else "B" if score >= 80 else "C" if score >= 70 else "F"
 # Too hard to read!
@@ -114,7 +120,7 @@ message = (print("Hello"), user.save(), "Done") if condition else "Skip"
 ```
 
 ## 📝 Nested Ternary (Use Sparingly!)
-```python
+```{code-cell} python
 # Can be hard to read
 grade = "A" if score >= 90 else "B" if score >= 80 else "C" if score >= 70 else "F"
 
@@ -132,7 +138,7 @@ else:
 ## 🎮 Real-World Examples
 
 ### Example: Discount Calculator
-```python
+```{code-cell} python
 total = 120
 discount = 0.10 if total >= 100 else 0.05 if total >= 50 else 0
 savings = total * discount
@@ -141,7 +147,7 @@ print(f"Discount: {discount*100}%, You save: ${savings:.2f}")
 ```
 
 ### Example: User Status Badge
-```python
+```{code-cell} python
 points = 1500
 badge = "🥇 Gold" if points >= 1000 else "🥈 Silver" if points >= 500 else "🥉 Bronze"
 print(f"Your badge: {badge}")

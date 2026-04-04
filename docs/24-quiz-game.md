@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # 🎯 Quiz Game
 
 ## 🚀 Open Notebook
@@ -39,7 +49,7 @@ A quiz game presents questions to users, collects their answers, compares them t
 3. **Safety** - Prevents accidental modification of quiz content
 4. **Intent** - Signals to other programmers that this data is constant
 
-```python
+```{code-cell} python
 # Tuple (immutable) - perfect for quiz data
 questions = ("What is 2+2?", "What is the capital of France?")
 
@@ -51,7 +61,7 @@ guesses = []  # Will store user's answers
 
 The quiz uses three parallel tuples that must stay synchronized:
 
-```python
+```{code-cell} python
 questions = ("Question 1?", "Question 2?")
 options = (
     ("A. Ans1", "B. Ans2", "C. Ans3", "D. Ans4"),
@@ -67,7 +77,7 @@ answers = ("A", "C")
 
 **zip()** is a powerful function that combines multiple iterables into tuples:
 
-```python
+```{code-cell} python
 names = ["Alice", "Bob", "Charlie"]
 scores = [95, 87, 92]
 
@@ -83,7 +93,7 @@ for name, score in zip(names, scores):
 
 In our quiz, zip() pairs questions with their options:
 
-```python
+```{code-cell} python
 for question, option in zip(questions, options):
     print(question)      # Current question
     for opt in option:   # Its four options
@@ -105,7 +115,7 @@ for question, option in zip(questions, options):
 ### Key Components
 
 #### Tuple of Tuples
-```python
+```{code-cell} python
 options = (
     ("A. Option1", "B. Option2", "C. Option3", "D. Option4"),  # Q1 options
     ("A. Option1", "B. Option2", "C. Option3", "D. Option4"),  # Q2 options
@@ -113,14 +123,16 @@ options = (
 ```
 
 #### Score Tracking
-```python
+```{code-cell} python
 score = 0
 if guess.upper() == answers[question_num]:
     score += 1
 ```
 
 #### Input Validation
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 guess = input("Enter your guess: ")
 guesses.append(guess)  # Store even if wrong
 ```
@@ -128,7 +140,7 @@ guesses.append(guess)  # Store even if wrong
 ## Examples
 
 ### Example 1: Basic Tuple Usage
-```python
+```{code-cell} python
 # Tuples are immutable - perfect for constant data
 colors = ("red", "green", "blue")
 
@@ -144,7 +156,7 @@ for color in colors:
 ```
 
 ### Example 2: Using zip() Function
-```python
+```{code-cell} python
 questions = ("What is 1+1?", "What is 2+2?")
 answers = ("2", "4")
 
@@ -163,7 +175,9 @@ for q, a in zip(questions, answers):
 ```
 
 ### Example 3: Simple Quiz with Scoring
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 questions = ("What is the capital of France?", 
              "What is 5 * 6?")
 answers = ("Paris", "30")
@@ -184,7 +198,9 @@ print(f"\nFinal Score: {score}/{len(questions)}")
 ```
 
 ### Example 4: Multiple Choice Quiz
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 questions = ("What is Python?",)
 options = (
     ("A. A snake", "B. A programming language", 
@@ -204,7 +220,9 @@ else:
 ```
 
 ### Example 5: Case-Insensitive Input
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 questions = ("What color is the sky?",)
 answers = ("BLUE",)
 
@@ -219,7 +237,9 @@ else:
 ```
 
 ### Example 6: Storing and Reviewing Guesses
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 questions = ("What is 2+2?", "What is 3+3?", "What is 4+4?")
 answers = ("4", "6", "8")
 guesses = []
@@ -238,7 +258,9 @@ for i in range(len(questions)):
 ```
 
 ### Example 7: Complete Mini Quiz
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # Quiz data in tuples (immutable)
 questions = (
     "What is the largest planet?",
@@ -333,14 +355,14 @@ else:
 ### Mistake 1: Using Lists Instead of Tuples for Constants
 
 **Wrong:**
-```python
+```{code-cell} python
 # Using list (mutable) for data that shouldn't change
 questions = ["What is 2+2?", "What is 3+3?"]
 # Could accidentally modify: questions[0] = "Wrong!"
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 # Using tuple (immutable) for constant data
 questions = ("What is 2+2?", "What is 3+3?")
 # questions[0] = "Wrong!"  # This raises TypeError
@@ -351,7 +373,9 @@ questions = ("What is 2+2?", "What is 3+3?")
 ### Mistake 2: Not Converting Input to Uppercase
 
 **Wrong:**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 answers = ("A", "B", "C")
 guess = input("Enter A, B, or C: ")  # User enters "a"
 if guess == answers[0]:  # "a" != "A"
@@ -359,7 +383,9 @@ if guess == answers[0]:  # "a" != "A"
 ```
 
 **Correct:**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 answers = ("A", "B", "C")
 guess = input("Enter A, B, or C: ").upper()  # Converts to "A"
 if guess == answers[0]:  # "A" == "A"
@@ -393,7 +419,7 @@ for question, option in zip(questions, options):
 ### Mistake 4: Mismatched Tuple Lengths
 
 **Wrong:**
-```python
+```{code-cell} python
 questions = ("Q1?", "Q2?", "Q3?")
 options = (("A", "B"), ("A", "B"))  # Only 2!
 answers = ("A", "B", "C")
@@ -403,7 +429,7 @@ for q, opt in zip(questions, options):  # Stops after 2
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 questions = ("Q1?", "Q2?", "Q3?")
 options = (("A", "B"), ("A", "B"), ("A", "B"))  # 3 tuples
 answers = ("A", "B", "C")

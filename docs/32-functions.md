@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # 🔧 Functions
 
 ## 🚀 Open Notebook
@@ -32,7 +42,7 @@ Functions are reusable blocks of code that perform a specific task. Think of the
 
 **Why Use Functions?**
 
-```python
+```{code-cell} python
 # Without functions - repetitive code
 print("Happy Birthday Sarah!")
 print("You are 20 years old!")
@@ -63,7 +73,7 @@ The function version is cleaner, easier to maintain, and if you need to change t
 
 A function has several key parts:
 
-```python
+```{code-cell} python
 def function_name(parameter1, parameter2):  # Definition line
     """Docstring - describes what function does"""
     # Function body - indented code block
@@ -83,14 +93,14 @@ def function_name(parameter1, parameter2):  # Definition line
 
 **Parameters** are variables in the function definition:
 
-```python
+```{code-cell} python
 def greet(name, greeting):  # name and greeting are PARAMETERS
     print(f"{greeting}, {name}!")
 ```
 
 **Arguments** are the actual values you pass when calling:
 
-```python
+```{code-cell} python
 greet("Alice", "Hello")  # "Alice" and "Hello" are ARGUMENTS
 ```
 
@@ -100,7 +110,7 @@ Think of parameters as placeholders, and arguments as the actual data.
 
 Functions can send data back using `return`:
 
-```python
+```{code-cell} python
 def add(a, b):
     return a + b  # Send sum back to caller
 
@@ -110,7 +120,7 @@ print(result)
 
 Without `return`, functions implicitly return `None`:
 
-```python
+```{code-cell} python
 def greet(name):
     print(f"Hello {name}")  # No return statement
 
@@ -122,7 +132,7 @@ print(result)  # Prints "None"
 
 This special pattern prevents code from running when your file is imported as a module:
 
-```python
+```{code-cell} python
 def my_function():
     print("Function called")
 
@@ -143,7 +153,7 @@ This lets you write reusable modules that can be both imported and executed.
 #### 1. **Single Responsibility**
 Each function should do one thing well:
 
-```python
+```{code-cell} python
 # Bad - does too much
 def process_user(name, email, age):
     # validate email
@@ -168,7 +178,7 @@ def send_welcome_email(email):
 #### 2. **Descriptive Names**
 Function names should describe what they do:
 
-```python
+```{code-cell} python
 # Bad
 def calc(x, y):
     return x * y
@@ -184,7 +194,7 @@ Aim for functions that fit on one screen (typically 10-20 lines).
 #### 4. **Use Docstrings**
 Document what your function does:
 
-```python
+```{code-cell} python
 def calculate_bmi(weight_kg, height_m):
     """
     Calculate Body Mass Index.
@@ -203,7 +213,7 @@ def calculate_bmi(weight_kg, height_m):
 
 Variables defined inside functions are **local** - they only exist within that function:
 
-```python
+```{code-cell} python
 def my_function():
     x = 10  # Local variable
     print(x)
@@ -215,7 +225,7 @@ print(x)  # Error! x doesn't exist outside function
 ## Examples
 
 ### Example 1: Simple Function (No Parameters, No Return)
-```python
+```{code-cell} python
 def greet():
     """Display a simple greeting."""
     print("Hello!")
@@ -229,7 +239,7 @@ greet()
 ```
 
 ### Example 2: Function with Parameters
-```python
+```{code-cell} python
 def greet_person(name, time_of_day):
     """
     Greet a person based on time of day.
@@ -246,7 +256,7 @@ greet_person("Charlie", "evening") # Good evening, Charlie!
 ```
 
 ### Example 3: Function with Return Value
-```python
+```{code-cell} python
 def calculate_area(length, width):
     """
     Calculate area of a rectangle.
@@ -271,7 +281,7 @@ print(f"Total area: {total_area}")  # Total area: 29
 ```
 
 ### Example 4: Function with Multiple Return Values
-```python
+```{code-cell} python
 def get_statistics(numbers):
     """
     Calculate statistics for a list of numbers.
@@ -298,7 +308,7 @@ print(f"Avg: {avg_score}")   # Avg: 86.6
 ```
 
 ### Example 5: Temperature Converter
-```python
+```{code-cell} python
 def celsius_to_fahrenheit(celsius):
     """
     Convert Celsius to Fahrenheit.
@@ -336,7 +346,9 @@ print(f"{temp_f}°F = {temp_c:.1f}°C")  # 98.6°F = 37.0°C
 ```
 
 ### Example 6: Input Validation Function
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 def get_positive_number(prompt):
     """
     Get a positive number from user.
@@ -367,7 +379,9 @@ print(f"Your BMI is {bmi:.1f}")
 ```
 
 ### Example 7: Complete Program with Main Function
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 def display_menu():
     """Display calculator menu."""
     print("\n===== CALCULATOR =====")
@@ -479,7 +493,7 @@ if __name__ == "__main__":
 ### Mistake 1: Forgetting to Return a Value
 
 **Wrong:**
-```python
+```{code-cell} python
 def add(a, b):
     sum_value = a + b
     # Forgot to return!
@@ -489,7 +503,7 @@ print(result)  # Prints None
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 def add(a, b):
     sum_value = a + b
     return sum_value  # Or: return a + b
@@ -503,7 +517,7 @@ print(result)  # Prints 8
 ### Mistake 2: Confusing Parameters and Arguments
 
 **Wrong:**
-```python
+```{code-cell} python
 def greet(name):
     print(f"Hello {name}")
 
@@ -512,7 +526,7 @@ greet(person)  # NameError: person is not defined
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 def greet(name):
     print(f"Hello {name}")
 
@@ -527,7 +541,7 @@ greet("Alice")  # Pass value directly
 ### Mistake 3: Incorrect Indentation
 
 **Wrong:**
-```python
+```{code-cell} python
 def calculate_sum(a, b):
 total = a + b  # Not indented!
 return total
@@ -536,7 +550,7 @@ return total
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 def calculate_sum(a, b):
     total = a + b  # Properly indented
     return total
@@ -547,7 +561,7 @@ def calculate_sum(a, b):
 ### Mistake 4: Modifying Global Variables Without Declaring
 
 **Wrong:**
-```python
+```{code-cell} python
 count = 0
 
 def increment():
@@ -557,7 +571,7 @@ increment()
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 count = 0
 
 def increment():
@@ -581,7 +595,7 @@ count = increment(count)
 ### 1. **Web Development**
 Functions are fundamental in web frameworks like Django and Flask. Routes are functions that handle HTTP requests:
 
-```python
+```{code-cell} python
 @app.route('/user/<username>')
 def show_user_profile(username):
     # Show user profile page
@@ -591,7 +605,7 @@ def show_user_profile(username):
 ### 2. **Data Science**
 Data processing pipelines use functions to clean, transform, and analyze data:
 
-```python
+```{code-cell} python
 def clean_data(dataframe):
     # Remove nulls, fix formatting, normalize
     return cleaned_df
@@ -604,7 +618,7 @@ def calculate_statistics(dataframe):
 ### 3. **Automation Scripts**
 Functions organize automation tasks into reusable components:
 
-```python
+```{code-cell} python
 def backup_files(source_dir, backup_dir):
     # Copy files from source to backup
     pass
@@ -617,7 +631,7 @@ def send_email_notification(status):
 ### 4. **Game Development**
 Game logic is built from functions for movement, collision detection, scoring:
 
-```python
+```{code-cell} python
 def check_collision(player, enemies):
     # Detect if player hit enemy
     return collision_detected

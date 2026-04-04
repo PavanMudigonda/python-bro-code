@@ -6,11 +6,12 @@ author = "Pavan Mudigonda"
 release = "1.0.0"
 
 extensions = [
-    "myst_parser",
+    "myst_nb",
     "sphinx.ext.autodoc",
     "sphinx.ext.viewcode",
     "sphinx_copybutton",
     "sphinx_design",
+    "sphinx_thebe",
 ]
 
 myst_enable_extensions = [
@@ -30,7 +31,8 @@ myst_heading_anchors = 3
 
 source_suffix = {
     ".rst": "restructuredtext",
-    ".md": "markdown",
+    ".md": "myst-nb",
+    ".ipynb": "myst-nb",
 }
 
 templates_path = ["_templates"]
@@ -65,3 +67,23 @@ html_theme_options = {
     "source_branch": "main",
     "source_directory": "docs/",
 }
+
+# ---------------------------------------------------------------------------
+# myst-nb: notebook execution settings
+# ---------------------------------------------------------------------------
+nb_execution_mode = "off"  # "off" renders existing outputs; switch to "auto" or
+                           # "cache" to execute cells during the build.
+nb_execution_timeout = 30
+nb_execution_raise_on_error = False
+
+# ---------------------------------------------------------------------------
+# sphinx-thebe: live "Run" button (connects to Binder for a free kernel)
+# ---------------------------------------------------------------------------
+thebe_config = {
+    "repository_url": "https://github.com/PavanMudigonda/python-bro-code",
+    "repository_branch": "main",
+    "path_to_docs": "docs/",
+}
+
+# sphinx-copybutton already provides the "Copy" button on every code block.
+# No extra config needed — both Run and Copy are now available.

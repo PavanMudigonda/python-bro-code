@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Chapter 13: String Methods
 
 ## 🚀 Open Notebook
@@ -10,10 +20,6 @@
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/tb6EYiHtcXU)
 
 **String methods in Python are easy! 〰️** (12:14)
-
-## 📺 Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/tb6EYiHtcXU)
 
 ## 📚 What You'll Learn
 Master Python's powerful string manipulation methods to transform and analyze text!
@@ -46,7 +52,7 @@ Strings in Python come with many built-in methods for manipulation. Methods are 
 ## 💡 Examples
 
 ### Example 1: Case Conversion
-```python
+```{code-cell} python
 name = "john DOE"
 print(name.upper())      # JOHN DOE
 print(name.lower())      # john doe
@@ -55,7 +61,7 @@ print(name.capitalize()) # John doe
 ```
 
 ### Example 2: Finding Substrings
-```python
+```{code-cell} python
 text = "Python Programming"
 print(text.find("Pro"))      # 7 (index where "Pro" starts)
 print(text.find("Java"))     # -1 (not found)
@@ -63,7 +69,7 @@ print("Pro" in text)         # True (membership check)
 ```
 
 ### Example 3: Replacing Text
-```python
+```{code-cell} python
 phone = "123-456-7890"
 clean = phone.replace("-", "")
 print(clean)  # 1234567890
@@ -74,7 +80,7 @@ print(new_msg)  # Hello Python
 ```
 
 ### Example 4: Validation
-```python
+```{code-cell} python
 user_input = "12345"
 if user_input.isdigit():
     number = int(user_input)
@@ -95,20 +101,20 @@ else:
 ## 📝 More Useful Methods
 
 ### `.count(substring)`
-```python
+```{code-cell} python
 text = "hello world"
 print(text.count("l"))  # 3
 ```
 
 ### `.startswith()` and `.endswith()`
-```python
+```{code-cell} python
 filename = "document.pdf"
 print(filename.endswith(".pdf"))  # True
 print(filename.startswith("doc")) # True
 ```
 
 ### `.strip()`, `.lstrip()`, `.rstrip()`
-```python
+```{code-cell} python
 text = "   hello   "
 print(text.strip())   # "hello" (both sides)
 print(text.lstrip())  # "hello   " (left side)
@@ -116,7 +122,7 @@ print(text.rstrip())  # "   hello" (right side)
 ```
 
 ### `.split()` and `.join()`
-```python
+```{code-cell} python
 # Split string into list
 sentence = "Python is awesome"
 words = sentence.split()  # ['Python', 'is', 'awesome']
@@ -129,7 +135,9 @@ csv = ",".join(words)     # "Python,is,awesome"
 ## 🎮 Real-World Examples
 
 ### Email Validator
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 email = input("Enter email: ")
 if "@" in email and "." in email:
     domain = email.split("@")[1]
@@ -139,14 +147,18 @@ else:
 ```
 
 ### Username Formatter
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 username = input("Username: ")
 username = username.strip().lower().replace(" ", "_")
 print(f"Formatted username: {username}")
 ```
 
 ### Password Strength Checker
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 password = input("Enter password: ")
 has_digit = any(c.isdigit() for c in password)
 has_upper = any(c.isupper() for c in password)

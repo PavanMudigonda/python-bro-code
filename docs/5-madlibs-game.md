@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Chapter 5: Madlibs Game
 
 ## 🚀 Open Notebook
@@ -37,7 +47,7 @@ Madlibs is a phrasal template word game where:
 - **-ing Verb**: Present continuous (running, jumping, singing)
 
 ### How the Program Works
-```python
+```{code-cell} python
 1. Ask user for words (without showing the story)
 2. Store each word in a variable
 3. Insert variables into story template using f-strings
@@ -86,7 +96,9 @@ Create madlibs for specific themes:
 - **Comedy**: funny situations
 
 ## 💻 Code Template for Your Own Madlib
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # Get user input
 noun1 = input("Enter a noun: ")
 verb1 = input("Enter a verb: ")
@@ -102,7 +114,9 @@ print("The end!")
 ## 🎨 Story Templates to Try
 
 ### Template 1: Adventure Story
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 character = input("Character name: ")
 adjective = input("Adjective: ")
 place = input("Place: ")
@@ -113,7 +127,9 @@ print(f"There, {character} {verb} and found treasure!")
 ```
 
 ### Template 2: News Report
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 city = input("City name: ")
 noun = input("Noun: ")
 number = input("Number: ")
@@ -126,7 +142,9 @@ print(f"A {adjective} {noun} was spotted {number} times today!")
 ## 🔍 Tips for Great Madlibs
 
 ### 1. Be Specific in Prompts
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # Vague:
 word = input("Enter a word: ")  # User doesn't know what kind
 
@@ -135,7 +153,9 @@ animal = input("Enter an animal: ")  # Clear instruction
 ```
 
 ### 2. Use Descriptive Variable Names
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # Confusing:
 x = input("Enter something: ")
 

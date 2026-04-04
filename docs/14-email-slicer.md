@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Chapter 14: Email Slicer Program
 
 ## 🚀 Open Notebook
@@ -34,27 +44,29 @@ Example: `john.doe@example.com`
 
 ### Finding the @ Symbol
 Use the `find()` method to locate the position of '@':
-```python
+```{code-cell} python
 email = "john.doe@example.com"
 at_index = email.find("@")  # Returns 8
 ```
 
 ### Extracting Username
 Use slicing from the start to the @ position:
-```python
+```{code-cell} python
 username = email[:at_index]  # Gets "john.doe"
 ```
 
 ### Extracting Domain
 Use slicing from after @ to the end:
-```python
+```{code-cell} python
 domain = email[at_index + 1:]  # Gets "example.com"
 ```
 
 ## 💡 Examples
 
 ### Basic Email Slicer
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 email = input("Enter your email: ")
 
 # Find the @ symbol
@@ -76,7 +88,9 @@ Domain: company.com
 ```
 
 ### With Error Handling
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 email = input("Enter your email: ")
 
 if "@" in email:
@@ -91,7 +105,9 @@ else:
 ```
 
 ### Enhanced Version
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 email = input("Enter your email: ").strip()
 
 if "@" in email and email.count("@") == 1:
@@ -124,7 +140,9 @@ Extend the program to identify the domain type:
 - .gov → Government
 - .org → Organization
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 email = input("Enter your email: ")
 at_index = email.find("@")
 domain = email[at_index + 1:]
@@ -138,7 +156,7 @@ elif domain.endswith(".edu"):
 
 ### Exercise 3: Multiple Emails
 Process multiple emails from a list:
-```python
+```{code-cell} python
 emails = [
     "john@company.com",
     "alice@school.edu",
@@ -155,7 +173,7 @@ for email in emails:
 ## 🔍 Common Mistakes
 
 ### 1. Forgetting to Add 1
-```python
+```{code-cell} python
 # ❌ Wrong - includes the @ symbol
 domain = email[at_index:]
 
@@ -164,7 +182,7 @@ domain = email[at_index + 1:]
 ```
 
 ### 2. Not Checking if @ Exists
-```python
+```{code-cell} python
 # ❌ Wrong - crashes if no @
 at_index = email.find("@")
 username = email[:at_index]
@@ -176,7 +194,7 @@ if "@" in email:
 ```
 
 ### 3. Multiple @ Symbols
-```python
+```{code-cell} python
 # Better to validate
 if email.count("@") == 1:
     # Process email
@@ -208,7 +226,7 @@ Convert emails to different formats:
 
 ### Challenge 3: Professional Email Generator
 Generate professional emails from names:
-```python
+```{code-cell} python
 first_name = "John"
 last_name = "Doe"
 company = "techcorp"

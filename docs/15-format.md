@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Chapter 15: Format Specifiers
 
 ## 🚀 Open Notebook
@@ -42,7 +52,7 @@ Format specifiers control how values are displayed in f-strings using the syntax
 ## 💡 Examples
 
 ### Decimal Places
-```python
+```{code-cell} python
 pi = 3.14159265
 print(f"{pi:.2f}")    # 3.14
 print(f"{pi:.4f}")    # 3.1416
@@ -50,7 +60,7 @@ print(f"{pi:.0f}")    # 3
 ```
 
 ### Alignment and Width
-```python
+```{code-cell} python
 name = "Python"
 price = 19.99
 
@@ -61,7 +71,7 @@ print(f"{price:>10.2f}")  # "     19.99"
 ```
 
 ### Thousands Separator
-```python
+```{code-cell} python
 population = 7800000000
 print(f"{population:,}")  # 7,800,000,000
 
@@ -70,7 +80,7 @@ print(f"${price:,.2f}")   # $1,234.56
 ```
 
 ### Zero Padding
-```python
+```{code-cell} python
 number = 42
 print(f"{number:05}")  # 00042
 print(f"{number:03}")  # 042
@@ -92,7 +102,7 @@ print(f"USER-{user_id:04}")  # USER-0007
 ## 🎮 Real-World Examples
 
 ### Price List
-```python
+```{code-cell} python
 items = [
     ("Apple", 0.99),
     ("Banana", 0.59),
@@ -113,7 +123,7 @@ for item, price in items:
 ```
 
 ### Financial Report
-```python
+```{code-cell} python
 revenue = 1234567.89
 expenses = 987654.32
 profit = revenue - expenses
@@ -133,7 +143,7 @@ print(f"Profit:   ${profit:>12,.2f}")
 ```
 
 ### Progress Display
-```python
+```{code-cell} python
 completed = 75
 total = 100
 percentage = completed / total
@@ -145,7 +155,7 @@ print(f"[{'=' * completed}{' ' * (total-completed)}] {percentage:.0%}")
 ```
 
 ### Student Grades
-```python
+```{code-cell} python
 students = [
     ("Alice", 95.5),
     ("Bob", 87.3),
@@ -169,14 +179,14 @@ for name, grade in students:
 ## 📝 Advanced Formatting
 
 ### Scientific Notation
-```python
+```{code-cell} python
 big_number = 1000000
 print(f"{big_number:e}")   # 1.000000e+06
 print(f"{big_number:.2e}") # 1.00e+06
 ```
 
 ### Binary, Octal, Hex
-```python
+```{code-cell} python
 number = 255
 print(f"{number:b}")   # 11111111 (binary)
 print(f"{number:o}")   # 377 (octal)
@@ -185,7 +195,7 @@ print(f"{number:X}")   # FF (hexadecimal uppercase)
 ```
 
 ### Custom Separators
-```python
+```{code-cell} python
 number = 1234567
 print(f"{number:_}")     # 1_234_567
 print(f"{number:,}")     # 1,234,567

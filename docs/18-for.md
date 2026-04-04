@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Chapter 18: For Loops
 
 ## 🚀 Open Notebook
@@ -28,7 +38,7 @@ Master the for loop - Python's most elegant way to iterate through sequences and
 A for loop iterates through a sequence (like a list, string, or range) and executes code for each item.
 
 ### Syntax
-```python
+```{code-cell} python
 for variable in sequence:
     # code to execute for each item
 ```
@@ -46,7 +56,7 @@ for variable in sequence:
 ## 💡 Examples
 
 ### Example 1: Basic For Loop
-```python
+```{code-cell} python
 for i in range(5):
     print(i)
 
@@ -54,7 +64,7 @@ for i in range(5):
 ```
 
 ### Example 2: Iterating Through a String
-```python
+```{code-cell} python
 name = "Python"
 
 for letter in name:
@@ -70,7 +80,7 @@ for letter in name:
 ```
 
 ### Example 3: Iterating Through a List
-```python
+```{code-cell} python
 fruits = ["apple", "banana", "cherry"]
 
 for fruit in fruits:
@@ -83,7 +93,7 @@ for fruit in fruits:
 ```
 
 ### Example 4: Using range() with Different Parameters
-```python
+```{code-cell} python
 # range(stop) - starts at 0
 for i in range(5):
     print(i, end=" ")  # 0 1 2 3 4
@@ -102,7 +112,7 @@ for i in range(0, 10, 2):
 ```
 
 ### Example 5: Countdown with Reversed
-```python
+```{code-cell} python
 # Countdown from 10 to 1
 for i in range(10, 0, -1):
     print(i)
@@ -115,7 +125,7 @@ print("Blastoff!")
 ```
 
 ### Example 6: Sum of Numbers
-```python
+```{code-cell} python
 total = 0
 
 for num in range(1, 11):
@@ -125,7 +135,7 @@ print(f"Sum of 1-10: {total}")  # 55
 ```
 
 ### Example 7: Multiplication Table
-```python
+```{code-cell} python
 number = 7
 
 print(f"Multiplication table for {number}:\n")
@@ -136,7 +146,7 @@ for i in range(1, 11):
 ```
 
 ### Example 8: Enumerate for Index and Value
-```python
+```{code-cell} python
 fruits = ["apple", "banana", "cherry"]
 
 for index, fruit in enumerate(fruits):
@@ -153,7 +163,7 @@ for index, fruit in enumerate(fruits, start=1):
 ```
 
 ### Example 9: Iterating Through Dictionary
-```python
+```{code-cell} python
 student = {
     "name": "Alice",
     "age": 20,
@@ -170,7 +180,7 @@ for key, value in student.items():
 ```
 
 ### Example 10: Nested For Loops (Preview)
-```python
+```{code-cell} python
 for i in range(3):
     for j in range(3):
         print(f"({i}, {j})", end=" ")
@@ -185,7 +195,7 @@ for i in range(3):
 ## 🔍 Common Mistakes
 
 ### Mistake 1: Off-by-One Errors
-```python
+```{code-cell} python
 # Wrong: range stops BEFORE the end
 for i in range(10):
     print(i)  # Prints 0-9, NOT 0-10
@@ -200,7 +210,7 @@ for i in range(1, 11):
 ```
 
 ### Mistake 2: Modifying List While Iterating
-```python
+```{code-cell} python
 # Dangerous!
 numbers = [1, 2, 3, 4, 5]
 for num in numbers:
@@ -213,7 +223,7 @@ numbers = [num for num in numbers if num % 2 != 0]
 ```
 
 ### Mistake 3: Using Wrong Variable Name
-```python
+```{code-cell} python
 fruits = ["apple", "banana"]
 
 # Confusing
@@ -226,7 +236,7 @@ for fruit in fruits:
 ```
 
 ### Mistake 4: Forgetting range() Around Numbers
-```python
+```{code-cell} python
 # Wrong
 for i in 5:  # TypeError!
     print(i)
@@ -262,7 +272,9 @@ for i in range(5):
 ## 🎮 Real-World Applications
 
 ### Application 1: Grade Calculator
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 print("=== Grade Calculator ===\n")
 
 num_students = int(input("How many students? "))
@@ -291,7 +303,9 @@ print(f"\nClass average: {class_average:.2f}")
 ```
 
 ### Application 2: Shopping Receipt
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 print("=== Shopping Receipt ===\n")
 
 items = []
@@ -326,7 +340,9 @@ print("="*40)
 ```
 
 ### Application 3: Password Generator
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 
 print("=== Password Generator ===\n")
@@ -348,7 +364,7 @@ print(f"Generated password: {password}")
 ```
 
 ### Application 4: Data Analysis
-```python
+```{code-cell} python
 # Temperature analysis
 temperatures = [72, 75, 68, 70, 73, 71, 69, 74, 76, 72]
 
@@ -372,7 +388,9 @@ print(f"Range: {highest - lowest}°F")
 ```
 
 ### Application 5: ASCII Art Generator
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # Triangle pattern
 height = int(input("Enter height: "))
 
@@ -433,7 +451,7 @@ Create patterns like:
 
 ## 📚 Range() Function Reference
 
-```python
+```{code-cell} python
 # Basic usage
 range(stop)           # 0 to stop-1
 range(start, stop)    # start to stop-1
@@ -450,7 +468,7 @@ range(5, 0, -2)       # 5, 3, 1
 ## 🔄 Loop Control Statements
 
 ### Break - Exit Loop Early
-```python
+```{code-cell} python
 for i in range(10):
     if i == 5:
         break
@@ -459,7 +477,7 @@ for i in range(10):
 ```
 
 ### Continue - Skip Current Iteration
-```python
+```{code-cell} python
 for i in range(6):
     if i == 3:
         continue
@@ -468,7 +486,7 @@ for i in range(6):
 ```
 
 ### Else with For Loop
-```python
+```{code-cell} python
 for i in range(5):
     print(i)
 else:
@@ -479,7 +497,7 @@ else:
 ## 🎯 Common Patterns
 
 ### Count Occurrences
-```python
+```{code-cell} python
 text = "hello world"
 count = 0
 
@@ -491,7 +509,7 @@ print(f"'l' appears {count} times")
 ```
 
 ### Build a String
-```python
+```{code-cell} python
 result = ""
 
 for i in range(5):
@@ -501,7 +519,7 @@ print(result)  # "0 1 2 3 4 "
 ```
 
 ### Find Maximum
-```python
+```{code-cell} python
 numbers = [34, 78, 12, 90, 45]
 maximum = numbers[0]
 

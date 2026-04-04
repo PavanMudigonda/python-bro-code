@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Chapter 9: Weight Converter Program
 
 ## 🚀 Open Notebook
@@ -10,10 +20,6 @@
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/80kjCBRjkmU)
 
 **Python weight conversion exercise 🏋️** (5:47)
-
-## 📺 Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/80kjCBRjkmU)
 
 ## 📚 What You'll Learn
 Create a practical unit converter that switches between pounds and kilograms!
@@ -70,14 +76,18 @@ Output: "Your weight in Lbs: 154.32"
 ## ✍️ Practice Exercises
 
 ### Exercise 1: Add Rounding Options
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # Ask user how many decimal places they want
 decimal_places = int(input("Decimal places: "))
 print(f"Weight: {weight:.{decimal_places}f}")
 ```
 
 ### Exercise 2: Improve User Interface
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 print("=== Weight Converter ===")
 print("L - Convert from Pounds to Kilograms")
 print("K - Convert from Kilograms to Pounds")
@@ -100,7 +110,9 @@ Add conversions for:
 ## 🔍 Code Analysis
 
 ### Using .upper()
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 unit = input("Enter L or K: ")
 if unit.upper() == "L":  # Accepts both 'l' and 'L'
     # convert...
@@ -108,7 +120,7 @@ if unit.upper() == "L":  # Accepts both 'l' and 'L'
 This makes the program more user-friendly!
 
 ### Formatting Output
-```python
+```{code-cell} python
 # Without formatting:
 print(f"Weight: {weight}")  # 68.039215686274506
 
@@ -118,7 +130,9 @@ print(f"Weight: {weight:.2f}")  # 68.04
 
 ## 🎮 Enhanced Weight Converter
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 def weight_converter():
     """Convert between pounds and kilograms"""
     
@@ -176,7 +190,9 @@ weight_converter()
 ## 🌍 Real-World Applications
 
 ### Fitness & Health
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # BMI Calculator with weight conversion
 height_m = float(input("Height in meters: "))
 weight_kg = float(input("Weight in kg: "))
@@ -185,7 +201,9 @@ print(f"BMI: {bmi:.1f}")
 ```
 
 ### Travel
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # Luggage weight checker
 weight_lbs = float(input("Luggage weight (lbs): "))
 weight_kg = weight_lbs * 0.453592
@@ -206,7 +224,7 @@ Create a converter for:
 - Volume (gallons, liters)
 
 ### Challenge 2: Batch Converter
-```python
+```{code-cell} python
 # Convert multiple weights at once
 weights = [120, 150, 180, 200]
 for weight in weights:
@@ -215,7 +233,7 @@ for weight in weights:
 ```
 
 ### Challenge 3: Conversion Table Generator
-```python
+```{code-cell} python
 # Generate a conversion table
 print("LBS | KG")
 print("-" * 15)

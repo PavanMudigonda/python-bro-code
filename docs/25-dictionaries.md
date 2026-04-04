@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # 📖 Dictionaries
 
 ## 🚀 Open Notebook
@@ -30,7 +40,7 @@ In this chapter, you'll master Python dictionaries - one of the most powerful an
 
 A **dictionary** is a collection of key-value pairs where each key is unique and maps to a specific value. Think of it like a real dictionary where words (keys) map to definitions (values), or a phone book where names (keys) map to phone numbers (values).
 
-```python
+```{code-cell} python
 # Dictionary syntax
 student = {
     "name": "Alice",      # key: "name", value: "Alice"
@@ -52,7 +62,7 @@ student = {
 
 The fundamental unit of a dictionary:
 
-```python
+```{code-cell} python
 capitals = {
     "USA": "Washington D.C.",    # "USA" → key, "Washington D.C." → value
     "France": "Paris",            # "France" → key, "Paris" → value
@@ -64,7 +74,7 @@ capitals = {
 
 Multiple ways to create dictionaries:
 
-```python
+```{code-cell} python
 # Method 1: Literal syntax
 person = {"name": "John", "age": 30}
 
@@ -82,7 +92,7 @@ person = {}  # or dict()
 
 Use keys to retrieve values:
 
-```python
+```{code-cell} python
 capitals = {"USA": "Washington D.C.", "France": "Paris"}
 
 # Method 1: Square brackets (raises KeyError if key doesn't exist)
@@ -96,7 +106,7 @@ print(capitals.get("Germany", "Not Found"))  # "Not Found"
 
 ### Modifying Dictionaries
 
-```python
+```{code-cell} python
 capitals = {"USA": "Washington D.C."}
 
 # Add new key-value pair
@@ -136,7 +146,7 @@ Important methods for working with dictionaries:
 ## Examples
 
 ### Example 1: Creating and Accessing Dictionaries
-```python
+```{code-cell} python
 # Create dictionary of capitals
 capitals = {
     "USA": "Washington D.C.",
@@ -155,7 +165,7 @@ print(capitals.get("Germany", "Unknown"))  # "Unknown"
 ```
 
 ### Example 2: Adding and Updating Items
-```python
+```{code-cell} python
 capitals = {"USA": "Washington D.C."}
 
 # Add new items
@@ -176,7 +186,7 @@ print(capitals)
 ```
 
 ### Example 3: Dictionary Methods
-```python
+```{code-cell} python
 capitals = {
     "USA": "Washington D.C.",
     "France": "Paris",
@@ -201,7 +211,7 @@ print(len(capitals))  # 3
 ```
 
 ### Example 4: Iterating Through Dictionaries
-```python
+```{code-cell} python
 capitals = {
     "USA": "Washington D.C.",
     "France": "Paris",
@@ -227,7 +237,7 @@ for country, capital in capitals.items():
 ```
 
 ### Example 5: Nested Dictionaries
-```python
+```{code-cell} python
 # Dictionary containing dictionaries
 students = {
     "student1": {
@@ -254,7 +264,7 @@ for student_id, info in students.items():
 ```
 
 ### Example 6: Dictionary Comprehension
-```python
+```{code-cell} python
 # Create dictionary using comprehension
 numbers = [1, 2, 3, 4, 5]
 squares = {num: num**2 for num in numbers}
@@ -272,7 +282,7 @@ print(people)  # {'Alice': 25, 'Bob': 30, 'Charlie': 35}
 ```
 
 ### Example 7: Practical Student Grade Book
-```python
+```{code-cell} python
 # Grade book using dictionary
 gradebook = {
     "Alice": [85, 92, 88, 95],
@@ -346,7 +356,7 @@ print(f"\nTop Student: {best_student[0]}")
 ### Mistake 1: Using Mutable Keys
 
 **Wrong:**
-```python
+```{code-cell} python
 # Lists are mutable and cannot be used as keys
 inventory = {
     ["apple", "red"]: 10,  # TypeError!
@@ -355,7 +365,7 @@ inventory = {
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 # Use tuples (immutable) as keys
 inventory = {
     ("apple", "red"): 10,
@@ -368,13 +378,13 @@ inventory = {
 ### Mistake 2: KeyError When Accessing Non-Existent Keys
 
 **Wrong:**
-```python
+```{code-cell} python
 capitals = {"USA": "Washington D.C."}
 print(capitals["Germany"])  # KeyError!
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 capitals = {"USA": "Washington D.C."}
 # Method 1: Use get() with default value
 print(capitals.get("Germany", "Not found"))  # "Not found"
@@ -391,7 +401,7 @@ else:
 ### Mistake 3: Modifying Dictionary During Iteration
 
 **Wrong:**
-```python
+```{code-cell} python
 grades = {"Alice": 85, "Bob": 70, "Charlie": 90}
 for student in grades:
     if grades[student] < 75:
@@ -399,7 +409,7 @@ for student in grades:
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 grades = {"Alice": 85, "Bob": 70, "Charlie": 90}
 # Create list of keys to delete
 to_delete = [student for student, grade in grades.items() if grade < 75]
@@ -415,14 +425,14 @@ grades = {s: g for s, g in grades.items() if g >= 75}
 ### Mistake 4: Confusing Keys and Values
 
 **Wrong:**
-```python
+```{code-cell} python
 capitals = {"USA": "Washington D.C.", "France": "Paris"}
 # Trying to find country by capital
 country = capitals["Paris"]  # KeyError!
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 capitals = {"USA": "Washington D.C.", "France": "Paris"}
 # Find key by value
 country = [k for k, v in capitals.items() if v == "Paris"][0]

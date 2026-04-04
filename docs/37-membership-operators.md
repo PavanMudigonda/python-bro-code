@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # ✅ Membership Operators
 
 ## 🚀 Open Notebook
@@ -34,7 +44,7 @@ Membership operators test whether a value is found in a sequence (string, list, 
 1. **`in`** - Returns `True` if value is found in sequence
 2. **`not in`** - Returns `True` if value is NOT found in sequence
 
-```python
+```{code-cell} python
 # in operator
 fruits = ["apple", "banana", "cherry"]
 print("apple" in fruits)  # True
@@ -48,7 +58,7 @@ print("apple" not in fruits)   # False
 ### Membership Operators with Different Types
 
 #### 1. **Lists**
-```python
+```{code-cell} python
 numbers = [1, 2, 3, 4, 5]
 
 print(3 in numbers)      # True
@@ -57,7 +67,7 @@ print(10 not in numbers) # True
 ```
 
 #### 2. **Tuples**
-```python
+```{code-cell} python
 colors = ("red", "green", "blue")
 
 print("red" in colors)    # True
@@ -65,7 +75,7 @@ print("yellow" in colors) # False
 ```
 
 #### 3. **Strings**
-```python
+```{code-cell} python
 message = "Hello World"
 
 print("H" in message)     # True (case-sensitive!)
@@ -75,7 +85,7 @@ print("world" in message) # False (case-sensitive)
 ```
 
 #### 4. **Sets**
-```python
+```{code-cell} python
 unique_nums = {1, 2, 3, 4, 5}
 
 print(3 in unique_nums)  # True
@@ -83,7 +93,7 @@ print(10 in unique_nums) # False
 ```
 
 #### 5. **Dictionaries (Checks Keys by Default)**
-```python
+```{code-cell} python
 person = {"name": "Alice", "age": 25, "city": "NYC"}
 
 print("name" in person)    # True (checks keys)
@@ -99,7 +109,9 @@ print(("name", "Alice") in person.items())  # True
 ### Why Use Membership Operators?
 
 #### 1. **Input Validation**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 valid_options = ("rock", "paper", "scissors")
 choice = input("Choose: ").lower()
 
@@ -110,7 +122,7 @@ else:
 ```
 
 #### 2. **Cleaner Code**
-```python
+```{code-cell} python
 # Without membership operator (verbose)
 if x == 1 or x == 2 or x == 3 or x == 4 or x == 5:
     print("Found!")
@@ -121,7 +133,7 @@ if x in [1, 2, 3, 4, 5]:
 ```
 
 #### 3. **Search Operations**
-```python
+```{code-cell} python
 # Check if email is blacklisted
 blacklist = ["spam@example.com", "fake@example.com"]
 
@@ -130,7 +142,7 @@ if user_email in blacklist:
 ```
 
 #### 4. **Character/Substring Checking**
-```python
+```{code-cell} python
 password = "MyPassword123"
 
 if "@" not in password:
@@ -145,7 +157,7 @@ Different data structures have different lookup speeds:
 - Sets: `{1, 2, 3}`
 - Dictionaries: `{"key": "value"}`
 
-```python
+```{code-cell} python
 # Very fast for large datasets
 large_set = set(range(1000000))
 print(999999 in large_set)  # Instant!
@@ -156,7 +168,7 @@ print(999999 in large_set)  # Instant!
 - Tuples: `(1, 2, 3)`
 - Strings: `"abc"`
 
-```python
+```{code-cell} python
 # Slower for large datasets
 large_list = list(range(1000000))
 print(999999 in large_list)  # Must scan through all elements
@@ -167,7 +179,9 @@ print(999999 in large_list)  # Must scan through all elements
 ## Examples
 
 ### Example 1: Word Guessing Game
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 word = "PYTHON"
 letter = input("Guess a letter: ").upper()
 
@@ -185,7 +199,9 @@ else:
 ```
 
 ### Example 2: Student Checker
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 students = ["Alice", "Bob", "Charlie", "David"]
 name = input("Enter student name: ")
 
@@ -199,7 +215,9 @@ if name not in students:
 ```
 
 ### Example 3: Email Validator
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 email = input("Enter email: ")
 
 # Check required characters
@@ -218,7 +236,9 @@ else:
 ```
 
 ### Example 4: Menu Selection
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 menu = {
     "1": "View Profile",
     "2": "Edit Settings",
@@ -235,7 +255,9 @@ else:
 ```
 
 ### Example 5: Grade Validator
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 valid_grades = ['A', 'B', 'C', 'D', 'F']
 grade = input("Enter grade: ").upper()
 
@@ -254,7 +276,9 @@ else:
 ```
 
 ### Example 6: Vowel Counter
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 text = input("Enter text: ")
 vowels = "aeiouAEIOU"
 vowel_count = 0
@@ -271,7 +295,9 @@ print(f"Vowels found: {vowel_count}")
 ```
 
 ### Example 7: Access Control System
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # User database
 admins = {"alice", "bob"}
 moderators = {"charlie", "david"}
@@ -335,14 +361,14 @@ else:
 ### Mistake 1: Case Sensitivity in Strings
 
 **Wrong:**
-```python
+```{code-cell} python
 word = "Python"
 if "python" in word:  # False - case mismatch!
     print("Found")
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 word = "Python"
 if "python" in word.lower():  # True - convert to lowercase
     print("Found")
@@ -353,14 +379,14 @@ if "python" in word.lower():  # True - convert to lowercase
 ### Mistake 2: Checking Values in Dictionary (Wrong Way)
 
 **Wrong:**
-```python
+```{code-cell} python
 person = {"name": "Alice", "age": 25}
 if "Alice" in person:  # False - checks keys, not values!
     print("Found")
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 person = {"name": "Alice", "age": 25}
 if "Alice" in person.values():  # True - checks values
     print("Found")
@@ -371,7 +397,7 @@ if "Alice" in person.values():  # True - checks values
 ### Mistake 3: Inefficient Membership Testing with Lists
 
 **Wrong:**
-```python
+```{code-cell} python
 # Slow for large lists - O(n) lookup
 large_list = list(range(1000000))
 for i in range(1000):
@@ -380,7 +406,7 @@ for i in range(1000):
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 # Fast with sets - O(1) lookup
 large_set = set(range(1000000))
 for i in range(1000):
@@ -393,7 +419,7 @@ for i in range(1000):
 ### Mistake 4: Using 'in' with Numbers Incorrectly
 
 **Wrong:**
-```python
+```{code-cell} python
 # Checking if digit is in a number (wrong approach)
 number = 12345
 if 3 in number:  # TypeError: argument of type 'int' is not iterable
@@ -401,7 +427,7 @@ if 3 in number:  # TypeError: argument of type 'int' is not iterable
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 # Convert to string first
 number = 12345
 if "3" in str(number):  # True
@@ -418,7 +444,7 @@ if 3 in [int(d) for d in str(number)]:
 
 ### 1. **Form Validation**
 Web forms validate input against allowed values:
-```python
+```{code-cell} python
 ALLOWED_COUNTRIES = ["USA", "Canada", "UK", "Australia"]
 if country in ALLOWED_COUNTRIES:
     process_form()
@@ -426,14 +452,14 @@ if country in ALLOWED_COUNTRIES:
 
 ### 2. **Access Control**
 Security systems check permissions:
-```python
+```{code-cell} python
 if user.role in ["admin", "superuser"]:
     grant_access()
 ```
 
 ### 3. **Content Filtering**
 Filter prohibited content:
-```python
+```{code-cell} python
 BANNED_WORDS = ["spam", "abuse", "illegal"]
 if any(word in message.lower() for word in BANNED_WORDS):
     reject_message()
@@ -441,7 +467,7 @@ if any(word in message.lower() for word in BANNED_WORDS):
 
 ### 4. **Search Features**
 Search functionality checks for matches:
-```python
+```{code-cell} python
 if search_term in product_name.lower():
     display_product()
 ```

@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # 🏦 Banking Program
 
 ## 🚀 Open Notebook
@@ -51,7 +61,7 @@ The banking program demonstrates professional application structure:
 
 Global variables maintain state across function calls:
 
-```python
+```{code-cell} python
 # Global variable - accessible by all functions
 balance = 0
 
@@ -68,7 +78,7 @@ def deposit():
 - **Reading**: Not needed - functions can read global variables directly
 - **Modifying**: Required - must declare `global variable_name` before modifying
 
-```python
+```{code-cell} python
 balance = 1000
 
 def read_balance():
@@ -89,7 +99,9 @@ def broken_update():
 
 Prevents crashes from invalid input:
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 try:
     # Code that might raise an exception
     amount = float(input("Enter amount: "))
@@ -109,7 +121,9 @@ User enters: "100" → float() succeeds → except block skipped → Program con
 
 Multiple layers of validation ensure data integrity:
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 def deposit():
     global balance
     
@@ -138,7 +152,9 @@ def deposit():
 
 Modern menu handling (Python 3.10+):
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 choice = input("Enter choice (1-4): ")
 
 match choice:
@@ -156,7 +172,7 @@ match choice:
 
 **Match-case vs If-elif:**
 
-```python
+```{code-cell} python
 # Old way (if-elif)
 if choice == "1":
     show_balance()
@@ -198,7 +214,9 @@ Main Loop:
 
 Each function has a single, clear responsibility:
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 def show_balance():
     """Single responsibility: Display balance"""
     print(f"Balance: ${balance}")
@@ -244,7 +262,9 @@ Banking operations require specific business rules:
 2. Amount must be positive (business rule)
 3. Amount must not exceed balance (business rule)
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 def withdraw():
     global balance
     
@@ -272,7 +292,9 @@ def withdraw():
 ### User Experience Considerations
 
 **Clear Prompts:**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # Bad: Confusing
 amount = float(input("$: "))
 
@@ -281,7 +303,7 @@ amount = float(input("Enter amount to deposit: "))
 ```
 
 **Informative Feedback:**
-```python
+```{code-cell} python
 # Bad: Silent failure
 if amount <= 0:
     return
@@ -293,7 +315,7 @@ if amount <= 0:
 ```
 
 **Consistent Formatting:**
-```python
+```{code-cell} python
 # Use consistent currency formatting
 print(f"Balance: ${balance:.2f}")  # Always 2 decimal places
 ```
@@ -302,7 +324,9 @@ print(f"Balance: ${balance:.2f}")  # Always 2 decimal places
 
 ### Example 1: Basic Banking Program (Complete)
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # Banking Program - Complete Implementation
 
 balance = 0  # Global variable for account balance
@@ -383,7 +407,9 @@ if __name__ == "__main__":
 
 ### Example 2: Banking with Transaction History
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # Banking with transaction history tracking
 
 balance = 0
@@ -473,7 +499,9 @@ if __name__ == "__main__":
 
 ### Example 3: Multi-Account Banking
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # Banking system with multiple accounts
 
 accounts = {}  # Dictionary: {account_number: balance}
@@ -586,7 +614,9 @@ if __name__ == "__main__":
 
 ### Example 4: Banking with Interest
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # Banking program with interest calculations
 
 balance = 0.0
@@ -688,7 +718,9 @@ if __name__ == "__main__":
 
 ### Example 5: Banking with File Persistence
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # Banking with saving/loading from file
 
 import json
@@ -790,7 +822,9 @@ if __name__ == "__main__":
 
 ### Example 6: Banking with Limits
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # Banking with withdrawal limits and fees
 
 balance = 0.0
@@ -888,7 +922,9 @@ if __name__ == "__main__":
 
 ### Example 7: Banking with PIN Protection
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # Banking with PIN authentication
 
 balance = 0.0
@@ -1120,7 +1156,7 @@ if __name__ == "__main__":
 ### Mistake 1: Forgetting the global Keyword
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 balance = 0
 
 def deposit():
@@ -1132,7 +1168,7 @@ deposit()
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 balance = 0
 
 def deposit():
@@ -1148,7 +1184,9 @@ deposit()  # Works correctly
 ### Mistake 2: Not Handling Invalid Input
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 def deposit():
     global balance
     # No error handling - crashes on non-numeric input
@@ -1157,7 +1195,9 @@ def deposit():
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 def deposit():
     global balance
     
@@ -1178,7 +1218,9 @@ def deposit():
 ### Mistake 3: Missing Business Logic Validation
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 def withdraw():
     global balance
     
@@ -1193,7 +1235,9 @@ def withdraw():
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 def withdraw():
     global balance
     
@@ -1222,7 +1266,9 @@ def withdraw():
 ### Mistake 4: Poor User Feedback
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 def deposit():
     global balance
     
@@ -1238,7 +1284,9 @@ def deposit():
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 def deposit():
     global balance
     

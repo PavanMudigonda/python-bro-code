@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # 🎯 Default Arguments
 
 ## 🚀 Open Notebook
@@ -30,7 +40,7 @@ In this chapter, you'll learn about default arguments - function parameters that
 
 Default arguments are parameters that have a pre-assigned value. When calling a function, if you don't provide a value for that parameter, it uses the default instead.
 
-```python
+```{code-cell} python
 def greet(name, greeting="Hello"):
     print(f"{greeting}, {name}!")
 
@@ -49,7 +59,7 @@ greet("Charlie", "Hey")     # Overrides default: "Hey, Charlie!"
 
 Default values are assigned in the function definition using `=`:
 
-```python
+```{code-cell} python
 def function_name(required_param, optional_param=default_value):
     # function body
     pass
@@ -57,7 +67,7 @@ def function_name(required_param, optional_param=default_value):
 
 Example with multiple defaults:
 
-```python
+```{code-cell} python
 def create_user(username, role="user", active=True, notifications=True):
     print(f"Username: {username}")
     print(f"Role: {role}")
@@ -78,7 +88,7 @@ create_user("charlie", role="moderator", notifications=False)
 
 Python enforces a specific order for different parameter types:
 
-```python
+```{code-cell} python
 def function(
     positional,          # 1. Required positional (no default)
     default_param=value, # 2. Default arguments (optional)
@@ -90,7 +100,7 @@ def function(
 
 **You CANNOT put a required parameter after a default parameter:**
 
-```python
+```{code-cell} python
 # WRONG - SyntaxError!
 def bad_function(name="Anonymous", age):
     pass
@@ -105,7 +115,7 @@ def good_function(age, name="Anonymous"):
 #### 1. **Common Default Values**
 When a parameter usually has the same value:
 
-```python
+```{code-cell} python
 def connect_database(host, port=5432, timeout=30):
     # PostgreSQL default port is 5432
     # 30 seconds is reasonable timeout
@@ -121,7 +131,7 @@ connect_database("prod-server", port=3306)  # MySQL
 #### 2. **Optional Configuration**
 For optional features or settings:
 
-```python
+```{code-cell} python
 def send_email(to, subject, body, cc=None, bcc=None, priority="normal"):
     # cc and bcc are optional
     # priority has sensible default
@@ -134,7 +144,7 @@ send_email("user@example.com", "Urgent", "Important!", priority="high")
 #### 3. **Backward Compatibility**
 Adding new parameters without breaking existing code:
 
-```python
+```{code-cell} python
 # Original function
 def process_data(data):
     # process data
@@ -151,7 +161,7 @@ def process_data(data, format="json"):
 
 **Never use mutable objects (lists, dicts) as defaults:**
 
-```python
+```{code-cell} python
 # WRONG - This is a common bug!
 def add_item(item, shopping_list=[]):
     shopping_list.append(item)
@@ -181,7 +191,7 @@ list2 = add_item("banana")  # ['banana'] - CORRECT!
 You can override defaults in two ways:
 
 #### 1. **Positional (Order Matters)**
-```python
+```{code-cell} python
 def greet(name, title="Mr", greeting="Hello"):
     print(f"{greeting} {title} {name}")
 
@@ -191,7 +201,7 @@ greet("Smith", "Dr", "Good morning")  # Good morning Dr Smith
 ```
 
 #### 2. **Keyword (Order Doesn't Matter)**
-```python
+```{code-cell} python
 # Skip some defaults, specify others by name
 greet("Smith", greeting="Hi")  # Hi Mr Smith
 greet("Smith", greeting="Hey", title="Ms")  # Hey Ms Smith
@@ -201,7 +211,7 @@ greet("Smith", greeting="Hey", title="Ms")  # Hey Ms Smith
 
 This combination creates very flexible functions:
 
-```python
+```{code-cell} python
 def create_profile(username, email, bio="", location="Unknown", 
                    age=None, verified=False):
     profile = {
@@ -237,7 +247,7 @@ profile3 = create_profile(
 ## Examples
 
 ### Example 1: Simple Default Argument
-```python
+```{code-cell} python
 def power(base, exponent=2):
     """
     Raise base to the power of exponent.
@@ -261,7 +271,7 @@ print(power(2, 10))  # 1024 (2^10)
 ```
 
 ### Example 2: Multiple Default Arguments
-```python
+```{code-cell} python
 def format_price(amount, currency="$", decimal_places=2, show_symbol=True):
     """
     Format a price with currency symbol.
@@ -298,7 +308,7 @@ print(format_price(19.99, show_symbol=False))  # 19.99
 ```
 
 ### Example 3: Price Calculator with Tax and Discount
-```python
+```{code-cell} python
 def calculate_price(base_price, tax_rate=0.08, discount=0, shipping=0):
     """
     Calculate final price with tax, discount, and shipping.
@@ -334,7 +344,7 @@ print(f"${calculate_price(100, tax_rate=0.05, discount=15, shipping=10):.2f}")
 ```
 
 ### Example 4: Greeting Generator
-```python
+```{code-cell} python
 def create_greeting(name, title="", greeting="Hello", punctuation="!"):
     """
     Create a personalized greeting.
@@ -367,7 +377,7 @@ print(create_greeting("Johnson", "Prof", "Good morning", "."))
 ```
 
 ### Example 5: Email Sender Function
-```python
+```{code-cell} python
 def send_email(to, subject, body, from_address="noreply@company.com",
                cc=None, bcc=None, priority="normal", html=False):
     """
@@ -418,7 +428,7 @@ send_email(
 ```
 
 ### Example 6: Database Connection Function
-```python
+```{code-cell} python
 def connect_database(host, database, username="root", 
                      password="", port=3306, timeout=30):
     """
@@ -470,7 +480,7 @@ conn3 = connect_database(
 ```
 
 ### Example 7: Shopping Cart with Default Tax
-```python
+```{code-cell} python
 def add_to_cart(item_name, price, quantity=1, tax_rate=0.08, 
                 gift_wrap=False, express_shipping=False):
     """
@@ -579,7 +589,7 @@ add_to_cart("Keyboard", 79.99, tax_rate=0.10)
 ### Mistake 1: Mutable Default Arguments
 
 **Wrong:**
-```python
+```{code-cell} python
 def add_student(name, class_list=[]):
     class_list.append(name)
     return class_list
@@ -590,7 +600,7 @@ class2 = add_student("Bob")    # ['Alice', 'Bob'] - WRONG!
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 def add_student(name, class_list=None):
     if class_list is None:
         class_list = []
@@ -606,14 +616,14 @@ class2 = add_student("Bob")    # ['Bob'] - CORRECT!
 ### Mistake 2: Wrong Parameter Order
 
 **Wrong:**
-```python
+```{code-cell} python
 # SyntaxError: non-default argument follows default argument
 def create_user(role="user", username, email):
     pass
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 def create_user(username, email, role="user"):
     pass
 ```
@@ -623,7 +633,7 @@ def create_user(username, email, role="user"):
 ### Mistake 3: Confusing Default Values with Function Calls
 
 **Wrong:**
-```python
+```{code-cell} python
 import datetime
 
 # This evaluates ONCE when function is defined!
@@ -636,7 +646,7 @@ log_message("Second")  # 2024-01-10 10:00:00 - SAME TIME!
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 def log_message(message, timestamp=None):
     if timestamp is None:
         timestamp = datetime.datetime.now()
@@ -652,7 +662,7 @@ log_message("Second")  # 2024-01-10 10:00:05 - CORRECT!
 ### Mistake 4: Overriding Defaults Positionally When Order Changes
 
 **Wrong:**
-```python
+```{code-cell} python
 def send_notification(user, message, email=True, sms=False, push=False):
     pass
 
@@ -662,7 +672,7 @@ send_notification("Alice", "Hello", False, False, True)
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 # Use keyword arguments for clarity
 send_notification("Alice", "Hello", push=True)
 # or
@@ -676,7 +686,7 @@ send_notification("Alice", "Hello", email=False, push=True)
 ### 1. **API Design**
 REST APIs use default parameters for pagination, filtering, and sorting:
 
-```python
+```{code-cell} python
 def get_users(page=1, per_page=20, sort_by="created_at", 
               order="desc", active_only=True):
     # Fetch users from database with sensible defaults
@@ -686,7 +696,7 @@ def get_users(page=1, per_page=20, sort_by="created_at",
 ### 2. **Configuration Management**
 Applications use defaults for configuration settings:
 
-```python
+```{code-cell} python
 def initialize_app(debug=False, port=5000, host="localhost",
                    database_url="sqlite:///app.db"):
     # Start app with production-safe defaults
@@ -696,7 +706,7 @@ def initialize_app(debug=False, port=5000, host="localhost",
 ### 3. **Data Processing**
 Data pipelines have default parameters for common operations:
 
-```python
+```{code-cell} python
 def clean_data(data, remove_nulls=True, normalize=True,
                encoding="utf-8", handle_duplicates="remove"):
     # Process data with standard cleaning options
@@ -706,7 +716,7 @@ def clean_data(data, remove_nulls=True, normalize=True,
 ### 4. **Machine Learning**
 ML models use default hyperparameters:
 
-```python
+```{code-cell} python
 def train_model(data, learning_rate=0.001, epochs=100,
                 batch_size=32, optimizer="adam"):
     # Train with commonly used defaults

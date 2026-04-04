@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Chapter 2: Variables and Data Types
 
 ## 🚀 Open Notebook
@@ -25,7 +35,7 @@ Variables are fundamental in programming - they let you store and manipulate dat
 ### What are Variables?
 Variables are named containers that store data values. Think of them as labeled boxes where you can put different types of information.
 
-```python
+```{code-cell} python
 name = "Alice"  # name is the variable, "Alice" is the value
 age = 25        # age stores the number 25
 ```
@@ -33,7 +43,7 @@ age = 25        # age stores the number 25
 ### Python's Basic Data Types
 
 #### 1. **String (str)** - Text Data
-```python
+```{code-cell} python
 name: str = "John"
 message: str = "Hello, World!"
 ```
@@ -41,7 +51,7 @@ message: str = "Hello, World!"
 - Must be enclosed in quotes (single or double)
 
 #### 2. **Integer (int)** - Whole Numbers
-```python
+```{code-cell} python
 age: int = 20
 quantity: int = 100
 ```
@@ -49,7 +59,7 @@ quantity: int = 100
 - Can be positive or negative
 
 #### 3. **Float (float)** - Decimal Numbers
-```python
+```{code-cell} python
 price: float = 19.99
 pi: float = 3.14159
 ```
@@ -57,7 +67,7 @@ pi: float = 3.14159
 - Used for precise calculations
 
 #### 4. **Boolean (bool)** - True or False
-```python
+```{code-cell} python
 is_student: bool = True
 is_available: bool = False
 ```
@@ -66,14 +76,14 @@ is_available: bool = False
 
 ### Type Annotations
 The `: type` syntax is called a type hint:
-```python
+```{code-cell} python
 name: str = "Alice"  # Explicitly states this is a string
 ```
 Type hints are optional but make code more readable!
 
 ### F-Strings (Formatted Strings)
 F-strings let you embed variables directly in strings:
-```python
+```{code-cell} python
 name = "Alice"
 age = 25
 print(f"My name is {name} and I am {age} years old")
@@ -83,7 +93,7 @@ print(f"My name is {name} and I am {age} years old")
 ## 💡 Examples
 
 ### Creating Variables
-```python
+```{code-cell} python
 # String variable
 favorite_food: str = "Pizza"
 
@@ -98,7 +108,7 @@ is_raining: bool = False
 ```
 
 ### Using Variables
-```python
+```{code-cell} python
 first_name = "John"
 last_name = "Doe"
 full_name = f"{first_name} {last_name}"

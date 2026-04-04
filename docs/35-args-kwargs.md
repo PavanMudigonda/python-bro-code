@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # ⭐ Args and Kwargs
 
 ## 🚀 Open Notebook
@@ -32,7 +42,7 @@ In this chapter, you'll master `*args` and `**kwargs` - Python's powerful featur
 
 **`**kwargs`** (keyword arguments) allows a function to accept **any number of keyword arguments**. They're collected into a **dictionary**.
 
-```python
+```{code-cell} python
 def example(*args, **kwargs):
     print(f"args type: {type(args)}")      # <class 'tuple'>
     print(f"kwargs type: {type(kwargs)}")  # <class 'dict'>
@@ -45,7 +55,7 @@ example(1, 2, 3, name="Alice", age=25)
 - The `*` and `**` are what matters
 - Could use `*numbers`, `**options`, etc.
 
-```python
+```{code-cell} python
 # These all work the same:
 def func1(*args, **kwargs): pass
 def func2(*items, **options): pass  
@@ -59,7 +69,7 @@ But stick with `*args` and `**kwargs` - it's what other Python developers expect
 #### 1. **Unknown Number of Arguments**
 When you don't know how many arguments you'll receive:
 
-```python
+```{code-cell} python
 # Without *args - limited
 def add_two(a, b):
     return a + b
@@ -76,7 +86,7 @@ add(1, 2, 3, 4, 5)  # 15
 #### 2. **Wrapper Functions**
 When creating decorators or wrapper functions:
 
-```python
+```{code-cell} python
 def logged(func):
     def wrapper(*args, **kwargs):
         print(f"Calling {func.__name__}")
@@ -94,7 +104,7 @@ greet("Bob", greeting="Hi")  # Also works!
 #### 3. **Flexible Configuration**
 Accept arbitrary configuration options:
 
-```python
+```{code-cell} python
 def configure_app(**kwargs):
     for key, value in kwargs.items():
         print(f"Setting {key} = {value}")
@@ -107,7 +117,7 @@ configure_app(debug=True, port=8000, host="localhost")
 
 `*args` collects extra positional arguments into a **tuple**:
 
-```python
+```{code-cell} python
 def print_args(*args):
     print(f"Type: {type(args)}")  # <class 'tuple'>
     print(f"Count: {len(args)}")
@@ -124,7 +134,7 @@ print_args(1, 2, 3)
 
 **Combining with Regular Parameters:**
 
-```python
+```{code-cell} python
 def greet(greeting, *names):
     # greeting is required
     # names can be 0 or more
@@ -141,7 +151,7 @@ greet("Hello", "Alice", "Bob", "Charlie")
 
 `**kwargs` collects extra keyword arguments into a **dictionary**:
 
-```python
+```{code-cell} python
 def print_kwargs(**kwargs):
     print(f"Type: {type(kwargs)}")  # <class 'dict'>
     print(f"Count: {len(kwargs)}")
@@ -158,7 +168,7 @@ print_kwargs(name="Alice", age=25, city="NYC")
 
 **Combining with Regular Parameters:**
 
-```python
+```{code-cell} python
 def create_user(username, **details):
     # username is required
     # details can be any keyword arguments
@@ -173,7 +183,7 @@ create_user("alice123", email="alice@example.com", age=25, verified=True)
 
 Parameters must be in this exact order:
 
-```python
+```{code-cell} python
 def function(
     positional1, positional2,  # 1. Regular positional
     default1=value1,           # 2. Default arguments
@@ -186,7 +196,7 @@ def function(
 
 **Complete Example:**
 
-```python
+```{code-cell} python
 def complex_function(required, default="default", *args, 
                      keyword_only, **kwargs):
     print(f"Required: {required}")
@@ -211,7 +221,7 @@ The `*` and `**` operators also **unpack** sequences and dictionaries:
 
 **Unpacking Lists/Tuples with *:**
 
-```python
+```{code-cell} python
 def add(a, b, c):
     return a + b + c
 
@@ -222,7 +232,7 @@ print(result)  # 6
 
 **Unpacking Dictionaries with **:**
 
-```python
+```{code-cell} python
 def greet(greeting, name):
     print(f"{greeting}, {name}!")
 
@@ -232,7 +242,7 @@ greet(**data)  # Same as greet(greeting="Hello", name="Alice")
 
 **Combining in Function Calls:**
 
-```python
+```{code-cell} python
 def full_name(first, middle, last, title="Mr"):
     return f"{title} {first} {middle} {last}"
 
@@ -246,7 +256,7 @@ print(full_name(*names, **details))
 ### Common Patterns
 
 #### 1. **Sum All Numbers**
-```python
+```{code-cell} python
 def sum_all(*numbers):
     return sum(numbers)
 
@@ -254,7 +264,7 @@ print(sum_all(1, 2, 3, 4, 5))  # 15
 ```
 
 #### 2. **Print with Custom Separator**
-```python
+```{code-cell} python
 def print_items(*items, sep=" | "):
     print(sep.join(str(item) for item in items))
 
@@ -266,7 +276,7 @@ print_items(1, 2, 3, sep=" -> ")
 ```
 
 #### 3. **Merge Dictionaries**
-```python
+```{code-cell} python
 def merge_configs(**configs):
     # Start with defaults
     default_config = {"debug": False, "port": 8000}
@@ -280,7 +290,7 @@ print(config)
 ```
 
 #### 4. **Shipping Labels**
-```python
+```{code-cell} python
 def shipping_label(name, *args, **kwargs):
     # name is required
     # args = additional address lines
@@ -305,7 +315,7 @@ shipping_label(
 ## Examples
 
 ### Example 1: Simple *args Function
-```python
+```{code-cell} python
 def multiply(*numbers):
     """
     Multiply all numbers together.
@@ -328,7 +338,7 @@ print(multiply(10))            # 10
 ```
 
 ### Example 2: Simple **kwargs Function
-```python
+```{code-cell} python
 def display_info(**info):
     """
     Display user information.
@@ -354,7 +364,7 @@ display_info(name="Alice", age=25, city="NYC", job="Engineer")
 ```
 
 ### Example 3: Combining *args and **kwargs
-```python
+```{code-cell} python
 def create_shipping_label(*address_lines, **contact):
     """
     Create a shipping label with address and contact info.
@@ -392,7 +402,7 @@ create_shipping_label(
 ```
 
 ### Example 4: Function Average Calculator
-```python
+```{code-cell} python
 def calculate_stats(*numbers, operation="mean"):
     """
     Calculate statistics for numbers.
@@ -430,7 +440,7 @@ print(f"Max: {calculate_stats(10, 20, 30, 40, 50, operation='max')}")
 ```
 
 ### Example 5: Custom Print Function
-```python
+```{code-cell} python
 def custom_print(*args, sep=" ", end="\n", prefix="", suffix=""):
     """
     Custom print function with additional options.
@@ -459,7 +469,7 @@ custom_print("Error:", "File not found", prefix="[!] ", suffix=" (!)")
 ```
 
 ### Example 6: Configuration Builder
-```python
+```{code-cell} python
 def build_config(app_name, *required_features, **optional_settings):
     """
     Build application configuration.
@@ -501,7 +511,7 @@ config = build_config(
 ```
 
 ### Example 7: Advanced Wrapper Function
-```python
+```{code-cell} python
 def timer_decorator(func):
     """Decorator that times function execution."""
     import time
@@ -586,14 +596,14 @@ result2 = process_data(2, 3, 4, operation="product")
 ### Mistake 1: Wrong Parameter Order
 
 **Wrong:**
-```python
+```{code-cell} python
 # SyntaxError: invalid syntax
 def bad_function(**kwargs, *args):
     pass
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 def good_function(*args, **kwargs):
     pass
 ```
@@ -603,7 +613,7 @@ def good_function(*args, **kwargs):
 ### Mistake 2: Forgetting *args is a Tuple
 
 **Wrong:**
-```python
+```{code-cell} python
 def add(*args):
     return args + 10  # TypeError: can only concatenate tuple (not "int") to tuple
 
@@ -611,7 +621,7 @@ add(1, 2, 3)
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 def add(*args):
     return sum(args) + 10  # Use sum() for tuple of numbers
 
@@ -623,7 +633,7 @@ add(1, 2, 3)  # Returns 16
 ### Mistake 3: Not Unpacking When Passing Lists/Dicts
 
 **Wrong:**
-```python
+```{code-cell} python
 def add(a, b, c):
     return a + b + c
 
@@ -632,7 +642,7 @@ result = add(numbers)  # TypeError: missing 2 required positional arguments
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 numbers = [1, 2, 3]
 result = add(*numbers)  # Unpack the list
 print(result)  # 6
@@ -643,14 +653,14 @@ print(result)  # 6
 ### Mistake 4: Modifying *args or **kwargs Directly
 
 **Wrong:**
-```python
+```{code-cell} python
 def process(*args, **kwargs):
     args.append(100)  # AttributeError: 'tuple' object has no attribute 'append'
     kwargs["new"] = "value"  # This works but modifies the original dict!
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 def process(*args, **kwargs):
     args_list = list(args)  # Convert to list
     args_list.append(100)
@@ -666,7 +676,7 @@ def process(*args, **kwargs):
 ### 1. **Logging Libraries**
 Logging functions use *args and **kwargs to handle flexible message formatting:
 
-```python
+```{code-cell} python
 logger.info("User %s logged in from %s", username, ip_address)
 logger.error("Error occurred", exc_info=True, stack_info=True)
 ```
@@ -674,7 +684,7 @@ logger.error("Error occurred", exc_info=True, stack_info=True)
 ### 2. **Django ORM**
 Database queries use **kwargs for flexible filtering:
 
-```python
+```{code-cell} python
 User.objects.filter(age__gte=18, is_active=True, city="NYC")
 Article.objects.create(title="Post", content="...", author=user)
 ```
@@ -682,14 +692,14 @@ Article.objects.create(title="Post", content="...", author=user)
 ### 3. **Matplotlib**
 Plotting functions accept *args for data and **kwargs for styling:
 
-```python
+```{code-cell} python
 plt.plot(x, y, color='blue', linewidth=2, marker='o', label='Data')
 ```
 
 ### 4. **Function Decorators**
 Decorators use *args and **kwargs to wrap any function:
 
-```python
+```{code-cell} python
 @cache
 @retry(attempts=3)
 @log_execution

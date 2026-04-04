@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # ✊✋✌️ Rock Paper Scissors Game
 
 ## 🚀 Open Notebook
@@ -51,7 +61,7 @@ This creates a balanced game where each choice has one win and one loss conditio
 #### 1. **Data Storage**
 Use a tuple to store valid options:
 
-```python
+```{code-cell} python
 options = ("rock", "paper", "scissors")
 ```
 
@@ -61,7 +71,7 @@ Tuples are perfect because:
 - Signals these are constants
 
 #### 2. **Random Computer Choice**
-```python
+```{code-cell} python
 import random
 computer = random.choice(options)
 ```
@@ -71,7 +81,9 @@ This gives the computer a fair, random selection each game.
 #### 3. **Input Validation with Membership**
 The **membership operator** checks if a value exists in a sequence:
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 player = input("Choose: ").lower()
 while player not in options:
     player = input("Invalid! Choose rock, paper, or scissors: ").lower()
@@ -108,7 +120,7 @@ elif player == "rock":
 
 Python provides two membership operators:
 
-```python
+```{code-cell} python
 # 'in' operator
 if "rock" in options:
     print("Found!")
@@ -120,7 +132,7 @@ if player not in options:
 
 These are cleaner than multiple comparisons:
 
-```python
+```{code-cell} python
 # Without membership operator (verbose)
 if player == "rock" or player == "paper" or player == "scissors":
     # valid
@@ -152,7 +164,9 @@ Is player == computer?
 ## Examples
 
 ### Example 1: Basic Membership Operators
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # Using 'in' operator
 fruits = ("apple", "banana", "cherry")
 
@@ -175,7 +189,9 @@ else:
 ```
 
 ### Example 2: Simple Rock Paper Scissors
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 
 options = ("rock", "paper", "scissors")
@@ -195,7 +211,9 @@ elif player == "rock" and computer == "paper":
 ```
 
 ### Example 3: Input Validation Loop
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 options = ("rock", "paper", "scissors")
 player = None
 
@@ -210,7 +228,9 @@ print(f"You chose: {player}")
 ```
 
 ### Example 4: Complete Game Logic
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 
 options = ("rock", "paper", "scissors")
@@ -240,7 +260,9 @@ elif player == "scissors":
 ```
 
 ### Example 5: With Replay Functionality
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 
 options = ("rock", "paper", "scissors")
@@ -275,7 +297,9 @@ print("Thanks for playing!")
 ```
 
 ### Example 6: With Score Tracking
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 
 options = ("rock", "paper", "scissors")
@@ -323,7 +347,9 @@ while playing:
 ```
 
 ### Example 7: Full Featured Version
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 
 def get_player_choice(options):
@@ -485,7 +511,9 @@ if __name__ == "__main__":
 ### Mistake 1: Not Handling Case Sensitivity
 
 **Wrong:**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 options = ("rock", "paper", "scissors")
 player = input("Choose: ")  # User enters "Rock"
 if player in options:  # "Rock" != "rock"
@@ -493,7 +521,9 @@ if player in options:  # "Rock" != "rock"
 ```
 
 **Correct:**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 options = ("rock", "paper", "scissors")
 player = input("Choose: ").lower()  # Convert to lowercase
 if player in options:
@@ -505,7 +535,7 @@ if player in options:
 ### Mistake 2: Incomplete Win Conditions
 
 **Wrong:**
-```python
+```{code-cell} python
 if player == "rock":
     if computer == "paper":
         print("You lose!")
@@ -513,7 +543,7 @@ if player == "rock":
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 if player == "rock":
     if computer == "paper":
         print("You lose!")
@@ -527,7 +557,9 @@ if player == "rock":
 ### Mistake 3: Resetting Computer Choice in Wrong Place
 
 **Wrong:**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 computer = random.choice(options)  # Only once!
 
 while True:
@@ -536,7 +568,9 @@ while True:
 ```
 
 **Correct:**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 while True:
     computer = random.choice(options)  # New choice each game
     player = input("Choose: ").lower()
@@ -547,7 +581,9 @@ while True:
 ### Mistake 4: Not Resetting Player Choice
 
 **Wrong:**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 player = None
 
 while running:
@@ -557,7 +593,9 @@ while running:
 ```
 
 **Correct:**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 while running:
     player = None  # Reset each round
     while player not in options:

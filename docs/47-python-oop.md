@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # 🏗️ Python OOP (Object-Oriented Programming)
 
 ## 🚀 Open Notebook
@@ -42,7 +52,7 @@ Student Form      → Alice, Bob, Charlie
 
 ### Classes and Objects
 
-```python
+```{code-cell} python
 # Class = Blueprint
 class Car:
     pass
@@ -54,7 +64,7 @@ car3 = Car()  # Third car object
 ```
 
 Each object is independent:
-```python
+```{code-cell} python
 car1.color = "red"
 car2.color = "blue"
 
@@ -66,7 +76,7 @@ print(car2.color)  # blue
 
 The `__init__` method is automatically called when creating an object:
 
-```python
+```{code-cell} python
 class Car:
     def __init__(self, make, model):
         self.make = make      # Instance attribute
@@ -83,7 +93,7 @@ my_car = Car("Toyota", "Camry")
 
 `self` refers to the instance being created or modified:
 
-```python
+```{code-cell} python
 class Dog:
     def __init__(self, name):
         self.name = name  # self = the specific dog being created
@@ -104,7 +114,7 @@ dog2.bark()  # self = dog2 → "Buddy says Woof!"
 - Required as first parameter in all instance methods
 - Automatically passed (don't include it when calling methods)
 
-```python
+```{code-cell} python
 # Definition (with self):
 def bark(self):
     print(f"{self.name} barks")
@@ -118,7 +128,7 @@ dog1.bark()  # Python calls: bark(dog1)
 **Attributes** = Variables that belong to an object (data)  
 **Methods** = Functions that belong to an object (behavior)
 
-```python
+```{code-cell} python
 class Person:
     def __init__(self, name, age):
         # Attributes (data)
@@ -146,7 +156,7 @@ print(person.age)   # 26
 
 ### Class Anatomy
 
-```python
+```{code-cell} python
 class ClassName:                    # Class definition
     def __init__(self, param1):     # Constructor
         self.attribute = param1     # Instance attribute
@@ -166,7 +176,7 @@ print(object_name.attribute)        # Access attribute
 
 ### Example 1: Simple Car Class
 
-```python
+```{code-cell} python
 class Car:
     """A simple Car class."""
     
@@ -198,7 +208,7 @@ car2.honk()            # Beep beep!
 
 ### Example 2: Bank Account Class
 
-```python
+```{code-cell} python
 class BankAccount:
     """Represents a bank account."""
     
@@ -243,7 +253,7 @@ account2.deposit(100)     # Deposited $100. New balance: $100
 
 ### Example 3: Student Class with Methods
 
-```python
+```{code-cell} python
 class Student:
     """Represents a student."""
     
@@ -286,7 +296,7 @@ print(student1.get_info())
 
 ### Example 4: Rectangle Class with Calculations
 
-```python
+```{code-cell} python
 class Rectangle:
     """Represents a rectangle."""
     
@@ -329,7 +339,7 @@ print(f"Is square: {rect2.is_square()}") # Is square: True
 
 ### Example 5: Dog Class with Multiple Instances
 
-```python
+```{code-cell} python
 class Dog:
     """Represents a dog."""
     
@@ -381,7 +391,7 @@ print(f"{dog1.name} is {dog1.get_age_human_years()} in human years")
 
 ### Example 6: Book Class
 
-```python
+```{code-cell} python
 class Book:
     """Represents a book."""
     
@@ -429,7 +439,7 @@ print(book2.get_info())  # 'Data Science' by Jane Smith - Page 0/450
 
 ### Example 7: Complete Game Character Class
 
-```python
+```{code-cell} python
 class Character:
     """Represents a game character."""
     
@@ -597,14 +607,14 @@ hero.show_status()
 ### Mistake 1: Forgetting `self`
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 class Dog:
     def __init__(name, age):  # Missing self!
         self.name = name
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 class Dog:
     def __init__(self, name, age):  # self is first parameter
         self.name = name
@@ -614,7 +624,7 @@ class Dog:
 ### Mistake 2: Not Using `self` to Access Attributes
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 class Dog:
     def __init__(self, name):
         self.name = name
@@ -624,7 +634,7 @@ class Dog:
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 class Dog:
     def __init__(self, name):
         self.name = name
@@ -636,13 +646,13 @@ class Dog:
 ### Mistake 3: Passing `self` When Calling Methods
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 dog = Dog("Rex")
 dog.bark(dog)  # Don't pass self manually!
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 dog = Dog("Rex")
 dog.bark()  # Python passes self automatically
 ```
@@ -650,7 +660,7 @@ dog.bark()  # Python passes self automatically
 ### Mistake 4: Confusing Class and Instance
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 class Car:
     color = "red"  # Class attribute (shared by all)
 
@@ -660,7 +670,7 @@ Car.color = "blue"  # Changes for all instances!
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 class Car:
     def __init__(self, color):
         self.color = color  # Instance attribute (unique to each)

@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # 🎮 Hangman Game
 
 ## 🚀 Open Notebook
@@ -74,7 +84,7 @@ print(hangman_art[3])  # Show state for 3 wrong guesses
 
 Sets provide O(1) lookup speed and prevent duplicates:
 
-```python
+```{code-cell} python
 guessed_letters = set()
 
 # Add letter
@@ -90,7 +100,7 @@ if 'a' in guessed_letters:  # O(1) - instant lookup
 ```
 
 **Set vs List for this purpose:**
-```python
+```{code-cell} python
 # List - slow lookup, allows duplicates
 letters_list = ['a', 'b', 'c']
 'a' in letters_list  # O(n) - checks each element
@@ -104,7 +114,7 @@ letters_set = {'a', 'b', 'c'}
 
 Create hint list with underscores:
 
-```python
+```{code-cell} python
 answer = "python"
 hint = ["_"] * len(answer)
 # Result: ['_', '_', '_', '_', '_', '_']
@@ -119,7 +129,7 @@ for letter in answer:
 
 Get both index and value when iterating:
 
-```python
+```{code-cell} python
 answer = "cat"
 guess = 'a'
 
@@ -137,7 +147,7 @@ for i, letter in enumerate(answer):
 ```
 
 **Enumerate examples:**
-```python
+```{code-cell} python
 for i, letter in enumerate("python"):
     print(f"Index {i}: {letter}")
 
@@ -154,7 +164,9 @@ for i, letter in enumerate("python"):
 
 Multiple validation checks:
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 guess = input("Enter letter: ").lower()
 
 # Check 1: Must be alphabetic
@@ -175,7 +187,7 @@ if guess in guessed_letters:
 
 ### String Methods for Validation
 
-```python
+```{code-cell} python
 "a".isalpha()    # True
 "5".isalpha()    # False
 "ab".isalpha()   # True
@@ -189,7 +201,9 @@ len("ab") == 1   # False
 
 ### Example 1: Basic Hangman (Complete)
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 
 hangman_art = {
@@ -252,7 +266,9 @@ if __name__ == "__main__":
 
 ### Example 2: Hangman with Categories
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 
 words_by_category = {
@@ -356,7 +372,9 @@ if __name__ == "__main__":
 
 ### Example 3: Hangman with Hints
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 
 words_with_hints = {
@@ -564,14 +582,14 @@ if __name__ == "__main__":
 ### Mistake 1: Not Using Set for Guessed Letters
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 guessed_letters = []  # List - slow lookups
 if letter in guessed_letters:  # O(n) complexity
     print("Already guessed")
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 guessed_letters = set()  # Set - fast lookups
 if letter in guessed_letters:  # O(1) complexity
     print("Already guessed")
@@ -580,13 +598,13 @@ if letter in guessed_letters:  # O(1) complexity
 ### Mistake 2: Modifying String Instead of List
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 hint = "______"
 # hint[0] = 'a'  # Error! Strings are immutable
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 hint = ["_"] * 6
 hint[0] = 'a'  # Works! Lists are mutable
 ```
@@ -594,14 +612,14 @@ hint[0] = 'a'  # Works! Lists are mutable
 ### Mistake 3: Not Checking All Occurrences
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 if guess in answer:
     index = answer.index(guess)  # Only finds first!
     hint[index] = guess
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 if guess in answer:
     for i, letter in enumerate(answer):  # Check all positions
         if letter == guess:
@@ -611,13 +629,13 @@ if guess in answer:
 ### Mistake 4: Wrong Win Condition
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 if len(guessed_letters) == len(answer):  # Wrong!
     print("You win")
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 if "_" not in hint:  # All letters revealed
     print("You win")
 ```

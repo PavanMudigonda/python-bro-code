@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # 🛒 Shopping Cart Program
 
 ## 🚀 Open Notebook
@@ -34,7 +44,7 @@ A shopping cart program simulates a simple point-of-sale system where users can 
 
 **Parallel lists** are two or more lists where elements at the same index are related to each other. In our shopping cart:
 
-```python
+```{code-cell} python
 foods = ["Apple", "Banana", "Cherry"]
 prices = [1.50, 0.75, 2.25]
 # foods[0] and prices[0] are related
@@ -49,7 +59,9 @@ The key principle: **corresponding indices represent related data**.
 #### 1. **Input Loop with Sentinel Value**
 Uses a while loop that continues until user enters a quit signal ('q'):
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 while True:
     food = input("Enter a food item (or 'q' to quit): ")
     if food.lower() == "q":
@@ -60,7 +72,7 @@ while True:
 #### 2. **Parallel List Management**
 Maintains two lists that grow together:
 
-```python
+```{code-cell} python
 foods.append(food)
 prices.append(price)
 ```
@@ -68,7 +80,7 @@ prices.append(price)
 #### 3. **Receipt Generation**
 Uses range(len()) pattern to iterate through parallel lists:
 
-```python
+```{code-cell} python
 for i in range(len(foods)):
     print(f"{foods[i]} ${prices[i]}")
 ```
@@ -76,7 +88,7 @@ for i in range(len(foods)):
 #### 4. **String Formatting for Alignment**
 Creates professional output with proper spacing:
 
-```python
+```{code-cell} python
 print(f"{foods[i]:<20} ${prices[i]:>6.2f}")
 # :<20  = left-align in 20 characters
 # :>6.2f = right-align in 6 chars, 2 decimal places
@@ -103,7 +115,7 @@ While dictionaries might seem more appropriate (and they are for more complex pr
 ## Examples
 
 ### Example 1: Basic Parallel Lists
-```python
+```{code-cell} python
 # Creating parallel lists for shopping cart
 foods = []
 prices = []
@@ -124,7 +136,9 @@ for i in range(len(foods)):
 ```
 
 ### Example 2: Input Loop with Break
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # Collecting items until user quits
 items = []
 
@@ -138,7 +152,7 @@ print(f"You entered {len(items)} items")
 ```
 
 ### Example 3: Calculating Total
-```python
+```{code-cell} python
 prices = [10.50, 25.00, 15.75, 8.25]
 
 # Method 1: Using a loop
@@ -153,7 +167,7 @@ print(f"Total: ${total}")  # Total: $59.5
 ```
 
 ### Example 4: String Formatting for Receipts
-```python
+```{code-cell} python
 # Left-aligned item names, right-aligned prices
 items = ["Coffee", "Sandwich", "Cookie"]
 prices = [3.50, 8.95, 2.25]
@@ -171,7 +185,9 @@ print("=" * 30)
 ```
 
 ### Example 5: Input Validation
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # Ensuring valid price input
 while True:
     try:
@@ -185,7 +201,7 @@ while True:
 ```
 
 ### Example 6: Enhanced Receipt with Item Numbers
-```python
+```{code-cell} python
 foods = ["Pizza", "Burger", "Fries"]
 prices = [12.99, 8.50, 3.99]
 
@@ -207,7 +223,9 @@ print("=" * 35)
 ```
 
 ### Example 7: Complete Mini Shopping Cart
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # Complete shopping cart with all features
 cart_items = []
 cart_prices = []
@@ -285,14 +303,18 @@ print("Thank you for shopping!\n")
 ### Mistake 1: Forgetting to Convert Price to Float
 
 **Wrong:**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 price = input("Enter price: $")
 prices.append(price)  # Stored as string!
 total += prices[i]    # Error: can't add strings
 ```
 
 **Correct:**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 price = float(input("Enter price: $"))
 prices.append(price)  # Stored as float
 total += prices[i]    # Works correctly
@@ -303,7 +325,7 @@ total += prices[i]    # Works correctly
 ### Mistake 2: Misaligned Parallel Lists
 
 **Wrong:**
-```python
+```{code-cell} python
 foods.append(food)
 if price > 0:  # Conditional append!
     prices.append(price)
@@ -311,7 +333,7 @@ if price > 0:  # Conditional append!
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 if price > 0:
     foods.append(food)
     prices.append(price)
@@ -323,13 +345,13 @@ if price > 0:
 ### Mistake 3: Incorrect Range Usage
 
 **Wrong:**
-```python
+```{code-cell} python
 for i in range(len(foods) + 1):  # Off by one!
     print(foods[i])  # IndexError on last iteration
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 for i in range(len(foods)):
     print(foods[i])  # Correct indexing
 ```
@@ -339,12 +361,12 @@ for i in range(len(foods)):
 ### Mistake 4: Not Formatting Decimal Places
 
 **Wrong:**
-```python
+```{code-cell} python
 print(f"Total: ${total}")  # Displays: $10.5
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 print(f"Total: ${total:.2f}")  # Displays: $10.50
 ```
 

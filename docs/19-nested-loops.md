@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Chapter 19: Nested Loops
 
 ## 🚀 Open Notebook
@@ -10,10 +20,6 @@
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/APWy6Pc83gE)
 
 **Nested loops in Python are easy ➿** (6:12)
-
-## 📺 Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/APWy6Pc83gE)
 
 ## 📚 What You'll Learn
 Master nested loops - loops within loops - to create patterns, process 2D data, and solve complex iteration problems!
@@ -32,14 +38,14 @@ Master nested loops - loops within loops - to create patterns, process 2D data, 
 A nested loop is a loop inside another loop. The inner loop completes all its iterations for each iteration of the outer loop.
 
 ### Syntax
-```python
+```{code-cell} python
 for outer_variable in outer_sequence:
     for inner_variable in inner_sequence:
         # code executes for each combination
 ```
 
 ### How It Works
-```python
+```{code-cell} python
 for i in range(3):      # Outer loop: 3 iterations
     for j in range(2):  # Inner loop: 2 iterations
         print(f"({i}, {j})")
@@ -57,7 +63,7 @@ Total iterations = Outer iterations × Inner iterations
 ## 💡 Examples
 
 ### Example 1: Basic Nested Loop
-```python
+```{code-cell} python
 for i in range(3):
     for j in range(4):
         print(f"i={i}, j={j}")
@@ -66,7 +72,7 @@ for i in range(3):
 ```
 
 ### Example 2: Rectangle Pattern
-```python
+```{code-cell} python
 rows = 4
 cols = 6
 
@@ -83,7 +89,7 @@ for i in range(rows):
 ```
 
 ### Example 3: Multiplication Table
-```python
+```{code-cell} python
 print("Multiplication Table (1-10)\n")
 
 # Header
@@ -102,7 +108,7 @@ for i in range(1, 11):
 ```
 
 ### Example 4: Right Triangle Pattern
-```python
+```{code-cell} python
 rows = 5
 
 for i in range(1, rows + 1):
@@ -119,7 +125,7 @@ for i in range(1, rows + 1):
 ```
 
 ### Example 5: Number Pyramid
-```python
+```{code-cell} python
 rows = 5
 
 for i in range(1, rows + 1):
@@ -142,7 +148,7 @@ for i in range(1, rows + 1):
 ```
 
 ### Example 6: Checkerboard Pattern
-```python
+```{code-cell} python
 size = 8
 
 for i in range(size):
@@ -157,7 +163,7 @@ for i in range(size):
 ```
 
 ### Example 7: 2D List Iteration
-```python
+```{code-cell} python
 matrix = [
     [1, 2, 3],
     [4, 5, 6],
@@ -178,7 +184,7 @@ for i in range(len(matrix)):
 ```
 
 ### Example 8: Finding Pairs
-```python
+```{code-cell} python
 numbers = [1, 2, 3, 4]
 
 print("All pairs:")
@@ -196,7 +202,7 @@ for i in range(len(numbers)):
 ```
 
 ### Example 9: Sum of 2D List
-```python
+```{code-cell} python
 matrix = [
     [1, 2, 3],
     [4, 5, 6],
@@ -212,7 +218,7 @@ print(f"Sum: {total}")  # 45
 ```
 
 ### Example 10: Diamond Pattern
-```python
+```{code-cell} python
 n = 5
 
 # Upper half
@@ -250,7 +256,7 @@ for i in range(n - 2, -1, -1):
 ## 🔍 Common Mistakes
 
 ### Mistake 1: Confusing Loop Variables
-```python
+```{code-cell} python
 # Wrong - using same variable
 for i in range(3):
     for i in range(2):  # Overwrites outer i!
@@ -263,7 +269,7 @@ for i in range(3):
 ```
 
 ### Mistake 2: Wrong Indentation
-```python
+```{code-cell} python
 # Wrong
 for i in range(3):
     for j in range(2):
@@ -278,7 +284,7 @@ for i in range(3):
 ```
 
 ### Mistake 3: Inefficient Nested Loops
-```python
+```{code-cell} python
 # Inefficient - O(n²)
 numbers = [1, 2, 3, 4, 5]
 for i in numbers:
@@ -292,7 +298,7 @@ for num in numbers:
 ```
 
 ### Mistake 4: Modifying List While Iterating
-```python
+```{code-cell} python
 # Dangerous!
 matrix = [[1, 2], [3, 4]]
 for row in matrix:
@@ -331,7 +337,7 @@ new_matrix = [[num for num in row if num > 2]
 ## 🎮 Real-World Applications
 
 ### Application 1: Seating Chart
-```python
+```{code-cell} python
 def create_seating_chart():
     rows = 5
     seats_per_row = 8
@@ -356,7 +362,7 @@ create_seating_chart()
 ```
 
 ### Application 2: Grade Table
-```python
+```{code-cell} python
 students = ["Alice", "Bob", "Charlie"]
 subjects = ["Math", "Science", "English"]
 grades = [
@@ -389,7 +395,7 @@ for i in range(len(students)):
 ```
 
 ### Application 3: Calendar Generator
-```python
+```{code-cell} python
 def print_calendar(days, start_day):
     print("Su Mo Tu We Th Fr Sa")
     
@@ -414,7 +420,7 @@ print_calendar(30, 4)  # 30 days, starts on Thursday
 ```
 
 ### Application 4: Matrix Operations
-```python
+```{code-cell} python
 def matrix_multiply(matrix1, matrix2):
     rows1 = len(matrix1)
     cols1 = len(matrix1[0])
@@ -444,7 +450,7 @@ for row in C:
 ```
 
 ### Application 5: Game Board
-```python
+```{code-cell} python
 def create_tic_tac_toe():
     board = [[" " for _ in range(3)] for _ in range(3)]
     
@@ -476,7 +482,7 @@ create_tic_tac_toe()
 ```
 
 ### Application 6: ASCII Art Generator
-```python
+```{code-cell} python
 def draw_box(width, height):
     # Top border
     print("┌" + "─" * (width - 2) + "┐")
@@ -531,7 +537,7 @@ Build a converter that:
 ## 📊 Performance Considerations
 
 ### Time Complexity
-```python
+```{code-cell} python
 # O(n²) - Quadratic
 for i in range(n):
     for j in range(n):
@@ -545,7 +551,7 @@ for i in range(n):
 ```
 
 ### Optimization Tips
-```python
+```{code-cell} python
 # Avoid unnecessary iterations
 for i in range(n):
     for j in range(i, n):  # Start from i instead of 0
@@ -561,7 +567,7 @@ for i in range(n):
 ## 🎯 Common Patterns Reference
 
 ### Rectangle
-```python
+```{code-cell} python
 for i in range(rows):
     for j in range(cols):
         print("*", end=" ")
@@ -569,7 +575,7 @@ for i in range(rows):
 ```
 
 ### Right Triangle
-```python
+```{code-cell} python
 for i in range(1, n+1):
     for j in range(i):
         print("*", end=" ")
@@ -577,7 +583,7 @@ for i in range(1, n+1):
 ```
 
 ### Inverted Triangle
-```python
+```{code-cell} python
 for i in range(n, 0, -1):
     for j in range(i):
         print("*", end=" ")
@@ -585,7 +591,7 @@ for i in range(n, 0, -1):
 ```
 
 ### Pyramid
-```python
+```{code-cell} python
 for i in range(1, n+1):
     print(" " * (n-i), end="")
     print("*" * (2*i-1))

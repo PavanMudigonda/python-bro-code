@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # 🔐 Encryption Program
 
 ## 🚀 Open Notebook
@@ -57,7 +67,7 @@ Key:       q w e r t y u i o p a...
 
 Python's `string` module provides useful character sets:
 
-```python
+```{code-cell} python
 import string
 
 string.ascii_letters  # 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -66,14 +76,14 @@ string.punctuation   # '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
 ```
 
 **Building Complete Character Set:**
-```python
+```{code-cell} python
 chars = " " + string.punctuation + string.digits + string.ascii_letters
 # Now chars contains: space, all punctuation, all digits, all letters
 ```
 
 ### List vs String Mutability
 
-```python
+```{code-cell} python
 # Strings are immutable (can't change)
 text = "hello"
 # text[0] = 'H'  # Error!
@@ -84,7 +94,7 @@ chars[0] = 'H'         # Works! → ['H', 'e', 'l', 'l', 'o']
 ```
 
 **Why convert to list?**
-```python
+```{code-cell} python
 # Need to shuffle characters for encryption key
 chars = list("abcde")
 random.shuffle(chars)  # Works! Shuffles the list
@@ -96,7 +106,7 @@ text = "abcde"
 
 ### Creating the Encryption Key
 
-```python
+```{code-cell} python
 import random
 import string
 
@@ -112,7 +122,7 @@ random.shuffle(key)  # Shuffle the key
 ```
 
 **Why use `.copy()`?**
-```python
+```{code-cell} python
 # Without copy - both variables point to same list
 chars = [1, 2, 3]
 key = chars           # Same list!
@@ -126,7 +136,7 @@ random.shuffle(key)   # Only shuffles key
 
 ### Character Substitution Algorithm
 
-```python
+```{code-cell} python
 plain_text = "hello"
 cipher_text = ""
 
@@ -153,7 +163,7 @@ Result: "wqr"
 
 ### Index Method
 
-```python
+```{code-cell} python
 my_list = ['a', 'b', 'c', 'd', 'e']
 
 my_list.index('a')  # 0
@@ -182,7 +192,9 @@ Can deduce: x=t, i=h, o=e
 
 ### Example 1: Basic Encryption Program
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 import string
 
@@ -208,7 +220,9 @@ print(f"Encrypted: {cipher_text}")
 
 ### Example 2: Encryption with Decryption
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 import string
 
@@ -246,7 +260,9 @@ print(f"Decrypted: {decrypted}")
 
 ### Example 3: Save/Load Encryption Key
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 import string
 import json
@@ -316,7 +332,9 @@ print(f"Decrypted: {decrypted}")
 
 ### Example 4: Caesar Cipher (Shift-Based)
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 def caesar_encrypt(text, shift):
     """Encrypt using Caesar cipher (shift each letter)."""
     result = ""
@@ -352,7 +370,9 @@ print(f"Decrypted: {decrypted}")
 
 ### Example 5: Interactive Encryption Program
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 import string
 
@@ -439,7 +459,9 @@ if __name__ == "__main__":
 
 ### Example 6: Vigenère Cipher
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 def vigenere_encrypt(text, keyword):
     """Encrypt using Vigenère cipher."""
     result = ""
@@ -500,7 +522,9 @@ print(f"Decrypted: {decrypted}")
 
 ### Example 7: File Encryption
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 import string
 import os
@@ -680,7 +704,7 @@ elif choice == "2":
 ### Mistake 1: Not Using .copy() for Key
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 chars = list("abcdef")
 key = chars  # Same list, not a copy!
 random.shuffle(key)
@@ -688,7 +712,7 @@ random.shuffle(key)
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 chars = list("abcdef")
 key = chars.copy()  # Independent copy
 random.shuffle(key)
@@ -700,7 +724,7 @@ random.shuffle(key)
 ### Mistake 2: Reversing Encryption and Decryption Logic
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 def decrypt(cipher):
     result = ""
     for char in cipher:
@@ -710,7 +734,7 @@ def decrypt(cipher):
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 def decrypt(cipher):
     result = ""
     for char in cipher:
@@ -724,14 +748,14 @@ def decrypt(cipher):
 ### Mistake 3: Not Handling Unknown Characters
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 for char in message:
     index = chars.index(char)  # Crashes if char not in chars!
     cipher += key[index]
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 for char in message:
     try:
         index = chars.index(char)
@@ -745,14 +769,14 @@ for char in message:
 ### Mistake 4: Forgetting random.seed() for Reproducible Keys
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 # Key is different every time - can't decrypt later!
 key = chars.copy()
 random.shuffle(key)
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 # Use seed for reproducible key
 password = "secret123"
 random.seed(password)

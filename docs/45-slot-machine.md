@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # 🎰 Slot Machine Program
 
 ## 🚀 Open Notebook
@@ -44,7 +54,7 @@ Player starts with balance → Place bet → Spin reels → Check for matches �
 
 Using list comprehensions with `random.choice()`:
 
-```python
+```{code-cell} python
 import random
 
 symbols = ['🍒', '🍋', '🍊', '🍉', '⭐', '🔔', '7️⃣']
@@ -55,7 +65,7 @@ row = [random.choice(symbols) for _ in range(3)]
 ```
 
 **How it works:**
-```python
+```{code-cell} python
 # Traditional loop way:
 row = []
 for _ in range(3):
@@ -67,7 +77,7 @@ row = [random.choice(symbols) for _ in range(3)]
 
 ### List Comprehension Breakdown
 
-```python
+```text
 [random.choice(symbols) for _ in range(3)]
 │                       │            │
 │                       │            └─ Loop 3 times
@@ -76,7 +86,7 @@ row = [random.choice(symbols) for _ in range(3)]
 ```
 
 **The underscore `_`** indicates we don't need the loop counter:
-```python
+```{code-cell} python
 # When you need the counter:
 [i * 2 for i in range(5)]  # [0, 2, 4, 6, 8]
 
@@ -88,7 +98,7 @@ row = [random.choice(symbols) for _ in range(3)]
 
 Conditional checks determine winnings:
 
-```python
+```{code-cell} python
 def calculate_payout(row, bet):
     # Check 1: All three match
     if row[0] == row[1] == row[2]:
@@ -106,7 +116,7 @@ def calculate_payout(row, bet):
 ```
 
 **Matching Logic:**
-```python
+```{code-cell} python
 row = ['🍒', '🍒', '🍋']
 
 # All three equal: row[0] == row[1] == row[2]
@@ -126,7 +136,7 @@ row[0] == row[2]  # '🍒' == '🍋' → False
 
 Track player's money throughout the game:
 
-```python
+```{code-cell} python
 balance = 100  # Starting balance
 
 # Placing a bet
@@ -150,7 +160,9 @@ Lose    → Balance: $90 (no payout)
 
 Multiple validation layers prevent errors:
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 bet = input("Enter bet: ")
 
 # Validation 1: Is it a number?
@@ -171,7 +183,7 @@ if bet == 0:
 ```
 
 **String Methods for Validation:**
-```python
+```{code-cell} python
 "123".isdigit()   # True
 "abc".isdigit()   # False
 "-5".isdigit()    # False (minus sign not a digit)
@@ -180,7 +192,7 @@ if bet == 0:
 
 ### Game Loop Structure
 
-```python
+```{code-cell} python
 while balance > 0:
     # Show current balance
     print(f"Balance: ${balance}")
@@ -212,7 +224,7 @@ print(f"Game over! Final balance: ${balance}")
 
 ### Loop Control
 
-```python
+```{code-cell} python
 while balance > 0:
     # continue - skip rest of loop, start next iteration
     if invalid_input:
@@ -225,7 +237,7 @@ while balance > 0:
 
 **Difference between `continue` and `break`:**
 
-```python
+```{code-cell} python
 for i in range(5):
     if i == 2:
         continue  # Skip just this iteration
@@ -243,7 +255,7 @@ for i in range(5):
 
 Emojis make the game visually appealing:
 
-```python
+```{code-cell} python
 symbols = ['🍒', '🍋', '🍊', '🍉', '⭐', '🔔', '7️⃣']
 
 # Display with separator
@@ -252,7 +264,7 @@ print(" | ".join(['🍒', '🍒', '🍋']))
 ```
 
 **Using join():**
-```python
+```{code-cell} python
 symbols = ['🍒', '🍒', '🍋']
 
 " | ".join(symbols)  # "🍒 | 🍒 | 🍋"
@@ -264,7 +276,9 @@ symbols = ['🍒', '🍒', '🍋']
 
 ### Example 1: Basic Slot Machine (Complete)
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 
 def spin_row():
@@ -338,7 +352,9 @@ if __name__ == "__main__":
 
 ### Example 2: Slot Machine with Statistics
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 
 def spin_row():
@@ -419,7 +435,9 @@ if __name__ == "__main__":
 
 ### Example 3: Multi-Line Slot Machine
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 
 def spin_row():
@@ -514,7 +532,9 @@ if __name__ == "__main__":
 
 ### Example 4: Slot Machine with Bonus Features
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 
 def spin_row():
@@ -614,7 +634,9 @@ if __name__ == "__main__":
 
 ### Example 5: Progressive Jackpot Slot
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 
 jackpot = 1000  # Progressive jackpot pool
@@ -703,7 +725,9 @@ if __name__ == "__main__":
 
 ### Example 6: Slot Machine with Achievements
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 
 achievements = {
@@ -810,7 +834,9 @@ if __name__ == "__main__":
 
 ### Example 7: Slot Machine with Auto-Play
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 import time
 
@@ -1049,14 +1075,18 @@ if __name__ == "__main__":
 ### Mistake 1: Not Validating Input Type
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 balance = 100
 bet = int(input("Enter bet: "))  # Crashes if user enters "abc"
 balance -= bet
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 balance = 100
 bet_input = input("Enter bet: ")
 
@@ -1073,7 +1103,7 @@ else:
 ### Mistake 2: Deducting Bet After Payout
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 # Spin first
 row = spin_row()
 payout = calculate_payout(row, bet)
@@ -1082,7 +1112,7 @@ balance -= bet  # Wrong order - should deduct before spinning!
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 # Deduct bet BEFORE spinning
 balance -= bet
 
@@ -1097,7 +1127,7 @@ balance += payout  # Add winnings to already-deducted balance
 ### Mistake 3: Not Handling Edge Cases in Matching
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 def calculate_payout(row, bet):
     # Only checks first two positions
     if row[0] == row[1]:
@@ -1107,7 +1137,7 @@ def calculate_payout(row, bet):
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 def calculate_payout(row, bet):
     # Check all three match
     if row[0] == row[1] == row[2]:

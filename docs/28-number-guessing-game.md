@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # 🎯 Number Guessing Game
 
 ## 🚀 Open Notebook
@@ -49,13 +59,15 @@ This pattern provides clear control over when the game starts and stops.
 ### Key Components
 
 #### 1. **Random Number Generation**
-```python
+```{code-cell} python
 import random
 answer = random.randint(1, 100)  # Secret number
 ```
 
 #### 2. **Input Validation**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 guess = input("Enter guess: ")
 if guess.isdigit():  # Checks if string contains only digits
     guess = int(guess)  # Safe to convert
@@ -64,13 +76,13 @@ else:
 ```
 
 #### 3. **Range Validation**
-```python
+```{code-cell} python
 if guess < lowest_num or guess > highest_num:
     print("Out of range!")
 ```
 
 #### 4. **Comparison Logic**
-```python
+```{code-cell} python
 if guess < answer:
     print("Too low!")
 elif guess > answer:
@@ -90,7 +102,7 @@ guesses += 1  # Increment on each guess
 
 The **isdigit()** method is crucial for preventing crashes:
 
-```python
+```{code-cell} python
 "123".isdigit()    # True - all characters are digits
 "12.5".isdigit()   # False - contains decimal point
 "-10".isdigit()    # False - contains minus sign
@@ -100,7 +112,7 @@ The **isdigit()** method is crucial for preventing crashes:
 
 **Why validate?** Converting non-numeric input to int() raises ValueError:
 
-```python
+```{code-cell} python
 int("abc")  # ValueError: invalid literal for int()
 ```
 
@@ -123,7 +135,7 @@ int("abc")  # ValueError: invalid literal for int()
 
 Effective feedback improves user experience:
 
-```python
+```{code-cell} python
 if guess < answer:
     print("Too low! Try again!")  # Encouraging
 elif guess > answer:
@@ -136,7 +148,9 @@ else:
 ## Examples
 
 ### Example 1: Basic Input Validation
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # Validating numeric input
 guess = input("Enter a number: ")
 
@@ -153,7 +167,9 @@ else:
 ```
 
 ### Example 2: Simple Guessing Game
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 
 answer = random.randint(1, 10)
@@ -166,7 +182,9 @@ else:
 ```
 
 ### Example 3: With Hints
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 
 answer = random.randint(1, 10)
@@ -181,7 +199,9 @@ else:
 ```
 
 ### Example 4: Tracking Attempts
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 
 answer = random.randint(1, 10)
@@ -204,7 +224,9 @@ else:
 ```
 
 ### Example 5: Complete Simple Version
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 
 # Setup
@@ -239,7 +261,9 @@ while not won:
 ```
 
 ### Example 6: With Difficulty Levels
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 
 print("Choose difficulty:")
@@ -284,7 +308,9 @@ while True:
 ```
 
 ### Example 7: Full Featured Version
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 import random
 
 def play_game():
@@ -409,12 +435,16 @@ if __name__ == "__main__":
 ### Mistake 1: Not Validating Input Before Converting
 
 **Wrong:**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 guess = int(input("Guess: "))  # Crashes if user enters "abc"
 ```
 
 **Correct:**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 guess_str = input("Guess: ")
 if guess_str.isdigit():
     guess = int(guess_str)
@@ -427,7 +457,7 @@ else:
 ### Mistake 2: Using 'is' Instead of '==' for Numbers
 
 **Wrong:**
-```python
+```{code-cell} python
 guess = 5
 answer = 5
 if guess is answer:  # May not work for larger numbers!
@@ -435,7 +465,7 @@ if guess is answer:  # May not work for larger numbers!
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 guess = 5
 answer = 5
 if guess == answer:  # Always works
@@ -447,14 +477,14 @@ if guess == answer:  # Always works
 ### Mistake 3: Off-by-One Range Error
 
 **Wrong:**
-```python
+```{code-cell} python
 # Checking if 1 <= guess <= 100
 if guess < 1 or guess >= 100:  # Wrong! Excludes 100
     print("Out of range")
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 # Checking if 1 <= guess <= 100
 if guess < 1 or guess > 100:  # Correct! Includes 1 and 100
     print("Out of range")

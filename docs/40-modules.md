@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # 📦 Modules
 
 ## 🚀 Open Notebook
@@ -44,7 +54,7 @@ A **module** is simply a file containing Python code (functions, variables, clas
 ### Basic Import Syntax
 
 #### 1. **Import Entire Module**
-```python
+```{code-cell} python
 import math
 
 result = math.sqrt(16)
@@ -52,7 +62,7 @@ print(result)  # 4.0
 ```
 
 #### 2. **Import Specific Items**
-```python
+```{code-cell} python
 from math import sqrt, pi
 
 print(sqrt(16))  # 4.0
@@ -60,14 +70,14 @@ print(pi)        # 3.14159...
 ```
 
 #### 3. **Import with Alias**
-```python
+```{code-cell} python
 import math as m
 
 print(m.sqrt(16))  # 4.0
 ```
 
 #### 4. **Import Everything** (Not Recommended!)
-```python
+```{code-cell} python
 from math import *
 
 print(sqrt(16))  # 4.0 - no prefix needed
@@ -79,7 +89,7 @@ print(sqrt(16))  # 4.0 - no prefix needed
 Any Python file can be a module. Just save your code in a `.py` file and import it!
 
 **example.py** (Your custom module):
-```python
+```{code-cell} python
 # example.py - Custom module
 
 pi = 3.14159
@@ -102,7 +112,7 @@ def area(radius):
 ```
 
 **main.py** (Using the custom module):
-```python
+```{code-cell} python
 # main.py
 import example
 
@@ -125,7 +135,7 @@ Every Python module has a special variable called `__name__`:
 This allows you to write code that only runs when the file is executed directly:
 
 **example.py**:
-```python
+```{code-cell} python
 # example.py
 def greet(name):
     print(f"Hello, {name}!")
@@ -137,7 +147,7 @@ if __name__ == "__main__":
 ```
 
 **main.py**:
-```python
+```{code-cell} python
 # main.py
 import example
 
@@ -147,7 +157,7 @@ example.greet("Bob")  # Only this executes
 
 ### Import Styles Comparison
 
-```python
+```{code-cell} python
 # Style 1: Import module
 import math
 print(math.sqrt(16))  # Must use math. prefix
@@ -168,7 +178,7 @@ print(sqrt(16))  # No prefix, but can cause conflicts
 ### Common Built-in Modules
 
 #### **math** - Mathematical functions
-```python
+```{code-cell} python
 import math
 
 print(math.sqrt(25))     # 5.0
@@ -178,7 +188,7 @@ print(math.floor(4.7))   # 4
 ```
 
 #### **random** - Random number generation
-```python
+```{code-cell} python
 import random
 
 print(random.randint(1, 10))        # Random int 1-10
@@ -187,7 +197,7 @@ print(random.random())              # Random float 0-1
 ```
 
 #### **datetime** - Date and time
-```python
+```{code-cell} python
 import datetime
 
 now = datetime.datetime.now()
@@ -195,7 +205,7 @@ print(now)  # Current date and time
 ```
 
 #### **os** - Operating system functions
-```python
+```{code-cell} python
 import os
 
 print(os.getcwd())  # Current working directory
@@ -209,7 +219,7 @@ Python looks for modules in this order:
 2. PYTHONPATH environment variable
 3. Installation-dependent directories
 
-```python
+```{code-cell} python
 import sys
 print(sys.path)  # Shows module search paths
 ```
@@ -217,7 +227,7 @@ print(sys.path)  # Shows module search paths
 ## Examples
 
 ### Example 1: Using math Module
-```python
+```{code-cell} python
 import math
 
 # Square root
@@ -240,7 +250,7 @@ print(f"Floor of 4.7: {math.floor(4.7)}")    # 4
 ```
 
 ### Example 2: Using random Module
-```python
+```{code-cell} python
 import random
 
 # Random integer in range
@@ -267,7 +277,7 @@ print(f"Lottery numbers: {lottery_numbers}")
 ```
 
 ### Example 3: Creating Custom Module
-```python
+```{code-cell} python
 # calculator.py
 """
 A simple calculator module.
@@ -308,7 +318,7 @@ print(calculator.divide(20, 4))    # 5.0
 ```
 
 ### Example 4: Different Import Styles
-```python
+```{code-cell} python
 # Style 1: Import entire module
 import random
 print(random.randint(1, 10))
@@ -330,7 +340,7 @@ print(e)
 ```
 
 ### Example 5: Using datetime Module
-```python
+```{code-cell} python
 import datetime
 
 # Current date and time
@@ -356,7 +366,7 @@ print(f"Formatted: {formatted}")  # Example: January 10, 2026
 ```
 
 ### Example 6: Custom Geometry Module
-```python
+```{code-cell} python
 # geometry.py
 """Geometry calculations module."""
 
@@ -398,7 +408,7 @@ print(geometry.triangle_area(10, 6))    # 30.0
 ```
 
 ### Example 7: Using os Module
-```python
+```{code-cell} python
 import os
 
 # Current working directory
@@ -467,7 +477,7 @@ if not os.path.exists("new_folder"):
 ### Mistake 1: Circular Imports
 
 **Wrong:**
-```python
+```{code-cell} python
 # module_a.py
 import module_b
 
@@ -492,7 +502,7 @@ def func_b():
 ### Mistake 2: Using `from module import *`
 
 **Wrong:**
-```python
+```{code-cell} python
 from math import *
 from random import *
 
@@ -501,7 +511,7 @@ from random import *
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 import math
 import random
 
@@ -515,7 +525,7 @@ random.choice(['a', 'b'])
 ### Mistake 3: Module Naming Conflicts
 
 **Wrong:**
-```python
+```{code-cell} python
 # Don't name your file math.py - conflicts with built-in!
 # math.py (your file)
 def my_function():
@@ -526,7 +536,7 @@ import math  # Imports YOUR math.py, not built-in!
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 # Use descriptive, unique names
 # my_math_utils.py
 def my_function():
@@ -538,7 +548,7 @@ def my_function():
 ### Mistake 4: Forgetting `__name__` Check
 
 **Wrong:**
-```python
+```{code-cell} python
 # module.py
 def useful_function():
     return "Result"
@@ -549,7 +559,7 @@ useful_function()
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 # module.py
 def useful_function():
     return "Result"
@@ -565,14 +575,14 @@ if __name__ == "__main__":
 ## Real-World Applications
 
 ### 1. **Web Development**
-```python
+```{code-cell} python
 from flask import Flask, request, jsonify
 from database import db_connect, db_query
 from auth import check_authentication
 ```
 
 ### 2. **Data Science**
-```python
+```{code-cell} python
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -580,7 +590,7 @@ from sklearn.model_selection import train_test_split
 ```
 
 ### 3. **Automation**
-```python
+```{code-cell} python
 import os
 import shutil
 from datetime import datetime
@@ -588,7 +598,7 @@ from email_utils import send_email
 ```
 
 ### 4. **Testing**
-```python
+```{code-cell} python
 import unittest
 from my_module import function_to_test
 ```

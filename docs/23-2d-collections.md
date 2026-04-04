@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # 📊 2D Collections (Nested Lists & Matrices)
 
 ## 🚀 Open Notebook
@@ -30,7 +40,7 @@ In this chapter, you'll explore two-dimensional (2D) data structures using neste
 
 A **2D collection** (or 2D list) is a list that contains other lists as its elements. Think of it like a spreadsheet with rows and columns, a game board, or a table of data.
 
-```python
+```{code-cell} python
 # A simple 2D list (3 rows, 3 columns)
 grid = [
     [1, 2, 3],    # Row 0
@@ -56,14 +66,14 @@ Index:     [0] [1] [2]
 
 To access an element in a 2D list, use **double bracket notation**:
 
-```python
+```{code-cell} python
 grid[row][column]
 ```
 
 - **First bracket** selects the row (which list)
 - **Second bracket** selects the column (which element in that list)
 
-```python
+```{code-cell} python
 grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
 grid[0][1]  # Row 0, Column 1 → 2
@@ -76,7 +86,7 @@ grid[2][2]  # Row 2, Column 2 → 9
 There are several ways to create 2D lists:
 
 #### Method 1: Direct Definition
-```python
+```{code-cell} python
 matrix = [
     [1, 2, 3],
     [4, 5, 6],
@@ -85,7 +95,7 @@ matrix = [
 ```
 
 #### Method 2: From Existing Lists
-```python
+```{code-cell} python
 fruits = ["apple", "banana", "cherry"]
 vegetables = ["carrot", "lettuce", "onion"]
 meats = ["beef", "chicken", "pork"]
@@ -95,7 +105,7 @@ groceries = [fruits, vegetables, meats]
 ```
 
 #### Method 3: Using List Comprehension
-```python
+```{code-cell} python
 # Create 3x3 grid filled with zeros
 grid = [[0 for _ in range(3)] for _ in range(3)]
 ```
@@ -104,7 +114,7 @@ grid = [[0 for _ in range(3)] for _ in range(3)]
 
 To process all elements in a 2D list, use **nested loops**:
 
-```python
+```{code-cell} python
 groceries = [
     ["apple", "banana", "cherry"],
     ["carrot", "lettuce", "onion"],
@@ -128,7 +138,7 @@ for collection in groceries:
 ## Examples
 
 ### Example 1: Creating and Accessing 2D Lists
-```python
+```{code-cell} python
 # Create a 2D list from separate lists
 fruits = ["apple", "banana", "cherry"]
 vegetables = ["carrot", "lettuce", "onion"]
@@ -144,7 +154,7 @@ print(groceries[1][1])  # "lettuce"
 ```
 
 ### Example 2: Modifying 2D List Elements
-```python
+```{code-cell} python
 groceries = [
     ["apple", "banana", "cherry"],
     ["carrot", "lettuce", "onion"],
@@ -158,7 +168,7 @@ print(groceries[0])  # ['apple', 'blueberry', 'cherry']
 ```
 
 ### Example 3: Nested Loops for 2D Lists
-```python
+```{code-cell} python
 groceries = [
     ["apple", "banana", "cherry"],
     ["carrot", "lettuce", "onion"],
@@ -189,7 +199,7 @@ for i in range(len(groceries)):
 ```
 
 ### Example 4: Number Pad Example
-```python
+```{code-cell} python
 # Representing a phone keypad
 num_pad = (
     (7, 8, 9),
@@ -212,7 +222,7 @@ for row in num_pad:
 ```
 
 ### Example 5: Tic-Tac-Toe Board
-```python
+```{code-cell} python
 # Create empty tic-tac-toe board
 board = [
     ["-", "-", "-"],
@@ -236,7 +246,7 @@ for row in board:
 ```
 
 ### Example 6: Matrix Operations
-```python
+```{code-cell} python
 # Create a 3x3 matrix
 matrix = [
     [1, 2, 3],
@@ -263,7 +273,7 @@ print(f"Maximum value: {max_val}")  # 9
 ```
 
 ### Example 7: Student Grades Table
-```python
+```{code-cell} python
 # Student grades: [name, math, science, english]
 students = [
     ["Alice", 85, 92, 88],
@@ -332,7 +342,7 @@ for student in students:
 ### Mistake 1: Shallow Copy Creating References
 
 **Wrong:**
-```python
+```{code-cell} python
 # This creates 3 references to the SAME list!
 matrix = [[0] * 3] * 3
 matrix[0][0] = 1
@@ -342,7 +352,7 @@ print(matrix)
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 # Create separate lists for each row
 matrix = [[0] * 3 for _ in range(3)]
 matrix[0][0] = 1
@@ -356,14 +366,14 @@ print(matrix)
 ### Mistake 2: Confusing Row/Column Order
 
 **Wrong:**
-```python
+```{code-cell} python
 matrix = [[1, 2, 3], [4, 5, 6]]
 # Trying to access column 2, row 1
 value = matrix[2][1]  # IndexError!
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 matrix = [[1, 2, 3], [4, 5, 6]]
 # Correct: row first, then column
 value = matrix[1][2]  # 6
@@ -374,7 +384,7 @@ value = matrix[1][2]  # 6
 ### Mistake 3: Forgetting to Print Newlines
 
 **Wrong:**
-```python
+```{code-cell} python
 matrix = [[1, 2], [3, 4]]
 for row in matrix:
     for num in row:
@@ -383,7 +393,7 @@ for row in matrix:
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 matrix = [[1, 2], [3, 4]]
 for row in matrix:
     for num in row:
@@ -399,7 +409,7 @@ for row in matrix:
 ### Mistake 4: Incorrect Loop Range for Indices
 
 **Wrong:**
-```python
+```{code-cell} python
 matrix = [[1, 2, 3], [4, 5, 6]]
 for i in range(len(matrix)):
     for j in range(len(matrix)):  # Wrong!
@@ -408,7 +418,7 @@ for i in range(len(matrix)):
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 matrix = [[1, 2, 3], [4, 5, 6]]
 for i in range(len(matrix)):
     for j in range(len(matrix[i])):  # Correct

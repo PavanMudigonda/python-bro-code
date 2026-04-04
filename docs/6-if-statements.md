@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Chapter 7: If-Elif-Else Statements
 
 ## 🚀 Open Notebook
@@ -10,10 +20,6 @@
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/FvMPfrgGeKs)
 
 **If statements in Python are easy (if, elif, else) 🤔** (12:07)
-
-## 📺 Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/FvMPfrgGeKs)
 
 ## 📚 What You'll Learn
 Make your programs smart with conditional logic! Learn how to make decisions based on different conditions.
@@ -33,14 +39,14 @@ Conditional statements let your program make decisions and execute different cod
 ### Syntax
 
 #### Basic If Statement
-```python
+```{code-cell} python
 if condition:
     # This code runs if condition is True
     print("Condition is true!")
 ```
 
 #### If-Else Statement
-```python
+```{code-cell} python
 if condition:
     # Runs if condition is True
 else:
@@ -48,7 +54,7 @@ else:
 ```
 
 #### If-Elif-Else Chain
-```python
+```{code-cell} python
 if condition1:
     # Runs if condition1 is True
 elif condition2:
@@ -71,7 +77,7 @@ else:
 | `<=` | Less than or equal | `3 <= 5` | `True` |
 
 ### Important: Indentation Matters!
-```python
+```{code-cell} python
 if age >= 18:
     print("Adult")      # Indented - part of if block
     print("Can vote")   # Indented - part of if block
@@ -81,7 +87,7 @@ print("Program ends")   # Not indented - always runs
 ## 💡 Examples
 
 ### Example 1: Simple If-Else
-```python
+```{code-cell} python
 temperature = 25
 
 if temperature > 30:
@@ -91,7 +97,7 @@ else:
 ```
 
 ### Example 2: Multiple Conditions (Elif)
-```python
+```{code-cell} python
 score = 85
 
 if score >= 90:
@@ -107,7 +113,9 @@ else:
 ```
 
 ### Example 3: User Authentication
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 password = input("Enter password: ")
 
 if password == "secret123":
@@ -117,7 +125,9 @@ else:
 ```
 
 ### Example 4: Even or Odd
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 number = int(input("Enter a number: "))
 
 if number % 2 == 0:
@@ -129,7 +139,9 @@ else:
 ## ✍️ Practice Exercises
 
 ### Exercise 1: Voting Eligibility
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # Ask for age and determine if person can vote (18+)
 age = int(input("Enter your age: "))
 # Add if-else logic
@@ -169,7 +181,7 @@ age = int(input("Enter your age: "))
 ## 🔍 Common Mistakes
 
 ### Mistake 1: Using = Instead of ==
-```python
+```{code-cell} python
 # Wrong:
 if age = 18:  # Error! This is assignment, not comparison
     print("18!")
@@ -180,7 +192,7 @@ if age == 18:  # This is comparison
 ```
 
 ### Mistake 2: Forgetting the Colon
-```python
+```{code-cell} python
 # Wrong:
 if age > 18  # Error! Missing colon
     print("Adult")
@@ -191,7 +203,7 @@ if age > 18:  # Colon is required
 ```
 
 ### Mistake 3: Incorrect Indentation
-```python
+```{code-cell} python
 # Wrong:
 if age > 18:
 print("Adult")  # Error! Not indented
@@ -202,7 +214,7 @@ if age > 18:
 ```
 
 ### Mistake 4: Unreachable Conditions
-```python
+```{code-cell} python
 # Wrong order:
 if age > 0:
     print("Positive age")
@@ -221,19 +233,19 @@ elif age > 0:
 You can combine conditions using logical operators:
 
 ### AND - Both conditions must be True
-```python
+```{code-cell} python
 if age >= 18 and age < 65:
     print("Working age")
 ```
 
 ### OR - At least one condition must be True
-```python
+```{code-cell} python
 if age < 13 or age > 65:
     print("Reduced ticket price")
 ```
 
 ### NOT - Reverses the condition
-```python
+```{code-cell} python
 if not is_raining:
     print("Go outside!")
 ```
@@ -241,7 +253,9 @@ if not is_raining:
 ## 🎮 Real-World Examples
 
 ### Example: ATM Withdrawal
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 balance = 1000
 withdrawal = int(input("Amount to withdraw: "))
 
@@ -255,7 +269,9 @@ else:
 ```
 
 ### Example: Discount Calculator
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 total = float(input("Enter purchase total: "))
 
 if total >= 100:

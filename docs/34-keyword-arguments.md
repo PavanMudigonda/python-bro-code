@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # 🏷️ Keyword Arguments
 
 ## 🚀 Open Notebook
@@ -31,7 +41,7 @@ In this chapter, you'll master keyword arguments - a powerful Python feature tha
 Keyword arguments are arguments passed to a function with the parameter name explicitly specified using the `name=value` syntax.
 
 **Positional Arguments (Traditional Way):**
-```python
+```{code-cell} python
 def greet(greeting, title, first, last):
     print(f"{greeting} {title} {first} {last}")
 
@@ -40,7 +50,7 @@ greet("Hello", "Mr", "John", "Doe")
 ```
 
 **Keyword Arguments (Named Way):**
-```python
+```{code-cell} python
 # Order doesn't matter - names are explicit
 greet(greeting="Hello", title="Mr", first="John", last="Doe")
 
@@ -53,7 +63,7 @@ greet(last="Doe", first="John", greeting="Hello", title="Mr")
 #### 1. **Improved Readability**
 Code becomes self-documenting:
 
-```python
+```{code-cell} python
 # Positional - what do these mean?
 create_user("alice", 25, "alice@email.com", True, False)
 
@@ -70,7 +80,7 @@ create_user(
 #### 2. **Order Independence**
 Don't need to remember parameter order:
 
-```python
+```{code-cell} python
 def book_flight(from_city, to_city, date, passengers, class_type):
     pass
 
@@ -90,7 +100,7 @@ book_flight(
 #### 3. **Skip Optional Parameters**
 Can specify only the parameters you want to change:
 
-```python
+```{code-cell} python
 def format_text(text, bold=False, italic=False, underline=False, 
                 color="black", size=12):
     pass
@@ -106,7 +116,7 @@ format_text("Hello", bold=True, size=16)
 #### 4. **Prevent Errors**
 Explicit names prevent mistakes:
 
-```python
+```{code-cell} python
 def set_alarm(hour, minute, am_pm):
     pass
 
@@ -121,7 +131,7 @@ set_alarm(hour=7, minute=30, am_pm="AM")  # CORRECT
 
 You can combine both styles, but **positional must come first**:
 
-```python
+```{code-cell} python
 def create_account(username, password, email, notifications=True):
     pass
 
@@ -207,7 +217,7 @@ create_account(username="alice", "pass123", "alice@email.com")  # SyntaxError!
 
 You can force parameters to be keyword-only using `*`:
 
-```python
+```{code-cell} python
 def create_user(username, *, email, age):
     # username can be positional or keyword
     # email and age MUST be keyword
@@ -225,7 +235,7 @@ This prevents mistakes when parameter order might be confusing.
 ### Best Practices
 
 #### 1. **Use Descriptive Parameter Names**
-```python
+```{code-cell} python
 # Bad - unclear names
 def calc(x, y, z):
     pass
@@ -236,14 +246,14 @@ def calculate_price(base_price, tax_rate, discount):
 ```
 
 #### 2. **Consistency in Your Codebase**
-```python
+```{code-cell} python
 # If you use keyword arguments for similar functions, be consistent
 create_user(username="alice", email="alice@email.com")
 create_admin(username="bob", email="bob@email.com")  # Same style
 ```
 
 #### 3. **Document Parameters**
-```python
+```{code-cell} python
 def complex_function(param1, param2, param3=None, param4=False):
     """
     Brief description.
@@ -260,7 +270,7 @@ def complex_function(param1, param2, param3=None, param4=False):
 ## Examples
 
 ### Example 1: Basic Keyword Arguments
-```python
+```{code-cell} python
 def introduce_person(greeting, title, first_name, last_name):
     """Print a formal introduction."""
     print(f"{greeting} {title} {first_name} {last_name}")
@@ -283,7 +293,7 @@ introduce_person("Hello", "Dr", last_name="Smith", first_name="Jane")
 ```
 
 ### Example 2: Configuration Function
-```python
+```{code-cell} python
 def configure_server(hostname, port, ssl=True, timeout=30, 
                      max_connections=100, debug=False):
     """
@@ -322,7 +332,7 @@ configure_server(
 ```
 
 ### Example 3: Email Sending Function
-```python
+```{code-cell} python
 def send_email(recipient, subject, body, sender="noreply@company.com",
                cc=None, bcc=None, attachments=None, priority="normal"):
     """
@@ -377,7 +387,7 @@ send_email(
 ```
 
 ### Example 4: Database Query Builder
-```python
+```{code-cell} python
 def build_query(table, columns="*", where=None, order_by=None, 
                 limit=None, offset=0):
     """
@@ -439,7 +449,7 @@ print(build_query(
 ```
 
 ### Example 5: Image Processor
-```python
+```{code-cell} python
 def process_image(filename, resize=None, rotate=0, flip=None,
                   brightness=1.0, contrast=1.0, output_format="jpg"):
     """
@@ -501,7 +511,7 @@ process_image(
 ```
 
 ### Example 6: API Request Function
-```python
+```{code-cell} python
 def api_request(endpoint, method="GET", headers=None, params=None,
                 data=None, timeout=30, verify_ssl=True):
     """
@@ -561,7 +571,7 @@ api_request(
 ```
 
 ### Example 7: Advanced Reporting Function
-```python
+```{code-cell} python
 def generate_report(title, data, report_type="summary", 
                     include_charts=True, include_stats=True,
                     page_size="A4", orientation="portrait",
@@ -658,7 +668,7 @@ generate_report(
 ### Mistake 1: Keyword Argument Before Positional
 
 **Wrong:**
-```python
+```{code-cell} python
 def greet(greeting, title, first, last):
     print(f"{greeting} {title} {first} {last}")
 
@@ -667,7 +677,7 @@ greet(greeting="Hello", title="Mr", "John", "Doe")
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 # Positional arguments must come first
 greet("Hello", "Mr", first="John", last="Doe")
 
@@ -680,7 +690,7 @@ greet(greeting="Hello", title="Mr", first="John", last="Doe")
 ### Mistake 2: Misspelling Parameter Names
 
 **Wrong:**
-```python
+```{code-cell} python
 def create_user(username, email, age):
     pass
 
@@ -689,7 +699,7 @@ create_user(user_name="alice", email="alice@example.com", age=25)
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 # Use exact parameter names
 create_user(username="alice", email="alice@example.com", age=25)
 ```
@@ -699,7 +709,7 @@ create_user(username="alice", email="alice@example.com", age=25)
 ### Mistake 3: Passing Same Argument Twice
 
 **Wrong:**
-```python
+```{code-cell} python
 def greet(name, greeting):
     print(f"{greeting}, {name}!")
 
@@ -708,7 +718,7 @@ greet("Alice", name="Bob")
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 # Choose one way to pass the argument
 greet("Alice", greeting="Hello")
 # or
@@ -720,14 +730,14 @@ greet(name="Alice", greeting="Hello")
 ### Mistake 4: Not Using Keyword Arguments When They Would Help
 
 **Wrong:**
-```python
+```{code-cell} python
 # What do these mean?
 configure_app(True, False, True, 30, "localhost", 8080, False)
 # Very hard to understand!
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 # Much clearer with keyword arguments
 configure_app(
     debug=True,
@@ -747,7 +757,7 @@ configure_app(
 ### 1. **Django Web Framework**
 Django extensively uses keyword arguments for clarity:
 
-```python
+```{code-cell} python
 # URL routing
 path('articles/<int:year>/', views.year_archive, name='year_archive')
 
@@ -761,7 +771,7 @@ forms.CharField(max_length=100, required=True, label='Username')
 ### 2. **Data Science with Pandas**
 Pandas functions use keyword arguments for flexible data manipulation:
 
-```python
+```{code-cell} python
 df.read_csv(
     'data.csv',
     sep=',',
@@ -775,7 +785,7 @@ df.read_csv(
 ### 3. **Matplotlib Visualization**
 Plotting functions use keywords for customization:
 
-```python
+```{code-cell} python
 plt.plot(
     x, y,
     color='blue',
@@ -789,7 +799,7 @@ plt.plot(
 ### 4. **Machine Learning with scikit-learn**
 ML models are configured with keyword arguments:
 
-```python
+```{code-cell} python
 model = RandomForestClassifier(
     n_estimators=100,
     max_depth=10,

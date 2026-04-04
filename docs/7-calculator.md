@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Chapter 8: Simple Calculator Program
 
 ## 🚀 Open Notebook
@@ -11,10 +21,6 @@
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/yUrYouDQZL8)
 
 **Let's code a simple python calculator! 🧮** (8:20)
-
-## 📺 Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/yUrYouDQZL8)
 
 ## 📚 What You'll Learn
 Build a functional calculator that performs basic mathematical operations!
@@ -44,12 +50,16 @@ A calculator program:
 ## 💡 Complete Program Breakdown
 
 ### Step 1: Get Operator
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 operator = input("Enter operator (+, -, *, /, %): ")
 ```
 
 ### Step 2: Get Numbers
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 number1 = float(input("Enter first number: "))
 number2 = float(input("Enter second number: "))
 ```
@@ -67,7 +77,7 @@ elif operator == "-":
 ## ✍️ Practice Exercises
 
 ### Exercise 1: Add Division by Zero Check
-```python
+```{code-cell} python
 elif operator == "/":
     if number2 == 0:
         print("Error: Cannot divide by zero!")
@@ -102,7 +112,7 @@ memory = 0
 ## 🔍 Enhancements
 
 ### Enhancement 1: Better Output Formatting
-```python
+```{code-cell} python
 if operator == "+":
     result = number1 + number2
     print(f"\n{number1} + {number2} = {result}")
@@ -110,14 +120,16 @@ if operator == "+":
 ```
 
 ### Enhancement 2: Input Validation
-```python
+```{code-cell} python
 valid_operators = ['+', '-', '*', '/', '%']
 if operator not in valid_operators:
     print("Invalid operator!")
 ```
 
 ### Enhancement 3: Try-Except for Error Handling
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 try:
     number1 = float(input("Enter first number: "))
     number2 = float(input("Enter second number: "))
@@ -128,7 +140,7 @@ except ValueError:
 ## 🎮 Advanced Calculator Features
 
 ### Scientific Calculator
-```python
+```{code-cell} python
 import math
 
 if operator == "sqrt":
@@ -140,7 +152,7 @@ elif operator == "cos":
 ```
 
 ### Calculator with History
-```python
+```{code-cell} python
 history = []
 
 # After each calculation:
@@ -193,7 +205,9 @@ import tkinter as tk
 ```
 
 ## 💻 Complete Enhanced Calculator
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 def calculator():
     print("=== Simple Calculator ===")
     print("Operations: +, -, *, /, %, **, //")

@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # 🧬 Inheritance
 
 ## 🚀 Open Notebook
@@ -62,7 +72,7 @@ dog.speak()  # Buddy makes a sound
 
 ### Inheritance Syntax
 
-```python
+```{code-cell} python
 class ParentClass:
     # Parent attributes and methods
     pass
@@ -109,7 +119,7 @@ car.start()       # Toyota is starting...
 
 **Child can have additional attributes/methods:**
 
-```python
+```{code-cell} python
 class Animal:
     def __init__(self, name):
         self.name = name
@@ -134,7 +144,7 @@ dog.bark()  # Dog-specific method
 
 **Child can provide its own version of parent methods:**
 
-```python
+```{code-cell} python
 class Animal:
     def speak(self):
         print("Some generic sound")
@@ -158,7 +168,7 @@ dog.speak()  # Woof! (overridden)
 
 **`super()` calls the parent class method:**
 
-```python
+```{code-cell} python
 class Animal:
     def __init__(self, name):
         self.name = name
@@ -180,7 +190,7 @@ dog = Dog("Buddy", "Labrador")
 
 **Classes can form inheritance chains:**
 
-```python
+```{code-cell} python
 class Organism:
     def __init__(self):
         self.alive = True
@@ -211,7 +221,7 @@ print(dog.species)       # Canis familiaris (from Dog)
 
 ### Example 1: Basic Animal Inheritance
 
-```python
+```{code-cell} python
 class Animal:
     """Base animal class."""
     
@@ -249,7 +259,7 @@ print(f"{mouse.name} alive? {mouse.is_alive}")  # Mickey alive? True
 
 ### Example 2: Vehicle Hierarchy
 
-```python
+```{code-cell} python
 class Vehicle:
     """Base vehicle class."""
     
@@ -318,7 +328,7 @@ motorcycle.wheelie()     # Harley Sportster does a wheelie!
 
 ### Example 3: Employee Management System
 
-```python
+```{code-cell} python
 class Employee:
     """Base employee class."""
     
@@ -393,7 +403,7 @@ print(dev2.get_info())
 
 ### Example 4: Shape Hierarchy
 
-```python
+```{code-cell} python
 class Shape:
     """Base shape class."""
     
@@ -464,7 +474,7 @@ for shape in shapes:
 
 ### Example 5: Bank Account Types
 
-```python
+```{code-cell} python
 class BankAccount:
     """Base bank account class."""
     
@@ -548,7 +558,7 @@ print(checking.get_balance())
 
 ### Example 6: User Roles
 
-```python
+```{code-cell} python
 class User:
     """Base user class."""
     
@@ -626,7 +636,7 @@ user.login()  # Account is deactivated
 
 ### Example 7: Pet System with Multiple Levels
 
-```python
+```{code-cell} python
 class Animal:
     """Base animal class."""
     
@@ -834,7 +844,7 @@ cat.sleep()
 ### Mistake 1: Forgetting to Call super().__init__()
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 class Animal:
     def __init__(self, name):
         self.name = name
@@ -849,7 +859,7 @@ print(dog.name)  # ERROR! name not set
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 class Animal:
     def __init__(self, name):
         self.name = name
@@ -866,7 +876,7 @@ print(dog.name)  # Max
 ### Mistake 2: Using Inheritance When Composition is Better
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 # Car "is a" Engine? No!
 class Engine:
     def start(self):
@@ -877,7 +887,7 @@ class Car(Engine):  # Wrong relationship
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 # Car "has an" Engine
 class Engine:
     def start(self):
@@ -894,7 +904,7 @@ class Car:
 ### Mistake 3: Overriding Without Understanding
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 class Animal:
     def __init__(self, name):
         self.name = name
@@ -908,7 +918,7 @@ class Dog(Animal):
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 class Animal:
     def __init__(self, name):
         self.name = name
@@ -923,7 +933,7 @@ class Dog(Animal):
 ### Mistake 4: Deep Inheritance Hierarchies
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 # Too many levels - hard to maintain
 class A:
     pass

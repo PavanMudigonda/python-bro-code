@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Chapter 11: Logical Operators
 
 ## 🚀 Open Notebook
@@ -10,10 +20,6 @@
 [![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/W7luvtXeQTA)
 
 **Logical operators in Python are easy 🔣** (7:56)
-
-## 📺 Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/W7luvtXeQTA)
 
 ## 📚 What You'll Learn
 Combine multiple conditions using logical operators to create powerful decision-making logic!
@@ -37,7 +43,7 @@ Logical operators combine boolean expressions (conditions) to create more comple
 
 ### AND Operator
 Returns True only if **both** conditions are True:
-```python
+```{code-cell} python
 if temp > 30 and is_sunny:
     print("Hot and sunny!")
 ```
@@ -52,7 +58,7 @@ Truth Table for AND:
 
 ### OR Operator
 Returns True if **at least one** condition is True:
-```python
+```{code-cell} python
 if is_weekend or is_holiday:
     print("Day off!")
 ```
@@ -67,7 +73,7 @@ Truth Table for OR:
 
 ### NOT Operator
 Reverses the boolean value:
-```python
+```{code-cell} python
 if not is_raining:
     print("No umbrella needed!")
 ```
@@ -81,7 +87,7 @@ Truth Table for NOT:
 ## 💡 Examples
 
 ### Example 1: Age and License Check
-```python
+```{code-cell} python
 age = 20
 has_license = True
 
@@ -92,7 +98,7 @@ else:
 ```
 
 ### Example 2: Weekend or Holiday
-```python
+```{code-cell} python
 is_weekend = False
 is_holiday = True
 
@@ -103,7 +109,7 @@ else:
 ```
 
 ### Example 3: Weather Advisory
-```python
+```{code-cell} python
 temp = 35
 is_sunny = True
 is_raining = False
@@ -113,7 +119,7 @@ if temp > 30 and is_sunny and not is_raining:
 ```
 
 ### Example 4: Login System
-```python
+```{code-cell} python
 username = "admin"
 password = "secret123"
 is_verified = True
@@ -136,7 +142,7 @@ else:
 ## 🔍 Common Mistakes
 
 ### Mistake 1: Confusing AND with OR
-```python
+```{code-cell} python
 # Wrong: This is too restrictive
 if day == "Saturday" and day == "Sunday":  # day can't be both!
     print("Weekend")
@@ -147,7 +153,7 @@ if day == "Saturday" or day == "Sunday":
 ```
 
 ### Mistake 2: Forgetting Parentheses
-```python
+```{code-cell} python
 # Ambiguous:
 if age > 18 and is_student or has_id  # Unclear precedence
 
@@ -156,7 +162,7 @@ if (age > 18 and is_student) or has_id  # Much better!
 ```
 
 ### Mistake 3: Using = Instead of ==
-```python
+```{code-cell} python
 # Wrong:
 if username = "admin":  # Assignment, not comparison!
 
@@ -171,7 +177,7 @@ Python evaluates operators in this order:
 3. `and`
 4. `or`
 
-```python
+```{code-cell} python
 # Without parentheses
 result = True or False and False  # True (and evaluated first)
 
@@ -183,7 +189,7 @@ result = (True or False) and False  # False
 ## 🎮 Real-World Examples
 
 ### Example: E-commerce Discount
-```python
+```{code-cell} python
 total = 150
 is_member = True
 has_coupon = False
@@ -198,7 +204,7 @@ else:
 ```
 
 ### Example: Security System
-```python
+```{code-cell} python
 is_armed = True
 is_door_open = True
 is_night = True

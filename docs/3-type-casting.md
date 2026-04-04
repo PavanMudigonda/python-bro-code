@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Chapter 3: Type Casting
 
 ## 🚀 Open Notebook
@@ -34,7 +44,7 @@ Type casting (or type conversion) is the process of converting a variable from o
 ### Common Type Casting Functions
 
 #### `int()` - Convert to Integer
-```python
+```{code-cell} python
 float_num = 3.14
 int_num = int(float_num)  # Result: 3 (decimal is removed)
 
@@ -43,7 +53,7 @@ number = int(text)  # Result: 25 (string becomes integer)
 ```
 
 #### `float()` - Convert to Float
-```python
+```{code-cell} python
 int_num = 25
 float_num = float(int_num)  # Result: 25.0
 
@@ -52,7 +62,7 @@ number = float(text)  # Result: 3.14
 ```
 
 #### `str()` - Convert to String
-```python
+```{code-cell} python
 age = 25
 age_text = str(age)  # Result: "25"
 
@@ -61,7 +71,7 @@ price_text = str(price)  # Result: "19.99"
 ```
 
 #### `bool()` - Convert to Boolean
-```python
+```{code-cell} python
 number = 1
 is_true = bool(number)  # Result: True (any non-zero number is True)
 
@@ -71,7 +81,7 @@ is_false = bool(empty_string)  # Result: False (empty strings are False)
 
 ### The `type()` Function
 The `type()` function tells you what data type a variable is:
-```python
+```{code-cell} python
 name = "Alice"
 age = 25
 print(type(name))  # Output: <class 'str'>
@@ -81,7 +91,9 @@ print(type(age))   # Output: <class 'int'>
 ## 💡 Examples
 
 ### Example 1: Converting User Input
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # input() always returns a string
 age_str = input("Enter your age: ")  # If user types "25", age_str = "25"
 age_int = int(age_str)  # Convert to integer: 25
@@ -89,7 +101,7 @@ print(age_int + 5)  # Now we can do math: 30
 ```
 
 ### Example 2: String Concatenation
-```python
+```{code-cell} python
 age = 25
 # This doesn't work: print("I am " + age)  # Error!
 print("I am " + str(age))  # Works! Convert age to string first
@@ -98,7 +110,7 @@ print(f"I am {age}")  # Also works!
 ```
 
 ### Example 3: Float to Int
-```python
+```{code-cell} python
 gpa = 3.7
 gpa_int = int(gpa)  # Result: 3 (truncates, doesn't round)
 print(gpa_int)
@@ -113,7 +125,9 @@ print(gpa_int)
 ## 🔍 Common Mistakes
 
 ### Forgetting to Convert User Input
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # Wrong:
 age = input("Enter age: ")
 print(age + 5)  # Error! Can't add string and number
@@ -124,7 +138,7 @@ print(age + 5)  # Works!
 ```
 
 ### Trying to Convert Invalid Strings
-```python
+```{code-cell} python
 # This will cause an error:
 text = "hello"
 number = int(text)  # Error! Can't convert "hello" to int
@@ -135,7 +149,7 @@ number = int(text)  # Works! Result: 123
 ```
 
 ### Losing Precision
-```python
+```{code-cell} python
 pi = 3.14159
 pi_int = int(pi)  # Result: 3 (decimal part is lost forever!)
 ```

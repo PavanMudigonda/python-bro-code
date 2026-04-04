@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Chapter 17: Compound Interest Calculator
 
 ## 🚀 Open Notebook
@@ -45,7 +55,7 @@ t = Time (in years)
 - **Real-world skill**: Essential for personal finance
 
 ### Mathematical Operations in Python
-```python
+```{code-cell} python
 # Exponentiation
 result = base ** exponent
 
@@ -56,7 +66,7 @@ result = base ** exponent
 ## 💡 Examples
 
 ### Example 1: Basic Compound Interest
-```python
+```{code-cell} python
 principal = 1000
 rate = 5
 time = 3
@@ -81,7 +91,9 @@ Interest Earned: $157.63
 ```
 
 ### Example 2: Interactive Calculator
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 print("=== Compound Interest Calculator ===\n")
 
 principal = float(input("Enter principal amount: $"))
@@ -102,7 +114,7 @@ print(f"Interest Earned: ${interest:,.2f}")
 ```
 
 ### Example 3: Multiple Scenarios Comparison
-```python
+```{code-cell} python
 principal = 5000
 rate = 7
 
@@ -128,7 +140,7 @@ Annual Rate: 7%
 ```
 
 ### Example 4: Different Interest Rates
-```python
+```{code-cell} python
 principal = 10000
 time = 10
 
@@ -141,7 +153,7 @@ for rate in [3, 5, 7, 10]:
 ```
 
 ### Example 5: Monthly Compounding
-```python
+```{code-cell} python
 # For monthly compounding: A = P(1 + r/100/12)^(12*t)
 principal = 1000
 annual_rate = 6
@@ -161,7 +173,7 @@ print(f"Difference: ${amount_monthly - amount_yearly:.2f}")
 ## 🔍 Common Mistakes
 
 ### Mistake 1: Forgetting to Divide Rate by 100
-```python
+```{code-cell} python
 # Wrong
 rate = 5
 amount = 1000 * (1 + rate) ** 3  # Treats 5 as 500%!
@@ -172,7 +184,7 @@ amount = 1000 * (1 + rate/100) ** 3  # Treats 5 as 5%
 ```
 
 ### Mistake 2: Using Wrong Operator for Exponentiation
-```python
+```{code-cell} python
 # Wrong
 amount = 1000 * (1.05) ^ 3  # ^ is XOR, not exponent!
 
@@ -181,7 +193,7 @@ amount = 1000 * (1.05) ** 3  # ** is exponentiation
 ```
 
 ### Mistake 3: Not Formatting Financial Output
-```python
+```{code-cell} python
 # Poor output
 print(f"Amount: ${1234.5678}")  # $1234.5678
 
@@ -191,7 +203,7 @@ print(f"Amount: ${1234.5678:,.2f}")  # $1,234.57
 ```
 
 ### Mistake 4: Integer Division Issues
-```python
+```{code-cell} python
 # Potential issue
 rate = 5
 partial = 1 + rate/100  # Good: results in 1.05
@@ -222,7 +234,9 @@ monthly_rate = rate / 100 / months  # Make sure rate is float
 ## 🎮 Real-World Applications
 
 ### Application 1: Savings Goal Calculator
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 print("=== Savings Goal Calculator ===\n")
 
 goal = float(input("Savings goal: $"))
@@ -242,7 +256,9 @@ print(f"Final amount: ${current:,.2f}")
 ```
 
 ### Application 2: Investment Comparison
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 print("=== Investment Comparison Tool ===\n")
 
 investment = float(input("Investment amount: $"))
@@ -260,7 +276,9 @@ for rate in rates:
 ```
 
 ### Application 3: Retirement Planner
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 print("=== Retirement Planner ===\n")
 
 current_age = int(input("Your current age: "))
@@ -322,7 +340,7 @@ Build a tool that:
 
 ## 📊 Format Specifiers Reference
 
-```python
+```{code-cell} python
 value = 1234.56789
 
 # Two decimal places
@@ -341,7 +359,7 @@ print(f"{0.15:.1%}")  # 15.0%
 ## 🧮 Formula Variations
 
 ### Simple Interest (for comparison)
-```python
+```{code-cell} python
 # I = P × r × t / 100
 simple_interest = principal * rate * time / 100
 ```

@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # 🔄 Iterables
 
 ## 🚀 Open Notebook
@@ -30,7 +40,7 @@ In this chapter, you'll understand iterables - objects that can return their ele
 
 An **iterable** is any Python object capable of returning its elements one at a time, allowing it to be iterated over in a loop.
 
-```python
+```{code-cell} python
 # These are all iterables
 numbers = [1, 2, 3]        # List
 letters = "abc"            # String
@@ -48,7 +58,7 @@ for item in numbers:
 ### Common Iterable Types
 
 #### 1. **Lists** - Ordered, Mutable, Reversible
-```python
+```{code-cell} python
 fruits = ["apple", "banana", "cherry"]
 
 # Forward iteration
@@ -61,7 +71,7 @@ for fruit in reversed(fruits):
 ```
 
 #### 2. **Tuples** - Ordered, Immutable, Reversible
-```python
+```{code-cell} python
 coordinates = (10, 20, 30)
 
 for coord in coordinates:
@@ -72,7 +82,7 @@ for coord in reversed(coordinates):
 ```
 
 #### 3. **Strings** - Ordered, Immutable, Reversible
-```python
+```{code-cell} python
 name = "Python"
 
 for char in name:
@@ -83,7 +93,7 @@ for char in reversed(name):
 ```
 
 #### 4. **Sets** - Unordered, Mutable, NOT Reversible
-```python
+```{code-cell} python
 numbers = {1, 2, 3, 4, 5}
 
 # Iteration works
@@ -98,7 +108,7 @@ for num in numbers:
 **Important:** Sets have no defined order, so `reversed()` raises a `TypeError`.
 
 #### 5. **Dictionaries** - Ordered (Python 3.7+), Mutable, Reversible
-```python
+```{code-cell} python
 person = {"name": "Alice", "age": 25, "city": "NYC"}
 
 # Iterate over keys (default)
@@ -125,7 +135,7 @@ Under the hood, iteration uses two special methods:
 #### 1. **`iter()` - Get Iterator**
 Converts an iterable to an iterator:
 
-```python
+```{code-cell} python
 numbers = [1, 2, 3]
 iterator = iter(numbers)  # Create iterator
 
@@ -136,7 +146,7 @@ print(type(iterator))  # <class 'list_iterator'>
 #### 2. **`next()` - Get Next Element**
 Gets the next element from an iterator:
 
-```python
+```{code-cell} python
 numbers = [1, 2, 3]
 iterator = iter(numbers)
 
@@ -148,7 +158,7 @@ print(next(iterator))  # StopIteration exception!
 
 **What `for` loops do automatically:**
 
-```python
+```{code-cell} python
 # When you write:
 for item in iterable:
     print(item)
@@ -176,7 +186,7 @@ while True:
 - Sets
 - Frozensets
 
-```python
+```{code-cell} python
 # Ordered - reversed() works
 numbers_list = [1, 2, 3]
 for n in reversed(numbers_list):
@@ -192,7 +202,7 @@ numbers_set = {1, 2, 3}
 
 `reversed()` returns a **reverse iterator** that accesses elements in reverse order:
 
-```python
+```{code-cell} python
 numbers = [1, 2, 3, 4, 5]
 
 # reversed() returns an iterator
@@ -212,7 +222,7 @@ print(reversed_list)  # [5, 4, 3, 2, 1]
 
 For sequences, you can also use slicing:
 
-```python
+```{code-cell} python
 numbers = [1, 2, 3, 4, 5]
 
 # Using reversed()
@@ -233,7 +243,7 @@ for num in numbers[::-1]:
 ### Practical Iteration Patterns
 
 #### 1. **Enumerate - Get Index and Value**
-```python
+```{code-cell} python
 fruits = ["apple", "banana", "cherry"]
 
 for index, fruit in enumerate(fruits):
@@ -251,7 +261,7 @@ for index, fruit in enumerate(fruits, start=1):
 ```
 
 #### 2. **Zip - Iterate Multiple Iterables**
-```python
+```{code-cell} python
 names = ["Alice", "Bob", "Charlie"]
 ages = [25, 30, 35]
 cities = ["NYC", "LA", "Chicago"]
@@ -264,7 +274,7 @@ for name, age, city in zip(names, ages, cities):
 ```
 
 #### 3. **Break and Continue**
-```python
+```{code-cell} python
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 # Break - stop early
@@ -282,7 +292,7 @@ for num in numbers:
 
 ### Checking if Something is Iterable
 
-```python
+```{code-cell} python
 from collections.abc import Iterable
 
 # Check if object is iterable
@@ -295,7 +305,7 @@ print(isinstance({"a": 1}, Iterable))     # True
 ## Examples
 
 ### Example 1: Iterating Over Different Types
-```python
+```{code-cell} python
 # List iteration
 print("List iteration:")
 numbers = [10, 20, 30, 40]
@@ -326,7 +336,7 @@ print()
 ```
 
 ### Example 2: Reverse Iteration
-```python
+```{code-cell} python
 # List
 numbers = [1, 2, 3, 4, 5]
 print("Forward:", end=" ")
@@ -351,7 +361,7 @@ print("Backward:", tuple(reversed(coordinates)))  # (30, 20, 10)
 ```
 
 ### Example 3: Dictionary Iteration
-```python
+```{code-cell} python
 student = {
     "name": "Alice",
     "age": 20,
@@ -387,7 +397,7 @@ for key in reversed(student):
 ```
 
 ### Example 4: Using iter() and next()
-```python
+```{code-cell} python
 fruits = ["apple", "banana", "cherry"]
 
 # Create iterator
@@ -406,7 +416,7 @@ print(next(fruit_iterator, "No more fruits"))  # No more fruits
 ```
 
 ### Example 5: Enumerate with Index
-```python
+```{code-cell} python
 shopping_list = ["milk", "eggs", "bread", "butter"]
 
 print("Shopping List:")
@@ -426,7 +436,7 @@ for index, item in enumerate(shopping_list, start=1):
 ```
 
 ### Example 6: Zipping Multiple Lists
-```python
+```{code-cell} python
 products = ["Laptop", "Mouse", "Keyboard"]
 prices = [999, 25, 75]
 quantities = [5, 20, 15]
@@ -451,7 +461,7 @@ for product, price, quantity in zip(products, prices, quantities):
 ```
 
 ### Example 7: Processing Lines from String
-```python
+```{code-cell} python
 text = """Python is awesome
 It's easy to learn
 Great for beginners
@@ -523,7 +533,7 @@ for line in reversed(text.split('\n')):
 ### Mistake 1: Trying to Reverse Unordered Iterables
 
 **Wrong:**
-```python
+```{code-cell} python
 numbers_set = {1, 2, 3, 4, 5}
 
 # TypeError: 'set' object is not reversible
@@ -532,7 +542,7 @@ for num in reversed(numbers_set):
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 numbers_set = {1, 2, 3, 4, 5}
 
 # Convert to list first
@@ -549,7 +559,7 @@ for num in numbers_set:
 ### Mistake 2: Modifying List While Iterating
 
 **Wrong:**
-```python
+```{code-cell} python
 numbers = [1, 2, 3, 4, 5]
 
 # Dangerous - modifying while iterating
@@ -561,7 +571,7 @@ print(numbers)  # May not remove all even numbers
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 numbers = [1, 2, 3, 4, 5]
 
 # Create new list
@@ -578,7 +588,7 @@ for num in numbers[:]:  # [:] creates copy
 ### Mistake 3: Exhausting Iterators
 
 **Wrong:**
-```python
+```{code-cell} python
 numbers = [1, 2, 3, 4, 5]
 num_iterator = iter(numbers)
 
@@ -592,7 +602,7 @@ print(count)  # 0 - iterator is exhausted!
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 numbers = [1, 2, 3, 4, 5]
 
 # Use original iterable multiple times
@@ -612,7 +622,7 @@ count = len(list(num_iterator2))
 ### Mistake 4: Assuming Dictionary Order in Old Python
 
 **Wrong:**
-```python
+```{code-cell} python
 # In Python < 3.7, dictionary order is not guaranteed
 person = {"name": "Alice", "age": 25, "city": "NYC"}
 
@@ -621,7 +631,7 @@ first_key = list(person.keys())[0]  # Might not be "name"!
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 # For Python 3.7+ - order is guaranteed
 person = {"name": "Alice", "age": 25, "city": "NYC"}
 first_key = list(person.keys())[0]  # "name"
@@ -638,7 +648,7 @@ person = OrderedDict([("name", "Alice"), ("age", 25)])
 ### 1. **File Processing**
 Reading and processing files line by line:
 
-```python
+```{code-cell} python
 with open('data.txt', 'r') as file:
     for line in file:  # File objects are iterable
         process_line(line.strip())
@@ -647,7 +657,7 @@ with open('data.txt', 'r') as file:
 ### 2. **Database Results**
 Processing database query results:
 
-```python
+```{code-cell} python
 cursor.execute("SELECT * FROM users")
 for row in cursor:  # Cursor is iterable
     print(row['name'], row['email'])
@@ -656,7 +666,7 @@ for row in cursor:  # Cursor is iterable
 ### 3. **Web Scraping**
 Iterating through HTML elements:
 
-```python
+```{code-cell} python
 for element in soup.find_all('div', class_='product'):
     title = element.find('h2').text
     price = element.find('span', class_='price').text
@@ -665,7 +675,7 @@ for element in soup.find_all('div', class_='product'):
 ### 4. **Data Analysis**
 Processing data frames and series:
 
-```python
+```{code-cell} python
 for index, row in dataframe.iterrows():
     process_row(row)
 

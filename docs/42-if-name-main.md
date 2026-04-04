@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # 🎯 If __name__ == "__main__"
 
 ## 🚀 Open Notebook
@@ -33,7 +43,7 @@ In this chapter, you'll master the `if __name__ == "__main__"` pattern - a funda
 - **When run directly**: `__name__ = "__main__"`
 - **When imported**: `__name__ = module name` (the filename without .py)
 
-```python
+```{code-cell} python
 # Example: my_module.py
 print(f"__name__ = {__name__}")
 
@@ -48,7 +58,7 @@ print(f"__name__ = {__name__}")
 
 Without the `if __name__ == "__main__"` pattern, all code in a module executes when imported:
 
-```python
+```{code-cell} python
 # calculator.py (BAD EXAMPLE)
 def add(a, b):
     return a + b
@@ -59,7 +69,7 @@ result = add(5, 3)
 print(f"Result: {result}")
 ```
 
-```python
+```{code-cell} python
 # app.py
 import calculator  # This prints "Running calculator..." and "Result: 8"
                    # Even though we just wanted to use the add() function!
@@ -69,7 +79,7 @@ import calculator  # This prints "Running calculator..." and "Result: 8"
 
 The `if __name__ == "__main__"` pattern solves this by separating reusable functions from script execution code:
 
-```python
+```{code-cell} python
 # calculator.py (GOOD EXAMPLE)
 def add(a, b):
     return a + b
@@ -86,7 +96,7 @@ if __name__ == "__main__":
     main()
 ```
 
-```python
+```{code-cell} python
 # app.py
 import calculator  # Nothing prints - clean import!
 result = calculator.add(10, 5)  # Just use the function
@@ -94,7 +104,7 @@ result = calculator.add(10, 5)  # Just use the function
 
 ### How It Works
 
-```python
+```{code-cell} python
 # my_script.py
 print("1. This ALWAYS runs (both direct execution and import)")
 
@@ -134,7 +144,7 @@ print("3. This ALWAYS runs (both direct execution and import)")
 
 #### 1. **Library with Standalone Testing**
 
-```python
+```{code-cell} python
 # math_utils.py
 def factorial(n):
     """Calculate factorial of n."""
@@ -157,7 +167,7 @@ if __name__ == "__main__":
 
 #### 2. **Command-Line Tool That's Also Importable**
 
-```python
+```{code-cell} python
 # text_processor.py
 import sys
 
@@ -184,7 +194,7 @@ if __name__ == "__main__":
 
 #### 3. **Module with Examples**
 
-```python
+```{code-cell} python
 # shapes.py
 class Circle:
     def __init__(self, radius):
@@ -211,7 +221,7 @@ if __name__ == "__main__":
 
 #### 1. **Always Use a main() Function**
 
-```python
+```{code-cell} python
 # GOOD - Organized and clear
 def helper_function():
     pass
@@ -240,7 +250,7 @@ if __name__ == "__main__":
 
 #### 2. **Keep Module-Level Code Minimal**
 
-```python
+```{code-cell} python
 # GOOD - Only imports and definitions at module level
 import math
 
@@ -251,7 +261,7 @@ if __name__ == "__main__":
     print(calculate(16))
 ```
 
-```python
+```{code-cell} python
 # BAD - Side effects at module level
 import math
 
@@ -266,7 +276,7 @@ def calculate(x):
 
 Design functions to be reusable:
 
-```python
+```{code-cell} python
 # GOOD - Pure, reusable functions
 def add(a, b):
     return a + b
@@ -279,7 +289,7 @@ if __name__ == "__main__":
     main()
 ```
 
-```python
+```{code-cell} python
 # BAD - Function has side effects
 def add(a, b):
     result = a + b
@@ -290,7 +300,7 @@ def add(a, b):
 ### Common Patterns
 
 #### Testing Pattern
-```python
+```{code-cell} python
 def my_function(x):
     return x * 2
 
@@ -302,7 +312,7 @@ if __name__ == "__main__":
 ```
 
 #### CLI Pattern
-```python
+```{code-cell} python
 import argparse
 
 def process(data):
@@ -321,7 +331,7 @@ if __name__ == "__main__":
 ```
 
 #### Demo Pattern
-```python
+```{code-cell} python
 class MyClass:
     def __init__(self, value):
         self.value = value
@@ -341,7 +351,9 @@ if __name__ == "__main__":
 
 ### Example 1: Basic Calculator Module
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # calculator.py
 """A simple calculator module that can be imported or run directly."""
 
@@ -385,7 +397,7 @@ if __name__ == "__main__":
 ```
 
 **Usage:**
-```python
+```{code-cell} python
 # As module:
 from calculator import add, multiply
 result = add(5, 3)  # 8
@@ -397,7 +409,7 @@ result = add(5, 3)  # 8
 
 ### Example 2: String Utilities Library
 
-```python
+```{code-cell} python
 # string_utils.py
 """String manipulation utilities."""
 
@@ -431,7 +443,9 @@ if __name__ == "__main__":
 
 ### Example 3: Temperature Converter
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # temp_converter.py
 """Temperature conversion utilities."""
 
@@ -483,7 +497,9 @@ if __name__ == "__main__":
 
 ### Example 4: File Statistics Module
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # file_stats.py
 """Analyze text file statistics."""
 
@@ -536,7 +552,9 @@ if __name__ == "__main__":
 
 ### Example 5: Data Validator
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # validators.py
 """Input validation functions."""
 
@@ -580,7 +598,7 @@ if __name__ == "__main__":
 
 ### Example 6: Math Operations Library
 
-```python
+```{code-cell} python
 # math_ops.py
 """Advanced math operations."""
 
@@ -632,7 +650,9 @@ if __name__ == "__main__":
 
 ### Example 7: Configuration Manager
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # config.py
 """Application configuration manager."""
 
@@ -795,7 +815,7 @@ if __name__ == "__main__":
 ### Mistake 1: Putting Script Logic at Module Level
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 # bad_module.py
 import sys
 
@@ -810,7 +830,7 @@ print(f"Result: {result}")
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 # good_module.py
 import sys
 
@@ -833,7 +853,7 @@ if __name__ == "__main__":
 ### Mistake 2: Forgetting the if Statement
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 # module.py
 def my_function():
     return "result"
@@ -846,7 +866,7 @@ main()  # This ALWAYS runs, even when imported!
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 # module.py
 def my_function():
     return "result"
@@ -864,7 +884,7 @@ if __name__ == "__main__":
 ### Mistake 3: Using Wrong Comparison
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 # Wrong comparison operators
 if __name__ = "__main__":  # SyntaxError: assignment, not comparison
     main()
@@ -874,7 +894,7 @@ if __name__ is "__main__":  # Works sometimes, but wrong
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 # Correct comparison
 if __name__ == "__main__":  # Use == for string comparison
     main()
@@ -885,7 +905,9 @@ if __name__ == "__main__":  # Use == for string comparison
 ### Mistake 4: Making Functions Depend on Direct Execution
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # bad_design.py
 def process_data():
     """This function assumes it's being run directly."""
@@ -900,7 +922,9 @@ if __name__ == "__main__":
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 # good_design.py
 def process_data(data):
     """Pure function - accepts input as parameter."""
@@ -924,7 +948,7 @@ if __name__ == "__main__":
 
 Professional Python libraries use this pattern extensively:
 
-```python
+```{code-cell} python
 # requests library example
 # Can be used as:
 import requests
@@ -944,7 +968,7 @@ response = requests.get('https://api.github.com')
 
 Tools that work both as CLI utilities and importable libraries:
 
-```python
+```{code-cell} python
 # aws_cli_tools.py
 def upload_file(filename, bucket):
     """Upload file to S3."""
@@ -979,7 +1003,7 @@ if __name__ == "__main__":
 
 Include test code that runs only during development:
 
-```python
+```{code-cell} python
 # database.py
 class Database:
     def __init__(self, connection_string):
@@ -1013,7 +1037,7 @@ if __name__ == "__main__":
 
 Jupyter notebooks and analysis scripts that are also reusable:
 
-```python
+```{code-cell} python
 # data_analysis.py
 import pandas as pd
 import matplotlib.pyplot as plt

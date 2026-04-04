@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # 📝 List Comprehensions
 
 ## 🚀 Open Notebook
@@ -31,7 +41,7 @@ In this chapter, you'll master list comprehensions - a powerful Python feature t
 List comprehensions provide a concise way to create lists. They're more compact and often faster than traditional for loops.
 
 **Traditional For Loop:**
-```python
+```{code-cell} python
 squares = []
 for x in range(1, 6):
     squares.append(x ** 2)
@@ -39,14 +49,14 @@ print(squares)  # [1, 4, 9, 16, 25]
 ```
 
 **List Comprehension:**
-```python
+```{code-cell} python
 squares = [x ** 2 for x in range(1, 6)]
 print(squares)  # [1, 4, 9, 16, 25]
 ```
 
 ### Basic Syntax
 
-```python
+```{code-cell} python
 [expression for item in iterable]
 ```
 
@@ -55,7 +65,7 @@ print(squares)  # [1, 4, 9, 16, 25]
 - **iterable**: Sequence to iterate over (list, range, string, etc.)
 
 **Examples:**
-```python
+```{code-cell} python
 # Double all numbers
 doubles = [x * 2 for x in range(1, 6)]  # [2, 4, 6, 8, 10]
 
@@ -72,12 +82,12 @@ lengths = [len(name) for name in names]  # [5, 3, 7]
 
 Add an `if` clause to filter elements:
 
-```python
+```{code-cell} python
 [expression for item in iterable if condition]
 ```
 
 **Examples:**
-```python
+```{code-cell} python
 # Only even numbers
 numbers = range(1, 11)
 evens = [x for x in numbers if x % 2 == 0]  # [2, 4, 6, 8, 10]
@@ -95,12 +105,12 @@ long_words = [w for w in words if len(w) > 5]  # ['elephant', 'butterfly']
 
 Use if-else to choose between two expressions:
 
-```python
+```{code-cell} python
 [expression_if_true if condition else expression_if_false for item in iterable]
 ```
 
 **Examples:**
-```python
+```{code-cell} python
 # "even" or "odd"
 numbers = range(1, 6)
 labels = ["even" if x % 2 == 0 else "odd" for x in numbers]
@@ -120,7 +130,7 @@ results = ["Pass" if s >= 70 else "Fail" for s in scores]
 ### Why Use List Comprehensions?
 
 #### 1. **More Concise**
-```python
+```{code-cell} python
 # Traditional: 4 lines
 squares = []
 for x in range(5):
@@ -132,7 +142,7 @@ squares = [x ** 2 for x in range(5)]
 
 #### 2. **More Readable**
 Once you're familiar with the syntax, comprehensions are easier to read:
-```python
+```{code-cell} python
 # Clear intent: "create list of squares from 0 to 4"
 squares = [x ** 2 for x in range(5)]
 ```
@@ -146,28 +156,28 @@ They're the idiomatic Python way to create lists.
 ### Common Patterns
 
 #### 1. **Transformation**
-```python
+```{code-cell} python
 # Multiply all by 10
 numbers = [1, 2, 3, 4, 5]
 times_ten = [n * 10 for n in numbers]  # [10, 20, 30, 40, 50]
 ```
 
 #### 2. **Extraction**
-```python
+```{code-cell} python
 # Extract first letter
 words = ["apple", "banana", "cherry"]
 first_letters = [word[0] for word in words]  # ['a', 'b', 'c']
 ```
 
 #### 3. **Filtering**
-```python
+```{code-cell} python
 # Only strings longer than 3 characters
 words = ["a", "hello", "hi", "world"]
 long = [w for w in words if len(w) > 3]  # ['hello', 'world']
 ```
 
 #### 4. **Combining**
-```python
+```{code-cell} python
 # Square evens, keep odds as-is
 numbers = [1, 2, 3, 4, 5]
 result = [x**2 if x % 2 == 0 else x for x in numbers]
@@ -178,7 +188,7 @@ result = [x**2 if x % 2 == 0 else x for x in numbers]
 
 You can nest comprehensions for complex operations:
 
-```python
+```{code-cell} python
 # Create 2D grid
 grid = [[i*j for j in range(3)] for i in range(3)]
 # [[0, 0, 0], [0, 1, 2], [0, 2, 4]]
@@ -196,7 +206,7 @@ flat = [num for row in matrix for num in row]
 2. You need to perform actions with side effects
 3. You don't need the resulting list
 
-```python
+```{code-cell} python
 # Too complex - use traditional loop
 result = [x*2 if x > 0 else abs(x)*3 if x < -5 else 0 for x in numbers]
 
@@ -214,7 +224,7 @@ for x in numbers:
 ## Examples
 
 ### Example 1: Basic Transformations
-```python
+```{code-cell} python
 # Squares
 squares = [x**2 for x in range(1, 11)]
 print(squares)  # [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
@@ -230,7 +240,7 @@ print(times_five)  # [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
 ```
 
 ### Example 2: String Manipulation
-```python
+```{code-cell} python
 fruits = ["apple", "banana", "cherry", "date"]
 
 # Uppercase
@@ -247,7 +257,7 @@ print(prefixed)  # ['I like apple', 'I like banana', ...]
 ```
 
 ### Example 3: Filtering
-```python
+```{code-cell} python
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 # Only evens
@@ -264,7 +274,7 @@ print(greater_five)  # [6, 7, 8, 9, 10]
 ```
 
 ### Example 4: Conditional Expressions
-```python
+```{code-cell} python
 numbers = range(1, 11)
 
 # Even/Odd labels
@@ -283,7 +293,7 @@ print(signs)  # ['Negative', 'Zero', 'Positive', ...]
 ```
 
 ### Example 5: Working with Strings
-```python
+```{code-cell} python
 sentence = "Hello World Python Programming"
 words = sentence.split()
 
@@ -322,7 +332,7 @@ for temp in temp_strings:
 ```
 
 ### Example 7: Data Processing
-```python
+```{code-cell} python
 # Student data
 students = [
     {"name": "Alice", "score": 85},
@@ -391,13 +401,13 @@ print(grades)  # ['Alice: B', 'Bob: A', 'Charlie: B', 'David: A']
 ### Mistake 1: Too Complex Comprehension
 
 **Wrong:**
-```python
+```{code-cell} python
 # Unreadable - too complex
 result = [x*2 if x > 0 else x*3 if x < 0 else 0 for x in nums if x != 5]
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 # Use traditional loop for complex logic
 result = []
 for x in nums:
@@ -416,13 +426,13 @@ for x in nums:
 ### Mistake 2: Wrong If/Else Position
 
 **Wrong:**
-```python
+```{code-cell} python
 # SyntaxError - if-else in wrong position
 evens = [x for x in range(10) if x % 2 == 0 else x + 1]
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 # If-else goes BEFORE 'for'
 result = [x if x % 2 == 0 else x + 1 for x in range(10)]
 
@@ -435,7 +445,7 @@ evens = [x for x in range(10) if x % 2 == 0]
 ### Mistake 3: Modifying Original List
 
 **Wrong:**
-```python
+```{code-cell} python
 numbers = [1, 2, 3, 4, 5]
 # This creates a new list, doesn't modify original
 [n * 2 for n in numbers]
@@ -443,7 +453,7 @@ print(numbers)  # [1, 2, 3, 4, 5] - unchanged!
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 numbers = [1, 2, 3, 4, 5]
 numbers = [n * 2 for n in numbers]  # Assign to variable
 print(numbers)  # [2, 4, 6, 8, 10]
@@ -454,13 +464,13 @@ print(numbers)  # [2, 4, 6, 8, 10]
 ### Mistake 4: Unnecessary Comprehension
 
 **Wrong:**
-```python
+```{code-cell} python
 # Don't need list, just iterating
 [print(x) for x in range(5)]  # Creates unnecessary list
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 # Use regular loop for side effects
 for x in range(5):
     print(x)
@@ -471,27 +481,27 @@ for x in range(5):
 ## Real-World Applications
 
 ### 1. **Data Cleaning**
-```python
+```{code-cell} python
 # Remove empty strings and whitespace
 data = ["  hello", "", "world  ", "  ", "python"]
 cleaned = [s.strip() for s in data if s.strip()]
 ```
 
 ### 2. **API Response Processing**
-```python
+```{code-cell} python
 # Extract IDs from API response
 users = [{"id": 1, "name": "Alice"}, {"id": 2, "name": "Bob"}]
 user_ids = [user["id"] for user in users]
 ```
 
 ### 3. **File Processing**
-```python
+```{code-cell} python
 # Read and process file lines
 lines = [line.strip() for line in file.readlines() if line.strip()]
 ```
 
 ### 4. **URL Generation**
-```python
+```{code-cell} python
 # Create list of URLs
 ids = [1, 2, 3, 4, 5]
 urls = [f"https://api.example.com/users/{id}" for id in ids]

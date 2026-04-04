@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # 📊 Class Variables
 
 ## 🚀 Open Notebook
@@ -31,7 +41,7 @@ In this chapter, you'll master the distinction between class variables and insta
 **Instance Variables** = Unique to each object (uses `self`)  
 **Class Variables** = Shared by ALL objects (defined in class body)
 
-```python
+```{code-cell} python
 class Student:
     # CLASS VARIABLE (shared by all)
     school_name = "Python High School"
@@ -54,7 +64,7 @@ print(student2.name)  # Bob (different!)
 
 ### Where to Define Each Type
 
-```python
+```{code-cell} python
 class MyClass:
     # CLASS VARIABLES - defined in class body
     class_var = "shared"
@@ -69,7 +79,7 @@ class MyClass:
 
 **Three ways to access class variables:**
 
-```python
+```{code-cell} python
 class Dog:
     species = "Canis familiaris"  # Class variable
 
@@ -93,7 +103,7 @@ class Dog:
 
 **Important:** Modify using `ClassName.variable`:
 
-```python
+```{code-cell} python
 class Counter:
     count = 0  # Class variable
     
@@ -108,7 +118,7 @@ print(Counter.count)  # 3
 ```
 
 **What NOT to do:**
-```python
+```{code-cell} python
 class Counter:
     count = 0
     
@@ -126,7 +136,7 @@ print(c2.count)       # 1 (different instance variable)
 ### Common Use Cases
 
 **1. Counters:**
-```python
+```{code-cell} python
 class Customer:
     total_customers = 0
     
@@ -136,7 +146,7 @@ class Customer:
 ```
 
 **2. Constants:**
-```python
+```{code-cell} python
 class Circle:
     PI = 3.14159  # Constant shared by all circles
     
@@ -148,7 +158,7 @@ class Circle:
 ```
 
 **3. Default Values:**
-```python
+```{code-cell} python
 class Product:
     tax_rate = 0.08  # 8% tax for all products
     
@@ -160,7 +170,7 @@ class Product:
 ```
 
 **4. Shared Configuration:**
-```python
+```{code-cell} python
 class DatabaseConnection:
     host = "localhost"
     port = 5432
@@ -171,7 +181,7 @@ class DatabaseConnection:
 
 ### Example 1: Student Counter
 
-```python
+```{code-cell} python
 class Student:
     """Student class with counter."""
     
@@ -206,7 +216,7 @@ print(f"Total students: {Student.total_students}")  # 3
 
 ### Example 2: Bank Account with Interest Rate
 
-```python
+```{code-cell} python
 class BankAccount:
     """Bank account with shared interest rate."""
     
@@ -248,7 +258,7 @@ acc2.apply_interest()  # Bob: +$103.00 interest
 
 ### Example 3: Product Catalog
 
-```python
+```{code-cell} python
 class Product:
     """Product with shared tax rate."""
     
@@ -290,7 +300,7 @@ print(f"Total products: {Product.product_count}")
 
 ### Example 4: Game Character Types
 
-```python
+```{code-cell} python
 class Warrior:
     """Warrior character class."""
     
@@ -340,7 +350,7 @@ print(f"\nTotal Warriors: {Warrior.total_warriors}")
 
 ### Example 5: Circle with Shared PI
 
-```python
+```{code-cell} python
 class Circle:
     """Circle class with shared PI constant."""
     
@@ -381,7 +391,7 @@ print(f"PI value used: {Circle.PI}")
 
 ### Example 6: Employee with Company Name
 
-```python
+```{code-cell} python
 class Employee:
     """Employee class with shared company info."""
     
@@ -439,7 +449,7 @@ Employee.company_info()
 
 ### Example 7: Game Settings
 
-```python
+```{code-cell} python
 class Game:
     """Game class with shared settings."""
     
@@ -593,7 +603,7 @@ print(f"\nTotal games played: {Game.games_played}")
 ### Mistake 1: Using `self` Instead of `ClassName`
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 class Counter:
     count = 0
     
@@ -606,7 +616,7 @@ print(Counter.count)  # Still 0!
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 class Counter:
     count = 0
     
@@ -621,7 +631,7 @@ print(Counter.count)  # 2
 ### Mistake 2: Mutable Class Variables
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 class Team:
     members = []  # Shared list - BAD!
     
@@ -635,7 +645,7 @@ t2 = Team("Bob")
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 class Team:
     def __init__(self, name):
         self.members = []  # Each team has own list
@@ -645,7 +655,7 @@ class Team:
 ### Mistake 3: Confusing Access Syntax
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 class Dog:
     species = "Canis"
     
@@ -659,7 +669,7 @@ print(Dog.species)  # Still "Canis"
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 class Dog:
     species = "Canis"
     
@@ -673,7 +683,7 @@ Dog.species = "Felis"  # Modifies for all
 ### Mistake 4: Not Using Class Variables When Appropriate
 
 ❌ **Wrong:**
-```python
+```{code-cell} python
 class Circle:
     def __init__(self, radius):
         self.radius = radius
@@ -684,7 +694,7 @@ class Circle:
 ```
 
 ✅ **Correct:**
-```python
+```{code-cell} python
 class Circle:
     PI = 3.14159  # Share constant
     

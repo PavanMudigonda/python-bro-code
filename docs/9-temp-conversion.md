@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Chapter 10: Temperature Converter Program
 
 ## 🚀 Open Notebook
@@ -56,21 +66,21 @@ C = (F - 32) / 1.8
 ## 💡 Examples
 
 ### Example 1: Freezing Point
-```python
+```{code-cell} python
 celsius = 0
 fahrenheit = (celsius * 9/5) + 32
 print(f"{celsius}°C = {fahrenheit}°F")  # 0°C = 32°F
 ```
 
 ### Example 2: Boiling Point
-```python
+```{code-cell} python
 celsius = 100
 fahrenheit = (celsius * 9/5) + 32
 print(f"{celsius}°C = {fahrenheit}°F")  # 100°C = 212°F
 ```
 
 ### Example 3: Body Temperature
-```python
+```{code-cell} python
 fahrenheit = 98.6
 celsius = (fahrenheit - 32) * 5/9
 print(f"{fahrenheit}°F = {celsius:.1f}°C")  # 98.6°F = 37.0°C
@@ -85,14 +95,14 @@ print(f"{fahrenheit}°F = {celsius:.1f}°C")  # 98.6°F = 37.0°C
 ```
 
 ### Exercise 2: Improve User Experience
-```python
+```{code-cell} python
 print("=== Temperature Converter ===")
 print("F - Convert from Fahrenheit to Celsius")
 print("C - Convert from Celsius to Fahrenheit")
 ```
 
 ### Exercise 3: Add Temperature Categories
-```python
+```{code-cell} python
 if temp_celsius < 0:
     print("Below freezing!")
 elif temp_celsius < 10:
@@ -106,7 +116,7 @@ else:
 ```
 
 ### Exercise 4: Batch Conversion
-```python
+```{code-cell} python
 # Convert multiple temperatures at once
 temps = [0, 32, 68, 100]
 for temp in temps:
@@ -128,7 +138,9 @@ for temp in temps:
 
 ## 🎮 Enhanced Temperature Converter
 
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 def temperature_converter():
     """Convert between Fahrenheit and Celsius"""
     
@@ -189,7 +201,7 @@ temperature_converter()
 ## 🌡️ Real-World Applications
 
 ### Weather Reporting
-```python
+```{code-cell} python
 def weather_report(temp_c):
     """Display weather with temperature"""
     temp_f = (temp_c * 9/5) + 32
@@ -210,7 +222,7 @@ weather_report(22)
 ```
 
 ### Cooking/Baking
-```python
+```{code-cell} python
 def oven_temp_converter(celsius):
     """Convert baking temperatures"""
     fahrenheit = (celsius * 9/5) + 32
@@ -242,7 +254,7 @@ Add Kelvin scale:
 ```
 
 ### Challenge 2: Temperature Range Converter
-```python
+```{code-cell} python
 # Convert a range of temperatures
 low_f = 50
 high_f = 80
@@ -254,7 +266,7 @@ print(f"Range: {low_f}-{high_f}°F = {low_c:.0f}-{high_c:.0f}°C")
 ```
 
 ### Challenge 3: Scientific Temperature Converter
-```python
+```{code-cell} python
 def convert_temperature(value, from_unit, to_unit):
     """Convert between C, F, and K"""
     # Convert to Celsius first
@@ -289,7 +301,7 @@ print(convert_temperature(32, 'F', 'K'))   # 273.15 K
 - This 32-degree offset must be adjusted
 
 ## 📊 Conversion Table Generator
-```python
+```{code-cell} python
 print("°C  | °F")
 print("-" * 15)
 for celsius in range(-10, 41, 5):

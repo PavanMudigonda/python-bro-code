@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # 🔍 Scope Resolution
 
 ## 🚀 Open Notebook
@@ -30,7 +40,7 @@ In this chapter, you'll master Python's scope resolution - understanding where v
 
 **Scope** determines where a variable is visible and accessible in your code. Not all variables are available everywhere - scope controls access.
 
-```python
+```{code-cell} python
 x = 10  # Global scope - accessible everywhere
 
 def my_function():
@@ -68,7 +78,7 @@ L (Local)       ← Variables inside current function
 
 Variables defined inside a function are **local** to that function:
 
-```python
+```{code-cell} python
 def my_function():
     x = 10  # Local variable
     print(x)  # 10
@@ -86,7 +96,7 @@ print(x)  # NameError: x is not defined
 
 For **nested functions**, the outer function's scope is the enclosing scope:
 
-```python
+```{code-cell} python
 def outer():
     x = 10  # Enclosing scope for inner()
     
@@ -102,7 +112,7 @@ outer()
 
 Variables defined at the module level (outside all functions) are **global**:
 
-```python
+```{code-cell} python
 x = 100  # Global variable
 
 def func1():
@@ -119,7 +129,7 @@ func2()  # 100
 
 Python's built-in names (functions like `print()`, `len()`, `type()`):
 
-```python
+```{code-cell} python
 # Built-in functions available everywhere
 print("Hello")  # 'print' is in built-in scope
 result = len([1, 2, 3])  # 'len' is in built-in scope
@@ -129,7 +139,7 @@ result = len([1, 2, 3])  # 'len' is in built-in scope
 
 Inner scopes can "shadow" (hide) outer scope variables:
 
-```python
+```{code-cell} python
 x = 100  # Global
 
 def my_function():
@@ -145,7 +155,7 @@ print(x)  # Prints 100 (global x unchanged)
 Use `global` to modify global variables from inside a function:
 
 **Without `global` (Creates local variable):**
-```python
+```{code-cell} python
 x = 100
 
 def modify():
@@ -157,7 +167,7 @@ print(f"Outside: {x}")  # 100 (global unchanged)
 ```
 
 **With `global` (Modifies global variable):**
-```python
+```{code-cell} python
 x = 100
 
 def modify():
@@ -173,7 +183,7 @@ print(f"Outside: {x}")  # 200 (global changed)
 
 Use `nonlocal` to modify variables in enclosing function scope:
 
-```python
+```{code-cell} python
 def outer():
     x = 10
     
@@ -191,7 +201,7 @@ outer()
 ### Scope Best Practices
 
 #### 1. **Minimize Global Variables**
-```python
+```{code-cell} python
 # Bad - global variables
 count = 0
 total = 0
@@ -211,7 +221,7 @@ count, total = add_value(count, total, 5)
 ```
 
 #### 2. **Use Function Parameters**
-```python
+```{code-cell} python
 # Bad - relies on global
 x = 10
 
@@ -226,7 +236,7 @@ result = double(10)
 ```
 
 #### 3. **Return Values Instead of Modifying Globals**
-```python
+```{code-cell} python
 # Bad
 result = 0
 
@@ -244,7 +254,7 @@ result = calculate(10)
 ### Understanding Scope with Examples
 
 #### Example: Independent Local Scopes
-```python
+```{code-cell} python
 def func1():
     x = 10  # Local to func1
     print(f"func1: {x}")
@@ -259,7 +269,7 @@ func2()  # func2: 20
 ```
 
 #### Example: LEGB in Action
-```python
+```{code-cell} python
 x = "global"  # Global scope
 
 def outer():
@@ -279,7 +289,7 @@ print(x)  # Prints "global"
 ## Examples
 
 ### Example 1: Basic Local vs Global
-```python
+```{code-cell} python
 x = 100  # Global variable
 
 def func1():
@@ -298,7 +308,7 @@ print(f"Global x = {x}")  # Global x = 100
 ```
 
 ### Example 2: Accessing Global Variables
-```python
+```{code-cell} python
 total = 0  # Global variable
 
 def add_to_total(value):
@@ -312,7 +322,7 @@ print(f"Total is still: {total}")  # 0
 ```
 
 ### Example 3: Modifying Global with `global`
-```python
+```{code-cell} python
 counter = 0  # Global counter
 
 def increment():
@@ -328,7 +338,7 @@ print(f"Final counter: {counter}")  # Final counter: 3
 ```
 
 ### Example 4: Enclosing Scope with Nested Functions
-```python
+```{code-cell} python
 def outer(x):
     """Outer function with enclosing scope."""
     
@@ -345,7 +355,7 @@ outer(42)
 ```
 
 ### Example 5: Using `nonlocal` for Closures
-```python
+```{code-cell} python
 def make_counter():
     """Create a counter function with persistent state."""
     count = 0  # Enclosing scope variable
@@ -370,7 +380,7 @@ print(counter2())  # 2
 ```
 
 ### Example 6: LEGB Resolution Order
-```python
+```{code-cell} python
 x = "global x"  # Global
 
 def outer():
@@ -402,7 +412,7 @@ print(f"4. Global: {x}")  # global x
 ```
 
 ### Example 7: Shopping Cart with Scope
-```python
+```{code-cell} python
 # Global variables (generally avoid, but for demonstration)
 cart_items = []
 cart_total = 0.0
@@ -485,7 +495,7 @@ show_cart()
 ### Mistake 1: Modifying Global Without `global`
 
 **Wrong:**
-```python
+```{code-cell} python
 count = 0
 
 def increment():
@@ -497,7 +507,7 @@ increment()
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 count = 0
 
 def increment():
@@ -513,7 +523,7 @@ print(count)  # 1
 ### Mistake 2: Assuming Local Changes Affect Global
 
 **Wrong:**
-```python
+```{code-cell} python
 total = 100
 
 def modify_total():
@@ -524,7 +534,7 @@ print(total)  # Still 100!
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 # Option 1: Use global
 total = 100
 
@@ -548,7 +558,7 @@ print(total)  # 200
 ### Mistake 3: Wrong Use of `nonlocal`
 
 **Wrong:**
-```python
+```{code-cell} python
 x = 10
 
 def func():
@@ -559,7 +569,7 @@ def func():
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 def outer():
     x = 10
     
@@ -578,7 +588,7 @@ outer()
 ### Mistake 4: Overusing Global Variables
 
 **Wrong:**
-```python
+```{code-cell} python
 # Bad - too many globals
 user_name = ""
 user_age = 0
@@ -592,7 +602,7 @@ def set_user_info(name, age, email):
 ```
 
 **Correct:**
-```python
+```{code-cell} python
 # Good - use parameters and returns
 def create_user(name, age, email):
     return {
@@ -609,7 +619,7 @@ user = create_user("Alice", 25, "alice@example.com")
 ## Real-World Applications
 
 ### 1. **Configuration Management**
-```python
+```{code-cell} python
 DEBUG = False  # Global config
 DATABASE_URL = "localhost:5432"
 
@@ -620,7 +630,7 @@ def setup_app():
 ```
 
 ### 2. **Closures for Decorators**
-```python
+```{code-cell} python
 def cache_result(func):
     cached = {}  # Enclosing scope
     
@@ -633,7 +643,7 @@ def cache_result(func):
 ```
 
 ### 3. **State Machines**
-```python
+```{code-cell} python
 def create_state_machine():
     state = "idle"  # Enclosing scope
     
@@ -648,7 +658,7 @@ def create_state_machine():
 ```
 
 ### 4. **Singleton Pattern**
-```python
+```{code-cell} python
 _instance = None  # Global
 
 def get_instance():

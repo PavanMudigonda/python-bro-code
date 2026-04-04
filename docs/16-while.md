@@ -1,3 +1,13 @@
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Chapter 16: While Loops
 
 ## 🚀 Open Notebook
@@ -27,7 +37,7 @@ Execute code repeatedly while a condition is true - essential for creating inter
 A while loop repeatedly executes code as long as a condition remains True.
 
 ### Syntax
-```python
+```{code-cell} python
 while condition:
     # code to execute
     # update condition eventually!
@@ -42,7 +52,9 @@ while condition:
 ## 💡 Examples
 
 ### Example 1: Age Verification
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 age = int(input("Enter your age: "))
 
 while age < 18:
@@ -53,7 +65,7 @@ print("You are an adult!")
 ```
 
 ### Example 2: Countdown
-```python
+```{code-cell} python
 count = 5
 while count > 0:
     print(count)
@@ -62,7 +74,9 @@ print("Blastoff!")
 ```
 
 ### Example 3: Sum Numbers Until Zero
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 total = 0
 number = int(input("Enter a number (0 to stop): "))
 
@@ -74,7 +88,9 @@ print(f"Total: {total}")
 ```
 
 ### Example 4: Password Validator
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 password = input("Enter password: ")
 
 while len(password) < 8:
@@ -96,7 +112,7 @@ print("Password accepted!")
 ## 📝 Loop Control Statements
 
 ### break - Exit Loop Early
-```python
+```{code-cell} python
 count = 0
 while True:  # Infinite loop
     count += 1
@@ -107,7 +123,7 @@ while True:  # Infinite loop
 ```
 
 ### continue - Skip Current Iteration
-```python
+```{code-cell} python
 count = 0
 while count < 10:
     count += 1
@@ -120,7 +136,7 @@ while count < 10:
 ## 🔍 Common Mistakes
 
 ### Infinite Loops
-```python
+```{code-cell} python
 # Wrong: Condition never becomes False
 count = 1
 while count > 0:
@@ -136,7 +152,9 @@ while count > 0:
 ## 🎮 Real-World Examples
 
 ### ATM Machine
-```python
+```{code-cell} python
+:tags: [skip-execution]
+
 balance = 1000
 
 while True:
