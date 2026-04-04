@@ -5,6 +5,17 @@ import glob
 GITHUB_REPO = "PavanMudigonda/python-bro-code"
 GITHUB_BRANCH = "main"
 
+# Pattern to match old badge lines (Colab/Kaggle image-links at the top of READMEs)
+OLD_BADGE_RE = re.compile(
+    r'^\s*\[!\[.*?\]\(https?://(?:colab\.research\.google\.com|kaggle\.com|img\.shields\.io).*?\)\]\(.*?\)\s*'
+    r'(?:\[!\[.*?\]\(https?://(?:colab\.research\.google\.com|kaggle\.com|img\.shields\.io).*?\)\]\(.*?\)\s*)*$',
+    re.MULTILINE,
+)
+
+def strip_old_badges(content):
+    """Remove pre-existing Colab/Kaggle badge lines from README content."""
+    return OLD_BADGE_RE.sub('', content).lstrip('\n')
+
 def fix_markdown_links(content):
     # This regex catches:
     # 1. `../1-print/`
@@ -80,6 +91,9 @@ def main():
             with open(readme_path, 'r', encoding='utf-8') as rf:
                 content = rf.read()
             
+            # Remove old/stale Colab/Kaggle badges from README
+            content = strip_old_badges(content)
+            
             # Apply link fixing
             content = fix_markdown_links(content)
             
@@ -107,7 +121,7 @@ def main():
     toctree_block = f"""
 
 ```{{toctree}}
-:maxdepth: 2
+:maxdepth: 1
 :caption: Chapters
 :hidden:
 

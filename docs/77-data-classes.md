@@ -5,8 +5,6 @@
 
 **You'll love Python data classes! 📋** (9:00)
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/G1lJeEIl05o)
-
 ## 📚 What You'll Learn
 Simplify class creation with data classes - auto-generate boilerplate code!
 

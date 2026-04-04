@@ -1,23 +1,15 @@
-# Chapter 12: String Methods
+# Chapter 13: String Methods
 
 ## 🚀 Open Notebook
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigonda/python-bro-code/blob/main/12-string-methods/12-string-methods.ipynb) [![Open In Kaggle](https://img.shields.io/badge/Open%20in-Kaggle-20BEFF?style=flat&logo=kaggle)](https://kaggle.com/kernels/welcome?src=https://github.com/PavanMudigonda/python-bro-code/blob/main/12-string-methods/12-string-methods.ipynb)
 
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigondaTR/python-bro-code/blob/main/12-string-methods/12-string-methods.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/PavanMudigondaTR/python-bro-code/main/12-string-methods/12-string-methods.ipynb)
-
-# Chapter 13: String Methods
-
 ## 📺 Video Tutorial
 
 **String methods in Python are easy! 〰️** (12:14)
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/tb6EYiHtcXU)
-
 ## 📺 Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/7pXf1DUuaIo)
 
 ## 📚 What You'll Learn
 Master Python's powerful string manipulation methods to transform and analyze text!

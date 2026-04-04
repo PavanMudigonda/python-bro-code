@@ -1,19 +1,13 @@
-# Chapter 47: Python Oop
+# 🏗️ Python OOP (Object-Oriented Programming)
 
 ## 🚀 Open Notebook
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigonda/python-bro-code/blob/main/47-python-oop/47-python-oop.ipynb) [![Open In Kaggle](https://img.shields.io/badge/Open%20in-Kaggle-20BEFF?style=flat&logo=kaggle)](https://kaggle.com/kernels/welcome?src=https://github.com/PavanMudigonda/python-bro-code/blob/main/47-python-oop/47-python-oop.ipynb)
 
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigondaTR/python-bro-code/blob/main/47-python-oop/47-python-oop.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/PavanMudigondaTR/python-bro-code/main/47-python-oop/47-python-oop.ipynb)
-
-# 🏗️ Python OOP (Object-Oriented Programming)
-
 ## 📺 Video Tutorial
 
 **Learn Python Object Oriented Programming! 🚗** (15:31)
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/1XE-_s4ZBT8)
 
 ## What You'll Learn
 

@@ -5,19 +5,11 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigonda/python-bro-code/blob/main/19-nested-loops/19-nested-loops.ipynb) [![Open In Kaggle](https://img.shields.io/badge/Open%20in-Kaggle-20BEFF?style=flat&logo=kaggle)](https://kaggle.com/kernels/welcome?src=https://github.com/PavanMudigonda/python-bro-code/blob/main/19-nested-loops/19-nested-loops.ipynb)
 
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigondaTR/python-bro-code/blob/main/19-nested-loops/19-nested-loops.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/PavanMudigondaTR/python-bro-code/main/19-nested-loops/19-nested-loops.ipynb)
-
-# Chapter 19: Nested Loops
-
 ## 📺 Video Tutorial
 
 **Nested loops in Python are easy ➿** (6:12)
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/APWy6Pc83gE)
-
 ## 📺 Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/KseiSR0MCTI)
 
 ## 📚 What You'll Learn
 Master nested loops - loops within loops - to create patterns, process 2D data, and solve complex iteration problems!

@@ -1,23 +1,15 @@
-# Chapter 13: String Indexing
+# Chapter 14: String Indexing and Slicing
 
 ## 🚀 Open Notebook
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigonda/python-bro-code/blob/main/13-string-indexing/13-string-indexing.ipynb) [![Open In Kaggle](https://img.shields.io/badge/Open%20in-Kaggle-20BEFF?style=flat&logo=kaggle)](https://kaggle.com/kernels/welcome?src=https://github.com/PavanMudigonda/python-bro-code/blob/main/13-string-indexing/13-string-indexing.ipynb)
 
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigondaTR/python-bro-code/blob/main/13-string-indexing/13-string-indexing.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/PavanMudigondaTR/python-bro-code/main/13-string-indexing/13-string-indexing.ipynb)
-
-# Chapter 14: String Indexing and Slicing
-
 ## 📺 Video Tutorial
 
 **String indexing in Python is easy ✂️** (6:17)
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/7pXf1DUuaIo)
-
 ## 📺 Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/6MAufQ6vGtI)
 
 ## 📚 What You'll Learn
 Access and extract parts of strings using indexing and slicing - essential for text processing!

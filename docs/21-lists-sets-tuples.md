@@ -1,19 +1,13 @@
-# Chapter 21: Lists Sets Tuples
+# Chapter 21: Sets 🎲
 
 ## 🚀 Open Notebook
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigonda/python-bro-code/blob/main/21-lists-sets-tuples/21-lists-sets-tuples.ipynb) [![Open In Kaggle](https://img.shields.io/badge/Open%20in-Kaggle-20BEFF?style=flat&logo=kaggle)](https://kaggle.com/kernels/welcome?src=https://github.com/PavanMudigonda/python-bro-code/blob/main/21-lists-sets-tuples/21-lists-sets-tuples.ipynb)
 
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigondaTR/python-bro-code/blob/main/21-lists-sets-tuples/21-lists-sets-tuples.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/PavanMudigondaTR/python-bro-code/main/21-lists-sets-tuples/21-lists-sets-tuples.ipynb)
-
-# Chapter 21: Sets 🎲
-
 ## 📺 Video Tutorial
 
 **Python lists, sets, and tuples explained 🍍** (13:04)
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/gOMW_n2-2Mw)
 
 ## What You'll Learn
 Master Python sets, an unordered collection type that automatically handles unique values and provides powerful mathematical set operations.

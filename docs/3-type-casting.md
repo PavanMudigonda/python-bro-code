@@ -5,15 +5,9 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigonda/python-bro-code/blob/main/3-type-casting/3-type-casting.ipynb) [![Open In Kaggle](https://img.shields.io/badge/Open%20in-Kaggle-20BEFF?style=flat&logo=kaggle)](https://kaggle.com/kernels/welcome?src=https://github.com/PavanMudigonda/python-bro-code/blob/main/3-type-casting/3-type-casting.ipynb)
 
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigondaTR/python-bro-code/blob/main/3-type-casting/3-type-casting.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/PavanMudigondaTR/python-bro-code/main/3-type-casting/3-type-casting.ipynb)
-
-# Chapter 3: Type Casting
-
 ## 📺 Video Tutorial
 
 **Learn type casting in 7 minutes! 💱** (7:39)
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/Qtq83lAoogM)
 
 ## 📚 What You'll Learn
 Type casting is the process of converting data from one type to another - essential for working with user input and performing calculations!

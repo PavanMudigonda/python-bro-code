@@ -5,8 +5,6 @@
 
 **Learn Python LAMBDA in 6 minutes! 🚮** (6:43)
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/IljPHDyBRog)
-
 ## 📚 What You'll Learn
 Master lambda functions - anonymous functions for quick, one-time operations!
 

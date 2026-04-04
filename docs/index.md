@@ -151,7 +151,7 @@ This video is the intellectual property of Bro Code. All rights reserved. No par
 
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 1
 :caption: Chapters
 :hidden:
 

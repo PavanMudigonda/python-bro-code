@@ -1,19 +1,13 @@
-# Chapter 46: Hangman Game
+# 🎮 Hangman Game
 
 ## 🚀 Open Notebook
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigonda/python-bro-code/blob/main/46-hangman-game/46-hangman-game.ipynb) [![Open In Kaggle](https://img.shields.io/badge/Open%20in-Kaggle-20BEFF?style=flat&logo=kaggle)](https://kaggle.com/kernels/welcome?src=https://github.com/PavanMudigonda/python-bro-code/blob/main/46-hangman-game/46-hangman-game.ipynb)
 
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigondaTR/python-bro-code/blob/main/46-hangman-game/46-hangman-game.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/PavanMudigondaTR/python-bro-code/main/46-hangman-game/46-hangman-game.ipynb)
-
-# 🎮 Hangman Game
-
 ## 📺 Video Tutorial
 
 **Let's code a HANGMAN GAME in Python! 🕺** (21:13)
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/ag8NtD1e0Kc)
 
 ## What You'll Learn
 

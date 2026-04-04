@@ -5,8 +5,6 @@
 
 **Learn Python NESTED CLASSES in 9 minutes! 📛** (9:21)
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/zxPODCF4KEw)
-
 ## 📚 What You'll Learn
 Explore nested classes - classes defined within other classes for better encapsulation!
 

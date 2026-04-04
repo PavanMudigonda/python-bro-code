@@ -1,19 +1,13 @@
-# Chapter 14: Email Slicer
+# Chapter 14: Email Slicer Program
 
 ## 🚀 Open Notebook
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigonda/python-bro-code/blob/main/14-email-slicer/14-email-slicer.ipynb) [![Open In Kaggle](https://img.shields.io/badge/Open%20in-Kaggle-20BEFF?style=flat&logo=kaggle)](https://kaggle.com/kernels/welcome?src=https://github.com/PavanMudigonda/python-bro-code/blob/main/14-email-slicer/14-email-slicer.ipynb)
 
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigondaTR/python-bro-code/blob/main/14-email-slicer/14-email-slicer.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/PavanMudigondaTR/python-bro-code/main/14-email-slicer/14-email-slicer.ipynb)
-
-# Chapter 14: Email Slicer Program
-
 ## 📺 Video Tutorial
 
 **Python email slicer program 📧** (4:07)
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/6MAufQ6vGtI)
 
 ## 📚 What You'll Learn
 Extract username and domain from email addresses using string slicing - a practical application of string indexing!

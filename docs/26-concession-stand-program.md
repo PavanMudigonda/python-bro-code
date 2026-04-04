@@ -1,19 +1,13 @@
-# Chapter 26: Concession Stand Program
+# 🍿 Concession Stand Program
 
 ## 🚀 Open Notebook
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigonda/python-bro-code/blob/main/26-concession-stand-program/26-concession-stand-program.ipynb) [![Open In Kaggle](https://img.shields.io/badge/Open%20in-Kaggle-20BEFF?style=flat&logo=kaggle)](https://kaggle.com/kernels/welcome?src=https://github.com/PavanMudigonda/python-bro-code/blob/main/26-concession-stand-program/26-concession-stand-program.ipynb)
 
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigondaTR/python-bro-code/blob/main/26-concession-stand-program/26-concession-stand-program.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/PavanMudigondaTR/python-bro-code/main/26-concession-stand-program/26-concession-stand-program.ipynb)
-
-# 🍿 Concession Stand Program
-
 ## 📺 Video Tutorial
 
 **Python concession stand program 🍿** (10:46)
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/PbkIzW_70EI)
 
 ## What You'll Learn
 

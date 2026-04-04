@@ -1,23 +1,15 @@
-# Chapter 6: If Statements
+# Chapter 7: If-Elif-Else Statements
 
 ## 🚀 Open Notebook
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigonda/python-bro-code/blob/main/6-if-statements/6-if-statements.ipynb) [![Open In Kaggle](https://img.shields.io/badge/Open%20in-Kaggle-20BEFF?style=flat&logo=kaggle)](https://kaggle.com/kernels/welcome?src=https://github.com/PavanMudigonda/python-bro-code/blob/main/6-if-statements/6-if-statements.ipynb)
 
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigondaTR/python-bro-code/blob/main/6-if-statements/6-if-statements.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/PavanMudigondaTR/python-bro-code/main/6-if-statements/6-if-statements.ipynb)
-
-# Chapter 7: If-Elif-Else Statements
-
 ## 📺 Video Tutorial
 
 **If statements in Python are easy (if, elif, else) 🤔** (12:07)
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/FvMPfrgGeKs)
-
 ## 📺 Video Tutorial
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&logo=youtube)](https://youtu.be/yUrYouDQZL8)
 
 ## 📚 What You'll Learn
 Make your programs smart with conditional logic! Learn how to make decisions based on different conditions.

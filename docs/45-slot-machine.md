@@ -1,19 +1,13 @@
-# Chapter 45: Slot Machine
+# 🎰 Slot Machine Program
 
 ## 🚀 Open Notebook
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigonda/python-bro-code/blob/main/45-slot-machine/45-slot-machine.ipynb) [![Open In Kaggle](https://img.shields.io/badge/Open%20in-Kaggle-20BEFF?style=flat&logo=kaggle)](https://kaggle.com/kernels/welcome?src=https://github.com/PavanMudigonda/python-bro-code/blob/main/45-slot-machine/45-slot-machine.ipynb)
 
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigondaTR/python-bro-code/blob/main/45-slot-machine/45-slot-machine.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/PavanMudigondaTR/python-bro-code/main/45-slot-machine/45-slot-machine.ipynb)
-
-# 🎰 Slot Machine Program
-
 ## 📺 Video Tutorial
 
 **Let's code a beginners Python SLOT MACHINE 🎰** (16:38)
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/f5J3YiZ3XX8)
 
 ## What You'll Learn
 
