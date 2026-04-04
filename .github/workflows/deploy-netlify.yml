@@ -21,9 +21,16 @@ jobs:
         uses: actions/setup-python@v6
         with:
           python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-docs.txt
 
-      - name: Generate docs
-        run: bash scripts/build_site.sh
+      - name: Install dependencies
+        run: pip install -r requirements-docs.txt
+
+      - name: Generate Sphinx site
+        run: |
+          bash scripts/build_site.sh
+          sphinx-build -b html docs site
 
       - name: Setup Node.js (for Netlify CLI)
         uses: actions/setup-node@v6
@@ -36,7 +43,7 @@ jobs:
       # Deploy preview for Pull Requests
       - name: Deploy preview to Netlify
         if: github.event_name == 'pull_request'
-        run: netlify deploy --dir=docs --message="PR ${{ github.event.number }} - Run ${{ github.run_number }}"
+        run: netlify deploy --dir=site --message="PR ${{ github.event.number }} - Run ${{ github.run_number }}"
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
@@ -44,7 +51,7 @@ jobs:
       # Deploy to Production for Main branch pushes
       - name: Deploy to Netlify Production
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: netlify deploy --prod --dir=docs --message="Deploy Main - Run ${{ github.run_number }}"
+        run: netlify deploy --prod --dir=site --message="Deploy Main - Run ${{ github.run_number }}"
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

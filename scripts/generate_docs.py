@@ -65,6 +65,7 @@ def main():
     folders.sort(key=lambda x: int(x.split('-')[0]))
     
     chapter_count = 0
+    generated_chapters = []
     
     for folder in folders:
         readme_path = os.path.join(folder, "README.md")
@@ -98,8 +99,25 @@ def main():
             with open(doc_path, 'w', encoding='utf-8') as wf:
                 wf.write(content)
                 
+            generated_chapters.append(folder)
             chapter_count += 1
-                
+
+    # 3. Append MyST toctree to index.md for Sphinx navigation
+    toctree_entries = "\n".join(generated_chapters)
+    toctree_block = f"""
+
+```{{toctree}}
+:maxdepth: 2
+:caption: Chapters
+:hidden:
+
+{toctree_entries}
+```
+"""
+    index_path = os.path.join(docs_dir, "index.md")
+    with open(index_path, 'a', encoding='utf-8') as f:
+        f.write(toctree_block)
+
     print(f"Generated docs for Home + {chapter_count} chapters.")
 
 if __name__ == '__main__':

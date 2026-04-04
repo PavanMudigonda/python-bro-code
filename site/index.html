@@ -1,2390 +1,577 @@
-
 <!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="Documentation for Python Bro Code examples.">
-      
-      
-        <meta name="author" content="Pavan Mudigonda">
-      
-      
-      
-      
-        <link rel="next" href="1-print/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Chapter 1: Print" href="1-print.html">
+
+    <!-- Generated with Sphinx 7.4.7 and Furo 2025.12.19 -->
+        <title>Python Bro Code</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=efc5eb83" />
     
     
-      
-        <title>Python Bro Code Docs</title>
-      
-    
-    
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
-      
-      
 
 
-    
-    
-      
-    
-    
-      
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
-
-    
-    
-  </head>
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #306998;
+  --color-brand-content: #306998;
   
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #FFD43B;
+  --color-brand-content: #FFD43B;
   
-    <body dir="ltr">
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #FFD43B;
+  --color-brand-content: #FFD43B;
   
+      }
+    }
+  }
+</style></head>
+  <body>
     
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#python-learning-repository" class="md-skip">
-          Skip to content
-        </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
     
-    
-      
 
-  
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
 
-<header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Python Bro Code Docs" class="md-header__button md-logo" aria-label="Python Bro Code Docs" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
 
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
-            Python Bro Code Docs
-          </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
-            
-              Home
-            
-          </span>
-        </div>
-      </div>
-    </div>
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-    
-    
-    
-      
-      
-        <label class="md-header__button md-icon" for="__search">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        </label>
-        <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
       </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </div>
+    <div class="header-center">
+      <a href="#"><div class="brand">Python Bro Code</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
       </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
     </div>
-  </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+  
+  <span class="sidebar-brand-text">Python Bro Code</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Chapters</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="1-print.html">Chapter 1: Print</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-print.html#chapter-1-print-statement">Chapter 1: Print Statement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2-variables.html">Chapter 2: Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2-variables.html#chapter-2-variables-and-data-types">Chapter 2: Variables and Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-type-casting.html">Chapter 3: Type Casting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-type-casting.html#id1">Chapter 3: Type Casting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-user-input.html">Chapter 4: User Input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-user-input.html#id1">Chapter 4: User Input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-madlibs-game.html">Chapter 5: Madlibs Game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-madlibs-game.html#id1">Chapter 5: Madlibs Game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-if-statements.html">Chapter 6: If Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-if-statements.html#chapter-7-if-elif-else-statements">Chapter 7: If-Elif-Else Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-calculator.html">Chapter 7: Calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-calculator.html#chapter-8-simple-calculator-program">Chapter 8: Simple Calculator Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8-weight-conversion.html">Chapter 8: Weight Conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8-weight-conversion.html#chapter-9-weight-converter-program">Chapter 9: Weight Converter Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-temp-conversion.html">Chapter 9: Temp Conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9-temp-conversion.html#chapter-10-temperature-converter-program">Chapter 10: Temperature Converter Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-logical-operators.html">Chapter 10: Logical Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-logical-operators.html#chapter-11-logical-operators">Chapter 11: Logical Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-conditional-expressions.html">Chapter 11: Conditional Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-conditional-expressions.html#chapter-12-conditional-expressions-ternary-operator">Chapter 12: Conditional Expressions (Ternary Operator)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-string-methods.html">Chapter 12: String Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-string-methods.html#chapter-13-string-methods">Chapter 13: String Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13-string-indexing.html">Chapter 13: String Indexing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13-string-indexing.html#chapter-14-string-indexing-and-slicing">Chapter 14: String Indexing and Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14-email-slicer.html">Chapter 14: Email Slicer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14-email-slicer.html#chapter-14-email-slicer-program">Chapter 14: Email Slicer Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15-format.html">Chapter 15: Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15-format.html#chapter-15-format-specifiers">Chapter 15: Format Specifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16-while.html">Chapter 16: While</a></li>
+<li class="toctree-l1"><a class="reference internal" href="16-while.html#chapter-16-while-loops">Chapter 16: While Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17-interest-calculator.html">Chapter 17: Interest Calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="17-interest-calculator.html#chapter-17-compound-interest-calculator">Chapter 17: Compound Interest Calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18-for.html">Chapter 18: For</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18-for.html#chapter-18-for-loops">Chapter 18: For Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19-nested-loops.html">Chapter 19: Nested Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="19-nested-loops.html#id1">Chapter 19: Nested Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20-timer.html">Chapter 20: Timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20-timer.html#chapter-20-countdown-timer">Chapter 20: Countdown Timer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21-lists-sets-tuples.html">Chapter 21: Lists Sets Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21-lists-sets-tuples.html#chapter-21-sets">Chapter 21: Sets 🎲</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22-shopping-cart.html">Chapter 22: Shopping Cart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22-shopping-cart.html#shopping-cart-program">🛒 Shopping Cart Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23-2d-collections.html">Chapter 23: 2d Collections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="23-2d-collections.html#d-collections-nested-lists-matrices">📊 2D Collections (Nested Lists &amp; Matrices)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="24-quiz-game.html">Chapter 24: Quiz Game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="24-quiz-game.html#quiz-game">🎯 Quiz Game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="25-dictionaries.html">Chapter 25: Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="25-dictionaries.html#dictionaries">📖 Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="26-concession-stand-program.html">Chapter 26: Concession Stand Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="26-concession-stand-program.html#concession-stand-program">🍿 Concession Stand Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="27-random-numbers.html">Chapter 27: Random Numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="27-random-numbers.html#random-numbers">🎲 Random Numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="28-number-guessing-game.html">Chapter 28: Number Guessing Game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="28-number-guessing-game.html#number-guessing-game">🎯 Number Guessing Game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="29-rock-paper-scissors-game.html">Chapter 29: Rock Paper Scissors Game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="29-rock-paper-scissors-game.html#rock-paper-scissors-game">✊✋✌️ Rock Paper Scissors Game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="30-dice-roller-program.html">Chapter 30: Dice Roller Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="30-dice-roller-program.html#dice-roller-program">🎲 Dice Roller Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="31-encryption-program.html">Chapter 31: Encryption Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="31-encryption-program.html#encryption-program">🔐 Encryption Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="32-functions.html">Chapter 32: Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="32-functions.html#functions">🔧 Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="33-default-arguments.html">Chapter 33: Default Arguments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="33-default-arguments.html#default-arguments">🎯 Default Arguments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="34-keyword-arguments.html">Chapter 34: Keyword Arguments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="34-keyword-arguments.html#keyword-arguments">🏷️ Keyword Arguments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="35-args-kwargs.html">Chapter 35: Args Kwargs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="35-args-kwargs.html#args-and-kwargs">⭐ Args and Kwargs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="36-iterables.html">Chapter 36: Iterables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="36-iterables.html#iterables">🔄 Iterables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="37-membership-operators.html">Chapter 37: Membership Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="37-membership-operators.html#membership-operators">✅ Membership Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="38-list-comprehensions.html">Chapter 38: List Comprehensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="38-list-comprehensions.html#list-comprehensions">📝 List Comprehensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="39-match-case-statements.html">Chapter 39: Match Case Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="39-match-case-statements.html#match-case-statements">🔀 Match Case Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="40-modules.html">Chapter 40: Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="40-modules.html#modules">📦 Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="41-scope-resolution.html">Chapter 41: Scope Resolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="41-scope-resolution.html#scope-resolution">🔍 Scope Resolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="42-if-name-main.html">Chapter 42: If Name Main</a></li>
+<li class="toctree-l1"><a class="reference internal" href="42-if-name-main.html#if-name-main">🎯 If <strong>name</strong> == “<strong>main</strong>”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="43-credit-card-validator.html">Chapter 43: Credit Card Validator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="43-credit-card-validator.html#id1">Chapter 43: Credit Card Validator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="44-banking-program.html">Chapter 44: Banking Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="44-banking-program.html#banking-program">🏦 Banking Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="45-slot-machine.html">Chapter 45: Slot Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="45-slot-machine.html#slot-machine-program">🎰 Slot Machine Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="46-hangman-game.html">Chapter 46: Hangman Game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="46-hangman-game.html#hangman-game">🎮 Hangman Game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="47-python-oop.html">Chapter 47: Python Oop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="47-python-oop.html#python-oop-object-oriented-programming">🏗️ Python OOP (Object-Oriented Programming)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="48-class-variables.html">Chapter 48: Class Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="48-class-variables.html#class-variables">📊 Class Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="49-inheritance.html">Chapter 49: Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="49-inheritance.html#inheritance">🧬 Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="50-multiple-inheritance.html">🔀 Multiple Inheritance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="51-abstract-classes.html">Chapter 51: Abstract Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="55-aggregation.html">Chapter 55: Aggregation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="56-composition.html">Chapter 56: Composition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="57-nested-classes.html">Chapter 57: Nested Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="63-lambda.html">Chapter 63: Lambda Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="64-sorting.html">Chapter 64: Sorting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="65-zip.html">Chapter 65: Zip Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="66-recursion.html">Chapter 66: Recursion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="71-execution-time.html">Chapter 71: Execution Time Measurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="74-iterators.html">Chapter 74: Iterators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="75-generators.html">Chapter 75: Generators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="76-generator-expressions.html">Chapter 76: Generator Expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="77-data-classes.html">Chapter 77: Data Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="92-qr-codes.html">Chapter 92: Create QR codes with Python in 4 minutes 📱</a></li>
+<li class="toctree-l1"><a class="reference internal" href="93-music-player.html">Chapter 93: Build a music player with Python 🎶</a></li>
+</ul>
+
 </div>
-      
-    
-    
-      <div class="md-header__source">
-        <a href="https://github.com/pavanmudigonda/python-bro-code" title="Go to repository" class="md-source" data-md-component="source">
-  <div class="md-source__icon md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
-  </div>
-  <div class="md-source__repository">
-    pavanmudigonda/python-bro-code
-  </div>
-</a>
+</div>
+
       </div>
-    
-  </nav>
-  
-</header>
-    
-    <div class="md-container" data-md-component="container">
       
-      
-        
-          
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="." title="Python Bro Code Docs" class="md-nav__button md-logo" aria-label="Python Bro Code Docs" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
-
-    </a>
-    Python Bro Code Docs
-  </label>
-  
-    <div class="md-nav__source">
-      <a href="https://github.com/pavanmudigonda/python-bro-code" title="Go to repository" class="md-source" data-md-component="source">
-  <div class="md-source__icon md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
-  </div>
-  <div class="md-source__repository">
-    pavanmudigonda/python-bro-code
-  </div>
-</a>
     </div>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Home
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Home
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#checkout-my-other-courses" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Checkout my other courses
-      
-    </span>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="https://github.com/PavanMudigonda/python-bro-code/blob/main/docs/index.md?plain=true" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#launch-instantly-in-your-favorite-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🚀 Launch Instantly in Your Favorite Environment
-      
-    </span>
+</div><div class="edit-this-page">
+  <a class="muted-link" href="https://github.com/PavanMudigonda/python-bro-code/edit/main/docs/index.md" rel="edit" title="Edit this page">
+    <svg><use href="#svg-pencil"></use></svg>
+    <span class="visually-hidden">Edit this page</span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#course-progress-status" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📊 Course Progress Status
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#chapter-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📚 Chapter Checklist
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#video-links" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📺 Video Links
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="1-print/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 1: Print
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="2-variables/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 2: Variables
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="3-type-casting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 3: Type Casting
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="4-user-input/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 4: User Input
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="5-madlibs-game/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 5: Madlibs Game
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="6-if-statements/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 6: If Statements
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="7-calculator/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 7: Calculator
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="8-weight-conversion/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 8: Weight Conversion
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="9-temp-conversion/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 9: Temp Conversion
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="10-logical-operators/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 10: Logical Operators
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="11-conditional-expressions/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 11: Conditional Expressions
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="12-string-methods/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 12: String Methods
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="13-string-indexing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 13: String Indexing
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="14-email-slicer/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 14: Email Slicer
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="15-format/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 15: Format
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="16-while/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 16: While
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="17-interest-calculator/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 17: Interest Calculator
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="18-for/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 18: For
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="19-nested-loops/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 19: Nested Loops
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="20-timer/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 20: Timer
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="21-lists-sets-tuples/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 21: Lists Sets Tuples
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="22-shopping-cart/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 22: Shopping Cart
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="23-2d-collections/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 23: 2d Collections
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="24-quiz-game/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 24: Quiz Game
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="25-dictionaries/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 25: Dictionaries
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="26-concession-stand-program/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 26: Concession Stand Program
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="27-random-numbers/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 27: Random Numbers
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="28-number-guessing-game/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 28: Number Guessing Game
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="29-rock-paper-scissors-game/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 29: Rock Paper Scissors Game
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="30-dice-roller-program/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 30: Dice Roller Program
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="31-encryption-program/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 31: Encryption Program
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="32-functions/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 32: Functions
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="33-default-arguments/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 33: Default Arguments
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="34-keyword-arguments/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 34: Keyword Arguments
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="35-args-kwargs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 35: Args Kwargs
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="36-iterables/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 36: Iterables
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="37-membership-operators/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 37: Membership Operators
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="38-list-comprehensions/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 38: List Comprehensions
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="39-match-case-statements/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 39: Match Case Statements
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="40-modules/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 40: Modules
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="41-scope-resolution/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 41: Scope Resolution
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="42-if-name-main/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 42: If Name Main
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="43-credit-card-validator/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 43: Credit Card Validator
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="44-banking-program/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 44: Banking Program
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="45-slot-machine/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 45: Slot Machine
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="46-hangman-game/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 46: Hangman Game
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="47-python-oop/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 47: Python Oop
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="48-class-variables/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 48: Class Variables
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="49-inheritance/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 49: Inheritance
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="50-multiple-inheritance/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 50: Multiple Inheritance
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="51-abstract-classes/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 51: Abstract Classes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="55-aggregation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 55: Aggregation
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="56-composition/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 56: Composition
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="57-nested-classes/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 57: Nested Classes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="63-lambda/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 63: Lambda
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="64-sorting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 64: Sorting
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="65-zip/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 65: Zip
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="66-recursion/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 66: Recursion
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="71-execution-time/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 71: Execution Time
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="74-iterators/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 74: Iterators
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="75-generators/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 75: Generators
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="76-generator-expressions/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 76: Generator Expressions
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="77-data-classes/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 77: Data Classes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="92-qr-codes/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 92: Qr Codes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="93-music-player/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chapter 93: Music Player
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#checkout-my-other-courses" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Checkout my other courses
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#launch-instantly-in-your-favorite-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🚀 Launch Instantly in Your Favorite Environment
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#course-progress-status" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📊 Course Progress Status
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#chapter-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📚 Chapter Checklist
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#video-links" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📺 Video Links
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          
-            <div class="md-content" data-md-component="content">
-              
-              <article class="md-content__inner md-typeset">
-                
-                  
-
-
-  
-  
-
-
-<h1 id="python-learning-repository">Python Learning Repository 🐍</h1>
-<p><a href="./practice-questions"><img alt="Practice Questions" src="https://img.shields.io/badge/Practice_Questions-1000-blue?style=for-the-badge" /></a>
-<a href="https://github.com/PavanMudigonda/python-bro-code/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/PavanMudigonda/python-bro-code?style=for-the-badge&amp;logo=github" /></a>
-<a href="https://youtu.be/ix9cRaBkVe0?feature=shared"><img alt="Watch on YouTube" src="https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&amp;logo=youtube" /></a></p>
+</div><div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="python-learning-repository">
+<h1>Python Learning Repository 🐍<a class="headerlink" href="#python-learning-repository" title="Link to this heading">¶</a></h1>
+<p><a class="reference internal" href="#./practice-questions"><span class="xref myst"><img alt="Practice Questions" src="https://img.shields.io/badge/Practice_Questions-1000-blue?style=for-the-badge" /></span></a>
+<a class="reference external" href="https://github.com/PavanMudigonda/python-bro-code/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/PavanMudigonda/python-bro-code?style=for-the-badge&amp;logo=github" /></a>
+<a class="reference external" href="https://youtu.be/ix9cRaBkVe0?feature=shared"><img alt="Watch on YouTube" src="https://img.shields.io/badge/Watch-BroCode_Python_Master_Class-red?style=for-the-badge&amp;logo=youtube" /></a></p>
 <blockquote>
-<p>⭐ <strong>Found this helpful?</strong> Star this repo to show your support and help others discover it!</p>
-</blockquote>
-<h3 id="checkout-my-other-courses">Checkout my other courses</h3>
-<p><a href="https://github.com/PavanMudigonda/zero-to-ai"><img alt="Zero to AI" src="https://img.shields.io/badge/Zero%20To%20AI-red?style=for-the-badge" /></a></p>
-<h3 id="launch-instantly-in-your-favorite-environment">🚀 Launch Instantly in Your Favorite Environment</h3>
-<p><a href="https://colab.research.google.com/github/PavanMudigonda/python-bro-code/blob/main"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a>
-<a href="https://replit.com/github/PavanMudigonda/python-bro-code"><img alt="Open in Replit" src="https://img.shields.io/badge/Open%20in-Replit-blue?style=flat&amp;logo=replit" /></a>
-<a href="https://kaggle.com/kernels/welcome?src=https://github.com/PavanMudigonda/python-bro-code"><img alt="Open in Kaggle" src="https://img.shields.io/badge/Open%20in-Kaggle-20BEFF?style=flat&amp;logo=kaggle" /></a>
-<a href="https://github.com/codespaces/new?hide_repo_select=true&amp;ref=main&amp;repo=PavanMudigonda/python-bro-code"><img alt="Open in Codespaces" src="https://img.shields.io/badge/Open%20in-Codespaces-black?style=flat&amp;logo=github" /></a>
-<a href="https://github.dev/PavanMudigonda/python-bro-code"><img alt="github.dev" src="https://img.shields.io/badge/Open%20in-github.dev-black?style=flat&amp;logo=github" /></a></p>
+<div><p>⭐ <strong>Found this helpful?</strong> Star this repo to show your support and help others discover it!</p>
+</div></blockquote>
+<section id="checkout-my-other-courses">
+<h2>Checkout my other courses<a class="headerlink" href="#checkout-my-other-courses" title="Link to this heading">¶</a></h2>
+<p><a class="reference external" href="https://github.com/PavanMudigonda/zero-to-ai"><img alt="Zero to AI" src="https://img.shields.io/badge/Zero%20To%20AI-red?style=for-the-badge" /></a></p>
+</section>
+<section id="launch-instantly-in-your-favorite-environment">
+<h2>🚀 Launch Instantly in Your Favorite Environment<a class="headerlink" href="#launch-instantly-in-your-favorite-environment" title="Link to this heading">¶</a></h2>
+<p><a class="reference external" href="https://colab.research.google.com/github/PavanMudigonda/python-bro-code/blob/main"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a>
+<a class="reference external" href="https://replit.com/github/PavanMudigonda/python-bro-code"><img alt="Open in Replit" src="https://img.shields.io/badge/Open%20in-Replit-blue?style=flat&amp;logo=replit" /></a>
+<a class="reference external" href="https://kaggle.com/kernels/welcome?src=https://github.com/PavanMudigonda/python-bro-code"><img alt="Open in Kaggle" src="https://img.shields.io/badge/Open%20in-Kaggle-20BEFF?style=flat&amp;logo=kaggle" /></a>
+<a class="reference external" href="https://github.com/codespaces/new?hide_repo_select=true&amp;amp;ref=main&amp;amp;repo=PavanMudigonda/python-bro-code"><img alt="Open in Codespaces" src="https://img.shields.io/badge/Open%20in-Codespaces-black?style=flat&amp;logo=github" /></a>
+<a class="reference external" href="https://github.dev/PavanMudigonda/python-bro-code"><img alt="github.dev" src="https://img.shields.io/badge/Open%20in-github.dev-black?style=flat&amp;logo=github" /></a></p>
 <p><strong>Zero Setup Required!</strong> Click any badge above to start coding in seconds.</p>
-<hr />
-<h2 id="course-progress-status">📊 Course Progress Status</h2>
+</section>
+<hr class="docutils" />
+<section id="course-progress-status">
+<h2>📊 Course Progress Status<a class="headerlink" href="#course-progress-status" title="Link to this heading">¶</a></h2>
 <p><img alt="Progress" src="https://img.shields.io/badge/Progress-49%2F93-blue?style=for-the-badge" />
 <img alt="Completion" src="https://img.shields.io/badge/Completion-53%25-green?style=for-the-badge" /></p>
 <p><strong>Programs Completed:</strong> 49 out of 93</p>
-<pre><code>██████████████████████░░░░░░░░░░░░  53.0%
-</code></pre>
-<hr />
-<h2 id="chapter-checklist">📚 Chapter Checklist</h2>
-<hr />
-<p><a href="https://youtu.be/ix9cRaBkVe0?feature=shared">Bro Code Python YouTube Class</a></p>
-<p>Learn Python in 1 HOUR ⏱ : <a href="https://youtu.be/ix9cRaBkVe0?feature=shared">Learn Python in 1 hour! 🐍. (2024)</a><br />
-My original Python 12 Hour course 🐍 : <a href="https://youtu.be/ix9cRaBkVe0?feature=shared">Python Full Course for free 🐍</a><br />
-Full Python playlist 📃: <a href="https://youtu.be/ix9cRaBkVe0?feature=shared">Start coding with PYTHON in 5 minutes! 🐍</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>██████████████████████░░░░░░░░░░░░  53.0%
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="chapter-checklist">
+<h2>📚 Chapter Checklist<a class="headerlink" href="#chapter-checklist" title="Link to this heading">¶</a></h2>
+<hr class="docutils" />
+<p><a class="reference external" href="https://youtu.be/ix9cRaBkVe0?feature=shared">Bro Code Python YouTube Class</a></p>
+<p>Learn Python in 1 HOUR ⏱ : <a class="reference external" href="https://youtu.be/ix9cRaBkVe0?feature=shared">Learn Python in 1 hour! 🐍. (2024)</a><br />
+My original Python 12 Hour course 🐍 : <a class="reference external" href="https://youtu.be/ix9cRaBkVe0?feature=shared">Python Full Course for free 🐍</a><br />
+Full Python playlist 📃: <a class="reference external" href="https://youtu.be/ix9cRaBkVe0?feature=shared">Start coding with PYTHON in 5 minutes! 🐍</a></p>
 <p>[⭐ = project]</p>
-<h2 id="video-links">📺 Video Links</h2>
-<ul>
-<li>[x] 1. Start coding with PYTHON in 5 minutes! 🐍 (5:13) - https://youtu.be/Sg4GMVMdOPo</li>
-<li>[x] 2. Learn Python VARIABLES in 10 minutes! ❎ (10:20) - https://youtu.be/7IoQ5BGkTJo</li>
-<li>[x] 3. Learn type casting in 7 minutes! 💱 (7:39) - https://youtu.be/Qtq83lAoogM</li>
-<li>[x] 4. User input in Python is easy + exercises ⌨️ (9:48) - https://youtu.be/nMCOB8KElwo</li>
-<li>[x] 5. Math in Python is easy! 📐 (10:03) - https://youtu.be/jc7TBgMS_kw</li>
-<li>[x] 6. If statements in Python are easy (if, elif, else) 🤔 (12:07) - https://youtu.be/FvMPfrgGeKs</li>
-<li>[x] 7. Let's code a simple python calculator! 🧮 (8:20) - https://youtu.be/yUrYouDQZL8</li>
-<li>[x] 8. Python weight conversion exercise 🏋️ (5:47) - https://youtu.be/80kjCBRjkmU</li>
-<li>[x] 9. Python temperature conversion program 🌡️ (5:44) - https://youtu.be/fy5QsDJmctQ</li>
-<li>[x] 10. Logical operators in Python are easy 🔣 (7:56) - https://youtu.be/W7luvtXeQTA</li>
-<li>[x] 11. Learn conditional expressions in 5 minutes! ❓ (5:21) - https://youtu.be/TYyKQBC4bwE</li>
-<li>[x] 12. String methods in Python are easy! 〰️ (12:14) - https://youtu.be/tb6EYiHtcXU</li>
-<li>[x] 13. String indexing in Python is easy ✂️ (6:17) - https://youtu.be/7pXf1DUuaIo</li>
-<li>[x] 14. Python email slicer program 📧 (4:07) - https://youtu.be/6MAufQ6vGtI</li>
-<li>[x] 15. Learn Python format specifiers in 5 minutes! 💬 (5:32) - https://youtu.be/FrvBwdAU2dQ</li>
-<li>[x] 16. While loops in Python are easy! ♾️ (8:04) - https://youtu.be/rRTjPnVooxE</li>
-<li>[x] 17. Code an interest calculator in 7 minutes! 💵 (7:35) - https://youtu.be/aM5dttidg4Q</li>
-<li>[x] 18. Learn Python for loops in 5 minutes! 🔁 (5:47) - https://youtu.be/KWgYha0clzw</li>
-<li>[x] 19. Nested loops in Python are easy ➿ (6:12) - https://youtu.be/APWy6Pc83gE</li>
-<li>[x] 20. Countdown timer program in Python ⌛ (8:59) - https://youtu.be/KseiSR0MCTI</li>
-<li>[x] 21. Python lists, sets, and tuples explained 🍍 (13:04) - https://youtu.be/gOMW_n2-2Mw</li>
-<li>[x] 22. Python shopping cart program 🛒 (9:12) - https://youtu.be/kbyHLU9JqjE</li>
-<li>[x] 23. Python 2D collections are easy! ⬜ (5:55) - https://youtu.be/Xy6qeQWQwFw</li>
-<li>[x] 24. Create a QUIZ GAME with Python 💯 (14:14) - https://youtu.be/zehwgTB0vV8</li>
-<li>[x] 25. Python dictionaries are easy 📙 (9:06) - https://youtu.be/MZZSMaEAC2g</li>
-<li>[x] 26. Python concession stand program 🍿 (10:46) - https://youtu.be/PbkIzW_70EI</li>
-<li>[x] 27. Generate random numbers in Python 🎲 (9:27) - https://youtu.be/piJc18hcH0Y</li>
-<li>[x] 28. Let's code a Python NUMBER GUESSING GAME! 🔢 (9:09) - https://youtu.be/jcKe13D6bao</li>
-<li>[x] 29. ROCK PAPER SCISSORS game in Python 🗿 (13:38) - https://youtu.be/fn68QNcatfo</li>
-<li>[x] 30. Code a dice roller program in 10 minutes! 🎲 (10:24) - https://youtu.be/x-Ag2_bJ40Y</li>
-<li>[x] 31. Encryption program in Python 🔐 (9:47) - https://youtu.be/vsLBErLWBhA</li>
-<li>[x] 32. Functions in Python are easy 📞 (9:05) - https://youtu.be/89cGQjB5R4M</li>
-<li>[x] 33. Python default arguments are awesome! 👍 (6:15) - https://youtu.be/m2uURZxex3c</li>
-<li>[x] 34. Python keyword arguments are awesome! 🗝️ (5:16) - https://youtu.be/7QCHpAtlSMo</li>
-<li>[x] 35. Python <em>ARGS &amp; </em>*KWARGS are awesome! 📦 (6:57) - https://youtu.be/Vh__2V2tXUM</li>
-<li>[x] 36. Learn Python iterables in 6 minutes! 🔂 (6:48) - https://youtu.be/VL_g3LjsFqs</li>
-<li>[x] 37. Learn Python MEMBERSHIP OPERATORS in 8 minutes! 🔎 (8:23) - https://youtu.be/OJ5E7VLsZQM</li>
-<li>[x] 38. Learn Python LIST COMPREHENSIONS in 10 minutes! 📃 (10:22) - https://youtu.be/YlY2g2xrl6Q</li>
-<li>[x] 39. Learn Python MATCH-CASE STATEMENTS in 5 minutes! 📆 (5:46) - https://youtu.be/L7tT0NZF-Ag</li>
-<li>[x] 40. What are Python modules? 📨 (7:57) - https://youtu.be/XcfxkHrHTVE</li>
-<li>[x] 41. What is Python scope resolution? 🔬 (8:05) - https://youtu.be/XN83IECAscM</li>
-<li>[x] 42. if <strong>name</strong> == '<strong>main</strong>' for Python beginners 📥 (6:05) - https://youtu.be/8A0E1dSyjFM</li>
-<li>[x] 43. Credit card validator in Python 💳 (8:49) - https://youtu.be/LqXIJjcRmGI</li>
-<li>[x] 44. Let's code a beginners Python BANKING PROGRAM 💰 (13:38) - https://youtu.be/8aW3tkIul-8</li>
-<li>[x] 45. Let's code a beginners Python SLOT MACHINE 🎰 (16:38) - https://youtu.be/f5J3YiZ3XX8</li>
-<li>[x] 46. Let's code a HANGMAN GAME in Python! 🕺 (21:13) - https://youtu.be/ag8NtD1e0Kc</li>
-<li>[x] 47. Learn Python Object Oriented Programming! 🚗 (15:31) - https://youtu.be/1XE-_s4ZBT8</li>
-<li>[x] 48. Learn class variables in 8 minutes! 🎓 (8:47) - https://youtu.be/bytvWg4fPB0</li>
-<li>[x] 49. Python INHERITANCE in 6 minutes! 👨‍👦‍👦 (6:40) - https://youtu.be/u1be7Vele5o</li>
-<li>[ ] 50. Learn Python multiple inheritance in 8 minutes! 🐟 (8:12) - https://youtu.be/Q8YlYHjksLo</li>
-<li>[ ] 51. Learn Python ABSTRACT CLASSES in 7 minutes! 👻 (7:42) - https://youtu.be/97V7ICVeTJc</li>
-<li>[ ] 52. SUPER() in Python explained! 🔴 (6:46) - https://youtu.be/HzyhmZqiaE8</li>
-<li>[ ] 53. Learn polymorphism in 8 minutes! 🎭 (8:39) - https://youtu.be/tHN8I_4FIt8</li>
-<li>[ ] 54. Learn Python DUCK TYPING in 4 minutes! 🦆 (4:51) - https://youtu.be/Qe03kCuTMoU</li>
-<li>[ ] 55. Learn Python AGGREGATION in 6 minutes! 📚 (6:45) - https://youtu.be/caXOUnQkD1o</li>
-<li>[ ] 56. Learn Python COMPOSITION in 7 minutes! 🚘 (7:30) - https://youtu.be/TPUdUkFHD5I</li>
-<li>[ ] 57. Learn Python NESTED CLASSES in 9 minutes! 📛 (9:21) - https://youtu.be/zxPODCF4KEw</li>
-<li>[ ] 58. Learn Python STATIC METHODS in 5 minutes! ⚡ (5:42) - https://youtu.be/GZYWTm7JoWs</li>
-<li>[ ] 59. Learn Python CLASS METHODS in 6 minutes! 🏫 (6:38) - https://youtu.be/g-qRKZD3FgE</li>
-<li>[ ] 60. Python MAGIC METHODS are easy! 🌟 (10:13) - https://youtu.be/NwjSP1_WEfE</li>
-<li>[ ] 61. Learn Python DECORATORS in 7 minutes! 🎊 (7:46) - https://youtu.be/U-G-mSd4KAE</li>
-<li>[ ] 62. Learn Python @property in 7 minutes! ⚙️ (7:28) - https://youtu.be/HkbQ_NaH0Lc</li>
-<li>[ ] 63. Learn Python LAMBDA in 6 minutes! 🚮 (6:43) - https://youtu.be/IljPHDyBRog</li>
-<li>[ ] 64. Python SORTING is easy (sort of) 🔀 (9:56) - https://youtu.be/cd-vtiO5chk</li>
-<li>[ ] 65. Learn Python zip() in 3 minutes! 🤐 (3:51) - https://youtu.be/5WK3j2erJW4</li>
-<li>[ ] 66. Learn RECURSION in 5 minutes! 😵 (5:42) - https://youtu.be/ivl5-snqul8</li>
-<li>[ ] 67. Learn Python EXCEPTION HANDLING in 5 minutes! 🚦 (5:59) - https://youtu.be/V_NXT2-QIlE</li>
-<li>[ ] 68. File detection in Python is easy! 🕵️‍♂️ (4:30) - https://youtu.be/EReeJSaU0Og</li>
-<li>[ ] 69. Write files using Python! ✍ (7:05) - https://youtu.be/1IYrmTTKOoI</li>
-<li>[ ] 70. Read files using Python! 🔍 (5:55) - https://youtu.be/GWBWQnWBI</li>
-<li>[ ] 71. How to measure EXECUTION TIME in Python ⌚ (5:26) - https://youtu.be/FblABqaKz_U</li>
-<li>[ ] 72. Learn Python DATES &amp; TIMES in 6 minutes! 📅 (6:48) - https://youtu.be/DwBDHsdX6XQ</li>
-<li>[ ] 73. Code an alarm clock using Python! ⏰ (8:56) - https://youtu.be/uf8DvQlWm7M</li>
-<li>[ ] 74. Learn Python iterators in 7 minutes! ➡️ (7:28) - https://youtu.be/k0D3MQwLn7A</li>
-<li>[ ] 75. Learn Python generators in 8 minutes! 🚰 (8:44) - https://youtu.be/Gsfsq2epdr8</li>
-<li>[ ] 76. Learn Python generator expressions in 9 minutes! ♻️ (9:31) - https://youtu.be/ZBlxaXMN_hU</li>
-<li>[ ] 77. You'll love Python data classes! 📋 (9:00) - https://youtu.be/G1lJeEIl05o</li>
-<li>[ ] 78. Learn Python multithreading in 8 minutes! 🧵 (8:54) - https://youtu.be/STEOavXqXkQ</li>
-<li>[ ] 79. Request API data using Python in 8 minutes! ↩️ (8:45) - https://youtu.be/JVQNywo4AbU</li>
-<li>[ ] 80. Python PyQt5 setup a basic GUI Application! 🖥️ (9:31) - https://youtu.be/Uvqmv3PGiXM</li>
-<li>[ ] 81. Create LABELS with Python in 8 minutes! 🏷️ (8:43) - https://youtu.be/nFLADhwXjW4</li>
-<li>[ ] 82. Python PyQt5 IMAGES are easy! 📷 (6:46) - https://youtu.be/7v5NQeIBYes</li>
-<li>[ ] 83. Layout managers in Python are easy! 🧲 (8:08) - https://youtu.be/ml-mBl77h6Q</li>
-<li>[ ] 84. Create Python buttons in 7 minutes! 🛎️ (7:42) - https://youtu.be/9pl55MxZlG4</li>
-<li>[ ] 85. Create Python checkboxes in 5 minutes! ✅ (5:49) - https://youtu.be/VgnUB_vzR9I</li>
-<li>[ ] 86. Python PyQt5 RADIO BUTTONS are easy! 🔘 (6:35) - https://youtu.be/DZ3-ij_JHE0</li>
-<li>[ ] 87. Python PyQt5 LINE EDITS are easy! 💬 (7:05) - https://youtu.be/4IUWg_wQNSc</li>
-<li>[ ] 88. Add CSS to Python in 10 minutes! 🎨 (10:55) - https://youtu.be/YJM9d0F3n-o</li>
-<li>[ ] 89. Let's code a digital clock with Python! 🕒 (12:45) - https://youtu.be/543g1CurFFo</li>
-<li>[ ] 90. Code a stopwatch using Python! ⏱ (15:47) - https://youtu.be/UKs0xhxSOg0</li>
-<li>[ ] 91. Create a weather app with Python! ☀️ (20:37) - https://youtu.be/Q4377DH5Jso</li>
-<li>[ ] 92. Create QR codes with Python in 4 minutes! 📱 (4:48) - https://youtu.be/pJdTyvufOdg</li>
-<li>[ ] 93. Build a music player with Python! 🎶 (18:52) - https://youtu.be/xf71dRBRP6o</li>
+</section>
+<section id="video-links">
+<h2>📺 Video Links<a class="headerlink" href="#video-links" title="Link to this heading">¶</a></h2>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 1. Start coding with PYTHON in 5 minutes! 🐍 (5:13) - <a class="reference external" href="https://youtu.be/Sg4GMVMdOPo">https://youtu.be/Sg4GMVMdOPo</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 2. Learn Python VARIABLES in 10 minutes! ❎ (10:20) - <a class="reference external" href="https://youtu.be/7IoQ5BGkTJo">https://youtu.be/7IoQ5BGkTJo</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 3. Learn type casting in 7 minutes! 💱 (7:39) - <a class="reference external" href="https://youtu.be/Qtq83lAoogM">https://youtu.be/Qtq83lAoogM</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 4. User input in Python is easy + exercises ⌨️ (9:48) - <a class="reference external" href="https://youtu.be/nMCOB8KElwo">https://youtu.be/nMCOB8KElwo</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 5. Math in Python is easy! 📐 (10:03) - <a class="reference external" href="https://youtu.be/jc7TBgMS_kw">https://youtu.be/jc7TBgMS_kw</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 6. If statements in Python are easy (if, elif, else) 🤔 (12:07) - <a class="reference external" href="https://youtu.be/FvMPfrgGeKs">https://youtu.be/FvMPfrgGeKs</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 7. Let’s code a simple python calculator! 🧮 (8:20) - <a class="reference external" href="https://youtu.be/yUrYouDQZL8">https://youtu.be/yUrYouDQZL8</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 8. Python weight conversion exercise 🏋️ (5:47) - <a class="reference external" href="https://youtu.be/80kjCBRjkmU">https://youtu.be/80kjCBRjkmU</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 9. Python temperature conversion program 🌡️ (5:44) - <a class="reference external" href="https://youtu.be/fy5QsDJmctQ">https://youtu.be/fy5QsDJmctQ</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 10. Logical operators in Python are easy 🔣 (7:56) - <a class="reference external" href="https://youtu.be/W7luvtXeQTA">https://youtu.be/W7luvtXeQTA</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 11. Learn conditional expressions in 5 minutes! ❓ (5:21) - <a class="reference external" href="https://youtu.be/TYyKQBC4bwE">https://youtu.be/TYyKQBC4bwE</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 12. String methods in Python are easy! 〰️ (12:14) - <a class="reference external" href="https://youtu.be/tb6EYiHtcXU">https://youtu.be/tb6EYiHtcXU</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 13. String indexing in Python is easy ✂️ (6:17) - <a class="reference external" href="https://youtu.be/7pXf1DUuaIo">https://youtu.be/7pXf1DUuaIo</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 14. Python email slicer program 📧 (4:07) - <a class="reference external" href="https://youtu.be/6MAufQ6vGtI">https://youtu.be/6MAufQ6vGtI</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 15. Learn Python format specifiers in 5 minutes! 💬 (5:32) - <a class="reference external" href="https://youtu.be/FrvBwdAU2dQ">https://youtu.be/FrvBwdAU2dQ</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 16. While loops in Python are easy! ♾️ (8:04) - <a class="reference external" href="https://youtu.be/rRTjPnVooxE">https://youtu.be/rRTjPnVooxE</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 17. Code an interest calculator in 7 minutes! 💵 (7:35) - <a class="reference external" href="https://youtu.be/aM5dttidg4Q">https://youtu.be/aM5dttidg4Q</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 18. Learn Python for loops in 5 minutes! 🔁 (5:47) - <a class="reference external" href="https://youtu.be/KWgYha0clzw">https://youtu.be/KWgYha0clzw</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 19. Nested loops in Python are easy ➿ (6:12) - <a class="reference external" href="https://youtu.be/APWy6Pc83gE">https://youtu.be/APWy6Pc83gE</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 20. Countdown timer program in Python ⌛ (8:59) - <a class="reference external" href="https://youtu.be/KseiSR0MCTI">https://youtu.be/KseiSR0MCTI</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 21. Python lists, sets, and tuples explained 🍍 (13:04) - <a class="reference external" href="https://youtu.be/gOMW_n2-2Mw">https://youtu.be/gOMW_n2-2Mw</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 22. Python shopping cart program 🛒 (9:12) - <a class="reference external" href="https://youtu.be/kbyHLU9JqjE">https://youtu.be/kbyHLU9JqjE</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 23. Python 2D collections are easy! ⬜ (5:55) - <a class="reference external" href="https://youtu.be/Xy6qeQWQwFw">https://youtu.be/Xy6qeQWQwFw</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 24. Create a QUIZ GAME with Python 💯 (14:14) - <a class="reference external" href="https://youtu.be/zehwgTB0vV8">https://youtu.be/zehwgTB0vV8</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 25. Python dictionaries are easy 📙 (9:06) - <a class="reference external" href="https://youtu.be/MZZSMaEAC2g">https://youtu.be/MZZSMaEAC2g</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 26. Python concession stand program 🍿 (10:46) - <a class="reference external" href="https://youtu.be/PbkIzW_70EI">https://youtu.be/PbkIzW_70EI</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 27. Generate random numbers in Python 🎲 (9:27) - <a class="reference external" href="https://youtu.be/piJc18hcH0Y">https://youtu.be/piJc18hcH0Y</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 28. Let’s code a Python NUMBER GUESSING GAME! 🔢 (9:09) - <a class="reference external" href="https://youtu.be/jcKe13D6bao">https://youtu.be/jcKe13D6bao</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 29. ROCK PAPER SCISSORS game in Python 🗿 (13:38) - <a class="reference external" href="https://youtu.be/fn68QNcatfo">https://youtu.be/fn68QNcatfo</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 30. Code a dice roller program in 10 minutes! 🎲 (10:24) - <a class="reference external" href="https://youtu.be/x-Ag2_bJ40Y">https://youtu.be/x-Ag2_bJ40Y</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 31. Encryption program in Python 🔐 (9:47) - <a class="reference external" href="https://youtu.be/vsLBErLWBhA">https://youtu.be/vsLBErLWBhA</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 32. Functions in Python are easy 📞 (9:05) - <a class="reference external" href="https://youtu.be/89cGQjB5R4M">https://youtu.be/89cGQjB5R4M</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 33. Python default arguments are awesome! 👍 (6:15) - <a class="reference external" href="https://youtu.be/m2uURZxex3c">https://youtu.be/m2uURZxex3c</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 34. Python keyword arguments are awesome! 🗝️ (5:16) - <a class="reference external" href="https://youtu.be/7QCHpAtlSMo">https://youtu.be/7QCHpAtlSMo</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 35. Python *ARGS &amp; **KWARGS are awesome! 📦 (6:57) - <a class="reference external" href="https://youtu.be/Vh__2V2tXUM">https://youtu.be/Vh__2V2tXUM</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 36. Learn Python iterables in 6 minutes! 🔂 (6:48) - <a class="reference external" href="https://youtu.be/VL_g3LjsFqs">https://youtu.be/VL_g3LjsFqs</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 37. Learn Python MEMBERSHIP OPERATORS in 8 minutes! 🔎 (8:23) - <a class="reference external" href="https://youtu.be/OJ5E7VLsZQM">https://youtu.be/OJ5E7VLsZQM</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 38. Learn Python LIST COMPREHENSIONS in 10 minutes! 📃 (10:22) - <a class="reference external" href="https://youtu.be/YlY2g2xrl6Q">https://youtu.be/YlY2g2xrl6Q</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 39. Learn Python MATCH-CASE STATEMENTS in 5 minutes! 📆 (5:46) - <a class="reference external" href="https://youtu.be/L7tT0NZF-Ag">https://youtu.be/L7tT0NZF-Ag</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 40. What are Python modules? 📨 (7:57) - <a class="reference external" href="https://youtu.be/XcfxkHrHTVE">https://youtu.be/XcfxkHrHTVE</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 41. What is Python scope resolution? 🔬 (8:05) - <a class="reference external" href="https://youtu.be/XN83IECAscM">https://youtu.be/XN83IECAscM</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 42. if <strong>name</strong> == ‘<strong>main</strong>’ for Python beginners 📥 (6:05) - <a class="reference external" href="https://youtu.be/8A0E1dSyjFM">https://youtu.be/8A0E1dSyjFM</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 43. Credit card validator in Python 💳 (8:49) - <a class="reference external" href="https://youtu.be/LqXIJjcRmGI">https://youtu.be/LqXIJjcRmGI</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 44. Let’s code a beginners Python BANKING PROGRAM 💰 (13:38) - <a class="reference external" href="https://youtu.be/8aW3tkIul-8">https://youtu.be/8aW3tkIul-8</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 45. Let’s code a beginners Python SLOT MACHINE 🎰 (16:38) - <a class="reference external" href="https://youtu.be/f5J3YiZ3XX8">https://youtu.be/f5J3YiZ3XX8</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 46. Let’s code a HANGMAN GAME in Python! 🕺 (21:13) - <a class="reference external" href="https://youtu.be/ag8NtD1e0Kc">https://youtu.be/ag8NtD1e0Kc</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 47. Learn Python Object Oriented Programming! 🚗 (15:31) - <a class="reference external" href="https://youtu.be/1XE-_s4ZBT8">https://youtu.be/1XE-_s4ZBT8</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 48. Learn class variables in 8 minutes! 🎓 (8:47) - <a class="reference external" href="https://youtu.be/bytvWg4fPB0">https://youtu.be/bytvWg4fPB0</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> 49. Python INHERITANCE in 6 minutes! 👨‍👦‍👦 (6:40) - <a class="reference external" href="https://youtu.be/u1be7Vele5o">https://youtu.be/u1be7Vele5o</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 50. Learn Python multiple inheritance in 8 minutes! 🐟 (8:12) - <a class="reference external" href="https://youtu.be/Q8YlYHjksLo">https://youtu.be/Q8YlYHjksLo</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 51. Learn Python ABSTRACT CLASSES in 7 minutes! 👻 (7:42) - <a class="reference external" href="https://youtu.be/97V7ICVeTJc">https://youtu.be/97V7ICVeTJc</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 52. SUPER() in Python explained! 🔴 (6:46) - <a class="reference external" href="https://youtu.be/HzyhmZqiaE8">https://youtu.be/HzyhmZqiaE8</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 53. Learn polymorphism in 8 minutes! 🎭 (8:39) - <a class="reference external" href="https://youtu.be/tHN8I_4FIt8">https://youtu.be/tHN8I_4FIt8</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 54. Learn Python DUCK TYPING in 4 minutes! 🦆 (4:51) - <a class="reference external" href="https://youtu.be/Qe03kCuTMoU">https://youtu.be/Qe03kCuTMoU</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 55. Learn Python AGGREGATION in 6 minutes! 📚 (6:45) - <a class="reference external" href="https://youtu.be/caXOUnQkD1o">https://youtu.be/caXOUnQkD1o</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 56. Learn Python COMPOSITION in 7 minutes! 🚘 (7:30) - <a class="reference external" href="https://youtu.be/TPUdUkFHD5I">https://youtu.be/TPUdUkFHD5I</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 57. Learn Python NESTED CLASSES in 9 minutes! 📛 (9:21) - <a class="reference external" href="https://youtu.be/zxPODCF4KEw">https://youtu.be/zxPODCF4KEw</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 58. Learn Python STATIC METHODS in 5 minutes! ⚡ (5:42) - <a class="reference external" href="https://youtu.be/GZYWTm7JoWs">https://youtu.be/GZYWTm7JoWs</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 59. Learn Python CLASS METHODS in 6 minutes! 🏫 (6:38) - <a class="reference external" href="https://youtu.be/g-qRKZD3FgE">https://youtu.be/g-qRKZD3FgE</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 60. Python MAGIC METHODS are easy! 🌟 (10:13) - <a class="reference external" href="https://youtu.be/NwjSP1_WEfE">https://youtu.be/NwjSP1_WEfE</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 61. Learn Python DECORATORS in 7 minutes! 🎊 (7:46) - <a class="reference external" href="https://youtu.be/U-G-mSd4KAE">https://youtu.be/U-G-mSd4KAE</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 62. Learn Python &#64;property in 7 minutes! ⚙️ (7:28) - <a class="reference external" href="https://youtu.be/HkbQ_NaH0Lc">https://youtu.be/HkbQ_NaH0Lc</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 63. Learn Python LAMBDA in 6 minutes! 🚮 (6:43) - <a class="reference external" href="https://youtu.be/IljPHDyBRog">https://youtu.be/IljPHDyBRog</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 64. Python SORTING is easy (sort of) 🔀 (9:56) - <a class="reference external" href="https://youtu.be/cd-vtiO5chk">https://youtu.be/cd-vtiO5chk</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 65. Learn Python zip() in 3 minutes! 🤐 (3:51) - <a class="reference external" href="https://youtu.be/5WK3j2erJW4">https://youtu.be/5WK3j2erJW4</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 66. Learn RECURSION in 5 minutes! 😵 (5:42) - <a class="reference external" href="https://youtu.be/ivl5-snqul8">https://youtu.be/ivl5-snqul8</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 67. Learn Python EXCEPTION HANDLING in 5 minutes! 🚦 (5:59) - <a class="reference external" href="https://youtu.be/V_NXT2-QIlE">https://youtu.be/V_NXT2-QIlE</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 68. File detection in Python is easy! 🕵️‍♂️ (4:30) - <a class="reference external" href="https://youtu.be/EReeJSaU0Og">https://youtu.be/EReeJSaU0Og</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 69. Write files using Python! ✍ (7:05) - <a class="reference external" href="https://youtu.be/1IYrmTTKOoI">https://youtu.be/1IYrmTTKOoI</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 70. Read files using Python! 🔍 (5:55) - <a class="reference external" href="https://youtu.be/GWBWQnWBI">https://youtu.be/GWBWQnWBI</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 71. How to measure EXECUTION TIME in Python ⌚ (5:26) - <a class="reference external" href="https://youtu.be/FblABqaKz_U">https://youtu.be/FblABqaKz_U</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 72. Learn Python DATES &amp; TIMES in 6 minutes! 📅 (6:48) - <a class="reference external" href="https://youtu.be/DwBDHsdX6XQ">https://youtu.be/DwBDHsdX6XQ</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 73. Code an alarm clock using Python! ⏰ (8:56) - <a class="reference external" href="https://youtu.be/uf8DvQlWm7M">https://youtu.be/uf8DvQlWm7M</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 74. Learn Python iterators in 7 minutes! ➡️ (7:28) - <a class="reference external" href="https://youtu.be/k0D3MQwLn7A">https://youtu.be/k0D3MQwLn7A</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 75. Learn Python generators in 8 minutes! 🚰 (8:44) - <a class="reference external" href="https://youtu.be/Gsfsq2epdr8">https://youtu.be/Gsfsq2epdr8</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 76. Learn Python generator expressions in 9 minutes! ♻️ (9:31) - <a class="reference external" href="https://youtu.be/ZBlxaXMN_hU">https://youtu.be/ZBlxaXMN_hU</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 77. You’ll love Python data classes! 📋 (9:00) - <a class="reference external" href="https://youtu.be/G1lJeEIl05o">https://youtu.be/G1lJeEIl05o</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 78. Learn Python multithreading in 8 minutes! 🧵 (8:54) - <a class="reference external" href="https://youtu.be/STEOavXqXkQ">https://youtu.be/STEOavXqXkQ</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 79. Request API data using Python in 8 minutes! ↩️ (8:45) - <a class="reference external" href="https://youtu.be/JVQNywo4AbU">https://youtu.be/JVQNywo4AbU</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 80. Python PyQt5 setup a basic GUI Application! 🖥️ (9:31) - <a class="reference external" href="https://youtu.be/Uvqmv3PGiXM">https://youtu.be/Uvqmv3PGiXM</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 81. Create LABELS with Python in 8 minutes! 🏷️ (8:43) - <a class="reference external" href="https://youtu.be/nFLADhwXjW4">https://youtu.be/nFLADhwXjW4</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 82. Python PyQt5 IMAGES are easy! 📷 (6:46) - <a class="reference external" href="https://youtu.be/7v5NQeIBYes">https://youtu.be/7v5NQeIBYes</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 83. Layout managers in Python are easy! 🧲 (8:08) - <a class="reference external" href="https://youtu.be/ml-mBl77h6Q">https://youtu.be/ml-mBl77h6Q</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 84. Create Python buttons in 7 minutes! 🛎️ (7:42) - <a class="reference external" href="https://youtu.be/9pl55MxZlG4">https://youtu.be/9pl55MxZlG4</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 85. Create Python checkboxes in 5 minutes! ✅ (5:49) - <a class="reference external" href="https://youtu.be/VgnUB_vzR9I">https://youtu.be/VgnUB_vzR9I</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 86. Python PyQt5 RADIO BUTTONS are easy! 🔘 (6:35) - <a class="reference external" href="https://youtu.be/DZ3-ij_JHE0">https://youtu.be/DZ3-ij_JHE0</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 87. Python PyQt5 LINE EDITS are easy! 💬 (7:05) - <a class="reference external" href="https://youtu.be/4IUWg_wQNSc">https://youtu.be/4IUWg_wQNSc</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 88. Add CSS to Python in 10 minutes! 🎨 (10:55) - <a class="reference external" href="https://youtu.be/YJM9d0F3n-o">https://youtu.be/YJM9d0F3n-o</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 89. Let’s code a digital clock with Python! 🕒 (12:45) - <a class="reference external" href="https://youtu.be/543g1CurFFo">https://youtu.be/543g1CurFFo</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 90. Code a stopwatch using Python! ⏱ (15:47) - <a class="reference external" href="https://youtu.be/UKs0xhxSOg0">https://youtu.be/UKs0xhxSOg0</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 91. Create a weather app with Python! ☀️ (20:37) - <a class="reference external" href="https://youtu.be/Q4377DH5Jso">https://youtu.be/Q4377DH5Jso</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 92. Create QR codes with Python in 4 minutes! 📱 (4:48) - <a class="reference external" href="https://youtu.be/pJdTyvufOdg">https://youtu.be/pJdTyvufOdg</a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> 93. Build a music player with Python! 🎶 (18:52) - <a class="reference external" href="https://youtu.be/xf71dRBRP6o">https://youtu.be/xf71dRBRP6o</a></p></li>
 </ul>
-<p>Python Interpreter: https://www.python.org/
-PyCharm IDE: https://www.jetbrains.com/pycharm/</p>
+<p>Python Interpreter: <a class="reference external" href="https://www.python.org/">https://www.python.org/</a>
+PyCharm IDE: <a class="reference external" href="https://www.jetbrains.com/pycharm/">https://www.jetbrains.com/pycharm/</a></p>
 <p><em>Copyright Disclaimer</em>:
 This video is the intellectual property of Bro Code. All rights reserved. No part of this video may be reproduced, distributed, or transmitted in any form or by any means, including but not limited to recording, uploading, or other electronic or mechanical methods, without my written permission, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law.</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
 
-
-
-
-
-
-
-
-
-
-
-
-                
-              </article>
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="1-print.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Chapter 1: Print</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, Pavan Mudigonda
             </div>
-          
-          
-<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
         </div>
         
-      </main>
-      
-        <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
-</div>
-      
+      </footer>
     </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Python Learning Repository 🐍</a><ul>
+<li><a class="reference internal" href="#checkout-my-other-courses">Checkout my other courses</a></li>
+<li><a class="reference internal" href="#launch-instantly-in-your-favorite-environment">🚀 Launch Instantly in Your Favorite Environment</a></li>
+<li><a class="reference internal" href="#course-progress-status">📊 Course Progress Status</a></li>
+<li><a class="reference internal" href="#chapter-checklist">📚 Chapter Checklist</a></li>
+<li><a class="reference internal" href="#video-links">📺 Video Links</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
   </div>
-</footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    
-    
-    
-      
-      
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-    
-    
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
-      
-    
-  </body>
+</div><script src="_static/documentation_options.js?v=8d563738"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    </body>
 </html>
