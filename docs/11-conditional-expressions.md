@@ -160,4 +160,3 @@ print(f"Your badge: {badge}")
 
 ## 🔗 Next Chapter
 Continue to [Chapter 13: String Methods](13-string.md) to explore string manipulation techniques!
-

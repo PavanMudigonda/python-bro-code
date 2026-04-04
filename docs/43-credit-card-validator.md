@@ -307,4 +307,3 @@ Continue to [Chapter 44: Banking Program](42-banking-program.md) to build a comp
 ---
 
 **Security Note:** This validates the format only. Real validation requires checking with the card issuer. Never store card numbers in plain text!
-

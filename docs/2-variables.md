@@ -133,4 +133,3 @@ Modify `main.py` to create variables about yourself and print them in creative w
 
 ## 🔗 Next Chapter
 Continue to [Chapter 3: Type Casting](3-type-casting.md) to learn how to convert between data types!
-

@@ -182,4 +182,3 @@ Create a madlib that uses at least 10 different words and tells a complete story
 
 ## 🔗 Next Chapter
 Continue to [Chapter 6: Arithmetic & Math](6-arithmetics-maths.md) to learn about mathematical operations in Python!
-

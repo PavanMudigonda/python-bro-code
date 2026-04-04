@@ -239,4 +239,3 @@ Continue to [Chapter 15: Format Specifiers](15-format.md) to learn advanced stri
 ---
 
 **Practice Tip:** Try extending this to validate email formats more thoroughly - check for valid characters, proper domain structure, etc!
-

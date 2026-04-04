@@ -177,4 +177,3 @@ while True:
 
 ## 🔗 Next Chapter
 Continue to [Chapter 17: Interest Calculator](17-interest-calculator.md) to build a compound interest calculator!
-

@@ -530,4 +530,3 @@ Modify `main.py` to:
 
 ## 🔗 Next Chapter
 Continue to [Chapter 19: Countdown Timer](19-timer.md) to build a real countdown timer application!
-

@@ -184,4 +184,3 @@ print(extension)  # "pdf"
 
 ## 🔗 Next Chapter
 Continue to [Chapter 15: Format Specifiers](15-format.md) to learn advanced string formatting!
-

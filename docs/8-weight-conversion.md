@@ -230,4 +230,3 @@ for lbs in range(10, 210, 10):
 
 ## 🔗 Next Chapter
 Continue to [Chapter 10: Temperature Converter](10-temp.md) to create another conversion program!
-

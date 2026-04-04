@@ -607,4 +607,3 @@ Modify `task.py` to:
 
 ## 🔗 Next Chapter
 Continue to [Chapter 21: Lists](21-lists.md) to learn about Python's most versatile data structure!
-

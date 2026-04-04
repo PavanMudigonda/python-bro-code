@@ -291,4 +291,3 @@ Remember: In an if-elif-else chain:
 
 ## 🔗 Next Chapter
 Continue to [Chapter 8: Calculator](8-calculator.md) to build a functional calculator program!
-

@@ -79,4 +79,3 @@ print("This is code")  # This is also a comment
 
 ## 🔗 Next Chapter
 Continue to [Chapter 2: Variables](2-variables.md) to learn about storing data!
-

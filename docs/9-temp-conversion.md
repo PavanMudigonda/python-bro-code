@@ -322,4 +322,3 @@ Output:
 
 ## 🔗 Next Chapter
 Continue to [Chapter 11: Logical Operators](11-logical.md) to learn about AND, OR, and NOT operations!
-

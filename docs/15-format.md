@@ -207,4 +207,3 @@ print(f"{number:,}")     # 1,234,567
 
 ## 🔗 Next Chapter
 Continue to [Chapter 16: While Loops](16-while.md) to learn about repetition and iteration!
-

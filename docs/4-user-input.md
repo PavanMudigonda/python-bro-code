@@ -161,4 +161,3 @@ Create an interactive program that:
 
 ## 🔗 Next Chapter
 Continue to [Chapter 5: Madlibs Game](5-madlibs-game.md) to create a fun word game using user input!
-

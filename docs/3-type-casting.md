@@ -161,4 +161,3 @@ Modify `main.py` to create a program that:
 
 ## 🔗 Next Chapter
 Continue to [Chapter 4: User Input](4-user-input.md) to learn how to interact with users!
-

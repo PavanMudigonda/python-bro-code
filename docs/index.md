@@ -155,6 +155,7 @@ This video is the intellectual property of Bro Code. All rights reserved. No par
 :caption: Chapters
 :hidden:
 
+0-examples
 1-print
 2-variables
 3-type-casting
@@ -201,6 +202,7 @@ This video is the intellectual property of Bro Code. All rights reserved. No par
 44-banking-program
 45-slot-machine
 46-hangman-game
+46-python-oop
 47-python-oop
 48-class-variables
 49-inheritance

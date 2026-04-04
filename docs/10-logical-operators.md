@@ -223,4 +223,3 @@ else:
 
 ## 🔗 Next Chapter
 Continue to [Chapter 12: Conditional Expressions](12-conditional.md) to learn shorthand if-else statements!
-

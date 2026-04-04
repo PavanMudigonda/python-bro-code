@@ -567,4 +567,3 @@ Modify `main.py` to:
 
 ## 🔗 Next Chapter
 Continue to [Chapter 20: Nested Loops](20-nested-loops.md) to learn about loops within loops!
-

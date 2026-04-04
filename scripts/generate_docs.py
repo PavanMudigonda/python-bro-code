@@ -1,6 +1,7 @@
 import os
 import re
 import glob
+import json
 
 GITHUB_REPO = "PavanMudigonda/python-bro-code"
 GITHUB_BRANCH = "main"
@@ -53,6 +54,24 @@ def generate_notebook_badges(folder):
     badges_lines.append("")
     return "\n".join(badges_lines)
 
+def extract_markdown_from_notebook(nb_path):
+    """Extract concatenated markdown cell sources from a Jupyter notebook,
+    skipping cells that only contain badge images."""
+    with open(nb_path, 'r', encoding='utf-8') as f:
+        nb = json.load(f)
+    parts = []
+    for cell in nb.get('cells', []):
+        if cell.get('cell_type') != 'markdown':
+            continue
+        source = ''.join(cell.get('source', []))
+        # Skip cells that are purely badges (Colab/Kaggle image links)
+        cleaned = strip_old_badges(source).strip()
+        if not cleaned:
+            continue
+        parts.append(cleaned)
+    return '\n\n'.join(parts)
+
+
 def main():
     base_dir = "."
     docs_dir = "docs"
@@ -80,41 +99,49 @@ def main():
     
     for folder in folders:
         readme_path = os.path.join(folder, "README.md")
+        notebooks = sorted(glob.glob(os.path.join(folder, "*.ipynb")))
+
+        # Determine content source: README.md first, then notebook markdown cells
+        content = None
         if os.path.exists(readme_path):
-            chapter_name = ' '.join(word.capitalize() for word in folder.split('-')[1:])
-            chapter_prefix = folder.split('-')[0]
-            display_name = f"Chapter {chapter_prefix}: {chapter_name}"
-            
-            doc_filename = f"{folder}.md"
-            doc_path = os.path.join(docs_dir, doc_filename)
-            
             with open(readme_path, 'r', encoding='utf-8') as rf:
                 content = rf.read()
-            
-            # Remove old/stale Colab/Kaggle badges from README
-            content = strip_old_badges(content)
-            
-            # Apply link fixing
-            content = fix_markdown_links(content)
-            
-            # Prepend a title if it's not present
-            if not content.startswith('# '):
-                content = f"# {display_name}\n\n{content}"
+        elif notebooks:
+            content = extract_markdown_from_notebook(notebooks[0])
+        else:
+            continue  # no content source
 
-            # Inject Colab / Kaggle notebook badges after the first heading
-            notebook_badges = generate_notebook_badges(folder)
-            if notebook_badges:
-                first_newline = content.find('\n')
-                if first_newline != -1:
-                    content = content[:first_newline] + "\n" + notebook_badges + content[first_newline:]
-                else:
-                    content += "\n" + notebook_badges
-            
-            with open(doc_path, 'w', encoding='utf-8') as wf:
-                wf.write(content)
-                
-            generated_chapters.append(folder)
-            chapter_count += 1
+        chapter_name = ' '.join(word.capitalize() for word in folder.split('-')[1:])
+        chapter_prefix = folder.split('-')[0]
+        display_name = f"Chapter {chapter_prefix}: {chapter_name}"
+
+        doc_filename = f"{folder}.md"
+        doc_path = os.path.join(docs_dir, doc_filename)
+
+        # Remove old/stale Colab/Kaggle badges
+        content = strip_old_badges(content)
+
+        # Apply link fixing
+        content = fix_markdown_links(content)
+
+        # Prepend a title if it's not present
+        if not content.startswith('# '):
+            content = f"# {display_name}\n\n{content}"
+
+        # Inject Colab / Kaggle notebook badges after the first heading
+        notebook_badges = generate_notebook_badges(folder)
+        if notebook_badges:
+            first_newline = content.find('\n')
+            if first_newline != -1:
+                content = content[:first_newline] + "\n" + notebook_badges + content[first_newline:]
+            else:
+                content += "\n" + notebook_badges
+
+        with open(doc_path, 'w', encoding='utf-8') as wf:
+            wf.write(content)
+
+        generated_chapters.append(folder)
+        chapter_count += 1
 
     # 3. Append MyST toctree to index.md for Sphinx navigation
     toctree_entries = "\n".join(generated_chapters)
