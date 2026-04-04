@@ -45,4 +45,9 @@ Thumbs.db
 
 # Generated output
 site/
-docs/
+docs/*
+!docs/conf.py
+!docs/_static/
+!docs/_static/custom.css
+!docs/_templates/
+!docs/_templates/.gitkeep
