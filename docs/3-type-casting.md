@@ -7,6 +7,8 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/Qtq83lAoogM)
+
 **Learn type casting in 7 minutes! 💱** (7:39)
 
 ## 📚 What You'll Learn

@@ -8,9 +8,13 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/yUrYouDQZL8)
+
 **Let's code a simple python calculator! 🧮** (8:20)
 
 ## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/yUrYouDQZL8)
 
 ## 📚 What You'll Learn
 Build a functional calculator that performs basic mathematical operations!

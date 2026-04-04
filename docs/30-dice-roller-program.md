@@ -7,6 +7,8 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/x-Ag2_bJ40Y)
+
 **Code a dice roller program in 10 minutes! 🎲** (10:24)
 
 ## What You'll Learn

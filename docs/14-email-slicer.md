@@ -7,6 +7,8 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/6MAufQ6vGtI)
+
 **Python email slicer program 📧** (4:07)
 
 ## 📚 What You'll Learn

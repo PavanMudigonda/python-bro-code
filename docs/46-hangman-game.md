@@ -7,6 +7,8 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/ag8NtD1e0Kc)
+
 **Let's code a HANGMAN GAME in Python! 🕺** (21:13)
 
 ## What You'll Learn

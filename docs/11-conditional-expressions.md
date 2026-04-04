@@ -7,9 +7,13 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/TYyKQBC4bwE)
+
 **Learn conditional expressions in 5 minutes! ❓** (5:21)
 
 ## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/TYyKQBC4bwE)
 
 ## 📚 What You'll Learn
 Write compact, elegant one-line conditional statements using Python's ternary operator!

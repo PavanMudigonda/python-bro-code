@@ -7,9 +7,13 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/FvMPfrgGeKs)
+
 **If statements in Python are easy (if, elif, else) 🤔** (12:07)
 
 ## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/FvMPfrgGeKs)
 
 ## 📚 What You'll Learn
 Make your programs smart with conditional logic! Learn how to make decisions based on different conditions.

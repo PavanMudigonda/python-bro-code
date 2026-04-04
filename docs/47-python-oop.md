@@ -7,6 +7,8 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/1XE-_s4ZBT8)
+
 **Learn Python Object Oriented Programming! 🚗** (15:31)
 
 ## What You'll Learn

@@ -7,9 +7,13 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/APWy6Pc83gE)
+
 **Nested loops in Python are easy ➿** (6:12)
 
 ## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/APWy6Pc83gE)
 
 ## 📚 What You'll Learn
 Master nested loops - loops within loops - to create patterns, process 2D data, and solve complex iteration problems!

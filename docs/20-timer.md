@@ -7,9 +7,13 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/KseiSR0MCTI)
+
 **Countdown timer program in Python ⌛** (8:59)
 
 ## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/KseiSR0MCTI)
 
 ## 📚 What You'll Learn
 Build a real countdown timer using Python's time module - combining loops, time operations, and user input!

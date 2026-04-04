@@ -7,6 +7,8 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/piJc18hcH0Y)
+
 **Generate random numbers in Python 🎲** (9:27)
 
 ## What You'll Learn

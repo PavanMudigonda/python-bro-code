@@ -7,6 +7,8 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/8A0E1dSyjFM)
+
 **if __name__ == '__main__' for Python beginners 📥** (6:05)
 
 ## What You'll Learn

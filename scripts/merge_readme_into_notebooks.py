@@ -17,10 +17,10 @@ import sys
 GITHUB_REPO = "PavanMudigonda/python-bro-code"
 GITHUB_BRANCH = "main"
 
-# Matches old Colab/Kaggle badge lines at the top of READMEs
+# Matches old Colab/Kaggle badge lines — only where the LINK TARGET is Colab/Kaggle (preserves YouTube)
 OLD_BADGE_RE = re.compile(
-    r'^\s*\[!\[.*?\]\(https?://(?:colab\.research\.google\.com|kaggle\.com|img\.shields\.io).*?\)\]\(.*?\)\s*'
-    r'(?:\[!\[.*?\]\(https?://(?:colab\.research\.google\.com|kaggle\.com|img\.shields\.io).*?\)\]\(.*?\)\s*)*$',
+    r'^\s*\[!\[.*?\]\(.*?\)\]\(https?://(?:colab\.research\.google\.com|kaggle\.com/kernels).*?\)\s*'
+    r'(?:\[!\[.*?\]\(.*?\)\]\(https?://(?:colab\.research\.google\.com|kaggle\.com/kernels).*?\)\s*)*$',
     re.MULTILINE,
 )
 

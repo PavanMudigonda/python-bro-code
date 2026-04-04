@@ -6,10 +6,10 @@ import json
 GITHUB_REPO = "PavanMudigonda/python-bro-code"
 GITHUB_BRANCH = "main"
 
-# Pattern to match old badge lines (Colab/Kaggle image-links at the top of READMEs)
+# Pattern to match old badge lines that LINK TO Colab/Kaggle (preserves YouTube badges)
 OLD_BADGE_RE = re.compile(
-    r'^\s*\[!\[.*?\]\(https?://(?:colab\.research\.google\.com|kaggle\.com|img\.shields\.io).*?\)\]\(.*?\)\s*'
-    r'(?:\[!\[.*?\]\(https?://(?:colab\.research\.google\.com|kaggle\.com|img\.shields\.io).*?\)\]\(.*?\)\s*)*$',
+    r'^\s*\[!\[.*?\]\(.*?\)\]\(https?://(?:colab\.research\.google\.com|kaggle\.com/kernels).*?\)\s*'
+    r'(?:\[!\[.*?\]\(.*?\)\]\(https?://(?:colab\.research\.google\.com|kaggle\.com/kernels).*?\)\s*)*$',
     re.MULTILINE,
 )
 

@@ -7,6 +7,8 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/fy5QsDJmctQ)
+
 **Python temperature conversion program 🌡️** (5:44)
 
 ## 📚 What You'll Learn

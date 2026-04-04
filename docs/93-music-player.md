@@ -2,6 +2,8 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-Chapter_93-red?style=for-the-badge&logo=youtube)](https://youtu.be/xf71dRBRP6o)
+
 ## 📚 What You'll Learn
 
 [Brief description of the chapter]

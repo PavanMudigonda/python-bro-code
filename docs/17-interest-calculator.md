@@ -7,6 +7,8 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/aM5dttidg4Q)
+
 **Code an interest calculator in 7 minutes! 💵** (7:35)
 
 ## 📚 What You'll Learn

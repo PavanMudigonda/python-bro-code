@@ -7,6 +7,8 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/m2uURZxex3c)
+
 **Python default arguments are awesome! 👍** (6:15)
 
 ## What You'll Learn

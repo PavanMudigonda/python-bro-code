@@ -7,6 +7,8 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/zehwgTB0vV8)
+
 **Create a QUIZ GAME with Python 💯** (14:14)
 
 ## What You'll Learn

@@ -7,9 +7,13 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/tb6EYiHtcXU)
+
 **String methods in Python are easy! 〰️** (12:14)
 
 ## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/tb6EYiHtcXU)
 
 ## 📚 What You'll Learn
 Master Python's powerful string manipulation methods to transform and analyze text!

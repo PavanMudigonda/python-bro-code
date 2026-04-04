@@ -7,6 +7,8 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/YlY2g2xrl6Q)
+
 **Learn Python LIST COMPREHENSIONS in 10 minutes! 📃** (10:22)
 
 ## What You'll Learn

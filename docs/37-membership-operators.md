@@ -7,6 +7,8 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/OJ5E7VLsZQM)
+
 **Learn Python MEMBERSHIP OPERATORS in 8 minutes! 🔎** (8:23)
 
 ## What You'll Learn

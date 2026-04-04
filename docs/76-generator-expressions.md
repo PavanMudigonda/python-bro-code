@@ -5,6 +5,8 @@
 
 **Learn Python generator expressions in 9 minutes! ♻️** (9:31)
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/ZBlxaXMN_hU)
+
 ## 📚 What You'll Learn
 Create generators using concise expression syntax - like list comprehensions but more efficient!
 

@@ -7,6 +7,8 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/8aW3tkIul-8)
+
 **Let's code a beginners Python BANKING PROGRAM 💰** (13:38)
 
 ## What You'll Learn

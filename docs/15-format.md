@@ -7,6 +7,8 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/FrvBwdAU2dQ)
+
 **Learn Python format specifiers in 5 minutes! 💬** (5:32)
 
 ## 📚 What You'll Learn

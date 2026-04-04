@@ -7,6 +7,8 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/gOMW_n2-2Mw)
+
 **Python lists, sets, and tuples explained 🍍** (13:04)
 
 ## What You'll Learn

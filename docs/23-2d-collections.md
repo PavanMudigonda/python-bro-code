@@ -7,6 +7,8 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/Xy6qeQWQwwFw)
+
 **Python 2D collections are easy! ⬜** (5:55)
 
 ## What You'll Learn

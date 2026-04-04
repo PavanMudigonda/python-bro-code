@@ -7,6 +7,8 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/bytvWg4fPB0)
+
 **Learn class variables in 8 minutes! 🎓** (8:47)
 
 ## What You'll Learn

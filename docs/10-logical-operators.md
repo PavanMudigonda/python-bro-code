@@ -7,9 +7,13 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/W7luvtXeQTA)
+
 **Logical operators in Python are easy 🔣** (7:56)
 
 ## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/W7luvtXeQTA)
 
 ## 📚 What You'll Learn
 Combine multiple conditions using logical operators to create powerful decision-making logic!

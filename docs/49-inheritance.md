@@ -8,6 +8,8 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/u1be7Vele5o)
+
 **Python INHERITANCE in 6 minutes! 👨‍👦‍👦** (6:40)
 
 ## What You'll Learn

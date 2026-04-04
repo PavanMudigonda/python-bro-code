@@ -7,9 +7,13 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/80kjCBRjkmU)
+
 **Python weight conversion exercise 🏋️** (5:47)
 
 ## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/80kjCBRjkmU)
 
 ## 📚 What You'll Learn
 Create a practical unit converter that switches between pounds and kilograms!

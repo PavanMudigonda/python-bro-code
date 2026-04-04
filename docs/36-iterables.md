@@ -7,6 +7,8 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/VL_g3LjsFqs)
+
 **Learn Python iterables in 6 minutes! 🔂** (6:48)
 
 ## What You'll Learn

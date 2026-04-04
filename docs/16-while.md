@@ -7,6 +7,8 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/rRTjPnVooxE)
+
 **While loops in Python are easy! ♾️** (8:04)
 
 ## 📚 What You'll Learn

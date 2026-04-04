@@ -7,6 +7,8 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/f5J3YiZ3XX8)
+
 **Let's code a beginners Python SLOT MACHINE 🎰** (16:38)
 
 ## What You'll Learn

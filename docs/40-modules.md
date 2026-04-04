@@ -7,6 +7,8 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/XcfxkHrHTVE)
+
 **What are Python modules? 📨** (7:57)
 
 ## What You'll Learn

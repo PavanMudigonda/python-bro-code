@@ -7,6 +7,8 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/vsLBErLWBhA)
+
 **Encryption program in Python 🔐** (9:47)
 
 ## What You'll Learn

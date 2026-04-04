@@ -7,9 +7,13 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/7pXf1DUuaIo)
+
 **String indexing in Python is easy ✂️** (6:17)
 
 ## 📺 Video Tutorial
+
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/7pXf1DUuaIo)
 
 ## 📚 What You'll Learn
 Access and extract parts of strings using indexing and slicing - essential for text processing!

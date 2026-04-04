@@ -7,6 +7,8 @@
 
 ## 📺 Video Tutorial
 
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/89cGQjB5R4M)
+
 **Functions in Python are easy 📞** (9:05)
 
 ## What You'll Learn
