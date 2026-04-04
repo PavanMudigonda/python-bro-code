@@ -1,5 +1,14 @@
 # Chapter 19: Nested Loops
 
+## 🚀 Open Notebook
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigonda/python-bro-code/blob/main/19-nested-loops/19-nested-loops.ipynb) [![Open In Kaggle](https://img.shields.io/badge/Open%20in-Kaggle-20BEFF?style=flat&logo=kaggle)](https://kaggle.com/kernels/welcome?src=https://github.com/PavanMudigonda/python-bro-code/blob/main/19-nested-loops/19-nested-loops.ipynb)
+
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/PavanMudigondaTR/python-bro-code/blob/main/19-nested-loops/19-nested-loops.ipynb) [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://raw.githubusercontent.com/PavanMudigondaTR/python-bro-code/main/19-nested-loops/19-nested-loops.ipynb)
+
+# Chapter 19: Nested Loops
+
 ## 📺 Video Tutorial
 
 **Nested loops in Python are easy ➿** (6:12)
