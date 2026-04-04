@@ -1,0 +1,83 @@
+﻿2026-04-04T20:23:14.2750753Z ##[group]Run actions/checkout@v6
+2026-04-04T20:23:14.2751805Z with:
+2026-04-04T20:23:14.2752310Z   repository: PavanMudigonda/python-bro-code
+2026-04-04T20:23:14.2753103Z   token: ***
+2026-04-04T20:23:14.2753506Z   ssh-strict: true
+2026-04-04T20:23:14.2753938Z   ssh-user: git
+2026-04-04T20:23:14.2754384Z   persist-credentials: true
+2026-04-04T20:23:14.2754835Z   clean: true
+2026-04-04T20:23:14.2755288Z   sparse-checkout-cone-mode: true
+2026-04-04T20:23:14.2755801Z   fetch-depth: 1
+2026-04-04T20:23:14.2756201Z   fetch-tags: false
+2026-04-04T20:23:14.2756631Z   show-progress: true
+2026-04-04T20:23:14.2757070Z   lfs: false
+2026-04-04T20:23:14.2757447Z   submodules: false
+2026-04-04T20:23:14.2757951Z   set-safe-directory: true
+2026-04-04T20:23:14.2758648Z ##[endgroup]
+2026-04-04T20:23:14.3993849Z Syncing repository: PavanMudigonda/python-bro-code
+2026-04-04T20:23:14.3996727Z ##[group]Getting Git version info
+2026-04-04T20:23:14.3998085Z Working directory is '/home/runner/work/python-bro-code/python-bro-code'
+2026-04-04T20:23:14.4000346Z [command]/usr/bin/git version
+2026-04-04T20:23:14.4001333Z git version 2.53.0
+2026-04-04T20:23:14.4021664Z ##[endgroup]
+2026-04-04T20:23:14.4035781Z Temporarily overriding HOME='/home/runner/work/_temp/b8caadb6-69ff-41eb-8511-e8226ee7a9a8' before making global git config changes
+2026-04-04T20:23:14.4039132Z Adding repository directory to the temporary git global config as a safe directory
+2026-04-04T20:23:14.4041316Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/python-bro-code/python-bro-code
+2026-04-04T20:23:14.4078340Z Deleting the contents of '/home/runner/work/python-bro-code/python-bro-code'
+2026-04-04T20:23:14.4081515Z ##[group]Initializing the repository
+2026-04-04T20:23:14.4088269Z [command]/usr/bin/git init /home/runner/work/python-bro-code/python-bro-code
+2026-04-04T20:23:14.4172405Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-04-04T20:23:14.4175332Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-04-04T20:23:14.4176942Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-04-04T20:23:14.4177966Z hint: call:
+2026-04-04T20:23:14.4178472Z hint:
+2026-04-04T20:23:14.4179268Z hint: 	git config --global init.defaultBranch <name>
+2026-04-04T20:23:14.4180169Z hint:
+2026-04-04T20:23:14.4180840Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-04-04T20:23:14.4182289Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-04-04T20:23:14.4183193Z hint:
+2026-04-04T20:23:14.4183695Z hint: 	git branch -m <name>
+2026-04-04T20:23:14.4184248Z hint:
+2026-04-04T20:23:14.4185024Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-04-04T20:23:14.4186527Z Initialized empty Git repository in /home/runner/work/python-bro-code/python-bro-code/.git/
+2026-04-04T20:23:14.4188114Z [command]/usr/bin/git remote add origin https://github.com/PavanMudigonda/python-bro-code
+2026-04-04T20:23:14.4216304Z ##[endgroup]
+2026-04-04T20:23:14.4216994Z ##[group]Disabling automatic garbage collection
+2026-04-04T20:23:14.4217548Z [command]/usr/bin/git config --local gc.auto 0
+2026-04-04T20:23:14.4241044Z ##[endgroup]
+2026-04-04T20:23:14.4241822Z ##[group]Setting up auth
+2026-04-04T20:23:14.4242533Z Removing SSH command configuration
+2026-04-04T20:23:14.4248549Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-04-04T20:23:14.4275245Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-04-04T20:23:14.4509919Z Removing HTTP extra header
+2026-04-04T20:23:14.4515479Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-04-04T20:23:14.4543353Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-04-04T20:23:14.4706352Z Removing includeIf entries pointing to credentials config files
+2026-04-04T20:23:14.4712204Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-04-04T20:23:14.4737514Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-04-04T20:23:14.4907104Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-607b3bca-d535-491f-8a2a-c18d479bdeea.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-04-04T20:23:14.4942891Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/python-bro-code/python-bro-code/.git.path /home/runner/work/_temp/git-credentials-607b3bca-d535-491f-8a2a-c18d479bdeea.config
+2026-04-04T20:23:14.4972588Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/python-bro-code/python-bro-code/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-607b3bca-d535-491f-8a2a-c18d479bdeea.config
+2026-04-04T20:23:14.4997131Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-607b3bca-d535-491f-8a2a-c18d479bdeea.config
+2026-04-04T20:23:14.5020094Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-607b3bca-d535-491f-8a2a-c18d479bdeea.config
+2026-04-04T20:23:14.5039595Z ##[endgroup]
+2026-04-04T20:23:14.5040295Z ##[group]Fetching the repository
+2026-04-04T20:23:14.5048736Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +3ac4267f5f7eb3e5f29d314b5468a46176cf82a6:refs/remotes/origin/main
+2026-04-04T20:23:15.1746925Z From https://github.com/PavanMudigonda/python-bro-code
+2026-04-04T20:23:15.1748579Z  * [new ref]         3ac4267f5f7eb3e5f29d314b5468a46176cf82a6 -> origin/main
+2026-04-04T20:23:15.1780484Z [command]/usr/bin/git branch --list --remote origin/main
+2026-04-04T20:23:15.1814317Z   origin/main
+2026-04-04T20:23:15.1822484Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+2026-04-04T20:23:15.1843333Z 3ac4267f5f7eb3e5f29d314b5468a46176cf82a6
+2026-04-04T20:23:15.1850086Z ##[endgroup]
+2026-04-04T20:23:15.1851389Z ##[group]Determining the checkout info
+2026-04-04T20:23:15.1852779Z ##[endgroup]
+2026-04-04T20:23:15.1853711Z [command]/usr/bin/git sparse-checkout disable
+2026-04-04T20:23:15.1888146Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-04-04T20:23:15.1915516Z ##[group]Checking out the ref
+2026-04-04T20:23:15.1924134Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-04-04T20:23:15.2719477Z Switched to a new branch 'main'
+2026-04-04T20:23:15.2733997Z branch 'main' set up to track 'origin/main'.
+2026-04-04T20:23:15.2738431Z ##[endgroup]
+2026-04-04T20:23:15.2769872Z [command]/usr/bin/git log -1 --format=%H
+2026-04-04T20:23:15.2790707Z 3ac4267f5f7eb3e5f29d314b5468a46176cf82a6
