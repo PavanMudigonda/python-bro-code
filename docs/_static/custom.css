@@ -1,76 +1,105 @@
 /* Custom styles for Python Bro Code docs */
 
+/* ── Force visibility for all pyodide elements ───────────────────────── */
+.pyodide-cell,
+.pyodide-toolbar,
+.pyodide-editor,
+.pyodide-run-btn,
+.pyodide-reset-btn,
+.pyodide-copy-btn {
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+  position: static !important;
+  pointer-events: auto !important;
+}
+.pyodide-toolbar,
+.pyodide-toolbar button {
+  display: flex !important;
+}
+.pyodide-toolbar button {
+  display: inline-block !important;
+}
+
 /* ── Pyodide cell wrapper ────────────────────────────────────────────── */
 .pyodide-cell {
+  border: 1px solid #d0d0d0;
   border: 1px solid var(--color-background-border, #d0d0d0);
   border-radius: 6px;
-  overflow: hidden;
+  overflow: visible !important;
   margin-bottom: 0.5rem;
 }
 
 /* ── Toolbar with Run / Reset / Copy ─────────────────────────────────── */
 .pyodide-toolbar {
-  display: flex;
-  gap: 0.4rem;
+  display: flex !important;
+  flex-wrap: wrap;
   padding: 0.3rem 0.5rem;
+  background: #f0f0f0;
   background: var(--color-background-secondary, #f0f0f0);
+  border-bottom: 1px solid #d0d0d0;
   border-bottom: 1px solid var(--color-background-border, #d0d0d0);
 }
 .pyodide-toolbar button {
-  padding: 0.2rem 0.6rem;
-  font-size: 0.78rem;
+  margin-right: 0.4rem;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  border: none;
+  border: 1px solid #aaa;
   border-radius: 4px;
   cursor: pointer;
-  transition: background 0.15s, color 0.15s;
 }
 .pyodide-run-btn {
-  color: #fff;
-  background: #306998;
+  color: #fff !important;
+  background: #306998 !important;
+  border-color: #306998 !important;
 }
 .pyodide-run-btn:hover {
-  background: #FFD43B;
-  color: #306998;
+  background: #FFD43B !important;
+  color: #306998 !important;
 }
 .pyodide-run-btn:disabled {
   opacity: 0.7;
   cursor: wait;
 }
 .pyodide-reset-btn {
-  color: var(--color-foreground-primary, #333);
-  background: var(--color-background-primary, #e8e8e8);
+  color: #333 !important;
+  background: #e8e8e8 !important;
 }
 .pyodide-reset-btn:hover {
-  background: #ccc;
+  background: #ccc !important;
 }
 .pyodide-copy-btn {
-  color: var(--color-foreground-primary, #333);
-  background: var(--color-background-primary, #e8e8e8);
+  color: #333 !important;
+  background: #e8e8e8 !important;
   margin-left: auto;
+  margin-right: 0 !important;
 }
 .pyodide-copy-btn:hover {
-  background: #ccc;
+  background: #ccc !important;
 }
 
 /* ── Editable code textarea ──────────────────────────────────────────── */
 .pyodide-editor {
-  display: block;
-  width: 100%;
+  display: block !important;
+  width: 100% !important;
   box-sizing: border-box;
   min-height: 3rem;
   padding: 0.75rem 1rem;
   margin: 0;
-  font-family: var(--font-stack--monospace, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace);
+  font-family: Consolas, "Liberation Mono", Menlo, monospace;
   font-size: 0.85rem;
   line-height: 1.6;
+  color: #333;
   color: var(--color-foreground-primary, #333);
+  background: #f7f7f7;
   background: var(--color-code-background, #f7f7f7);
   border: none;
   outline: none;
-  resize: none;
-  overflow: hidden;
+  resize: vertical;
+  overflow-y: auto;
   tab-size: 4;
+  -moz-tab-size: 4;
   white-space: pre;
 }
 .pyodide-editor:focus {
@@ -82,13 +111,15 @@
   display: none;
   margin: 0;
   padding: 0.75rem 1rem;
-  font-family: var(--font-stack--monospace, monospace);
+  font-family: Consolas, "Liberation Mono", Menlo, monospace;
   font-size: 0.85rem;
   line-height: 1.5;
   white-space: pre-wrap;
   word-break: break-word;
+  background: #f7f7f7;
   background: var(--color-background-secondary, #f7f7f7);
   border-top: 2px solid #306998;
+  color: #333;
   color: var(--color-foreground-primary, #333);
 }
 .pyodide-output.pyodide-error {
