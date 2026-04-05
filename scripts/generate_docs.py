@@ -6,6 +6,31 @@ import json
 GITHUB_REPO = "PavanMudigonda/python-bro-code"
 GITHUB_BRANCH = "main"
 
+MYSTNB_FRONTMATTER = """\
+---
+jupytext:
+  text_representation:
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
+"""
+
+# Markers that indicate a code block is pseudocode / not runnable
+SKIP_MARKERS = [
+    "# ...",
+    "# calculator code here",
+    "# Create calculator",
+    "# Parse and calculate",
+    "# Allow user",
+    "# your code here",
+    "# TODO",
+    "pass  #",
+]
+
 # Pattern to match old badge lines that LINK TO Colab/Kaggle (preserves YouTube badges)
 OLD_BADGE_RE = re.compile(
     r'^\s*\[!\[.*?\]\(.*?\)\]\(https?://(?:colab\.research\.google\.com|kaggle\.com/kernels).*?\)\s*'
@@ -72,6 +97,110 @@ def extract_markdown_from_notebook(nb_path):
     return '\n\n'.join(parts)
 
 
+# ── Post-processing helpers applied to every generated doc ──────────────
+
+
+def remove_duplicate_video_tutorial(content):
+    """Remove the second '## 📺 Video Tutorial' block if duplicated."""
+    VT_HEADING = "## 📺 Video Tutorial"
+    first = content.find(VT_HEADING)
+    if first == -1:
+        return content
+    second = content.find(VT_HEADING, first + len(VT_HEADING))
+    if second == -1:
+        return content
+    # Find the end of the duplicate block (heading + optional blank + badge line)
+    end = second
+    lines = content[second:].split('\n')
+    remove_count = 0
+    for line in lines:
+        remove_count += 1
+        # Stop after the badge line (or after 4 lines max)
+        if 'Watch on YouTube' in line or remove_count >= 4:
+            break
+    end = second + len('\n'.join(lines[:remove_count]))
+    # Also consume the blank line before the heading
+    if second > 0 and content[second - 1] == '\n':
+        second -= 1
+    return content[:second] + content[end:]
+
+
+def _should_convert(code_lines):
+    """Return True if a python code block looks runnable."""
+    code = "\n".join(code_lines)
+    stripped = [l for l in code_lines if l.strip()]
+    if not stripped:
+        return False
+    for marker in SKIP_MARKERS:
+        if marker in code:
+            return False
+    if all(l.strip().startswith("#") or not l.strip() for l in code_lines):
+        return False
+    return True
+
+
+def _has_box_drawing(code_lines):
+    """Return True if the block contains box-drawing characters."""
+    return any(ch in line for line in code_lines for ch in "│└├─")
+
+
+def convert_python_to_code_cells(content):
+    """Convert ```python blocks to ```{code-cell} python where appropriate.
+
+    Blocks with box-drawing chars become ```text.
+    Blocks using input() get :tags: [skip-execution].
+    Pseudocode blocks stay as ```python.
+    """
+    lines = content.split("\n")
+    new_lines = []
+    i = 0
+    while i < len(lines):
+        if re.match(r"^```python\s*$", lines[i]):
+            code_lines = []
+            i += 1
+            while i < len(lines) and not re.match(r"^```\s*$", lines[i]):
+                code_lines.append(lines[i])
+                i += 1
+            closing = lines[i] if i < len(lines) else "```"
+
+            if _has_box_drawing(code_lines):
+                new_lines.append("```text")
+            elif _should_convert(code_lines):
+                if any("input(" in l for l in code_lines):
+                    new_lines.append("```{code-cell} python")
+                    new_lines.append(":tags: [skip-execution]")
+                    new_lines.append("")
+                else:
+                    new_lines.append("```{code-cell} python")
+            else:
+                new_lines.append("```python")
+
+            new_lines.extend(code_lines)
+            new_lines.append(closing)
+            i += 1
+        else:
+            new_lines.append(lines[i])
+            i += 1
+    return "\n".join(new_lines)
+
+
+def add_mystnb_frontmatter(content):
+    """Prepend myst-nb YAML frontmatter if the doc has code-cell blocks."""
+    if "{code-cell}" not in content:
+        return content
+    if content.startswith("---"):
+        return content
+    return MYSTNB_FRONTMATTER + content
+
+
+def postprocess_doc(content):
+    """Apply all post-processing steps to generated doc content."""
+    content = remove_duplicate_video_tutorial(content)
+    content = convert_python_to_code_cells(content)
+    content = add_mystnb_frontmatter(content)
+    return content
+
+
 def main():
     base_dir = "."
     docs_dir = "docs"
@@ -136,6 +265,9 @@ def main():
                 content = content[:first_newline] + "\n" + notebook_badges + content[first_newline:]
             else:
                 content += "\n" + notebook_badges
+
+        # Post-process: deduplicate, convert code cells, add frontmatter
+        content = postprocess_doc(content)
 
         with open(doc_path, 'w', encoding='utf-8') as wf:
             wf.write(content)

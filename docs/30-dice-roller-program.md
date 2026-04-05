@@ -60,7 +60,7 @@ Example of a dice showing 3:
 
 These special characters create the dice borders:
 
-```{code-cell} python
+```text
 # Unicode characters
 print("\u25CF")  # ● (bullet/dot)
 print("\u250C")  # ┌ (top-left corner)
@@ -75,7 +75,7 @@ print("\u2500")  # ─ (horizontal line)
 
 The program uses a clever data structure:
 
-```python
+```text
 dice_art = {
     1: ("┌─────────┐",
         "│         │",
@@ -149,7 +149,7 @@ if num_dice < 1:
 
 ### Why Use Tuples for Dice Art?
 
-```{code-cell} python
+```text
 # Each dice face is a tuple of 5 strings
 dice_face = (
     "┌─────────┐",  # Line 0
@@ -171,7 +171,7 @@ Tuples ensure:
 ## Examples
 
 ### Example 1: Basic Unicode Characters
-```{code-cell} python
+```text
 # Box drawing characters
 print("┌─────────┐")
 print("│  Hello  │")
@@ -189,7 +189,7 @@ print("└─────────┘")
 ```
 
 ### Example 2: Storing Dice Art in Tuple
-```{code-cell} python
+```text
 # Single dice face as tuple of strings
 dice_one = (
     "┌─────────┐",
@@ -212,7 +212,7 @@ for line in dice_one:
 ```
 
 ### Example 3: Dictionary of Dice Faces
-```{code-cell} python
+```text
 dice_art = {
     1: ("┌─────────┐",
         "│         │",
@@ -237,7 +237,7 @@ for line in dice_art[2]:
 ```
 
 ### Example 4: Rolling Random Dice
-```python
+```text
 import random
 
 dice_art = {
@@ -257,7 +257,7 @@ for line in dice_art[roll]:
 ```
 
 ### Example 5: Displaying Multiple Dice Side-by-Side
-```{code-cell} python
+```text
 import random
 
 dice_art = {
@@ -316,9 +316,7 @@ print(f"Total: {sum(results)}")
 ```
 
 ### Example 7: Complete Dice Roller (Simplified)
-```{code-cell} python
-:tags: [skip-execution]
-
+```text
 import random
 
 # Complete dice art dictionary
@@ -425,7 +423,7 @@ while True:
 ### Mistake 1: Incorrect Line Indexing
 
 **Wrong:**
-```{code-cell} python
+```text
 # Only 3 lines (missing top and bottom)
 dice_face = (
     "│  ●   ●  │",
@@ -438,7 +436,7 @@ for line_idx in range(5):  # Trying to access 5 lines!
 ```
 
 **Correct:**
-```{code-cell} python
+```text
 # All 5 lines included
 dice_face = (
     "┌─────────┐",  # Line 0
@@ -457,7 +455,7 @@ for line_idx in range(5):
 ### Mistake 2: Not Adding Spacing Between Dice
 
 **Wrong:**
-```{code-cell} python
+```text
 for line_idx in range(5):
     line = ""
     for result in results:
@@ -469,7 +467,7 @@ for line_idx in range(5):
 ```
 
 **Correct:**
-```{code-cell} python
+```text
 for line_idx in range(5):
     line = ""
     for result in results:
@@ -485,7 +483,7 @@ for line_idx in range(5):
 ### Mistake 3: Using List Instead of Tuple
 
 **Wrong:**
-```{code-cell} python
+```text
 dice_art = {
     1: ["┌─────────┐", "│    ●    │", "└─────────┘"]  # List!
 }
@@ -493,7 +491,7 @@ dice_art = {
 ```
 
 **Correct:**
-```{code-cell} python
+```text
 dice_art = {
     1: ("┌─────────┐", "│    ●    │", "└─────────┘")  # Tuple!
 }

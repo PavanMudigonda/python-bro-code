@@ -37,8 +37,6 @@
 
 ## 📚 Chapter Checklist
 
----
-
 [Bro Code Python YouTube Class](https://youtu.be/ix9cRaBkVe0?feature=shared)
 
 Learn Python in 1 HOUR ⏱ : [Learn Python in 1 hour! 🐍. (2024)](https://youtu.be/ix9cRaBkVe0?feature=shared)  

@@ -482,7 +482,7 @@ create_tic_tac_toe()
 ```
 
 ### Application 6: ASCII Art Generator
-```{code-cell} python
+```text
 def draw_box(width, height):
     # Top border
     print("┌" + "─" * (width - 2) + "┐")
