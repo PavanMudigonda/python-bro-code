@@ -11,7 +11,6 @@ extensions = [
     "sphinx.ext.viewcode",
     "sphinx_copybutton",
     "sphinx_design",
-    "sphinx_thebe",
 ]
 
 myst_enable_extensions = [
@@ -53,6 +52,7 @@ html_theme = "furo"
 html_title = "Python Bro Code"
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
+html_js_files = ["pyodide-runner.js"]
 
 html_theme_options = {
     "light_css_variables": {
@@ -77,13 +77,8 @@ nb_execution_timeout = 30
 nb_execution_raise_on_error = False
 
 # ---------------------------------------------------------------------------
-# sphinx-thebe: live "Run" button (connects to Binder for a free kernel)
+# In-browser code execution (Pyodide via _static/pyodide-runner.js)
 # ---------------------------------------------------------------------------
-thebe_config = {
-    "repository_url": "https://github.com/PavanMudigonda/python-bro-code",
-    "repository_branch": "main",
-    "path_to_docs": "docs/",
-}
-
-# sphinx-copybutton already provides the "Copy" button on every code block.
-# No extra config needed — both Run and Copy are now available.
+# - "Copy" button: provided by sphinx-copybutton on every code block.
+# - "Run"  button: provided by pyodide-runner.js on every {code-cell} block.
+#   Loads Pyodide (WebAssembly CPython) on first click — no server needed.

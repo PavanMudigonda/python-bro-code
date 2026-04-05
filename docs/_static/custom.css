@@ -1,1 +1,51 @@
 /* Custom styles for Python Bro Code docs */
+
+/* ── Pyodide Run button ─────────────────────────────────────────────── */
+.pyodide-run-btn {
+  position: absolute;
+  top: 0.35rem;
+  right: 2.6rem;           /* leave room for the Copy button */
+  z-index: 10;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #fff;
+  background: #306998;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.highlight:hover .pyodide-run-btn,
+.pyodide-run-btn:focus {
+  opacity: 1;
+}
+.pyodide-run-btn:hover {
+  background: #FFD43B;
+  color: #306998;
+}
+.pyodide-run-btn:disabled {
+  opacity: 0.9;
+  cursor: wait;
+}
+
+/* ── Output area below code cells ────────────────────────────────────── */
+.pyodide-output {
+  display: none;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-stack--monospace, monospace);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: var(--color-background-secondary, #f7f7f7);
+  border-top: 2px solid #306998;
+  border-radius: 0 0 4px 4px;
+  color: var(--color-foreground-primary, #333);
+}
+.pyodide-output.pyodide-error {
+  border-top-color: #e74c3c;
+  color: #e74c3c;
+}
