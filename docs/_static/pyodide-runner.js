@@ -115,12 +115,13 @@
   /** Convert a code block into an editable cell with Run / Reset / Copy. */
   function makeEditable(container) {
     var preEl = container.querySelector("pre");
-    if (!preEl) return;
+    if (!preEl) { console.warn("[pyodide-runner] No <pre> found in", container); return; }
     // Avoid double-init
-    if (container.querySelector(".pyodide-cell")) return;
+    if (container.querySelector(".pyodide-cell")) { console.log("[pyodide-runner] Already initialized, skipping"); return; }
 
     var codeEl = preEl.querySelector("code") || preEl;
     var originalCode = codeEl.textContent;
+    console.log("[pyodide-runner] Converting cell, code length:", originalCode.length);
 
     // Build wrapper
     var wrapper = document.createElement("div");
@@ -166,6 +167,7 @@
     wrapper.appendChild(textarea);
     container.innerHTML = "";
     container.appendChild(wrapper);
+    console.log("[pyodide-runner] Cell converted, textarea in DOM:", !!container.querySelector(".pyodide-editor"));
 
     // Size & events
     autoResize(textarea);
